@@ -1,0 +1,169 @@
+% [fontSize]{documentType}
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in, paperwidth=8.3in, paperheight=11.7in]{geometry} % Define Margins
+\usepackage{amsfonts}  % Adds symbols for natural numbers etc.
+\usepackage{amsmath}
+%Body of document goes between \begin{document} & \end{document}
+\begin{document}
+
+% Easily create a title for documents
+\title{Hello World! Hello \LaTeX !}
+\author{Dominic Hutchinson}
+\date{\today} % Automatically adds today's date when compiled
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+% Just typing text leaves it as standard text
+\section{Text}
+\subsection{General}
+Hello World!\newline
+
+% New lines are considered as new paragraphs
+% \\ starts a new line but in the same paragraph
+Paragraphs are useful as they make reading large blocks of text easier.\\
+It really is great.\newline
+
+% Can format text
+\subsection{Formatting}
+This text with be \textit{italised}.\\
+This text will be \textbf{bold}.\\
+This text will be \textsc{small caps}.\\
+This text will be \texttt{typewriter typeface}.\\
+This text will be \begin{tiny} tiny \end{tiny}.\\
+This text will be \begin{small} small \end{small}.\\
+This text will be normal.\\
+This text will be \begin{large} large \end{large}.\\
+This text will be \begin{Large} Large \end{Large}.\\
+This text will be \begin{huge} huge \end{huge}.\\
+This text will be \begin{Huge} Huge \end{Huge}.\\
+
+\subsection{Alignment}
+\begin{center} This text is centre aligned. \end{center}
+\begin{flushright} This text is right aligned. \end{flushright}
+\begin{flushleft} This text is left aligned. \end{flushleft}
+
+\subsection{Set Notation}
+Natural Numbers:\ $\mathbb{N}$\\
+Integers Numbers:\ $\mathbb{Z}$\\
+Real Numbers:\ $\mathbb{R}$\\
+Complex Numbers:\ $\mathbb{C}$\\
+% For mathematical notation we need to use special notation
+% Write inline equations between $s.
+\newpage
+\section{Maths Notation}
+\subsection{General}
+Suppose we are given a rectangle with sides of length $(x+1)$ and $(x+3)$. The equation $A=x^2+4x+3$ represents the area of the rectangle.\newline
+
+% To have equations on seperate lines to text, use $$
+Suppose we are given a rectangle with sides of length $(x+1)$ and $(x+3)$. The equation $$A=x^2+4x+3$$ represents the area of the rectangle.\newline
+
+% Sometimes in line equations are shrunk in order to fit inline
+% use \displaystyle{} to make the equations standard size
+About $\displaystyle{\frac{2}{3}}$ of the glass is full.\newline
+
+% Some common maths notation
+\subsection{Superscript}
+$$2x^3$$
+$$2x^{34}$$
+$$2x^{2x^4+5}$$
+
+\subsection{Subscript}
+$$x_1$$
+$$x_1, ..., x_{10}$$
+$$x_{1_2}$$
+
+\subsection{Greek Letters}
+$$\alpha, \beta, ..., \omega$$
+$$A=\pi r^2$$
+
+\subsection{Trigonometry}
+$$1=\sin^2{x} + \cos^2{x}$$
+
+\subsection{Logs}
+$$\log{x}, log_{10}{x}, log_2{x}$$
+$$\ln{x}$$
+
+\subsection{Roots}
+$$\sqrt{4}=\pm2$$
+$$\sqrt[3]{8}=2$$
+$$z=\sqrt{x^2+y^2}$$
+
+\subsection{Fractions}
+
+About $\frac{2}{3}$ of the glass is full.\newline
+
+\subsection{Brackets}
+$$(x+1)$$
+$$3[2+(x+1)]$$
+% Need to but \ in front of {, }, $ etc.
+$$\{a,b,c\}$$
+% Brackets don't automatically resize for fractions
+$$3\left(\frac{2} {5} \right)$$
+$$3\left[\frac{2} {5} \right]$$
+$$3\left\{\frac{2} {5} \right\}$$
+$$\left|\frac{x}{x+1} \right|$$
+% You can miss off a bracket by using a '.' instead of a bracket
+$$\left. \frac{dy}{dx} \right|_{x=1}$$
+
+\subsection{Tables}
+% {alignment & #cols}. Enter one letter per col
+% c = centre, 
+\begin{tabular}{|c|cc|}
+
+% & between columns, \\ starts next row
+\hline
+$x$ & $1$ & $2$ \\ \hline
+$f(x)$ & 11 & 12 \\ \hline
+
+\end{tabular} \newline
+
+% Automatically in maths mode
+% Lines up equations, right-justify by default
+	% Placing an & around a character tells compiler to align by said character
+% Numbers equations by default
+	% Placing an * after 'eqnarray' removes numbers
+\subsection{Equation Arrays}
+\begin{eqnarray*}
+5x^2-9&=&x^2+3\\
+4x^2&=&12\\
+x^2&=&3\\
+x&=&\pm\sqrt{3}
+\end{eqnarray*}
+
+\subsection{Calculus}
+The equation $f(x)=(x-3)^2+\frac{1}{2}$ with domain $\mathrm{D}_f:(-\infty,\infty)$ has range $\mathrm{R}_f:\left[-\frac{1}{2}, \infty\right]$\\
+
+$\displaystyle{\lim \limits_{x \to a} \frac{f(x)-f(a)}{x-a} =f'(a)}$\\
+
+$\displaystyle{\int \sin (x)\ dx = -\cos (x)+c}$\\
+
+$\displaystyle{\int_a^b \sin (x)\ dx = \cos (a) - \cos (b)}$\\
+
+$\displaystyle{\sum \limits_{n=1}^{\infty}ar^n=a+ar+ar^2+ \cdots +ar^n}$
+
+\subsection{Matrices}
+\begin{eqnarray*}
+\begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{pmatrix}\\
+\begin{pmatrix}
+1 \\
+2 \\
+3 
+\end{pmatrix} \\
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+\end{eqnarray*}
+
+
+\end{document}
+\grid
