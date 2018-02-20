@@ -1,0 +1,106 @@
+% Ctrl + alt + b to build & preview (Linux)
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in, paperwidth=8.3in, paperheight=11.7in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\begin{document}
+
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\dotprod}[0]{\boldsymbol{\cdot}}
+
+\setlength\parindent{0pt}
+
+% Cover page title
+\title{Linear Algebra \& Geometry - Notes}
+\author{Dom Hutchinson}
+\date{\today}
+\maketitle
+
+% Header
+\fancyhead[L]{Dom Hutchinson}
+\fancyhead[C]{Linear Algebra \& Geometry - Notes}
+\fancyhead[R]{\today}
+
+\tableofcontents
+
+% Start of content
+\newpage
+
+\section{Euclidean Plane, Vectors, Cartesian Co-Ordinates \& Complex Numbers}
+
+\subsection{Vectors}
+
+\textbf{Definition 1.01 - }\textit{Vectors} \\
+Ordered sets of real numbers. \\
+Denoted by $\vect{v} = (v_1, v_2, v_3,...) = \begin{pmatrix} x \\ y \end{pmatrix}$ \\
+
+\textbf{Definition 1.02 - }\textit{Euclidean Plane} \\
+The set of two dimensional vectors, with real componenets, is called the Euclidean Plane. \\
+Denoted by $\mathbb{R}^2$ \\
+
+\textbf{Definition 1.03 - }\textit{Vector Addition} \\
+Let $\vect{v}, \vect{w} \in \mathbb{R}^2$ such that $\vect{v} = (v_1,v_2)$ and $\vect{w} = (w_1,w_2)$. \\
+Then $\vect{v} + \vect{w} = (v_1 + w_1, v_2 + w_2)$. \\
+
+\textbf{Definition 1.03 - }\textit{Scalar Multiplcation of Vectors} \\
+Let $\vect{v} \in \mathbb{R}^2$ and $\lambda \in \mathbb{R}$ such that $\vect{v} = (v_1,v_2)$. \\
+Then $\lambda\vect{v} = (\lambda v_1, \lambda v_2)$. \\
+
+\textbf{Definition 1.04 - }\textit{Norm of vectors} \\
+The norm of a vector is its length from the origin. \\
+Denoted by $||\vect{v}|| = \sqrt{v_{1}^{2} + v_{2}^{2}}$ for $\vect{v} \in \mathbb{R}^2$. \\
+
+\textbf{Theorem 1.05} \\
+Let $\vect{v}, \vect{w} \in \mathbb{R}^2$ and $\lambda \in \mathbb{R} $ such that $\vect{v} = (v_1,v_2)$ and $\vect{w} = (w_1,w_2)$. \\
+%
+\textbf{1)} $$||\vect{v}|| = 0\ \mathrm{iff}\ \vect{v} = \vect{0}$$ \\
+%
+\textbf{2)}
+\begin{align*}
+  ||\lambda\vect{v}|| &= \sqrt{\lambda^2v_{1}^{2} + \lambda^2v_{2}^{2}} \\
+  &= |\lambda|.||\vect{v}||
+\end{align*}
+%
+\textbf{3)} $$||\vect{v} + \vect{w}|| \leq ||\vect{v}|| + ||\vect{w}||$$ \\
+
+\textbf{Definition 1.06 - }\textit{Unit Vector} \\
+A vector can be described by its length \& direction. \\
+Let $\vect{v} \in \mathbb{R}^2\backslash\{\vect{0}\}$. \\
+Then $\vect{v} = ||\vect{v}||\vect{u}$ where $\vect{u}$ is the unit vector, $\vect{u} = \begin{pmatrix} cos\theta \\ sin\theta \end{pmatrix}$ \\
+Thus $\forall\ \vect{v} \in \mathbb{R}^2\ \vect{v} = \begin{pmatrix} \lambda cos\theta \\ \lambda sin\theta \end{pmatrix}$ for some $\lambda \in \mathbb{R}$. \\
+
+\textbf{Definition 1.07 - }\textit{Dot Product} \\
+Let $\vect{v} \in \mathbb{R}^2$ and $\lambda \in \mathbb{R}$ such that $\vect{v} = (v_1,v_2)$. \\
+Then $\vect{v} \dotprod \vect{w} = v_1.w_1 + v_2.w_2$. \\
+
+\textbf{Remark 1.08 - }\textit{Positivity of Dot Product} \\
+Let $\vect{v} \in \mathbb{R}^2$. \\
+Then $\vect{v} \dotprod \vect{v} = ||\vect{v}||^2 = v_{1}^{2} + v_{2}^{2} \geq 0$. \\
+
+\textbf{Remark 1.09 - }\textit{Angle between vectors in Euclidean Plane} \\
+Let $\vect{v}, \vect{w} \in \mathbb{R}^2$. \\
+Set $\theta$ to be the angle between $\vect{v}$ \& $\vect{w}$. \\
+Then $$cos\theta = \frac{\vect{v} \dotprod \vect{w}}{||\vect{v}||\ ||\vect{w}||}$$.
+
+\textbf{Theorem 1.10 - }\textit{Cauchy-Schwarz Inequality} \\
+Let $\vect{v}, \vect{w} \in \mathbb{R}^2$. \\
+Then $$|\vect{v} \dotprod \vect{w}| \leq ||\vect{v}||\ ||\vect{w}||$$
+%
+\textit{Proof}
+\begin{align*}
+  \frac{v_1w_1}{||\vect{v}||\ ||\vect{w}||} + \frac{v_2w_2}{||\vect{v}||\ ||\vect{w}||} &\leq \frac{1}{2}\left(\frac{v_{1}^{2}}{||\vect{v}||^2} + \frac{w_{1}^{2}}{||\vect{w}||^2}\right) + \frac{1}{2}\left(\frac{v_{2}^{2}}{||\vect{v}||^2} + \frac{w_{2}^{2}}{||\vect{w}||^2}\right) \\
+  &\leq \frac{1}{2}\left(\frac{v_{1}^{2} + v_{2}^{2}}{||\vect{v}||^2} + \frac{w_{1}^{2} + w_{2}^{2}}{||\vect{w}||^2}\right) \\
+  &\leq \frac{1}{2}(1 + 1) \\
+  &\leq 1 \\
+  => |v_1w_1 + v_2w_2| &\leq ||\vect{v}||\ ||\vect{w}|| \\
+  |\vect{v} \dotprod \vect{w}| &\leq ||\vect{v}||\ ||\vect{w}|| \\
+\end{align*}
+
+\end{document}
