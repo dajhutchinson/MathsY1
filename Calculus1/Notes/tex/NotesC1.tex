@@ -1,0 +1,75 @@
+% Ctrl + alt + b to build & preview (Linux)
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in, paperwidth=8.3in, paperheight=11.7in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\begin{document}
+
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\setlength\parindent{0pt}
+
+% Cover page title
+\title{Calculus 1 - Notes}
+\author{Dom Hutchinson}
+\date{\today}
+\maketitle
+
+% Header
+\fancyhead[L]{Dom Hutchinson}
+\fancyhead[C]{Calculus 1 - Notes}
+\fancyhead[R]{\today}
+
+\tableofcontents
+
+% Start of content
+\newpage
+
+\section{Fundamental Theorem of Calculus}
+
+\textbf{Definition 1.01 - }\textit{Fundamental Theorem of Calculus} \\
+The Fundamental Theorem of Calculus states $$\frac{d}{dx}\int_{a}^{x} f(t) dt = f(x) $$
+
+\textbf{Definition 1.02 - }\textit{Common Sets of Numbers} \\
+Natural Numbers, set of positive integers - $\mathbb{N} := \{1, 2, 3, ...\}$. \\
+Whole Numbers, set of all integers - $\mathbb{Z} := \{..., -2, -1, 0, 1, 2, ...\}$. \\
+Rational Numbers, set of fractions - $\mathbb{Q} := \left\{\frac{p}{q} : p \in \mathbb{Z}, q \in \mathbb{N} \right\}$. \\
+Real Numbers, set of all rational \& irrational numbers - $\mathbb{R}$. \newline
+
+\textbf{Definition 1.03 - }\textit{Intervals} \\
+Sets of real numbers that fulfil in given ranges. \\
+\textit{Notation}
+\begin{eqnarray*}
+  [a,b] := \{x \in \mathbb{R} : a \leq x \leq b\} \\
+  (a,b] := \{x \in \mathbb{R} : a < x \leq b\} \\
+  \left[a,b\right) := \{x \in \mathbb{R} : a \leq x < b\} \\
+  (a,b) := \{x \in \mathbb{R} : a < x < b \}
+\end{eqnarray*}
+
+\underline{Example} \\
+In what interval does x lie such that: $$|3x+4|<|2x-1$$ \\
+\textit{Solution}
+\begin{eqnarray*}
+  \mathrm{Case\ 1:\ } x \geq \frac{1}{2} && \\
+  &=>& 1 - 2x < 3x + 4 < 2x - 1 \\
+  &=>& 1 - 2x < 3x + 4 \\
+  &=>& x > \frac{-3}{5} \\
+  \mathrm{And,} &=>& 3x + 4 < 2x - 1 \\
+  &=>& x < -5 \\
+  \text{There are no real solutions in this range.} \\
+  \mathrm{Case\ 2:} x < \frac{1}{2} && \\
+  &=>& 2x - 1 < 3x + 4 < 1 -2x \\
+  &=>& 2x - 1 < 3x + 4 \\
+  &=>& -5 < x \\
+  \mathrm{And,} &=>& 3x + 4 < 1 - 2x \\
+  &=>& 5x < -3 \\
+  &=>& x < \frac{-3}{5} \\
+  \\ &=>&-5 < x < \frac{-3}{5},\ \underline{ x \in \left(-5,\frac{-3}{5}\right) }
+\end{eqnarray*}
+
+\end{document}
