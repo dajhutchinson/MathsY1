@@ -60,16 +60,13 @@ Denoted by $||\vect{v}|| = \sqrt{v_{1}^{2} + v_{2}^{2}}$ for $\vect{v} \in \math
 
 \subtitle{Theorem 1.05}{}
 Let $\vect{v}, \vect{w} \in \mathbb{R}^2$ and $\lambda \in \mathbb{R} $ such that $\vect{v} = (v_1,v_2)$ and $\vect{w} = (w_1,w_2)$. \\
-%
-\textbf{1)} $$||\vect{v}|| = 0\ \mathrm{iff}\ \vect{v} = \vect{0}$$ \\
-%
-\textbf{2)}
+Then
 \begin{align*}
+  ||\vect{v}|| &= 0\ \mathrm{iff}\ \vect{v} = \vect{0}\\
   ||\lambda\vect{v}|| &= \sqrt{\lambda^2v_{1}^{2} + \lambda^2v_{2}^{2}} \\
-  &= |\lambda|.||\vect{v}||
-\end{align*}
-%
-\textbf{3)} $$||\vect{v} + \vect{w}|| \leq ||\vect{v}|| + ||\vect{w}||$$ \\
+  &= |\lambda|.||\vect{v}|| \\
+  ||\vect{v} + \vect{w}|| &\leq ||\vect{v}|| + ||\vect{w}||
+\end{align*} \\
 
 \subtitle{Definition 1.06 - }{Unit Vector}
 A vector can be described by its length \& direction. \\
@@ -103,5 +100,59 @@ Then $$|\vect{v} \dotprod \vect{w}| \leq ||\vect{v}||\ ||\vect{w}||$$
   => |v_1w_1 + v_2w_2| &\leq ||\vect{v}||\ ||\vect{w}|| \\
   |\vect{v} \dotprod \vect{w}| &\leq ||\vect{v}||\ ||\vect{w}|| \\
 \end{align*}
+
+\subsection{Complex Numbers}
+
+\subtitle{Definition 1.11 - }{i}
+\begin{alignat*}{1}
+  i^2 &= -1 \\
+  i &= \sqrt{-1}
+\end{alignat*}
+
+\subtitle{Definition 1.12 - }{Complex Number Set}
+The set of complex numbers contains all numbers with an imaginary part. $$\mathbb{C} := \left\{x + iy; x,y \in \mathbb{R}\right\}$$
+Complex numbers are often denoted by $$z = x + iy$$ and we say $x$ is the real part of $z$ and $y$ the imaginary part.
+
+\subtitle{Definition 1.13 - }{Complex Conjugate}
+Let $z \in \mathbb{C}$ st $z = x + iy$. \\
+Then $$\bar{z} := x - iy$$
+%
+\newpage
+%
+\subtitle{Theorem 1.14 - }{Operations on Complex Numbers}
+Let $z_1,z_2 \in \mathbb{C}$ st $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$. \\
+Then \begin{alignat*}{2}
+  &z_1 + z_2 &&:= (x_1 + x_2) + i(y_1 + y_2) \\
+  &z_1.z_2 &&:= (x_1 + iy_1)(x_2 + iy_2) \\
+  & && := x_1.x_2 - y_1.y_2 + i(x_1.y_2 + x_2.y_1)
+\end{alignat*}
+\underline{N.B.} When dividing by a complex number, multiply top and bottom by the complex conjugate. \\
+
+\subtitle{Definition 1.15 - }{Modulus of Complex Numbers}
+The modulus of a complex number is the distance of the number, from the origin, on an Argand diagram.
+Let $z \in \mathbb{C}$ st $z = x + iy$. \\
+Then \begin{alignat*}{2}
+  |z| &:= \sqrt{x^2 + y^2} \\
+  &:= \sqrt{\bar{z}z}
+\end{alignat*}
+\underline{N.B.} Amplitude is an alternative name for the modulus \\
+
+\subtitle{Definition 1.16 - }{Phase of Complex Numbers}
+The phase of a complex number is the angle between the positive real axis and the line subtended from the origin and the number, on an Argand digram.$$z = |z|.(cos\theta + i.sin\theta), \quad \theta = \mathrm{Phase}$$
+\underline{N.B.} Phase of $\bar{z}$ = - Phase of $z$ \\
+
+\subtitle{Theorem 1.17 - }{de Moivre's Formula}
+$$z^n = (cos\theta +i.sin\theta)^n = cos(n\theta)+i.sin(n\theta)$$
+
+\subtitle{Theorem 1.18 - }{Euler's Formula}
+$$e^{i\theta} = cos\theta + i.sin\theta$$
+
+\subtitle{Remark 1.19}{}
+Using Euler's formula we can express all complex numbers in terms of $e$. Thus many properties of the exponential remain true:
+\begin{alignat*}{2}
+  z &= \lambda e^{i\theta}, && \quad \lambda \in \mathbb{R} , \theta \in \left[0, 2\pi\right) \\
+  => z_1 + z_2 &= \lambda_1 . \lambda_2. e^{i(\theta_1 + \theta_2)} \\
+  \&, \frac{z_1}{z_2} &= \frac{\lambda_1}{\lambda_2}.e^{i(\theta_1 = \theta_2)}
+\end{alignat*}
 
 \end{document}

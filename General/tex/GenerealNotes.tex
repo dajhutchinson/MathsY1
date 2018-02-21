@@ -1,0 +1,54 @@
+% Ctrl + alt + b to build & preview (Linux)
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in, paperwidth=8.3in, paperheight=11.7in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\begin{document}
+
+\pagestyle{fancy}
+\setlength\parindent{0pt}
+\allowdisplaybreaks
+
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\subtitle}[2]{\textbf{#1}\textit{#2} \\}
+\newcommand{\dotprod}[0]{\boldsymbol{\cdot}}
+
+% Cover page title
+\title{General - Notes}
+\author{Dom Hutchinson}
+\date{\today}
+\maketitle
+
+% Header
+\fancyhead[L]{Dom Hutchinson}
+\fancyhead[C]{General - Notes}
+\fancyhead[R]{\today}
+
+\textbf{Useful Trig Identities}
+\begin{alignat*}{2}
+  &sin(\alpha + \beta) &&= sin(\alpha)cos(\beta) + sin(\beta)cos(\alpha) \\
+  &sin(\alpha - \beta) &&= sin(\alpha)cos(\beta) - sin(\beta)cos(\alpha) \\
+  &cos(\alpha + \beta) &&= cos(\alpha)cos(\beta) - sin(\alpha)sin(\beta) \\
+  &cos(\alpha - \beta) &&= cos(\alpha)cos(\beta) + sin(\alpha)sin(\beta) \\
+  &sin^2(x) + cos^2(x) &&= 1 \\
+  &tan^2(x) + 1 &&= sec^2(x) \\
+  &1 + cot^2(x) &&= cosec^2(x) \\
+  &sin(2x) &&= 2.sin(x).cos(x) \\
+  &cos(2x) &&= cos^2(x) - sin^2(x)\\
+  & &&= 2cos^2(x) - 1 \\
+  & &&= 1 - 2sin^2(x) \\
+  &sin^2(x) &&= \frac{1 - cos(2x)}{2} \\
+  &cos^2(x) &&= \frac{1 + cos(2x)}{2} \\
+  &tan^2(x) &&= \frac{1-cos(2x)}{1 + cos(2x)} \\
+  &sin(x) + sin(y) &&= 2.sin\left(\frac{x+y}{2}\right).cos\left(\frac{x-y}{2}\right) \\
+  &sin(x) - sin(y) &&= 2.sin\left(\frac{x-y}{2}\right).cos\left(\frac{x+y}{2}\right) \\
+  &cos(x) + cos(y) &&= 2.cos\left(\frac{x+y}{2}\right).cos\left(\frac{x-y}{2}\right) \\
+  &cos(x) - cos(y) &&= -2.sin\left(\frac{x+y}{2}\right).sin\left(\frac{x-y}{2}\right)
+\end{alignat*}
+
+\end{document}
