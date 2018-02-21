@@ -104,13 +104,11 @@ A limit is the value a function tends to, for a given x. \\
 \\\textit{Formally} We say $L$ is the limit of $f(x)$ as $x$ tends to $x_0$ if $$\forall\ \varepsilon > 0,\ \exists\ \delta > 0\ \mathrm{st\ if}\ x \in A\ \mathrm{and}\ |x - x_0| < \delta => |f(x) - L| < \varepsilon$$
 \textit{Notation} $$\lim_{x \to x_0} f(x) = L$$
 
-\newpages
-\subtitle{Remark 2.02 - }{Common Limits}
-\begin{alignat*}{2}
-  &\lim_{x \to x_0} \frac{1-x}{1+x} &= 1 \\
-  &\lim_{x \to \infty} \frac{1}{x} &= 0 \\
-  &\lim_{x \to 0} \frac{sin(x)}{x} &= 1
-\end{alignat*} \\
+\newpage
+\subtitle{Definition 2.02 - }{Directional Limits}
+Sometimes the value of a limit depends on which direction you approach it from.\\
+$\lim_{x \to x_{0}+}$ is used when approaching from values greater than $x_0$. \\
+$\lim_{x \to x_{0}-}$ is used when approaching from values less than $x_0$. \\
 
 \subtitle{Theorem 2.03 - }{Operations with limits}
 Let $\lim_{x \to x_0} f(x) = L_f$ and $\lim_{x \to x_0} g(x) = L_g$
@@ -130,6 +128,52 @@ A techique for expanding binomial expressions
 \begin{alignat*}{2}
 \left(1+\frac{x}{n}\right)^n &= \sum_{i=0}^{n} \binom{i}{n} . 1^{(n-i)} . \left(\frac{x}{n}\right)^i \\
 &= 1 + x + \frac{n-1}{2n}.x^2 + ... + \frac{x^n}{n^n}
+\end{alignat*}
+
+\section{The Derivative}
+
+\subtitle{Definition 3.01 - }{Differentiable Equations}
+Let $f : A \to B$ and $x_0 \in A$. \\
+$f$ is differentiable at $x_0$ if $\exists\ L \in B$ such that $$L = \lim_{h \to 0} \frac{f(x_0 + h)-f(x_0)}{h}$$
+If this limit exists $\forall\ x \in A$ then we can define the derivative of $f(x)$ $$f'(x) := \lim_{h \to 0} \frac{f(x + h) -f(x)}{h}$$
+
+\subtitle{Definition 3.02 - }{Notation for Differentiation}
+There are two ways to denote the derivative of an equation $$f'(x) \iff \frac{df}{dx}, f''(x) \iff \frac{d^2f}{dx^2}, ... , f^{(n)}(x) \iff \frac{d^nf}{dx^n}$$
+\underline{N.B.} - Using $\displaystyle{\frac{df}{dx}}$ is more informative, especially for equations with multiple variables.
+
+\subsection{Techniques for finding derivative}
+%
+\subtitle{Theorem 3.03 - }{Sum Rule}
+Let $f, g$ be differentiable with respect to x.
+$$(f+g)' = f' + g'$$
+
+\subtitle{Theorem 3.04 - }{Product Rule}
+Let $f, g$ be differentiable with respect to x.
+$$(fg)' = f'g + fg'$$
+
+\subtitle{Theorem 3.05 - }{Quotient Rule}
+Let $f, g$ be differentiable with respect to x.
+$$\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$$
+
+\subtitle{Definition 3.06 - }{Composite Functions}
+Let $f : B \to C$ and $g : A \to B$ Then $$(f \circ g)(x) = f(g(x))$$
+
+\subtitle{Theorem 3.07 - }{Chain Rule}
+Let $f, g$ be differentiable with respect to x.
+$$\frac{d}{dx} f(g(x)) = f'(g(x)).g'(x)$$
+
+\subsection{Implicit Differentiation}
+%
+\subtitle{Definition 3.08 - }{Implicit Differentiation}
+Sometimes it is hard to isolate variables in multi-variable equations, in these cases differentiate both sides with respect to the same variable. \\
+Remembering $$\frac{d}{dx}(x) = 1\ \mathrm{and}\ \frac{d}{dx}(y) = \frac{dy}{dx} = y'$$
+\textit{Example} \\
+Find $y$ if $x^3 + y^3 = 6xy$
+\begin{alignat*}{2}
+  &\frac{d}{dx}\left(x^3 + y^3\right) &&= \frac{d}{dx}\left(6xy\right) \\
+  => &3x^2 + 3y^2.y' &&= 6y + 6x.y' \\
+  => &y'(3y^2 - 6x) &&= 6y - 3x^2 \\
+  => &y' &&= \frac{2y - x^2}{y^2 - 2x}
 \end{alignat*}
 
 \end{document}

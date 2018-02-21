@@ -29,7 +29,7 @@
 \fancyhead[C]{General - Notes}
 \fancyhead[R]{\today}
 
-\textbf{Useful Trig Identities}
+\section{Trig Identities}
 \begin{alignat*}{2}
   &sin(\alpha + \beta) &&= sin(\alpha)cos(\beta) + sin(\beta)cos(\alpha) \\
   &sin(\alpha - \beta) &&= sin(\alpha)cos(\beta) - sin(\beta)cos(\alpha) \\
@@ -49,6 +49,40 @@
   &sin(x) - sin(y) &&= 2.sin\left(\frac{x-y}{2}\right).cos\left(\frac{x+y}{2}\right) \\
   &cos(x) + cos(y) &&= 2.cos\left(\frac{x+y}{2}\right).cos\left(\frac{x-y}{2}\right) \\
   &cos(x) - cos(y) &&= -2.sin\left(\frac{x+y}{2}\right).sin\left(\frac{x-y}{2}\right)
+\end{alignat*}
+
+\section{Limits}
+\begin{alignat*}{2}
+  &\lim_{x \to x_0} \frac{1-x}{1+x} &= 1 \\
+  &\lim_{x \to \infty} \frac{1}{x} &= 0 \\
+  &\lim_{x \to 0} \frac{sin(x)}{x} &= 1
+\end{alignat*}
+
+\section{Differentiation}
+\subsection{Techniques}
+Sum Rule
+$$(f+g)' = f' + g'$$
+%
+Product Rule
+$$(fg)' = f'g + fg'$$
+%
+Quotient Rule
+$$\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$$
+%
+Chain Rule
+$$\frac{d}{dx} f(g(x)) = f'(g(x)).g'(x)$$
+
+\subsection{Common Results}
+\begin{alignat*}{2}
+  &\frac{d}{dx}(x^n) &&= nx^{n-1} \\
+  &\frac{d}{dx}(e^x) &&= e^x \\
+  &\frac{d}{dx}(ln(x)) &&= \frac{1}{x}\\
+  &\frac{d}{dx}(sin(x)) &&= cos(x) \\
+  &\frac{d}{dx}(cos(x)) &&= -sin(x) \\
+  &\frac{d}{dx}(tan(x)) &&= sec^2(x) \\
+  &\frac{d}{dx}(cot(x)) &&= -cosec^2(x) \\
+  &\frac{d}{dx}(sec(x)) &&= tan(x).sec(x) \\
+  &\frac{d}{dx}(cosec(x)) &&= -cosec(x).cot(x) \\
 \end{alignat*}
 
 \end{document}
