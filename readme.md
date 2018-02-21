@@ -1,7 +1,7 @@
 # Maths Year One #
 
 Files from some of my first year maths modules: <br />
-| [Calculus 1](http://https://github.com/dajhutchinson/MathsY1/tree/master/Calculus1) |
+| [Calculus 1](https://github.com/dajhutchinson/MathsY1/tree/master/Calculus1) |
 | [Linear Algebra And Geometry](https://github.com/dajhutchinson/MathsY1/tree/master/LinearAlgebraAndGeometry) |
 | [Introduction to Group Theory](GroupTheory) |
 
