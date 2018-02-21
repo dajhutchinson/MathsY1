@@ -155,4 +155,94 @@ Using Euler's formula we can express all complex numbers in terms of $e$. Thus m
   \&, \frac{z_1}{z_2} &= \frac{\lambda_1}{\lambda_2}.e^{i(\theta_1 = \theta_2)}
 \end{alignat*}
 
+\newpage
+\section{Euclidean Space, $\mathbb{R}^n$}
+%
+\subtitle{Definition 2.01 - }{Euclidean Space}
+Let $n \in \mathbb{N}$ then $\forall\ \vect{x} = (x_1, x_2, ... , x_n)$ with $x_1, x_2, ... , x_n \in \mathbb{R}$ we have that $\vect{x} \in \mathbb{R}^n$. \\
+
+\subtitle{Theorem 2.02 - }{Operations in Euclidean Space}
+Let $\vect(x), \vect(y) \in \mathbb{R}^n$ and $\lambda \in \mathbb{R}$.
+Then $$\vect(x) + \vect(y) = (x_1 + y_1, ... , x_n + y_n)$$
+And $$\vect(x) + \lambda.\vect(y) = (x_1 + \lambda.y_1, ... , x_n + \lambda.y_n)$$
+
+\subtitle{Definition 2.03 - }{Cartesian Product}
+Let $A, B \in \mathbb{R}^n$ be non-empty sets. \\
+Then $$A \times B := \{(a,b); a \in A, b \in B\}$$
+
+\subsection{Dot Product}
+%
+\subtitle{Definition 2.04 - }{Dot Product}
+Let $\vect{v}, \vect{w} \in \mathbb{R}^n$. Then \begin{alignat*}{1}
+\vect{v} \dotprod \vect{w} &:= v_1.w_1 + ... + v_n.w_n \\
+&:= \sum_{j=1}^n v_j.w_j
+\end{alignat*}
+
+\subtitle{Theorem 2.05 - }{Properties of the Dot Product}
+Let $\vect{u}, \vect{v}, \vect{w} \in \mathbb{R}^n$.
+Linearity: $$(\vect{u} + \lambda\vect{v}) \dotprod \vect{w} = \vect{u} \dotprod \vect{w} + \lambda(\vect{v} \dotprod \vect{w})$$
+Symmetry: $$\vect{v} \dotprod \vect{w} = \vect{w} \dotprod \vect{v}$$
+Positivity: $$\vect{v} \dotprod \vect{v} = v_1^2 + v_2^2 + ... +v_n^2 \geq 0$$
+
+\subtitle{Definition 2.06 - }{Orthogonality}
+Let $\vect{v}, \vect{w} \in \mathbb{R}^n$. \\
+It is said that $\vect(v), \vect(w)$ are orthogonal to each other if $\vect{v} \dotprod \vect{w} = 0$ \\
+\underline{N.B.} Orthogonal vectors are perpendicular to each other. \\
+
+\subtitle{Definition 2.07 - }{The Norm}
+Let $\vect{x} \in \mathbb{R}^n$.\\
+Then $$||\vect{x}|| = \sqrt{\vect{x} \dotprod \vect{x}} = \sqrt{\sum_{i=1}^n x_i^2}$$
+
+\newpage
+%
+\subtitle{Theorem 2.08 - }{Properties of the Norm}
+Let $\vect{x}, \vect{y} \in \mathbb{R}^n$ and $\lambda \in \mathbb{R}$. Then
+\begin{alignat*}{2}
+  &||\vect{x}|| &&\geq 0 \\
+  &||\vect{x}|| &&= 0 \mathrm{\ iff\ } \vect{x} = 0 \\
+  &||\lambda\vect{x}|| &&= |\lambda| ||\vect{x}|| \\
+  &||\vect{x} + \vect{y}|| &&\leq ||\vect{x}|| + ||\vect{y}||
+\end{alignat*}
+
+\subtitle{Theorem 2.09 - }{Dot Product and Norm}
+Let $\vect{x}, \vect{y} \in \mathbb{R}^n$.
+$$|\vect{x} \dotprod \vect{y}| \leq ||\vect{x}|| ||\vect{y}||$$
+\underline{N.B.} $|\vect{x} \dotprod \vect{y}| = ||\vect{x}|| ||\vect{y}||$ iff $\vect{x}$ \& $\vect{x}$ are orthogonal.\\
+
+\subtitle{Theorem 2.10 - }{Angle between Vectors}
+Let $\vect{x}, \vect{y} \in \mathbb{R}^n$. Then $$cos\theta = \frac{\vect{x} \dotprod \vect{y}}{||\vect{x}|| ||\vect{y}||}$$
+
+\subsection{Linear Subspaces}
+%
+\subtitle{Definition 2.11 - }{Linear Subspace}
+Let $V \subset \mathbb{R}^n$. $V$ is a \textit{Linear Subspace} if: \\
+\textbf{i)} $V \not = \emptyset$; \\
+\textbf{ii)} $\forall\ \vect{v}, \vect{w} \in V$ then $\vect{v} + \vect{w} \in V$; \\
+\textbf{iii)} $\forall\ \lambda \in \mathbb{R}, \vect{v} \in V$ then $\lambda\vect{v} \in V$. \\
+
+\subtitle{Definition 2.12 - }{Span}
+Let $\vect{x_1}, ... , \vect{x_k} \in \mathbb{R}^n; k \in \mathbb{N}$. Then
+$$\mathrm{span}\{\vect{x_1}, ... , \vect{x_k}\} := \{\lambda_1\vect{x_1} + ... + \lambda_k\vect{x_k}; \lambda_i \in \mathbb{R}, 0 \leq i \geq k\}$$
+
+\subtitle{Definition 2.13 - }{Spans are Subspaces}
+Let $\vect{x_1}, ... , \vect{x_k} \in \mathbb{R}^n;\ k \in \mathbb{N}$. Then span$\{\vect{x_1}, ... , \vect{x_k}\}$ is a linear subspace of $\mathbb{R}^n$.
+
+\subtitle{Theorem 2.15}{}
+$$W_{\vect{a}} := \{\vect{x} \in \mathbb{R}^n; \vect{x} \dotprod \vect{a} = 0\}\mathrm{\ is\ a\ subspace.}$$
+
+\subtitle{Definition 2.16 - }{Orthogonal Complement}
+Let $V \subset \mathbb{R}^n$. Then,
+$$V^{\perp} := \{\vect{x} \in \mathbb{R}^n; \vect{x} \dotprod \vect{y}\ \forall\ \vect{y} \in V\}$$
+\underline{N.B.} $V^{\perp} \subset \mathbb{R}^n$
+
+\subtitle{Theorem 2.17 - }{Relationship of Subspaces}
+Let $V, W$ be subspaces of $\mathbb{R}$. Then
+$$V \cap W \mathrm{\ is\ a\ subspace.}$$
+$$V+W := \{\vect{v} + \vect{w}; \vect{v} \in V, \vect{w} \in W\}\mathrm{\ is\ a\ subspace.}$$
+
+\subtitle{Definition 2.18 - }{Direct Sum}
+Let $V_1, V_2, W$ be subspaces of $\mathbb{R}$. Then $W$ is said to be a \textit{direct sum} if \\
+\textbf{i)} $W = V_1 + V_2$; \\
+\textbf{ii)} $V_1 \cap V_2 = \emptyset$. \\
+
 \end{document}
