@@ -10,8 +10,10 @@
 \begin{document}
 
 \pagestyle{fancy}
+\allowdisplaybreaks
 
 \renewcommand{\headrulewidth}{0pt}
+\newcommand{\subtitle}[2]{\textbf{#1}\textit{#2} \\}
 \setlength\parindent{0pt}
 
 % Cover page title
@@ -30,20 +32,22 @@
 % Start of content
 \newpage
 
-\section{Fundamental Theorem of Calculus}
+\section{Before Calculus}
 
-\textbf{Definition 1.01 - }\textit{Fundamental Theorem of Calculus} \\
+\subsection{Fundamental Theorem of Calculus}
+\subtitle{Definition 1.01 - }{Fundamental Theorem of Calculus}
 The Fundamental Theorem of Calculus states $$\frac{d}{dx}\int_{a}^{x} f(t) dt = f(x) $$ \\
 
-\textbf{Definition 1.02 - }\textit{Common Sets of Numbers} \\
+\subtitle{Definition 1.02 - }{Common Sets of Numbers}
 Natural Numbers, set of positive integers - $\mathbb{N} := \{1, 2, 3, ...\}$. \\
 Whole Numbers, set of all integers - $\mathbb{Z} := \{..., -2, -1, 0, 1, 2, ...\}$. \\
 Rational Numbers, set of fractions - $\mathbb{Q} := \left\{\frac{p}{q} : p \in \mathbb{Z}, q \in \mathbb{N} \right\}$. \\
 Real Numbers, set of all rational \& irrational numbers - $\mathbb{R}$. \\
 
-\textbf{Definition 1.03 - }\textit{Intervals} \\
+\subsection{Intervals}
+\subtitle{Definition 1.03 - }{Intervals}
 Sets of real numbers that fulfil in given ranges. \\
-\textit{Notation}
+\underline{Notation}
 \begin{eqnarray*}
   [a,b] := \{x \in \mathbb{R} : a \leq x \leq b\} \\
   (a,b] := \{x \in \mathbb{R} : a < x \leq b\} \\
@@ -52,24 +56,78 @@ Sets of real numbers that fulfil in given ranges. \\
 \end{eqnarray*}
 
 \underline{Example} \\
-In what interval does x lie such that: $$|3x+4|<|2x-1$$ \\
+In what interval does x lie such that: $$|3x+4|<|2x-1|$$ \\
 \textit{Solution}
-\begin{eqnarray*}
-  \mathrm{Case\ 1:\ } x \geq \frac{1}{2} && \\
-  &=>& 1 - 2x < 3x + 4 < 2x - 1 \\
-  &=>& 1 - 2x < 3x + 4 \\
-  &=>& x > \frac{-3}{5} \\
-  \mathrm{And,} &=>& 3x + 4 < 2x - 1 \\
-  &=>& x < -5 \\
+\begin{align*}
+  \mathrm{Case\ 1:}\ x \geq \frac{1}{2} & \\
+  &=> 1 - 2x < 3x + 4 < 2x - 1 \\
+  &=> 1 - 2x < 3x + 4 \\
+  &=> x > \frac{-3}{5} \\ \\
+  \mathrm{And,} &=> 3x + 4 < 2x - 1 \\
+  &=> x < -5 \\
   \text{There are no real solutions in this range.} \\
-  \mathrm{Case\ 2:} x < \frac{1}{2} && \\
-  &=>& 2x - 1 < 3x + 4 < 1 -2x \\
-  &=>& 2x - 1 < 3x + 4 \\
-  &=>& -5 < x \\
-  \mathrm{And,} &=>& 3x + 4 < 1 - 2x \\
-  &=>& 5x < -3 \\
-  &=>& x < \frac{-3}{5} \\
-  \\ &=>&-5 < x < \frac{-3}{5},\ \underline{ x \in \left(-5,\frac{-3}{5}\right) }
-\end{eqnarray*}
+  \mathrm{Case\ 2:}\ x < \frac{1}{2} & \\
+  &=> 2x - 1 < 3x + 4 < 1 -2x \\
+  &=> 2x - 1 < 3x + 4 \\
+  &=> -5 < x \\
+  \mathrm{And,} &=> 3x + 4 < 1 - 2x \\
+  &=> 5x < -3 \\
+  &=> x < \frac{-3}{5} \\
+  %
+  \\ &=>-5 < x < \frac{-3}{5},\ \underline{ x \in \left(-5,\frac{-3}{5}\right) }
+\end{align*}
+
+\subtitle{Definition 1.04 - }{Functions}
+Functions map values between fields of numbers. The signature of a function is defined by $$f : A \to B$$
+Where $f$ is the name of the function, $A$ is the domain and $B$ is the co-domain. \\
+The \textit{Domain} of a function is the set of numbers it can take as an input. \\
+The \textit{Co-Domain} is the set of numbers that the domain is mapped to. \\
+
+\underline{N.B.} - A function is valid iff it maps each value in the domain to a single value in the co-domain. \\
+
+\subtitle{Definition 1.05 - }{Maximal Domain}
+The \textit{Maximal Domain} of a function is the largest set of values which can serve as the domain of a function. \\
+
+\subtitle{Remark 1.06 - }{Types of Function}
+Let $f:A \to B$ \\
+\textit{Polynomials} $$f(x) = a_0 + a_1x + ... +a_nx^n$$
+\textit{Rational} $$f(x) = \frac{p(x)}{q(x)},\quad q(x) \not = 0\ \forall\ x \in A$$
+\textit{Trigonometric} $$sin(x),\ cos(x),\ tan(x)\ \mathrm{etc.}$$
+%
+\section{Limits}
+\subsection{Limits}
+\subtitle{Definition 2.01 - }{Limits}
+A limit is the value a function tends to, for a given x. \\
+\textit{i.e.} The value f(x) has at it gets very close to x. \\
+\\\textit{Formally} We say $L$ is the limit of $f(x)$ as $x$ tends to $x_0$ if $$\forall\ \varepsilon > 0,\ \exists\ \delta > 0\ \mathrm{st\ if}\ x \in A\ \mathrm{and}\ |x - x_0| < \delta => |f(x) - L| < \varepsilon$$
+\textit{Notation} $$\lim_{x \to x_0} f(x) = L$$
+
+\newpages
+\subtitle{Remark 2.02 - }{Common Limits}
+\begin{alignat*}{2}
+  &\lim_{x \to x_0} \frac{1-x}{1+x} &= 1 \\
+  &\lim_{x \to \infty} \frac{1}{x} &= 0 \\
+  &\lim_{x \to 0} \frac{sin(x)}{x} &= 1
+\end{alignat*} \\
+
+\subtitle{Theorem 2.03 - }{Operations with limits}
+Let $\lim_{x \to x_0} f(x) = L_f$ and $\lim_{x \to x_0} g(x) = L_g$
+Then
+\begin{alignat*}{2}
+  &\lim_{x \to x_0} \left[f(x) + g(x)\right] &&= L_f + L_g \\
+  &\lim_{x \to x_0} f(x).g(x) &&= L_f.L_g \\
+  &\lim_{x \to x_0} \frac{f(x)}{g(x)} &&= \frac{L_f}{L_g} \quad L_g \not = 0
+\end{alignat*}
+
+\subsection{Exponential Function}
+\subtitle{Definition 2.04 - }{Exponential Function}
+$$e := \lim_{x \to \infty} \left(1+\frac{1}{n}\right)^n \simeq 2.7182818...$$\\
+
+\subtitle{Theorem 2.05 - }{Binomial Expansion}
+A techique for expanding binomial expressions
+\begin{alignat*}{2}
+\left(1+\frac{x}{n}\right)^n &= \sum_{i=0}^{n} \binom{i}{n} . 1^{(n-i)} . \left(\frac{x}{n}\right)^i \\
+&= 1 + x + \frac{n-1}{2n}.x^2 + ... + \frac{x^n}{n^n}
+\end{alignat*}
 
 \end{document}
