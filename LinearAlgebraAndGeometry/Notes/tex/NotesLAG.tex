@@ -4,8 +4,9 @@
 \usepackage[margin=1in, paperwidth=8.3in, paperheight=11.7in]{geometry}
 \usepackage{amsfonts}
 \usepackage{amsmath}
-\usepackage{fancyhdr}
+\usepackage{enumerate}
 \usepackage{enumitem}
+\usepackage{fancyhdr}
 
 \begin{document}
 
@@ -225,24 +226,124 @@ Let $\vect{x_1}, ... , \vect{x_k} \in \mathbb{R}^n; k \in \mathbb{N}$. Then
 $$\mathrm{span}\{\vect{x_1}, ... , \vect{x_k}\} := \{\lambda_1\vect{x_1} + ... + \lambda_k\vect{x_k}; \lambda_i \in \mathbb{R}, 0 \leq i \geq k\}$$
 
 \subtitle{Definition 2.13 - }{Spans are Subspaces}
-Let $\vect{x_1}, ... , \vect{x_k} \in \mathbb{R}^n;\ k \in \mathbb{N}$. Then span$\{\vect{x_1}, ... , \vect{x_k}\}$ is a linear subspace of $\mathbb{R}^n$.
+Let $\vect{x_1}, ... , \vect{x_k} \in \mathbb{R}^n;\ k \in \mathbb{N}$. Then span$\{\vect{x_1}, ... , \vect{x_k}\}$ is a linear subspace of $\mathbb{R}^n$. \\
 
-\subtitle{Theorem 2.15}{}
+\subtitle{Theorem 2.14}{}
 $$W_{\vect{a}} := \{\vect{x} \in \mathbb{R}^n; \vect{x} \dotprod \vect{a} = 0\}\mathrm{\ is\ a\ subspace.}$$
 
-\subtitle{Definition 2.16 - }{Orthogonal Complement}
+\subtitle{Definition 2.15 - }{Orthogonal Complement}
 Let $V \subset \mathbb{R}^n$. Then,
 $$V^{\perp} := \{\vect{x} \in \mathbb{R}^n; \vect{x} \dotprod \vect{y}\ \forall\ \vect{y} \in V\}$$
 \underline{N.B.} $V^{\perp} \subset \mathbb{R}^n$
 
-\subtitle{Theorem 2.17 - }{Relationship of Subspaces}
+\subtitle{Theorem 2.16 - }{Relationship of Subspaces}
 Let $V, W$ be subspaces of $\mathbb{R}$. Then
 $$V \cap W \mathrm{\ is\ a\ subspace.}$$
 $$V+W := \{\vect{v} + \vect{w}; \vect{v} \in V, \vect{w} \in W\}\mathrm{\ is\ a\ subspace.}$$
 
-\subtitle{Definition 2.18 - }{Direct Sum}
+\subtitle{Definition 2.17 - }{Direct Sum}
 Let $V_1, V_2, W$ be subspaces of $\mathbb{R}$. Then $W$ is said to be a \textit{direct sum} if \\
 \textbf{i)} $W = V_1 + V_2$; \\
 \textbf{ii)} $V_1 \cap V_2 = \emptyset$. \\
+
+\section{Linear Equations \& Matrices}
+
+\subsection{Linear Equations}
+%
+\subtitle{Definition 3.01 - }{Multi-Variable Linear Equations}
+Linear equations produce a straight line and can have multiple variables. \\
+\textit{Examples} - $x = 3, y = x + 3, z + 5x - 2y$ \\
+
+\subtitle{Defintion 3.02 - }{Systems of Linear Equations}
+Let $\vect{a}, \vect{x} \in \mathbb{R}^n$ \& $b \in \mathbb{R}$ such that $\vect{a} \dotprod \vect{x} = b$. \\
+$\vect{a} \dotprod \vect{x} = b$ is a linear equation in $x$ with $S = \{\vect{x}; \vect{a} \dotprod \vect{x} = b\}$ as the set of solutions. \\
+\underline{N.B.} If $b = 0$ then $S(\vect{a}, 0)$ is a subspace. \\
+
+\subtitle{Definition 3.03 - }{Matrix}
+Let $m, n \in \mathbb{N}$, then a $m \times n$ grid of numbers form an "m" by "n" matrix.
+Each element of the matrix can be reference by $a_{ij}$ with $i = 1, ... , m$ and $j = 1, ... , n$.
+$$ A = \begin{pmatrix}
+  a_{11} & a_{12} & ... & a_{1n} \\
+  a_{21} & a_{22} & ... & a_{2n} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{m1} & a_{m2} & ... & a_{mn}
+\end{pmatrix}
+$$
+\underline{N.B.} m,i = rows, n,j = columns \\
+
+\subtitle{Definition 3.04 - }{Sets of Matrices}
+$M_{m,n}(\mathbb{R})$ is the set of m x n matrices containing only real numbers. \\
+$M_{m,n}(\mathbb{Z})$ is the set of m x n matrices containing only integers. \\
+$M_{n}(\mathbb{R})$ is the set square matrices, size n, containing only real numbers. \\
+
+\subtitle{Definition 3.05 - }{Transpose Vectors}
+Let $\vect{x} = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n\end{pmatrix}$ then $\vect{x}^t = \begin{pmatrix} x_1 & x_2 & ... & x_n\end{pmatrix}$
+
+\subtitle{Definition 3.06 - }{Vector-Matrix Multiplication}
+Let $A \in \mathbb{R}_{m,n}$ and $\vect{x} \in \mathbb{R}^n$ then
+$$A\vect{x} := \begin{pmatrix}
+  a_{11} & a_{12} & ... & a_{1n} \\
+  a_{21} & a_{22} & ... & a_{2n} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{m1} & a_{m2} & ... & a_{mn}
+\end{pmatrix} \begin{pmatrix}
+  x_1 \\ x_2 \\ \vdots \\ x_n
+\end{pmatrix} = \begin{pmatrix}
+  a_{11}x_1 + a_{12}x_2 + ... + a_{1n}{x_n} \\
+  a_{21}x_1 + a_{22}x_2 + ... + a_{2n}{x_n} \\
+  \vdots \\
+  a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}{x_n} \\
+\end{pmatrix} = \begin{pmatrix}
+  \vect{a}_{1}^{t} \dotprod \vect{x} \\
+  \vect{a}_{2}^{t} \dotprod \vect{x} \\
+  \vdots \\
+  \vect{a}_{m}^{t} \dotprod \vect{x} \\
+\end{pmatrix} \in \mathbb{R}^m
+$$ This can be simplified to $$\vect{y} = A\vect{x} \mathrm{\ with\ } y_i = \sum_{j=1}^n a_{ij} x_j$$
+
+\subtitle{Theorem 3.07 - }{Operations on Matrices with Vectors}
+\begin{enumerate}[label=\roman*)]
+  \item $A(\vect{x} + \vect{y}) = A\vect{x} + A\vect{y},\quad \forall\ \vect{x}, \vect{y} \in \mathbb{R}^n$.
+  \item $A(\lambda\vect{x}) = \lambda(A\vect{x}),\quad \forall \vect{x} \in \mathbb{R}^n, \lambda \in \mathbb{R}$.
+\end{enumerate}
+
+\subtitle{Theorem 3.08}{}
+Let $A = (a_{ij}) \in M_{m,n}(\mathbb{R})$ and $B = (b_{ij}) \in M_{l,m}(\mathbb{R})$.
+Then there exists a $C = (c_{ij}) \in M_{l,n}(\mathbb{R})$ such that
+$$C\vect{x} = B(A\vect{x}), \quad \forall\ \vect{x} \in \mathbb{R}^n$$
+\underline{N.B.} $c_{ij} = \sum_{k=1}^m b_{ik} a_{kj}$ \\
+
+\subtitle{Theorem 3.09 - }{Operation between Matrices}
+Let $A, B \in M_{m,n}$ and $C \in M_{l,m}$
+\begin{enumerate}[label=\roman*)]
+  \item $C(A + B) = CA + CB$.
+  \item $(A + B)C = AC + BC$.
+  \item Let $D \in M_{m,n}, E \in M_{n,l}$ \& $F \in M_{l, k}$ then $$E(FG) = (EF)G$$
+\end{enumerate}
+\underline{N.B.} $AB \not = BA$ \\
+
+\subtitle{Definition 3.10 - }{Types of Matrix}
+Upper Triangle $\begin{pmatrix}
+1 & 2 & 3 \\
+0 & 4 & 5 \\
+0 & 0 & 6
+\end{pmatrix},\quad a_{ij} = 0 \mathrm{\ if\ } i > j$. \\
+Lower Triangle $\begin{pmatrix}
+1 & 0 & 0 \\
+2 & 3 & 0 \\
+4 & 5 & 6
+\end{pmatrix},\quad a_{ij} = 0 \mathrm{\ if\ } i < j$. \\
+Symmetric Matrix $\begin{pmatrix}
+1 & 2 & 3 \\
+2 & 4 & 0 \\
+3 & 0 & 1
+\end{pmatrix},\quad a_{ij} = a_{ji}.$ \\
+Anti-Symmetric $\begin{pmatrix}
+1 & -2 & -3 \\
+2 & 0 & -4 \\
+3 & 4 & -1
+\end{pmatrix},\quad a_{ij} = -a_{ji}$. \\
+
+%\subtitle{Definition 3.11 - }{Transposed Matrices}
 
 \end{document}

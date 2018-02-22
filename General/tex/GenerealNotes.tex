@@ -29,6 +29,22 @@
 \fancyhead[C]{General - Notes}
 \fancyhead[R]{\today}
 
+\section{Hyperbolic Trig}
+\begin{alignat*}{3}
+  &sinh(x) &&= \frac{e^{x} - e^{-x}}{2} \\
+  &cosh(x) &&= \frac{e^{x} + e^{-x}}{2} \\
+  &tanh(x) &&= \frac{sin(x)}{cosh(x)} &= \frac{e^{x} + e^{-x}}{e^{x} - e^{-x}} \\
+  &cosech(x) &&= \frac{1}{sinh(x)} &= \frac{2}{e^{x} - e^{-x}} \\
+  &sech(x) &&= \frac{1}{cosh(x)} &= \frac{2}{e^{x} + e^{-x}} \\
+  &coth(x) &&= \frac{1}{tanh(x)} &= \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} \\
+  &\frac{d}{dx}sinh(x) &&= cosh(x) \\
+  &\frac{d}{dx}cosh(x) &&= sinh(x) \\
+  &\frac{d}{dx}tanh(x) &&= sech^2(x) \\
+  &\frac{d}{dx}cosech(x) &&= -cosech(x).coth^2(x) \\
+  &\frac{d}{dx}sech(x) &&= -sech(x).tanh(x) \\
+  &\frac{d}{dx}coth(x) &&= -cosech^2(x) \\
+\end{alignat*}
+
 \section{Trig Identities}
 \begin{alignat*}{2}
   &sin(\alpha + \beta) &&= sin(\alpha)cos(\beta) + sin(\beta)cos(\alpha) \\
