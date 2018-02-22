@@ -4,8 +4,9 @@
 \usepackage[margin=1in, paperwidth=8.3in, paperheight=11.7in]{geometry}
 \usepackage{amsfonts}
 \usepackage{amsmath}
-\usepackage{fancyhdr}
+\usepackage{enumerate}
 \usepackage{enumitem}
+\usepackage{fancyhdr}
 
 \begin{document}
 
@@ -175,5 +176,52 @@ Find $y$ if $x^3 + y^3 = 6xy$
   => &y'(3y^2 - 6x) &&= 6y - 3x^2 \\
   => &y' &&= \frac{2y - x^2}{y^2 - 2x}
 \end{alignat*}
+
+\newpage
+\subsection{Applications of The Derivative}
+%
+\subtitle{Thoerem 3.09 - }{Netwon's Method}
+Let $f$ be differentiable. Using \textit{Newton's Method} we can approximate a solution to $f(x) = 0$.
+\begin{enumerate}[label=\roman*)]
+  \item Take an inital guess, $x_0$;
+  \item Find the value of $x$ where the tangent to $x_0$ on $f(x)$ intercepts the x-axis;
+  \item Use this value as the next guess;
+  \item Repeat until the value of $x$ reduces little.
+\end{enumerate}
+The equation for the tangent is $$y = f(x_0) + (x - x_0)f'(x_0)$$ so a simplified equation for the process can be deduced $$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
+
+\subtitle{Theorem 3.10 - }{Angle between Intersecting Curves}
+Let $y = f_1(x)$ and $y = f_2(x)$ be two curves which intersect at $(x_0, y_0)$. \\
+Then $y_0 = f_1(x_0) = f_2(x_0)$ \\
+Let $m_1, m_2$ be the gradient of the tangents to $f_1$ \& $f_2$ at $x_0$. \\
+Then $\theta_i := tan^{-1}(m_i)$ for $i = 1, 2$. \\
+Let $\phi = |\theta_1 - \theta_2|$, then $$\phi = \left|\frac{m_1 - m_2}{1 + m_1m_2}\right|$$
+
+\subtitle{Theorem 3.11 - }{L'Hospital's Rule}
+For two equations equations, $f,g$ with limit of $-\infty, 0$ or $\infty$ as $x$ tends to $a$, it is hard to solve $$\lim_{x \to a}\frac{f(x)}{g(x)}$$
+Provided the limit exists, L'Hospital's Rule states that $$\lim_{x \to a}\frac{f(x)}{g(x)} \iff \lim_{x \to a}\frac{f'(x)}{g'(x)}$$
+
+\subsection{Sketching Curves}
+%
+\subtitle{Remark 3.11 - }{Sketching Curves}
+Evaluating the derivative of a curve can make it easier to sketch:
+\begin{enumerate}[label=\roman*)]
+  \item When $f'(x) > 0$ the curve is heading upwards;
+  \item When $f'(x) < 0$ the curve is heading downwards;
+  \item When $f'(x) = 0$ the curve is flat;
+  \item When $f'(x) = \infty, -\infty$ there are assymptotes.
+\end{enumerate}
+
+\subtitle{Definition 3.12 - }{Even Functions}
+If $f(x) = f(-x)$ then the function is symmetrical and said to be \textit{even}. \\
+\textit{Examples} - $x^2, cos(x), |x|$ \\
+
+\subtitle{Definition 3.13 - }{Odd Functions}
+If $f(x) = -f(-x)$ then the function is said to be \textit{odd}. \\
+\textit{Examples} - $x, sin(x), x.cos(x)$\\
+
+\subtitle{Remark 3.14}
+Some functions are neither \textit{odd} nor \textit{even}. \\
+\textit{Example} - $x + x^2$
 
 \end{document}
