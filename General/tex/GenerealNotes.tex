@@ -75,6 +75,19 @@
 \end{alignat*}
 
 \section{Differentiation}
+\subsection{Common Results}
+\begin{alignat*}{2}
+  &\frac{d}{dx}(x^n) &&= nx^{n-1} \\
+  &\frac{d}{dx}(e^x) &&= e^x \\
+  &\frac{d}{dx}(ln(x)) &&= \frac{1}{x}\\
+  &\frac{d}{dx}(sin(x)) &&= cos(x) \\
+  &\frac{d}{dx}(cos(x)) &&= -sin(x) \\
+  &\frac{d}{dx}(tan(x)) &&= sec^2(x) \\
+  &\frac{d}{dx}(cot(x)) &&= -cosec^2(x) \\
+  &\frac{d}{dx}(sec(x)) &&= tan(x).sec(x) \\
+  &\frac{d}{dx}(cosec(x)) &&= -cosec(x).cot(x) \\
+\end{alignat*}
+
 \subsection{Techniques}
 Sum Rule
 $$(f+g)' = f' + g'$$
@@ -88,17 +101,25 @@ $$\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$$
 Chain Rule
 $$\frac{d}{dx} f(g(x)) = f'(g(x)).g'(x)$$
 
+\section{Integration}
 \subsection{Common Results}
+Let $F$ be a primitive of $f$.
 \begin{alignat*}{2}
-  &\frac{d}{dx}(x^n) &&= nx^{n-1} \\
-  &\frac{d}{dx}(e^x) &&= e^x \\
-  &\frac{d}{dx}(ln(x)) &&= \frac{1}{x}\\
-  &\frac{d}{dx}(sin(x)) &&= cos(x) \\
-  &\frac{d}{dx}(cos(x)) &&= -sin(x) \\
-  &\frac{d}{dx}(tan(x)) &&= sec^2(x) \\
-  &\frac{d}{dx}(cot(x)) &&= -cosec^2(x) \\
-  &\frac{d}{dx}(sec(x)) &&= tan(x).sec(x) \\
-  &\frac{d}{dx}(cosec(x)) &&= -cosec(x).cot(x) \\
+  &f(x) = x^n &&=> F(x) = \frac{x^{n+1}}{n+1} \\
+  &f(x) = sin(x) &&=> F(x) = -cos(x) \\
+  &f(x) = cos(x) &&=> F(x) = sin(x) \\
+  &f(x) = e^x = &&=> F(x) = e^x
 \end{alignat*}
+
+\subsection{Integration by Substition}
+Let $f : [a, b] \to \mathbb{R}$ be continuous.
+Let $u$ be a differentiable bijection with a co-domain of $[a, b]$. \\
+Let $\alpha, \beta \in \mathbb{R}$ such that $u(\alpha) = a,\ u(\beta) = b$. \\
+Then $$\displaystyle{\int_{a}^{b} f(u) du = \int_{\alpha}^{\beta}(f \circ u)(x).u'(x) dx}$$
+
+\subsection{Integration by Parts}
+Let $u, v$ be differentiable functions with the same domain.
+By the \textit{Product Rule} $$u(x).v(x) = \int\left[u(x).v'(x) + u'(x).v(x) \right]dx$$
+So $$\int u(x).v'(x) dx = u(x).v(x) - \int v(x).u'(x) dx$$
 
 \end{document}

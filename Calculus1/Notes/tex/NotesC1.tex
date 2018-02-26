@@ -220,8 +220,36 @@ If $f(x) = f(-x)$ then the function is symmetrical and said to be \textit{even}.
 If $f(x) = -f(-x)$ then the function is said to be \textit{odd}. \\
 \textit{Examples} - $x, sin(x), x.cos(x)$\\
 
-\subtitle{Remark 3.14}
+\subtitle{Remark 3.14}{}
 Some functions are neither \textit{odd} nor \textit{even}. \\
 \textit{Example} - $x + x^2$
+
+\section{Inegration}
+%
+\subsection{The Primitive}
+
+\subtitle{Definition 4.01 - }{The Primitive}
+A function, $F : A \to \mathbb{R}$, is a primative for the function $f : A \to \mathbb{R}$ if $F$ is differentiable and $$\displaystyle{\frac{d}{dx} F = f}$$
+\underline{N.B.} - Primitives are also called \textit{Indefinite Integral} or \textit{Anti-Derivative}. \\
+
+\subtitle{Remark 4.02 - }{Area Under a Curve}
+Let $f : [a,b] \to \mathbb{R}$ be a continuous function. Then the area between the curve and the x-axis is found by integration. $$A := \int_{a}^{b} f(x) dx$$
+
+\subtitle{Definition 4.03 - }{Convergent Improper Integrals}
+Let $b > a$ and define a function, $f : \left[a, \infty\right) \to \mathbb{R}$, which is continuous in $[a, b]$ Then
+$$\int_{0}^{\infty} f(x) dx := \lim_{b \to \infty} \int_{a}^{b} f(x) dx$$
+If this limit exists then the improper integral is \textit{convergent}, otherwise it is \textit{divergent}. \\
+
+\subtitle{Definition 4.04 - }{Definite Integral}
+Let $F$ be the primative for the function $f$. Then $$\int_{b}^{a} f(x) dx = F(a) - F(b)$$
+\underline{Notation} - $F(x)\big|_{a}^{b} = F(b) - F(a)$\\
+
+\subtitle{Remark 4.05 - }{Summing Definiate Inegrals}
+For all $a < c < b$ $$\int_{a}^{b} f(x) dx = \int_{c}^{a} f(x) dx + \int_{b}^{c} f(x) dx$$ $$\displaystyle{\int_{b}^{a} f(x) d := -\int_{a}^{b} f(x) dx}$$
+
+\subtitle{Theorem 4.06 - }{Taylor Series}
+Functions can be expanded into polynomial form with degree $n$, $T_n$, and remainder $R_n$ such that $f(x) = T_n(x) + R_n(x)$.
+$$T_n(x) = f(a) + (x-a)f'(a) + ... + \frac{1}{n}.(x-a)^n.f^n(a)$$
+$$R_n(x) = \frac{1}{n} \int_{a}^{x} (x-t)^n.f^{(n+1)}(t) dt$$
 
 \end{document}
