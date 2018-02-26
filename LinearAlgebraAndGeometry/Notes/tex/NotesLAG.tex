@@ -259,6 +259,8 @@ Let $\vect{a}, \vect{x} \in \mathbb{R}^n$ \& $b \in \mathbb{R}$ such that $\vect
 $\vect{a} \dotprod \vect{x} = b$ is a linear equation in $x$ with $S = \{\vect{x}; \vect{a} \dotprod \vect{x} = b\}$ as the set of solutions. \\
 \underline{N.B.} If $b = 0$ then $S(\vect{a}, 0)$ is a subspace. \\
 
+\subsection{Matrices}
+%
 \subtitle{Definition 3.03 - }{Matrix}
 Let $m, n \in \mathbb{N}$, then a $m \times n$ grid of numbers form an "m" by "n" matrix.
 Each element of the matrix can be reference by $a_{ij}$ with $i = 1, ... , m$ and $j = 1, ... , n$.
@@ -344,6 +346,174 @@ Anti-Symmetric $\begin{pmatrix}
 3 & 4 & -1
 \end{pmatrix},\quad a_{ij} = -a_{ji}$. \\
 
-%\subtitle{Definition 3.11 - }{Transposed Matrices}
+\subtitle{Definition 3.11 - }{Transposed Matrices}
+Let $A = (a_{ij}) \in M_{m,n}(\mathbb{R})$ then the transponse of $A$, $A^t$, is an element of $M_{n,m}(\mathbb{R})$. $$A^t := (aji)$$
+
+\subtitle{Theorem 3.12 - }{Transpose Matrix Multiplication}
+Let $A \in M_{m,n}(\mathbb{R}), \vect{x} \in \mathbb{R}^n, \vect{y} \in \mathbb{R}^m$. Then
+$$\vect{y} \dotprod A \vect{x} = \left(A_t \vect{y}\right) \dotprod \vect{x}$$
+
+\subtitle{Theorem 3.10 - }{Transposing Multiplied Matrices}
+$$(AB)^t = B^t A^t$$
+
+\subsection{Structure of Set of Solutions}
+%
+\subtitle{Definition 3.13 - }{Set of Solutions}
+Let $A \in M_{m,n}(\mathbb{R})$ and $\vect{b} \in \mathbb{R}^m$. Then $$S(A, \vect{b}) :={\vect{x} \in \mathbb{R}^n; A\vect{x} = b}$$
+
+\subtitle{Definition 3.14 - }{Homogenous Solutions}
+The system of $S(A, \vect{0})$ is called said to be \textit{homogenous}. All other systems are \textit{inhomogenous}.
+\underline{N.B.} - $S(A, \vect{0})$ is a linear subspace. \\
+
+\subtitle{Theorem 3.15 - }{Using Homogenous Solutions}
+Let $A \in M_{m,n}(\mathbb{R})$ and $\vect{b} \in \mathbb{R}^n$. Let $\vect{x}_0 \in \mathbb{R}^n$ such that $A\vect{x}_0 = \vect{b}$, then
+$$S(A, \vect{b}) = {\vect{x}_0} + S(A, \vect{0})$$
+
+\subtitle{Remark 3.16 - }{Systems of Linear Equations as Matrices}
+The system of linear equations $3x + z = 0, y - z = 1, 3x + y = 1$ can be represented by a matrix and a vector.
+$$A = \begin{pmatrix}
+3 & 0 & 1 \\
+0 & 1 & -1 \\
+3 & 1 & 0
+\end{pmatrix},\ \vect{b} = \begin{pmatrix}
+0 \\ 1 \\ 1
+\end{pmatrix}$$
+
+\subsection{Solving Systems of Linear Equations}
+Systems of linear equations can be displayed as matrices which can be reduced and solved by a technique called \textit{Gaussian Elimination}. \\ \\
+%
+\subtitle{Theorem 3.17}{}
+There are certain operations that can be performed on a system of linear equations without changing the result:
+\begin{enumerate}[label=\roman*)]
+  \item Multiply an equaion by a non-zero constant;
+  \item Add a multiple of any equation to another equation;
+  \item Swap any two equations.
+\end{enumerate}
+
+\subtitle{Definition 3.18 - }{Augmented Matrices}
+Let $A\vect{x} = \vect{b}$ be a system of linear equations. The associated \textit{Augmented Matrix} is $$(A\ \vect{b}) \in M_{m, n+1}(\mathbb{R})$$
+
+\subtitle{Theorem 3.19 - }{Elementary Row Operations}
+From \textit{Theorem 3.17} we can deduce ceratin operations that can be performed on an \textit{Augmented Matrix} which do not alter the solutions:
+\begin{enumerate}[label=\roman*)]
+  \item Multiply a row by a non-zero constant, $row\ i \to \lambda(row\ i)$;
+  \item Add a multiple of any row to another row, $row\ i \to row\ i + \lambda(row\ j)$;
+  \item Swap two rows, $row\ i \leftrightarrow row\ j $.
+\end{enumerate}
+
+\subtitle{Definition 3.20 - }{Row Echelon Form}
+A matrix is in \textit{Row Echelon Form} if:
+\begin{enumerate}[label=\roman*)]
+  \item The left-most non-zero value in each row is $1$; And,
+  \item The leading $1$ in each row is one place to the right of the leading $1$ in the row below.
+\end{enumerate}
+\textit{Example} $$\begin{pmatrix}
+  1 & a & b \\
+  0 & 1 & c \\
+  0 & 0 & 1
+\end{pmatrix}$$
+
+\subtitle{Definition 3.20 - }{Reduced Row Echelon Form}
+A matrix is in \textit{Reduced Row Echelon Form} if:
+\begin{enumerate}[label=\roman*)]
+  \item The matrix is in \textit{row echelon form}; And,
+  \item All values in a row, except the leading $1$, are $0$.
+\end{enumerate}
+\textit{Example} $$\begin{pmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+\end{pmatrix}$$
+
+\subtitle{Theorem 3.21 - }{Gaussian Elimination}
+\textit{Gaussian Elimination} is a technique used to solve systems of linear equations.
+\textit{Example} \\
+Solve $x + y + 2z = 9, 2x + 4y - 3z = 1, 3x + 6y - 5z = 0$.
+\begin{alignat*}{2}
+  \mathrm{Augmented\ Matrix\ -\ } &\begin{pmatrix}
+    1 & 1 & 2 & 9 \\
+    2 & 4 & -3 & 1 \\
+    3 & 6 & -5 & 0
+  \end{pmatrix} && \\
+  \mathrm{By\ EROS\ -\ } &\begin{pmatrix}
+    1 & 1 & 2 & 9 \\
+    2 & 4 & -3 & 1 \\
+    3 & 6 & -5 & 0
+  \end{pmatrix} &&= \begin{pmatrix}
+    1 & 1 & 2 & 9 \\
+    0 & 2 & -7 & -17 \\
+    0 & 3 & -11 & 27
+  \end{pmatrix} \\ &  &&= \begin{pmatrix}
+    1 & 1 & 2 & 9 \\
+    0 & 2 & -7 & -17 \\
+    0 & 1 & -4 & -10
+  \end{pmatrix} \\ & &&= \begin{pmatrix}
+    1 & 1 &2 & 9 \\
+    0 & 1 & -4 & -10 \\
+    0 & 2 & -7 & -17
+  \end{pmatrix} \\ & &&= \begin{pmatrix}
+    1 & 1 & 2 & 9 \\
+    0 & 1 & -4 & -10 \\
+    0 & 0 & 1 & 3
+  \end{pmatrix} \\ & &&= \begin{pmatrix}
+    1 & 0 & 6 & 19 \\
+    0 & 1 & -4 & -10 \\
+    0 & 0 & 1 & 3
+  \end{pmatrix}\\ & &&= \begin{pmatrix}
+    1 & 0 & 0 & 1 \\
+    0 & 1 & 0 & 2 \\
+    0 & 0 & 1 & 3
+  \end{pmatrix}\\
+  => & \underline{x = 1, y= 2, z = 3}
+\end{alignat*}
+
+\subsection{Elementary Matrices \& Inverting Matrices}
+%
+\subtitle{Definition 3.22 - }{Invertible Matrices}
+A matrix, $A \in M_{m,n}(\mathbb{R})$, is said to be \textit{Invertible} if there exists $A^{-1} \in M_{n,m}(\mathbb{R})$ such that
+$$AA^{-1} = I$$
+\underline{N.B.} - If a matrix is not invertible then it is \textit{Singular}.\\
+
+\subtitle{Definition 3.23 - }{Elementary Matrices}
+A matrix, $E \in M_{m,n}(\mathbb{R})$, is said to be an \textit{Elementary Matrix} if it can be obtained by performing Elementary Row Operations on a square identity matrix.\\
+\textit{Examples}
+$\begin{pmatrix}
+  0 & 1 \\
+  1 & 0
+\end{pmatrix},\ \begin{pmatrix}
+  0 & \lambda \\
+  \mu & 0
+\end{pmatrix}$ \\
+
+\subtitle{Remark 3.24}{}
+All elementary matrices are invertible.
+
+\subtitle{Remark 3.25}{}
+Let $A$ be a matrix, and $B$ be a matrix which can be obtained from $A$ by elementary row operations. Then there exists an elementary matrix $E$ such that $$B = EA$$.
+
+\subtitle{Theorem 3.26 - }{Finding $A^{-1}$}
+Let $A = \begin{pmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23} \\
+  a_{31} & a_{32} & a_{33}
+\end{pmatrix},\ B = \begin{pmatrix}
+  b_{11} & b_{12} & b_{13} \\
+  b_{21} & b_{22} & b_{23} \\
+  b_{31} & b_{32} & b_{33}
+\end{pmatrix},\ I = \begin{pmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+\end{pmatrix}$. \\
+Then by using EROS to change $(A\ I) \to (I\ B)$, $B$ is the inverse of $A$. \\
+
+\subtitle{Theorem 3.27 - }{Inverse of a 2x2 Matrix}
+Let $A = \begin{pmatrix}
+  a & b \\
+  c & d
+\end{pmatrix}$ then $$A^{-1} = \frac{1}{ad - bc}\begin{pmatrix}
+  d & -b \\
+  -c & a
+\end{pmatrix}$$
 
 \end{document}
