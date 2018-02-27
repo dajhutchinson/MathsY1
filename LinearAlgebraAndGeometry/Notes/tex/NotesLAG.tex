@@ -18,6 +18,8 @@
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 \newcommand{\subtitle}[2]{\textbf{#1}\textit{#2} \\}
 \newcommand{\dotprod}[0]{\boldsymbol{\cdot}}
+\newcommand{\real}[0]{\mathbb{R}}
+\newcommand{\nat}[0]{\mathbb{N}}
 
 % Cover page title
 \title{Linear Algebra \& Geometry - Notes}
@@ -45,22 +47,22 @@ Denoted by $\vect{v} = (v_1, v_2, v_3,...) = \begin{pmatrix} x \\ y \end{pmatrix
 
 \subtitle{Definition 1.02 - }{Euclidean Plane}
 The set of two dimensional vectors, with real componenets, is called the Euclidean Plane. \\
-Denoted by $\mathbb{R}^2$ \\
+Denoted by $\real^2$ \\
 
 \subtitle{Definition 1.03 - }{Vector Addition}
-Let $\vect{v}, \vect{w} \in \mathbb{R}^2$ such that $\vect{v} = (v_1,v_2)$ and $\vect{w} = (w_1,w_2)$. \\
+Let $\vect{v}, \vect{w} \in \real^2$ such that $\vect{v} = (v_1,v_2)$ and $\vect{w} = (w_1,w_2)$. \\
 Then $\vect{v} + \vect{w} = (v_1 + w_1, v_2 + w_2)$. \\
 
 \subtitle{Definition 1.03 - }{Scalar Multiplcation of Vectors}
-Let $\vect{v} \in \mathbb{R}^2$ and $\lambda \in \mathbb{R}$ such that $\vect{v} = (v_1,v_2)$. \\
+Let $\vect{v} \in \real^2$ and $\lambda \in \real$ such that $\vect{v} = (v_1,v_2)$. \\
 Then $\lambda\vect{v} = (\lambda v_1, \lambda v_2)$. \\
 
 \subtitle{Definition 1.04 - }{Norm of vectors}
 The norm of a vector is its length from the origin. \\
-Denoted by $||\vect{v}|| = \sqrt{v_{1}^{2} + v_{2}^{2}}$ for $\vect{v} \in \mathbb{R}^2$. \\
+Denoted by $||\vect{v}|| = \sqrt{v_{1}^{2} + v_{2}^{2}}$ for $\vect{v} \in \real^2$. \\
 
 \subtitle{Theorem 1.05}{}
-Let $\vect{v}, \vect{w} \in \mathbb{R}^2$ and $\lambda \in \mathbb{R} $ such that $\vect{v} = (v_1,v_2)$ and $\vect{w} = (w_1,w_2)$. \\
+Let $\vect{v}, \vect{w} \in \real^2$ and $\lambda \in \real $ such that $\vect{v} = (v_1,v_2)$ and $\vect{w} = (w_1,w_2)$. \\
 Then
 \begin{align*}
   ||\vect{v}|| &= 0\ \mathrm{iff}\ \vect{v} = \vect{0}\\
@@ -71,25 +73,25 @@ Then
 
 \subtitle{Definition 1.06 - }{Unit Vector}
 A vector can be described by its length \& direction. \\
-Let $\vect{v} \in \mathbb{R}^2\backslash\{\vect{0}\}$. \\
+Let $\vect{v} \in \real^2\backslash\{\vect{0}\}$. \\
 Then $\vect{v} = ||\vect{v}||\vect{u}$ where $\vect{u}$ is the unit vector, $\vect{u} = \begin{pmatrix} cos\theta \\ sin\theta \end{pmatrix}$ \\
-Thus $\forall\ \vect{v} \in \mathbb{R}^2\ \vect{v} = \begin{pmatrix} \lambda cos\theta \\ \lambda sin\theta \end{pmatrix}$ for some $\lambda \in \mathbb{R}$. \\
+Thus $\forall\ \vect{v} \in \real^2\ \vect{v} = \begin{pmatrix} \lambda cos\theta \\ \lambda sin\theta \end{pmatrix}$ for some $\lambda \in \real$. \\
 
 \subtitle{Definition 1.07 - }{Dot Product}
-Let $\vect{v} \in \mathbb{R}^2$ and $\lambda \in \mathbb{R}$ such that $\vect{v} = (v_1,v_2)$. \\
+Let $\vect{v} \in \real^2$ and $\lambda \in \real$ such that $\vect{v} = (v_1,v_2)$. \\
 Then $\vect{v} \dotprod \vect{w} = v_1.w_1 + v_2.w_2$. \\
 
 \subtitle{Remark 1.08 - }{Positivity of Dot Product}
-Let $\vect{v} \in \mathbb{R}^2$. \\
+Let $\vect{v} \in \real^2$. \\
 Then $\vect{v} \dotprod \vect{v} = ||\vect{v}||^2 = v_{1}^{2} + v_{2}^{2} \geq 0$. \\
 
 \subtitle{Remark 1.09 - }{Angle between vectors in Euclidean Plane}
-Let $\vect{v}, \vect{w} \in \mathbb{R}^2$. \\
+Let $\vect{v}, \vect{w} \in \real^2$. \\
 Set $\theta$ to be the angle between $\vect{v}$ \& $\vect{w}$. \\
 Then $$cos\theta = \frac{\vect{v} \dotprod \vect{w}}{||\vect{v}||\ ||\vect{w}||}$$.
 
 \subtitle{Theorem 1.10 - }{Cauchy-Schwarz Inequality}
-Let $\vect{v}, \vect{w} \in \mathbb{R}^2$. \\
+Let $\vect{v}, \vect{w} \in \real^2$. \\
 Then $$|\vect{v} \dotprod \vect{w}| \leq ||\vect{v}||\ ||\vect{w}||$$
 %
 \textit{Proof}
@@ -111,7 +113,7 @@ Then $$|\vect{v} \dotprod \vect{w}| \leq ||\vect{v}||\ ||\vect{w}||$$
 \end{alignat*}
 
 \subtitle{Definition 1.12 - }{Complex Number Set}
-The set of complex numbers contains all numbers with an imaginary part. $$\mathbb{C} := \left\{x + iy; x,y \in \mathbb{R}\right\}$$
+The set of complex numbers contains all numbers with an imaginary part. $$\mathbb{C} := \left\{x + iy; x,y \in \real\right\}$$
 Complex numbers are often denoted by $$z = x + iy$$ and we say $x$ is the real part of $z$ and $y$ the imaginary part.
 
 \subtitle{Definition 1.13 - }{Complex Conjugate}
@@ -151,53 +153,53 @@ $$e^{i\theta} = cos\theta + i.sin\theta$$
 \subtitle{Remark 1.19}{}
 Using Euler's formula we can express all complex numbers in terms of $e$. Thus many properties of the exponential remain true:
 \begin{alignat*}{2}
-  z &= \lambda e^{i\theta}, && \quad \lambda \in \mathbb{R} , \theta \in \left[0, 2\pi\right) \\
+  z &= \lambda e^{i\theta}, && \quad \lambda \in \real , \theta \in \left[0, 2\pi\right) \\
   => z_1 + z_2 &= \lambda_1 . \lambda_2. e^{i(\theta_1 + \theta_2)} \\
   \&, \frac{z_1}{z_2} &= \frac{\lambda_1}{\lambda_2}.e^{i(\theta_1 = \theta_2)}
 \end{alignat*}
 
 \newpage
-\section{Euclidean Space, $\mathbb{R}^n$}
+\section{Euclidean Space, $\real^n$}
 %
 \subtitle{Definition 2.01 - }{Euclidean Space}
-Let $n \in \mathbb{N}$ then $\forall\ \vect{x} = (x_1, x_2, ... , x_n)$ with $x_1, x_2, ... , x_n \in \mathbb{R}$ we have that $\vect{x} \in \mathbb{R}^n$. \\
+Let $n \in \nat$ then $\forall\ \vect{x} = (x_1, x_2, ... , x_n)$ with $x_1, x_2, ... , x_n \in \real$ we have that $\vect{x} \in \real^n$. \\
 
 \subtitle{Theorem 2.02 - }{Operations in Euclidean Space}
-Let $\vect(x), \vect(y) \in \mathbb{R}^n$ and $\lambda \in \mathbb{R}$.
+Let $\vect(x), \vect(y) \in \real^n$ and $\lambda \in \real$.
 Then $$\vect(x) + \vect(y) = (x_1 + y_1, ... , x_n + y_n)$$
 And $$\vect(x) + \lambda.\vect(y) = (x_1 + \lambda.y_1, ... , x_n + \lambda.y_n)$$
 
 \subtitle{Definition 2.03 - }{Cartesian Product}
-Let $A, B \in \mathbb{R}^n$ be non-empty sets. \\
+Let $A, B \in \real^n$ be non-empty sets. \\
 Then $$A \times B := \{(a,b); a \in A, b \in B\}$$
 
 \subsection{Dot Product}
 %
 \subtitle{Definition 2.04 - }{Dot Product}
-Let $\vect{v}, \vect{w} \in \mathbb{R}^n$. Then \begin{alignat*}{1}
+Let $\vect{v}, \vect{w} \in \real^n$. Then \begin{alignat*}{1}
 \vect{v} \dotprod \vect{w} &:= v_1.w_1 + ... + v_n.w_n \\
 &:= \sum_{j=1}^n v_j.w_j
 \end{alignat*}
 
 \subtitle{Theorem 2.05 - }{Properties of the Dot Product}
-Let $\vect{u}, \vect{v}, \vect{w} \in \mathbb{R}^n$.
+Let $\vect{u}, \vect{v}, \vect{w} \in \real^n$.
 Linearity: $$(\vect{u} + \lambda\vect{v}) \dotprod \vect{w} = \vect{u} \dotprod \vect{w} + \lambda(\vect{v} \dotprod \vect{w})$$
 Symmetry: $$\vect{v} \dotprod \vect{w} = \vect{w} \dotprod \vect{v}$$
 Positivity: $$\vect{v} \dotprod \vect{v} = v_1^2 + v_2^2 + ... +v_n^2 \geq 0$$
 
 \subtitle{Definition 2.06 - }{Orthogonality}
-Let $\vect{v}, \vect{w} \in \mathbb{R}^n$. \\
+Let $\vect{v}, \vect{w} \in \real^n$. \\
 It is said that $\vect(v), \vect(w)$ are orthogonal to each other if $\vect{v} \dotprod \vect{w} = 0$ \\
 \underline{N.B.} Orthogonal vectors are perpendicular to each other. \\
 
 \subtitle{Definition 2.07 - }{The Norm}
-Let $\vect{x} \in \mathbb{R}^n$.\\
+Let $\vect{x} \in \real^n$.\\
 Then $$||\vect{x}|| = \sqrt{\vect{x} \dotprod \vect{x}} = \sqrt{\sum_{i=1}^n x_i^2}$$
 
 \newpage
 %
 \subtitle{Theorem 2.08 - }{Properties of the Norm}
-Let $\vect{x}, \vect{y} \in \mathbb{R}^n$ and $\lambda \in \mathbb{R}$. Then
+Let $\vect{x}, \vect{y} \in \real^n$ and $\lambda \in \real$. Then
 \begin{alignat*}{2}
   &||\vect{x}|| &&\geq 0 \\
   &||\vect{x}|| &&= 0 \mathrm{\ iff\ } \vect{x} = 0 \\
@@ -206,43 +208,43 @@ Let $\vect{x}, \vect{y} \in \mathbb{R}^n$ and $\lambda \in \mathbb{R}$. Then
 \end{alignat*}
 
 \subtitle{Theorem 2.09 - }{Dot Product and Norm}
-Let $\vect{x}, \vect{y} \in \mathbb{R}^n$.
+Let $\vect{x}, \vect{y} \in \real^n$.
 $$|\vect{x} \dotprod \vect{y}| \leq ||\vect{x}|| ||\vect{y}||$$
 \underline{N.B.} $|\vect{x} \dotprod \vect{y}| = ||\vect{x}|| ||\vect{y}||$ iff $\vect{x}$ \& $\vect{x}$ are orthogonal.\\
 
 \subtitle{Theorem 2.10 - }{Angle between Vectors}
-Let $\vect{x}, \vect{y} \in \mathbb{R}^n$. Then $$cos\theta = \frac{\vect{x} \dotprod \vect{y}}{||\vect{x}|| ||\vect{y}||}$$
+Let $\vect{x}, \vect{y} \in \real^n$. Then $$cos\theta = \frac{\vect{x} \dotprod \vect{y}}{||\vect{x}|| ||\vect{y}||}$$
 
 \subsection{Linear Subspaces}
 %
 \subtitle{Definition 2.11 - }{Linear Subspace}
-Let $V \subset \mathbb{R}^n$. $V$ is a \textit{Linear Subspace} if: \\
+Let $V \subset \real^n$. $V$ is a \textit{Linear Subspace} if: \\
 \textbf{i)} $V \not = \emptyset$; \\
 \textbf{ii)} $\forall\ \vect{v}, \vect{w} \in V$ then $\vect{v} + \vect{w} \in V$; \\
-\textbf{iii)} $\forall\ \lambda \in \mathbb{R}, \vect{v} \in V$ then $\lambda\vect{v} \in V$. \\
+\textbf{iii)} $\forall\ \lambda \in \real, \vect{v} \in V$ then $\lambda\vect{v} \in V$. \\
 
 \subtitle{Definition 2.12 - }{Span}
-Let $\vect{x_1}, ... , \vect{x_k} \in \mathbb{R}^n; k \in \mathbb{N}$. Then
-$$\mathrm{span}\{\vect{x_1}, ... , \vect{x_k}\} := \{\lambda_1\vect{x_1} + ... + \lambda_k\vect{x_k}; \lambda_i \in \mathbb{R}, 0 \leq i \geq k\}$$
+Let $\vect{x_1}, ... , \vect{x_k} \in \real^n; k \in \nat$. Then
+$$\mathrm{span}\{\vect{x_1}, ... , \vect{x_k}\} := \{\lambda_1\vect{x_1} + ... + \lambda_k\vect{x_k}; \lambda_i \in \real, 0 \leq i \geq k\}$$
 
 \subtitle{Definition 2.13 - }{Spans are Subspaces}
-Let $\vect{x_1}, ... , \vect{x_k} \in \mathbb{R}^n;\ k \in \mathbb{N}$. Then span$\{\vect{x_1}, ... , \vect{x_k}\}$ is a linear subspace of $\mathbb{R}^n$. \\
+Let $\vect{x_1}, ... , \vect{x_k} \in \real^n;\ k \in \nat$. Then span$\{\vect{x_1}, ... , \vect{x_k}\}$ is a linear subspace of $\real^n$. \\
 
 \subtitle{Theorem 2.14}{}
-$$W_{\vect{a}} := \{\vect{x} \in \mathbb{R}^n; \vect{x} \dotprod \vect{a} = 0\}\mathrm{\ is\ a\ subspace.}$$
+$$W_{\vect{a}} := \{\vect{x} \in \real^n; \vect{x} \dotprod \vect{a} = 0\}\mathrm{\ is\ a\ subspace.}$$
 
 \subtitle{Definition 2.15 - }{Orthogonal Complement}
-Let $V \subset \mathbb{R}^n$. Then,
-$$V^{\perp} := \{\vect{x} \in \mathbb{R}^n; \vect{x} \dotprod \vect{y}\ \forall\ \vect{y} \in V\}$$
-\underline{N.B.} $V^{\perp} \subset \mathbb{R}^n$
+Let $V \subset \real^n$. Then,
+$$V^{\perp} := \{\vect{x} \in \real^n; \vect{x} \dotprod \vect{y}\ \forall\ \vect{y} \in V\}$$
+\underline{N.B.} $V^{\perp} \subset \real^n$
 
 \subtitle{Theorem 2.16 - }{Relationship of Subspaces}
-Let $V, W$ be subspaces of $\mathbb{R}$. Then
+Let $V, W$ be subspaces of $\real$. Then
 $$V \cap W \mathrm{\ is\ a\ subspace.}$$
 $$V+W := \{\vect{v} + \vect{w}; \vect{v} \in V, \vect{w} \in W\}\mathrm{\ is\ a\ subspace.}$$
 
 \subtitle{Definition 2.17 - }{Direct Sum}
-Let $V_1, V_2, W$ be subspaces of $\mathbb{R}$. Then $W$ is said to be a \textit{direct sum} if \\
+Let $V_1, V_2, W$ be subspaces of $\real$. Then $W$ is said to be a \textit{direct sum} if \\
 \textbf{i)} $W = V_1 + V_2$; \\
 \textbf{ii)} $V_1 \cap V_2 = \emptyset$. \\
 
@@ -255,14 +257,14 @@ Linear equations produce a straight line and can have multiple variables. \\
 \textit{Examples} - $x = 3, y = x + 3, z + 5x - 2y$ \\
 
 \subtitle{Defintion 3.02 - }{Systems of Linear Equations}
-Let $\vect{a}, \vect{x} \in \mathbb{R}^n$ \& $b \in \mathbb{R}$ such that $\vect{a} \dotprod \vect{x} = b$. \\
+Let $\vect{a}, \vect{x} \in \real^n$ \& $b \in \real$ such that $\vect{a} \dotprod \vect{x} = b$. \\
 $\vect{a} \dotprod \vect{x} = b$ is a linear equation in $x$ with $S = \{\vect{x}; \vect{a} \dotprod \vect{x} = b\}$ as the set of solutions. \\
 \underline{N.B.} If $b = 0$ then $S(\vect{a}, 0)$ is a subspace. \\
 
 \subsection{Matrices}
 %
 \subtitle{Definition 3.03 - }{Matrix}
-Let $m, n \in \mathbb{N}$, then a $m \times n$ grid of numbers form an "m" by "n" matrix.
+Let $m, n \in \nat$, then a $m \times n$ grid of numbers form an "m" by "n" matrix.
 Each element of the matrix can be reference by $a_{ij}$ with $i = 1, ... , m$ and $j = 1, ... , n$.
 $$ A = \begin{pmatrix}
   a_{11} & a_{12} & ... & a_{1n} \\
@@ -274,15 +276,15 @@ $$
 \underline{N.B.} m,i = rows, n,j = columns \\
 
 \subtitle{Definition 3.04 - }{Sets of Matrices}
-$M_{m,n}(\mathbb{R})$ is the set of m x n matrices containing only real numbers. \\
+$M_{m,n}(\real)$ is the set of m x n matrices containing only real numbers. \\
 $M_{m,n}(\mathbb{Z})$ is the set of m x n matrices containing only integers. \\
-$M_{n}(\mathbb{R})$ is the set square matrices, size n, containing only real numbers. \\
+$M_{n}(\real)$ is the set square matrices, size n, containing only real numbers. \\
 
 \subtitle{Definition 3.05 - }{Transpose Vectors}
 Let $\vect{x} = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n\end{pmatrix}$ then $\vect{x}^t = \begin{pmatrix} x_1 & x_2 & ... & x_n\end{pmatrix}$
 
 \subtitle{Definition 3.06 - }{Vector-Matrix Multiplication}
-Let $A \in \mathbb{R}_{m,n}$ and $\vect{x} \in \mathbb{R}^n$ then
+Let $A \in \real_{m,n}$ and $\vect{x} \in \real^n$ then
 $$A\vect{x} := \begin{pmatrix}
   a_{11} & a_{12} & ... & a_{1n} \\
   a_{21} & a_{22} & ... & a_{2n} \\
@@ -300,19 +302,19 @@ $$A\vect{x} := \begin{pmatrix}
   \vect{a}_{2}^{t} \dotprod \vect{x} \\
   \vdots \\
   \vect{a}_{m}^{t} \dotprod \vect{x} \\
-\end{pmatrix} \in \mathbb{R}^m
+\end{pmatrix} \in \real^m
 $$ This can be simplified to $$\vect{y} = A\vect{x} \mathrm{\ with\ } y_i = \sum_{j=1}^n a_{ij} x_j$$
 
 \subtitle{Theorem 3.07 - }{Operations on Matrices with Vectors}
 \begin{enumerate}[label=\roman*)]
-  \item $A(\vect{x} + \vect{y}) = A\vect{x} + A\vect{y},\quad \forall\ \vect{x}, \vect{y} \in \mathbb{R}^n$.
-  \item $A(\lambda\vect{x}) = \lambda(A\vect{x}),\quad \forall \vect{x} \in \mathbb{R}^n, \lambda \in \mathbb{R}$.
+  \item $A(\vect{x} + \vect{y}) = A\vect{x} + A\vect{y},\quad \forall\ \vect{x}, \vect{y} \in \real^n$.
+  \item $A(\lambda\vect{x}) = \lambda(A\vect{x}),\quad \forall \vect{x} \in \real^n, \lambda \in \real$.
 \end{enumerate}
 
 \subtitle{Theorem 3.08}{}
-Let $A = (a_{ij}) \in M_{m,n}(\mathbb{R})$ and $B = (b_{ij}) \in M_{l,m}(\mathbb{R})$.
-Then there exists a $C = (c_{ij}) \in M_{l,n}(\mathbb{R})$ such that
-$$C\vect{x} = B(A\vect{x}), \quad \forall\ \vect{x} \in \mathbb{R}^n$$
+Let $A = (a_{ij}) \in M_{m,n}(\real)$ and $B = (b_{ij}) \in M_{l,m}(\real)$.
+Then there exists a $C = (c_{ij}) \in M_{l,n}(\real)$ such that
+$$C\vect{x} = B(A\vect{x}), \quad \forall\ \vect{x} \in \real^n$$
 \underline{N.B.} $c_{ij} = \sum_{k=1}^m b_{ik} a_{kj}$ \\
 
 \subtitle{Theorem 3.09 - }{Operation between Matrices}
@@ -347,10 +349,10 @@ Anti-Symmetric $\begin{pmatrix}
 \end{pmatrix},\quad a_{ij} = -a_{ji}$. \\
 
 \subtitle{Definition 3.11 - }{Transposed Matrices}
-Let $A = (a_{ij}) \in M_{m,n}(\mathbb{R})$ then the transponse of $A$, $A^t$, is an element of $M_{n,m}(\mathbb{R})$. $$A^t := (aji)$$
+Let $A = (a_{ij}) \in M_{m,n}(\real)$ then the transponse of $A$, $A^t$, is an element of $M_{n,m}(\real)$. $$A^t := (aji)$$
 
 \subtitle{Theorem 3.12 - }{Transpose Matrix Multiplication}
-Let $A \in M_{m,n}(\mathbb{R}), \vect{x} \in \mathbb{R}^n, \vect{y} \in \mathbb{R}^m$. Then
+Let $A \in M_{m,n}(\real), \vect{x} \in \real^n, \vect{y} \in \real^m$. Then
 $$\vect{y} \dotprod A \vect{x} = \left(A_t \vect{y}\right) \dotprod \vect{x}$$
 
 \subtitle{Theorem 3.10 - }{Transposing Multiplied Matrices}
@@ -359,14 +361,14 @@ $$(AB)^t = B^t A^t$$
 \subsection{Structure of Set of Solutions}
 %
 \subtitle{Definition 3.13 - }{Set of Solutions}
-Let $A \in M_{m,n}(\mathbb{R})$ and $\vect{b} \in \mathbb{R}^m$. Then $$S(A, \vect{b}) :={\vect{x} \in \mathbb{R}^n; A\vect{x} = b}$$
+Let $A \in M_{m,n}(\real)$ and $\vect{b} \in \real^m$. Then $$S(A, \vect{b}) :={\vect{x} \in \real^n; A\vect{x} = b}$$
 
 \subtitle{Definition 3.14 - }{Homogenous Solutions}
 The system of $S(A, \vect{0})$ is called said to be \textit{homogenous}. All other systems are \textit{inhomogenous}.
 \underline{N.B.} - $S(A, \vect{0})$ is a linear subspace. \\
 
 \subtitle{Theorem 3.15 - }{Using Homogenous Solutions}
-Let $A \in M_{m,n}(\mathbb{R})$ and $\vect{b} \in \mathbb{R}^n$. Let $\vect{x}_0 \in \mathbb{R}^n$ such that $A\vect{x}_0 = \vect{b}$, then
+Let $A \in M_{m,n}(\real)$ and $\vect{b} \in \real^n$. Let $\vect{x}_0 \in \real^n$ such that $A\vect{x}_0 = \vect{b}$, then
 $$S(A, \vect{b}) = {\vect{x}_0} + S(A, \vect{0})$$
 
 \subtitle{Remark 3.16 - }{Systems of Linear Equations as Matrices}
@@ -391,7 +393,7 @@ There are certain operations that can be performed on a system of linear equatio
 \end{enumerate}
 
 \subtitle{Definition 3.18 - }{Augmented Matrices}
-Let $A\vect{x} = \vect{b}$ be a system of linear equations. The associated \textit{Augmented Matrix} is $$(A\ \vect{b}) \in M_{m, n+1}(\mathbb{R})$$
+Let $A\vect{x} = \vect{b}$ be a system of linear equations. The associated \textit{Augmented Matrix} is $$(A\ \vect{b}) \in M_{m, n+1}(\real)$$
 
 \subtitle{Theorem 3.19 - }{Elementary Row Operations}
 From \textit{Theorem 3.17} we can deduce ceratin operations that can be performed on an \textit{Augmented Matrix} which do not alter the solutions:
@@ -470,12 +472,12 @@ Solve $x + y + 2z = 9, 2x + 4y - 3z = 1, 3x + 6y - 5z = 0$.
 \subsection{Elementary Matrices \& Inverting Matrices}
 %
 \subtitle{Definition 3.22 - }{Invertible Matrices}
-A matrix, $A \in M_{m,n}(\mathbb{R})$, is said to be \textit{Invertible} if there exists $A^{-1} \in M_{n,m}(\mathbb{R})$ such that
+A matrix, $A \in M_{m,n}(\real)$, is said to be \textit{Invertible} if there exists $A^{-1} \in M_{n,m}(\real)$ such that
 $$AA^{-1} = I$$
 \underline{N.B.} - If a matrix is not invertible then it is \textit{Singular}.\\
 
 \subtitle{Definition 3.23 - }{Elementary Matrices}
-A matrix, $E \in M_{m,n}(\mathbb{R})$, is said to be an \textit{Elementary Matrix} if it can be obtained by performing Elementary Row Operations on a square identity matrix.\\
+A matrix, $E \in M_{m,n}(\real)$, is said to be an \textit{Elementary Matrix} if it can be obtained by performing Elementary Row Operations on a square identity matrix.\\
 \textit{Examples}
 $\begin{pmatrix}
   0 & 1 \\
@@ -515,5 +517,53 @@ Let $A = \begin{pmatrix}
   d & -b \\
   -c & a
 \end{pmatrix}$$
+
+\section{Linear Independence, Bases \& Dimensions}
+\subsection{Linear Independence \& Dependence}
+%
+\subtitle{Definition 4.01 - }{Linear Independence \& Dependence}
+Vectors, $\vect{x}_1, ... , \vect{x}_n \in \real^k$, are said to be \textit{linearly dependent} if there exists \underline{non-zero} real numbers, $\lambda_1, ... , \lambda_n$ such that
+$$\lambda_1.\vect{x}_1 + ... + \lambda_n.\vect{x}_n = \vect{0}$$
+\underline{N.B.} - If this is only true if $\lambda_1 = ... = \lambda_n = 0$ then the vectors are said to be \textit{linearly independent}. \\
+
+\subtitle{Remark 4.02}{}
+Vectors are only \textit{linearly dependent} if one of them lies in the span of the rest.
+
+\subsection{Bases \& Dimensions}
+%
+\subtitle{Definition 4.03 - }{Basis}
+A \textit{basis} is a set of vectors, $\vect{v}_1, ... , \vect{v}_n \in V$ such that
+\begin{enumerate}[label=\roman*)]
+  \item $V = \mathrm{span}\{\vect{v}_1, .... , \vect{v}_n\}$;
+  \item $\vect{v}_1, ... , \vect{v}_n$ are linearly independent.
+\end{enumerate}
+
+\subtitle{Definition 4.04 - }{Standard Basis}
+The \textit{standard basis} for a vector space is the set fewest unit vectors which span it. \\
+\textit{Example} - $\{\vect{v}_1, \vect{e}_2 , \vect{e}_3\}$ are the standard basis for $\real^3$. \\
+
+\subtitle{Theorem 4.05 - }{Basis of a Linear Subspace}
+For all elements, $\vect{v}$, of a linear subspace, $V \subset \real^n$, there exists a \underline{unique} set of numbers, $\lambda_1, ... , \lambda_n$, such that
+$$\vect{v} = \lambda_1.\vect{v}_1 + ... + \lambda_n.\vect{v}_n$$
+
+\subtitle{Theorem 4.06 - }{Linear Independence and Bases}
+Let $V \subset \real^n$ be a linear subspace with basis ${\vect{v}_1, ... , \vect{v}_n}$. Suppose $\vect{w}_1 , ... , \vect{w}_k \in V$ are linearly independent, then $k \leq n$. \\
+
+\subtitle{Definition 4.07 - }{Dimension}
+Let $V \subset \real^n$ be a linear subspace then the \textit{dimension} of $V$, $dim(V)$, is the fewest number vectors required to form a basis for $V$.
+
+\subsection{Orthogonal Bases}
+%
+\subtitle{Definition 4.08 - }{Orthogonal}
+Let $V \subset \real^n$ be a linear subspace with $\{\vect{v}_1 , ... , \vect{v}_k\}$ as its basis. This basis is an \textit{orthogonal basis} if it statisfies:
+\begin{enumerate}[label=\roman*)]
+  \item $\vect{v}_i \dotprod \vect{v}_j = 0$ if $i \not = j$;
+  \item $\vect{v}_i \dotprod \vect{v}_i = 1,\ i = 1, ... , k$.
+\end{enumerate}
+\underline{N.B.} - This can be generalised to $\vect{v}_i \dotprod \vect{v}_k = \delta_{ij}$ with $\delta_{ij} := \begin{cases} 1, & i = j \\ 0, & \mathrm{otherwise}\end{cases}$
+
+\subtitle{Theorem 4.09}{}
+Let $V \subset \real^n$ be a linear subspace with an orthogonal basis $\{\vect{v}_1 , ... , \vect{v}_k\}$. \\
+Then for all $\vect{u} \in V$ $$\vect{u} = (\vect{v}_1 \dotprod \vect{u}) \vect{v}_1 , ... , (\vect{v}_k \dotprod \vect{u}) \vect{v}_k$$
 
 \end{document}
