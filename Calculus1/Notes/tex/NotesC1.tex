@@ -17,6 +17,8 @@
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 \newcommand{\subtitle}[2]{\textbf{#1}\textit{#2} \\}
 \newcommand{\dotprod}[0]{\boldsymbol{\cdot}}
+\newcommand{\real}[0]{\mathbb{R}}
+\newcommand{\nat}[0]{\mathbb{N}}
 \setlength\parindent{0pt}
 
 % Cover page title
@@ -42,20 +44,20 @@
 The Fundamental Theorem of Calculus states $$\frac{d}{dx}\int_{a}^{x} f(t) dt = f(x) $$ \\
 
 \subtitle{Definition 1.02 - }{Common Sets of Numbers}
-Natural Numbers, set of positive integers - $\mathbb{N} := \{1, 2, 3, ...\}$. \\
+Natural Numbers, set of positive integers - $\nat := \{1, 2, 3, ...\}$. \\
 Whole Numbers, set of all integers - $\mathbb{Z} := \{..., -2, -1, 0, 1, 2, ...\}$. \\
-Rational Numbers, set of fractions - $\mathbb{Q} := \left\{\frac{p}{q} : p \in \mathbb{Z}, q \in \mathbb{N} \right\}$. \\
-Real Numbers, set of all rational \& irrational numbers - $\mathbb{R}$. \\
+Rational Numbers, set of fractions - $\mathbb{Q} := \left\{\frac{p}{q} : p \in \mathbb{Z}, q \in \nat \right\}$. \\
+Real Numbers, set of all rational \& irrational numbers - $\real$. \\
 
 \subsection{Intervals}
 \subtitle{Definition 1.03 - }{Intervals}
 Sets of real numbers that fulfil in given ranges. \\
 \underline{Notation}
 \begin{eqnarray*}
-  [a,b] := \{x \in \mathbb{R} : a \leq x \leq b\} \\
-  (a,b] := \{x \in \mathbb{R} : a < x \leq b\} \\
-  \left[a,b\right) := \{x \in \mathbb{R} : a \leq x < b\} \\
-  (a,b) := \{x \in \mathbb{R} : a < x < b \}
+  [a,b] := \{x \in \real : a \leq x \leq b\} \\
+  (a,b] := \{x \in \real : a < x \leq b\} \\
+  \left[a,b\right) := \{x \in \real : a \leq x < b\} \\
+  (a,b) := \{x \in \real : a < x < b \}
 \end{eqnarray*}
 
 \underline{Example} \\
@@ -229,14 +231,14 @@ Some functions are neither \textit{odd} nor \textit{even}. \\
 \subsection{The Primitive}
 
 \subtitle{Definition 4.01 - }{The Primitive}
-A function, $F : A \to \mathbb{R}$, is a primative for the function $f : A \to \mathbb{R}$ if $F$ is differentiable and $$\displaystyle{\frac{d}{dx} F = f}$$
+A function, $F : A \to \real$, is a primative for the function $f : A \to \real$ if $F$ is differentiable and $$\displaystyle{\frac{d}{dx} F = f}$$
 \underline{N.B.} - Primitives are also called \textit{Indefinite Integral} or \textit{Anti-Derivative}. \\
 
 \subtitle{Remark 4.02 - }{Area Under a Curve}
-Let $f : [a,b] \to \mathbb{R}$ be a continuous function. Then the area between the curve and the x-axis is found by integration. $$A := \int_{a}^{b} f(x) dx$$
+Let $f : [a,b] \to \real$ be a continuous function. Then the area between the curve and the x-axis is found by integration. $$A := \int_{a}^{b} f(x) dx$$
 
 \subtitle{Definition 4.03 - }{Convergent Improper Integrals}
-Let $b > a$ and define a function, $f : \left[a, \infty\right) \to \mathbb{R}$, which is continuous in $[a, b]$ Then
+Let $b > a$ and define a function, $f : \left[a, \infty\right) \to \real$, which is continuous in $[a, b]$ Then
 $$\int_{0}^{\infty} f(x) dx := \lim_{b \to \infty} \int_{a}^{b} f(x) dx$$
 If this limit exists then the improper integral is \textit{convergent}, otherwise it is \textit{divergent}. \\
 
@@ -244,12 +246,85 @@ If this limit exists then the improper integral is \textit{convergent}, otherwis
 Let $F$ be the primative for the function $f$. Then $$\int_{b}^{a} f(x) dx = F(a) - F(b)$$
 \underline{Notation} - $F(x)\big|_{a}^{b} = F(b) - F(a)$\\
 
-\subtitle{Remark 4.05 - }{Summing Definiate Inegrals}
+\subtitle{Remark 4.05 - }{Summing Definite Inegrals}
 For all $a < c < b$ $$\int_{a}^{b} f(x) dx = \int_{c}^{a} f(x) dx + \int_{b}^{c} f(x) dx$$ $$\displaystyle{\int_{b}^{a} f(x) d := -\int_{a}^{b} f(x) dx}$$
 
 \subtitle{Theorem 4.06 - }{Taylor Series}
 Functions can be expanded into polynomial form with degree $n$, $T_n$, and remainder $R_n$ such that $f(x) = T_n(x) + R_n(x)$.
 $$T_n(x) = f(a) + (x-a)f'(a) + ... + \frac{1}{n}.(x-a)^n.f^n(a)$$
 $$R_n(x) = \frac{1}{n} \int_{a}^{x} (x-t)^n.f^{(n+1)}(t) dt$$
+
+\section{Parametric Curves \& Arc-Length}
+%
+\subsection{Parametric Curves}
+%
+\subtitle{Definition 5.01 - }{Parametric Curves}
+\textit{Parametric equations} are an alternative to Cartesian equations, for representing curves. They can also represent a point in 3D space.
+$$\vect{p} = \begin{pmatrix} x(t)\\ y(t)\\ z(t) \end{pmatrix}$$
+
+\subtitle{Theorem 5.02 - }{Parametric to Cartesian Equations}
+As all equations in a Parametric series have a common variable, substition can be used to form a single equation. \\
+\textit{Example} Let $\begin{pmatrix} x(t) \\ y(t) \end{pmatrix} = \begin{pmatrix} t-2 \\ \frac{t}{t-2} \end{pmatrix}$.
+\begin{alignat*}{2}
+  &x &&= t - 2 \\
+  =>&t &&= x + 2 \\
+  =>&y &&= \frac{x+2}{(x+2) - 2} \\
+  & &&= \frac{x+2}{x} \\
+  & y &&= \underline{1 + \frac{2}{x}}
+\end{alignat*}
+
+\subsection{Tangent of a Curve}
+%
+\subtitle{Theorem 5.02 - }{Tangent to a Parametric Curve}
+Let $(x(t), y(t))$ be a parametric equation. If we want to find the tangent at a point on the line, $(a, b)$, we need to find the value $t_0$ such that $x(t_0) = a$ \& $y(t_0) = b$. \\
+Then by using the chain rule we can deduce the following equation for the tangent when $t = t_0$: $$\frac{dy(t_0)}{dx(t_0)} = \frac{y - y(t_0)}{x - x(t_0)}$$.
+Similarly we can deduce the equation for the normal when $t = t_0$: $$-\frac{dx(t_0)}{dy(t_0)} = \frac{y - y(t_0)}{x - x(t_0)}$$
+
+\subsection{Arc-Length}
+%
+\subtitle{Theorem 5.03 - }{Arc-Length}
+Arc-Length is the length of a curve, following a function, between two points. For a cartesian equation, $y = f(x)$, between the points $x$ and $x + dx$ is $$ds = \sqrt{dx^2 + dy^2}$$
+So for a set of parametric equations, $(x(t), y(t)),\ a \leq t \leq b$, $$ds = \sqrt{\frac{dx^2}{dt} + \frac{dy^2}{dt}}$$
+To find the length of a curve between points $a$ and $b$ $$s = \int_{a}^{b} \sqrt{\frac{dx^2}{dt} + \frac{dy^2}{dt}} dt$$
+
+\subtitle{Definition 5.04 - }{Curvature}
+Curvature measures how fast the unit tangent vector to a curve rotates.
+Curvature of a curve, $y = f(x)$, can be found using the equation: $$K(x) = \frac{|y''(x)|}{[1 + (y'(x))^2]^{\frac{3}{2}}}$$
+For a set of parametric equations, $(x(t), y(t))$, it can be found using: $$K(t_0) = \frac{y''(t_0).x'(t_0) - y'(t_0).x''(t_0)}{[(x'(t_0))^2 + (y'(t_0))^2]^{\frac{3}{2}}}$$
+
+\subsection{Level Curves}
+%
+\subtitle{Definition 5.05 - }{Level Curves}
+Let $f : \real^d \to \real$ be a function with $d \geq 2,\ d \in \nat$. A level curve for $f$ is the set of real solutions for $f(\vect{x}) = c, c \in \real$. \\
+\underline{N.B} - $f(\vect{x}) = c$ is often written as $f = c$.
+
+\section{Differential Equations}
+%
+\subtitle{Definition 6.01 - }{Differential Equations}
+Differential equations take the form $$f(x, y, \frac{dx}{dy}, ... , \frac{d^{(n)}y}{dx^{(n)}}) = 0,\ x \in I$$
+
+\subsection{First Order Differential Equations}
+%
+\subtitle{Definition 6.02 - }{First Order}
+First order differential equations are equations of form $f(x, y, \frac{dx}{dy}) = 0$. \\
+
+\subtitle{Definition 6.03 - }{Seperable Equations}
+An equation, $f$, is said to be seperable if there exists two equations, $M(x),\ N(y)$, such that $$f(x, y, y') = y' - M(x).N(y)$$
+Thus \begin{alignat*}{2}
+  &y' &&= M(x).N(y) \\
+  => &\frac{y'}{N(y)} &&= M(x) \\
+  => &\int{\frac{1}{N(y)}dy} &&= \int{M(x)dx}
+\end{alignat*}
+After integration, the equation can be rearranged to be in terms of y.
+
+\subsection{Integrating Factor}
+%
+\subtitle{Theorem 6.04 - }{Integrating Factor}
+Consider the equation $y' + f(x)y + g(x)$. Let $F(x) = \int{f(x)dx}$. Thus \begin{alignat*}{2}
+  &e^{F(x)}.y' + e^{F(x)}.y &&= e^{F(x)}.g(x) \\
+  => &\frac{d}{dx}\left(e^{F(x)}.y \right) &&= e^{F(x)}.g(x) \\
+  => &e^{F(x)}.y &&= \int{e^{F(x)}.g(x)\ dx} \\
+  => &y &&= e^{-F(x)} \int{e^{F(x)}.g(x)\ dx}
+\end{alignat*}
 
 \end{document}
