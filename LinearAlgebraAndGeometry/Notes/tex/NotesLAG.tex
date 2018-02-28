@@ -566,4 +566,84 @@ Let $V \subset \real^n$ be a linear subspace with $\{\vect{v}_1 , ... , \vect{v}
 Let $V \subset \real^n$ be a linear subspace with an orthogonal basis $\{\vect{v}_1 , ... , \vect{v}_k\}$. \\
 Then for all $\vect{u} \in V$ $$\vect{u} = (\vect{v}_1 \dotprod \vect{u}) \vect{v}_1 , ... , (\vect{v}_k \dotprod \vect{u}) \vect{v}_k$$
 
+\section{Linear Maps}
+
+\subtitle{Definition 5.01 - }{Linear Map}
+A map, $T : \real^n \to \real^m$ is a \textit{linear map} if
+\begin{enumerate}[label=\roman*)]
+  \item $T(\vect{x} + \vect{y}) = T(\vect{x}) + T(\vect{y}),\quad \forall\ \vect{x}, \vect{y} \in \real^n$;
+  \item $T(\lambda\vect{x}) = \lambda T(\vect{x}),\quad \forall\ \vect{x} \in \real^n, \lambda \in \real$.
+\end{enumerate}
+\underline{N.B.} - If $m = n$ then $T$ is referred to as a \textit{linear operator}. \\
+
+\subtitle{Theorem 5.02 - }{Properties of Linear Maps}
+Let $T : \real^n \to \real^m$ be a linear map. Then $T(\vect{0}) = \vect{0}$. \\
+
+\subtitle{Definiton 5.03 - }{Linear Maps as Matrices}
+Let $T : \real^n \to \real^m$ be a linear map. Then the associated Matrix is defined as $$M_T = (t_{ij}) \in M_{m,n}(\real)$$
+with the elements of $M_T$ defined by $$t_{ij} = \vect{e}_i \dotprod T(\vect{e}_j)$$
+
+\subtitle{Theorem 5.04 - }{Solutions to Linear Maps from Matrices}
+Let $T : \real^n \to \real^m$ be a linear map and $M_T$ be the associated matrix. Then $$T(\vect{x}) = M_T\vect{x},\quad \forall\ \vect{x} \in \real^n$$
+
+\subsection{Abstract Properties of Linear Maps}
+%
+\subtitle{Theorem 5.05 - }{Relationship between Linear Maps}
+Let $S : \real^n \to \real^m$, $T : \real^n \to \real^m$ \& $U : \real^m \to \real^k$ be a linear maps and $\lambda \in \real$. Then
+\begin{enumerate}[label=\roman*)]
+  \item $(\lambda T)(\vect{x}) := \lambda T(\vect{x})$;
+  \item $(S + T)(\vect{x}) = S(\vect{x}) + T(\vect{x})$;
+  \item $(U \circ S)(\vect{x}) = U(S(\vect{x}))$.
+\end{enumerate}
+
+\subtitle{Definition 5.06 - }{Image \& Kernel}
+Let $T : \real^n \to \real^m$ be a linear map. Then
+\begin{enumerate}[label=\roman*)]
+  \item The \textit{image} of $T$ is defined to be $$Im(T) := \{\vect{y} \in \real^m : \exists\ \vect{x} \in \real^n st\ T(\vect{x}) = \vect{y}\}$$
+  \item The \textit{kernel} of $T$ is defined to be $$Ket(T) := \{\vect{x} \in \real^n : T(\vect{x}) = \vect{0}\}$$
+\end{enumerate}
+
+\subtitle{Theorem 5.07}{}
+Let $T : \real^n \to \real^m$ be a linear map then $Im(T)$ is a linear subsapce of $\real^m$ and $Ker(T)$ is a linear subspaces of $\real^n$ \\
+
+\subtitle{Remark 5.08}{}
+Let $T : \real^n \to \real^m$ be a linear map. Then
+\begin{enumerate}[label=\roman*)]
+  \item $T$ is surjective if $Im(T) = \real^m$;
+  \item $T$ is injective if $Ker(T) = \{ 0\}$.
+\end{enumerate}
+
+\subsection{Matrices}
+
+\subtitle{Definition 5.09 - }{Linear Maps as Matrices}
+Let $S : \real^n \to \real^m$, $T : \real^n \to \real^m$ \& $U : \real^m \to \real^k$ be a linear maps and $\lambda \in \real$ with $M_S, M_T\ \&\ M_U$ as the corresponding matrices. Then
+\begin{enumerate}[label=\roman*)]
+  \item $M_{\lambda T} = \lambda M_T = (\lambda t_{ij})$;
+  \item $M_{S + T} = (s_{ij} + t_{ij}) = M_S + M_T$;
+  \item $M_{U \circ S} = (r_{ij})$ where $r_{ik} = \sum_{k=1}^m s_{ik}t_{jk}$.
+\end{enumerate}
+
+\subsection{Rank \& Nullity}
+
+\subtitle{Defintion 5.10 - }{Rank \& Nullity}
+Let $T : \real^n \to \real^m$ be a linear map. Then we define \textit{Rank} of $T$ by $$rank(T) := dim(Im(T))$$
+and we define \textit{Nullity} of $T$ by $$nullity(T) := dim(Im(T))$$
+\underline{N.B.} - For all linear maps, $T : \real^n \to \real^m$, $$nullity(T) + rank(T) = n$$
+
+\subtitle{Remark 5.11}{}
+Let $T : \real^n \to \real^n$ be a linear map. Then $T$ is invertible if
+\begin{enumerate}[label=\roman*)]
+  \item $rank(T) = n$, or
+  \item $nullity(T) = 0$.
+\end{enumerate}
+
+\subtitle{Theorem 5.12 - }{Relationship of Rank \& Nullity between Linear Maps}
+Let $S : \real^n \to \real^m$ \& $T : \real^k \to \real^n$ be linear maps. Then
+\begin{enumerate}[label=\roman*)]
+  \item $S \circ T = 0$ iff $Im(T) \subset Ker(S)$;
+  \item $rank(S \circ T) \leq rank(T)$ and $rank(S \circ T) \leq rank(S)$;
+  \item $nullity(S \circ T) \geq nullity(T)$ and $nullity(S \circ T) \geq nullity(S) + k - n$;
+  \item $S$ is invertible then $rank(S \circ T) = rank(T)$ and $nullity(S \circ T) = nullity(T)$.
+\end{enumerate}
+
 \end{document}
