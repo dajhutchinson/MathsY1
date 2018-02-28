@@ -327,4 +327,90 @@ Consider the equation $y' + f(x)y + g(x)$. Let $F(x) = \int{f(x)dx}$. Thus \begi
   => &y &&= e^{-F(x)} \int{e^{F(x)}.g(x)\ dx}
 \end{alignat*}
 
+\subsection{Second Order Differential Equations}
+%
+\subtitle{Definition 6.05 - }{Linear Differential Equations}
+A differential equation is said to be \textit{linear} if it can be written in the form $$Ay(x) := a_n(x).y^{(n)}(x) + ... + a_1(x).y'(x) + a_0(x).y(x) = b(x)$$
+We define the set of solutions as $$S(A, b) := {y : I \to \real ; Ay = b}$$
+If the only solution is $b=0$ then the system is homogenous, otherwise it is inhomogenous. \\
+
+\subtitle{Definition 6.06 - }{Particular \& Complimentary Solutions}
+When solving a differential equation, $Ay(x) = b(x)$, we need to find two functions in order to find the final solution.
+\begin{enumerate}[label=\roman*)]
+  \item Complementary Function, $y_c$ - The homogenous case of the equation, $Ay(x) = 0$;
+  \item Particular Function, $y_p$ - The inhomogenous case of the equation, $Ay(x) = b(x)$ for a given $b(x)$.
+\end{enumerate}
+Then $y = y_c + y_p$ is the final solution for $Ay(x) = b(x)$.
+
+\newpage
+\subtitle{Theorem 6.07 - }{Complementary Functon of LDEs with Constant Coefficients}
+Take a linear differential equation $$a_n.y^{(n)}(x) + ... + a_1.y'(x) + a_0.y(x) = b(x)$$ where $a_n, ... , a_1, a_0 \in \real\ \mathrm{\&}\ b(x) : \real \to \real$ are all constant. \\
+To find the \textit{Complementary Function} we solve the equation $$a_n.\lambda^n + ... + a_1.\lambda^n + a_0 = 0$$.
+to get solutions $\lambda_1, ... , \lambda_k$ and then produce the complimentary function $$y_c(x) = \mu_1e^{\lambda_1x} + ... + \mu_ke^{\lambda_kx}$$
+Where $\mu_1, ... , \mu_k$ are constants to be found later, by comparing with $b(x)$.
+
+\subtitle{Remark 6.08 - }{Complementary Function}
+The complementary function, $y_c$, for differential equations with constant coefficients depends upon the $\lambda_1, ... , \lambda_k$ we find, due to Euler's Formula.
+\begin{enumerate}[label=\roman*)]
+  \item $\lambda_i = c,\quad y_{c_i} = \mu_ie^{\lambda_ix}$;
+  \item $\lambda_i = \pm ib,\quad y_{c_i} = \mu_{i_1}cos(bx) + \mu_{i_2}sin(bx)$;
+  \item $\lambda_i = a \pm ib,\quad y_{c_i} = e^{ax}[\mu_{i_1}cos(bx) + \mu_{i_2}sin(bx)]$.
+\end{enumerate}
+Then $y_c = \sum_{j=1}^{k} y_{c_j}$.\\
+
+\subtitle{Remark 6.09 - }{Particular Function}
+The particular function, $y_p$, for a differential equation with constand coefficients, $Ay(x) = b(x)$, depends on the form of $b(x)$.
+\begin{enumerate}[label=\roman*)]
+  \item $b(x) = a_nx^n + ... + a_1x + a_0,\quad y_p = b_nx^n + ... + b_1x + b_0$;
+  \item $b(x) = ae^{bx},\quad y_p = \alpha e^{\beta x}$;
+  \item $b(x) = a.sin(bx) + c.cos(dx),\quad y_p = \alpha sin(\beta x) + \gamma cos(\delta x)$.
+\end{enumerate}
+Where the constants of $y_p$ are values to be found, when given certain conditions.
+
+\subtitle{Theorem 6.10 - }{Particular Functon of LDEs with Constant Coefficients}
+Take a linear differential equation $$a_n.y^{(n)}(x) + ... + a_1.y'(x) + a_0.y(x) = b(x)$$ where $a_n, ... , a_1, a_0 \in \real\ \mathrm{\&}\ b(x) : \real \to \real$ are all constant. \\
+Deduce the particular function for the differential equation, given $b(x)$, and then differentiate $y_p$ n times. \\
+Substitute in these values, in place of the $y$s, into the original equation and solve to find values for the constants in $y_p$. \\
+
+\underline{Example} \\
+Solve $y'' -y' + y = x^2$.
+\begin{align*}{2}
+  \mathrm{\textbf{Complementary\ Function}} \\
+  \mathrm{Let\ }\lambda^2 - \lambda + 1 &= 0 \\
+  => \lambda &= \frac{1 \pm \sqrt{1-4}}{2} \\
+  &= \frac{1}{2} \pm i\frac{\sqrt{3}}{2} \\
+  => y_c &= e^{\frac{x}{2}}[A cos(x\frac{\sqrt{3}}{2}) + B sin(\frac{\sqrt{3}}{2})] \\
+  \mathrm{\textbf{Particular\ Function}} \\
+  \mathrm{Let\ }y_p &= \alpha x^2 + \beta x + \gamma \\
+  => y'_p(x) &= 2\alpha x + \beta, \& \\
+  => y''_p(x) &= 2\alpha \\
+  => (2\alpha) - (2\alpha x + \beta) + (\alpha x^2 + \beta x + \gamma) &= x^2 \\
+  => x^2[\alpha] + x[\beta - 2\alpha] + [2\alpha -\beta + \gamma] &= x^2 \\ \\
+  [x^2] : \alpha &= 1 \\
+  [x] : \beta - 2\alpha &= 0 \\
+  =>\beta &= 2 \\
+  [x^0] : 2\alpha + \gamma - \beta = 0 \\
+  => \gamma &= 0 \\
+  => y_p &= x^2 + 2x \\
+  => \underline{y = x^2 + 2x + e^{\frac{x}{2}}[A cos(x\frac{\sqrt{3}}{2}) + B sin(\frac{\sqrt{3}}{2})]}
+\end{align*}
+
+\subsection{Wronskian}
+%
+\subtitle{Definition 6.11 - }{The Wronskian}
+The \textit{Wronskian}, $W[y_1, y_2]$, of two differentiable functions is defined by $$W[y_1, y_2](x) = y_1(x).y'_2(x) - y'_1(x).y_2(x)$$
+The notation for this is $$\begin{vmatrix} a & b \\ c & d \end{vmatrix} := ad - bc$$
+So $$W[y_1, y_2] = \begin{vmatrix} y_1 & y_2 \\ y'_1 & y'_2 \end{vmatrix}$$
+
+\subtitle{Remark 6.12}{}
+If $W[y_1, y_2] \not = 0$ then $y_1, y_2$ are linearly independent.
+
+\subsection{Variation of Constants}
+%
+\subtitle{Theorem 6.12}{}
+This is a technique for solving all differential equations, not just ones with constant coefficients. \\
+Consider the equation $$Ay(x) := y''(x) + \beta(x)y'(x) + \gamma(x)y(x) = b(x),\quad \mathrm{for\ a\ known\ }b(x)$$
+We can deduce a complementary function in the form $$y_c = \lambda_1(x)y_1(x) + \lambda_2(x)y_2(x)$$ where $y_1\ \&\ y_2$ are linearly independent, thus $W[y_1, y_2] \not = 0$. \\
+\huge{WIP}
+
 \end{document}
