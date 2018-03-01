@@ -657,7 +657,7 @@ A \textit{determinant function} $d_n : \real^n \times ... \times \real^n \to \re
   \item \textit{Antisymmetric} - $d_2(\vect{a}_1, \vect{a}_2) = -d_2(\vect{a}_2, \vect{a}_1)$;
   \item \textit{Normalisation} - $d_2(\vect{e}_1, \vect{e}_2) = 1$.
 \end{enumerate}
-
+\underline{N.B.} - Determinant functions only exists for \textit{square matrices}. \\
 
 \subtitle{Theorem 6.02 - }{Properties of Determinant}
 \begin{enumerate}[label=\roman*)]
@@ -667,5 +667,29 @@ A \textit{determinant function} $d_n : \real^n \times ... \times \real^n \to \re
   \item $det[... \vect{a}_i ... \vect{a}_j ...] = det[... (\vect{a}_i + \lambda\vect{a}_j) ... \vect{a}_j ...]$
 \end{enumerate}
 
+\subtitle{Theorem 6.03}{}
+Let $f_n : \real^n \times ... \times \real^n \to \real$ be a function which is \textit{multilinear} \& \textit{Antisymmetric} then $$f_n(A) = C.det(A)$$
+where $C$ is a constant such that $C = f_n(\vect{e}_1, ... , \vect{e}_n)$. \\
+
+\subtitle{Theorem 6.04 - }{Determinant of a Triangle Matrix}
+Let $A = (a_{ij}) \in M_{n}(\real)$ be a upper triangle matrix, so $a_{ij} = 0$ if $i > j$. Then $$det(A) = a_{11}.a_{22}.\ ...\ .a_{nn}$$
+\underline{N.B.} - The same is true for lower triangle matrices. \\
+
+\subtitle{Theorem 6.05 - }{Relationship between Determinants}
+Let $A, B \in M_{n}(\real)$ then $$det(AB) = det(A).det(B)$$ but usually $$det(A + B) \not = det(A) + det(B)$$
+
+\subtitle{Theorem 6.06 - }{Determinant \& Inverses}
+If $det(A) = 0$ then $A^{-1}$ does not exist. \\
+
+\subtitle{Theorem 6.07 - }{Leibniz Formula}
+Let $A = (a_{ij}) \in M_n(\real)$ then the \textit{Leibniz Formula} states that $$det(A) := \sum_{\sigma \in S_n} \mathrm{sign}(\sigma) \prod_{j=1}^{n}a_{\sigma(j),j}$$
+Where: \begin{itemize}[label={-}]
+  \item $S_n$ is the group of symmetries for a regular n-sided polygons;
+  \item sign$(\sigma)$ is the sign function which returns $+1$ for even permuations and $-1$ for odd permutations. \\
+  A permutation is even if a even number of permutations (swaps) are required to change the identity permutation to the given permutation, $\sigma$.
+\end{itemize}
+
+\subtitle{Remark 6.08 - }{Determinant of Transpose}
+Let $A$ be a square matrix, then $$det(A) = det(A^t)$$
 
 \end{document}

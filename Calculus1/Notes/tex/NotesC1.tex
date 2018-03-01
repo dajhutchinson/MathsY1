@@ -407,10 +407,85 @@ If $W[y_1, y_2] \not = 0$ then $y_1, y_2$ are linearly independent.
 
 \subsection{Variation of Constants}
 %
-\subtitle{Theorem 6.12}{}
-This is a technique for solving all differential equations, not just ones with constant coefficients. \\
+\subtitle{Theorem 6.13}{}
+This is a technique for solving all differential equations, not just ones with constant coefficients, and assumes we know the complementary function, $y_c$. \\
 Consider the equation $$Ay(x) := y''(x) + \beta(x)y'(x) + \gamma(x)y(x) = b(x),\quad \mathrm{for\ a\ known\ }b(x)$$
-We can deduce a complementary function in the form $$y_c = \lambda_1(x)y_1(x) + \lambda_2(x)y_2(x)$$ where $y_1\ \&\ y_2$ are linearly independent, thus $W[y_1, y_2] \not = 0$. \\
-\huge{WIP}
+Suppose we have a complementary function in the form $$y_c = \lambda_1(x)y_1(x) + \lambda_2(x)y_2(x)$$ where $y_1\ \&\ y_2$ are linearly independent, thus $W[y_1, y_2] \not = 0$. \\
+Then $$y'_p = \lambda'_1 y_1 + \lambda_1 y'_1 + \lambda'_2 y_2 + \lambda_2 y'_2$$
+As $\lambda_1, \lambda_2$ are constant then $\lambda'_1 = \lambda'_2 = 0$ so $$y'_p = \lambda_1y'_1 + \lambda_2y'_2$$
+By differentiating and then substituting back into the original equation we see $y_p$ is a solution iff $$\lambda'_1y'_1 + \lambda'_2y'_2 = f$$
+In matrix form we have $$\begin{pmatrix} y_1 & y_2 \\ y'_1 & y'_2 \end{pmatrix} \begin{pmatrix} \lambda'_1 \\ \lambda'_2 \end{pmatrix} = \begin{pmatrix} 0 \\ f \end{pmatrix}$$
+Then by Cramer's rule we have $$\lambda'_1 = \frac{\begin{vmatrix}0 & y_2 \\ f & y'_2 \end{vmatrix}}{W[y_1\ y_2]} = \frac{-y_2f}{W[y_1\ y_2]}$$
+and $$\lambda'_2 = \frac{\begin{vmatrix}y_1 & 0 \\ y'_1 & f \end{vmatrix}}{W[y_1\ y_2]} = \frac{y_1f}{W[y_1\ y_2]}$$
+Giving use a solution for $y'_p = \lambda'_1 y_1 + \lambda_1 y'_1 + \lambda'_2 y_2 + \lambda_2 y'_2$.
+
+\section{Applied Differential Equations}
+%
+\subtitle{Definition 7.01 - }{Denoting Limit Relationships}
+We use $$F(x) \sim G(x)\ \mathrm{as}\ x \to a$$ to denote $$\lim_{x \to a} \frac{F(x)}{G(x)} = 1$$
+
+\subtitle{Theorem 7.02 - }{Vibrating String}
+If we are given a string which is $L$ long then we can define an equation, $y(x,t)$, which describe the displacement of a point $x$ along the string, at time $t$. $$y(x,t) = u(x)e^{i\omega t}$$
+Where $\frac{\omega}{2\pi}$ is the frequency of the string and $u(x) = Acos(\omega x) + Bsin(\omega x)$. \\
+We can generalise this for strings with $n$ anti-nodes. $$\omega_n := \frac{n\pi}{L},\quad u_n := sin(\omega_nx)$$
+
+\section{Liner Difference Equations}
+%
+\subtitle{Definition 8.01 - }{Difference Equations}
+A difference equation is an equation of the form $$F(n, y_n, ... , y_{n+d}) = 0,\quad n,d \in \nat$$
+
+\subsection{First-Order Linear Difference Equation}
+\subtitle{Definition 8.02 - }{Liner First-Order Difference Equations}
+A \textit{Linear First-Order Difference Equation} is an equation, $F$, which can be described by $$F(n, y_n, y_{n+1}) = a_ny_{n+1} + b_ny_n - f_n$$
+where $a_n, b_n, f_n$ are all known sequences. \\
+
+\subtitle{Example 8.03}{}
+By taking a simple equation $$y_{n+1} - y_n = f_n$$
+we can see that $$y_{n+1} = y_n +(y_{n+1} - y_n) = y_n + f_n = ... = y_{n_0} +f_{n_0} + ... + f_{n-1} + f_n$$
+So $$y_n = y_{n_0} + \sum_{j = n_0}^{n-1} f_j$$
+
+\subtitle{Theorem 8.04 - }{Solving First-Order Liner Difference Equations}
+From \textit{Definition 8.02} we can generalise the equation to show that $$y_{n+1} + b_ny_n = f_n$$
+Then $$\frac{-1}{b_n}y_{n+1}-y_n = \frac{-1}{b_n}f_n$$
+We now define the \textit{Summing Factor}, $S_n$, as $$S_n :=\prod_{j={n_0}}^{n-1}\frac{-1}{b_n}$$.
+We multiply both sides of the original equation by the summing factor and as $S_n(\frac{-1}{b_n})=S_{n+1}$ we get $$S_{n+1}y_{n+1} - S_ny_n = S_{n+1}f_n$$
+As this has the same form as the example in \textit{8.03} we can now deduce $$S_ny_n = y_{n_0} + \sum_{j={n_0}}^{n-1}S_{j+1}.f_j$$
+
+\subsection{Second-Order Linear Difference Equation}
+%
+\subtitle{Definition 8.05 - }{Second-Order Linear Difference Equation}
+A \textit{Linear Second-Order Difference Equation} is an equation, $F$, which can be described by $$a_ny_{n+2} + b_ny_{n+1} +c_ny_n = f_n$$
+where $a_n, b_n, c_n, f_n$ are know sequences. \\
+
+\subtitle{Remark 8.06 - }{Solving Second-Order Linear Difference Equations}
+Similar to solving second-order differential equations we need to consider to cases. The \textit{homogenous} \& \textit{inhomogenous} cases.
+So two sequences will be found the complementary sequence, $y_n^c$, and the particular sequence, $y_n^p$. The final solution for $y_n$ is given by $$y_n = y_n^c + y_n^p$$
+
+\subtitle{Definition 8.07 - }{Wronskian of Sequences}
+For two sequences $u_n \& v_n$ we define the Wronskian to be $$W_n := \begin{vmatrix} u_n & v_n \\ u_{n+1} & v_{n+1} \end{vmatrix} = u_n.v_{n+1} - v_n.u_{n+1}$$
+
+\subtitle{Theorem 8.08 - }{Homogenous Case with Constant Cofficients}
+Take the equation $$ay_{n+2} + by_{n+1} + cy_n = 0$$ where $a, b, c$ are known constants. We look for solutions of the form $$y_n = \lambda^n$$
+By substition we get the equation $a\lambda^2 + b\lambda + c = 0$. By solving for $\lambda$ we find a solution
+\begin{enumerate}[label=\roman*)]
+  \item $\lambda$ has two real solutions - $y_n = A\lambda_1^n + B\lambda_2^n$;
+  \item $\lambda$ has one real solution - $y_n = (An + B)\lambda^n$;
+  \item $\lambda$ has only an imaginamry solution - $y_n = \Lambda e^{i\theta},\quad \Lambda^2 := \frac{c}{a}, \theta := tan^{-1}(\frac{4ac - b^2}{-b})$.\\
+\end{enumerate}
+
+\subtitle{Theorem 8.09 - }{Homogenous Case Second-Order Linear Difference Equations}
+The homogenous case finds solutions for $$a_ny_{n+2} + b_ny_{n+1} + c_ny_n = 0$$
+Suppose $y_n = u_n$ and $y_n = v_n$ are solutions to this homogenous equation. Then $$W_n [u_n\ v_n] = W_{n_0}\prod_{j=n_0}^{n-1} \frac{c_j}{a_j}$$
+So $$ u_n.v_{n+1} - v_n.u_{n+1} = W_{n_0}\prod_{j=n_0}^{n-1} \frac{c_j}{a_j}$$
+Which can be rearranged to be in the form of a first order difference equation, such as \textit{Example 8.03}
+$$\frac{u_n}{u_{n+1}}v_{n+1} - v_n = W_{n_0}\prod_{j=n_0}^{n-1} \frac{c_j}{a_j}$$
+Which has a summing factor $$S_n = \frac{1}{u_n}$$
+By multiplying both sides by $S_n$ and simplifying we get
+$$v_n = u_n \sum_{j=n_0}^{n-1} \frac{1}{u_j.u_{j+1}} \prod_{k=n_0}^{n-1} \frac{c_k}{a_k}$$
+Typically you need to solve the product part of the equation to get a result for the sequence $u_n$. \\
+
+\subtitle{Remark 8.10 - }{Inomogenous Case Second-Order Linear Difference Equations}
+Generally the best way to do this is to make an educated guess based on the right hand side of the equation.
+So if the RHS is a polynomial, guess a polynomial, etc. Similar to solving differential equations.
 
 \end{document}
