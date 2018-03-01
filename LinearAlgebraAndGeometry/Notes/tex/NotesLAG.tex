@@ -646,4 +646,26 @@ Let $S : \real^n \to \real^m$ \& $T : \real^k \to \real^n$ be linear maps. Then
   \item $S$ is invertible then $rank(S \circ T) = rank(T)$ and $nullity(S \circ T) = nullity(T)$.
 \end{enumerate}
 
+\section{Determinants}
+%
+\subsection{Definition \& Basic Properties}
+
+\subtitle{Definition 6.01 - }{Determinant Function}
+A \textit{determinant function} $d_n : \real^n \times ... \times \real^n \to \real$ is a function which statisfies three conditions:
+\begin{enumerate}[label=\roman*)]
+  \item \textit{Multilinear} - $d_2(\lambda\vect{a}_1 + \mu\vect{b}, \vect{a}_2) = \lambda d_2(\vect{a}_1, \vect{a}_2) + \mu(\vect{b}, \vect{a}_2)$;
+  \item \textit{Antisymmetric} - $d_2(\vect{a}_1, \vect{a}_2) = -d_2(\vect{a}_2, \vect{a}_1)$;
+  \item \textit{Normalisation} - $d_2(\vect{e}_1, \vect{e}_2) = 1$.
+\end{enumerate}
+
+
+\subtitle{Theorem 6.02 - }{Properties of Determinant}
+\begin{enumerate}[label=\roman*)]
+  \item $det[ ... , \vect{a}_i + \lambda\vect{a}_i , ...] = det[ ... , \vect{a}_i , ...] + \lambda det[ ... , \vect{a}_i , ...]$;
+  \item If $A$ has two identical columns then $det(A) = 0$;
+  \item If $A$ has an all zero column then $det(A) = 0$;
+  \item $det[... \vect{a}_i ... \vect{a}_j ...] = det[... (\vect{a}_i + \lambda\vect{a}_j) ... \vect{a}_j ...]$
+\end{enumerate}
+
+
 \end{document}
