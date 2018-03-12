@@ -488,4 +488,82 @@ Typically you need to solve the product part of the equation to get a result for
 Generally the best way to do this is to make an educated guess based on the right hand side of the equation.
 So if the RHS is a polynomial, guess a polynomial, etc. Similar to solving differential equations.
 
+\section{Several Variables - Differentiability}
+%
+\subtitle{Definition 9.1 - }{Several Variable Function}
+Let $d \in \nat, A \subset \real^d$ \& $B \subset \real^d$.\\
+A function $\vect{f} : A \to B$ is a map which, for all $\vect{x} \in A$, assigns a unique value $\vect{f}(\vect{x}) \in B$.\\
+
+\subtitle{Defintion 9.2 - }{Linear Functions}
+A function $\vect{f} : \real^d \to \real^n$ is \textit{linear} if it can be given in terms of a matrix $A \in M_{n,d}(\real)$ where $$\vect{f}(\vect{x}) = A\vect{x}$$
+
+\subtitle{Theorem 9.3 - }{Properties of Liner Functions}
+If a function is linear then the following are true:
+\begin{enumerate}[label=\roman*)]
+  \item $\vect{f}(\lambda\vect{x}) = \lambda\vect{f}(\vect{x})$;
+  \item $\vect{f}(\vect{x} + \vect{y}) = \vect{f}(\vect{x}) + \vect{f}(\vect{y})$.
+\end{enumerate}
+
+\subtitle{Definition 9.4 - }{Continuous Several Variable Function}
+Let $\vect{f} : A \to B$ and $\vect{a} \in A$. Then $\vect{f}$ is continuous if $$\lim_{\vect{x} \to \vect{a}}\vect{f}(\vect{x}) = \vect{f}(\vect{a})$$
+
+\subsection{The Derivative}
+%
+\subtitle{Defintion 9.5 - }{Norm of a Vector}
+The norm of a vector, $\vect{x} \in \real^d$ is $$||\vect{x}|| := \left( \sum_{j=1}^{d}x_j \right)^{1/2}$$
+
+\subtitle{Definition 9.6 - }{Derivative of Several Variable Function}
+A function, $\vect{f} : \real^d \to \real^n$, is said to be differentiable at the point $\vect{x} \in \real^d$ if the exists an $A \in M_{n,d}(\real)$ such that
+$$\lim_{\vect{h} \to \vect{0}} \frac{||\vect{f}(\vect{x} + \vect{h}) - \vect{f}(\vect{x}) -A\vect{h}||}{||\vect{h}||} = 0$$
+This $A$ is the derivative of $\vect{f}(\vect{x})$. $$\vect{f}'(\vect{x}) := A$$
+
+\subtitle{Remark 9.7}{}
+If consider the following several variable function
+$$\vect{f} = \begin{pmatrix} f_1 \\ \vdots \\ f_n \end{pmatrix}$$
+Then
+$$\vect{f}' = \begin{pmatrix} f'_1 \\ \vdots \\ f'_n \end{pmatrix}$$
+
+\section{Directional \& Partial Derivatives}
+%
+\subsection{Directional Derivative}
+
+\subtitle{Definition 10.1 - }{Direction}
+A direction in $\real^d$ is a vector of unit length. \\
+In $\real^2$ every direction can be given by $\vect{u} = \begin{pmatrix}cos(\theta)\\ sin(\theta)\end{pmatrix}$, where $\theta$ is the angle from positive $x$ axis \\
+In $\real^3$ every direction can be given by $\vect{u} = \begin{pmatrix}sin(\phi)cos(\theta)\\ sin(\phi)sin(\theta)\\ cos(\phi)\end{pmatrix}$, where $\phi$ is the angle from positive $z$ axis and $\theta$ is the angle from the positive $x$ axis.
+
+\subtitle{Definition 10.2 - }{Spherical Co-ordinates}
+The spherical co-ordinates describe points in three dimension space.\\
+The distance of a point from the origin is $$r = \rho sin(\phi)$$
+Then $$\vect{x} = \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} r cos(\theta) \\ r sin(\theta) \\ \rho cos(\phi) \end{pmatrix} = \begin{pmatrix} \rho sin(\phi)cos(\theta) \\ \rho sin(\phi)sin(\theta) \\ \rho cos(\phi) \end{pmatrix}$$
+
+\subtitle{Defintion 10.3 - }{Direction Derivative}
+The direction derivative of $\vect{f}$ in the direction of $\vect{u}$ at the point $\vect{x}_0$ is the vector:
+$$D_{\vect{u}}\vect{f}(\vect{x}_0) := \frac{d}{dt} \vect{f}(\vect{x}_0 + t\vect{u})\bigm|_{t=0}$$
+
+\subtitle{Theorem 10.4}{}
+For all $\vect{f} : \real^d \to \real^n$ the directional derivative at $\vect{u}$ in $\real^d$ we have
+$$D_{\vect{u}} \vect{f} (\vect{x}) = \vect{f}'(\vect{x}).\vect{u}$$
+
+\subsection{Partial Derivative}
+
+\subtitle{Defintion 10.5 - }{Partial Derivative}
+Let $f : \real^d \to \real$. Then the direction derivative, $D_{\vect{e}_j}f(\vect{x})$, if it exists, is called the \textit{partial derivative} of $f$ with respect to $x_j$ at $\vect{x}$.\\
+This is denoted by $$\frac{\partial f}{\partial x_j}(\vect{x}) \mathrm{\ or\ } f_{x_j}(\vect{x})$$
+
+\subtitle{Proposition 10.6 - }{Partial Derivative as a Matrix}
+If $\vect{f} : \real^d \to \real^n$ is differentiable then
+$$\vect{f}'(\vect{x}) = \begin{pmatrix}
+\frac{\partial f_1}{\partial x_1} & \dots & \frac{\partial f_1}{\partial x_d} \\
+\vdots & \ddots & \vdots \\
+\frac{\partial f_n}{\partial x_1} & \dots & \frac{\partial f_n}{\partial x_d}
+\end{pmatrix}$$
+
+\subtitle{Remark 10.7 - }{Second Order Partial Derivatives}
+\begin{alignat*}{2}
+  &\frac{\partial^2 f}{\partial x^2} &&= \frac{\partial}{\partial x} \dotprod \frac{\partial f}{\partial x} \\
+  &\frac{\partial^2 f}{\partial x \partial y} &&= \frac{\partial}{\partial x} \dotprod \frac{\partial f}{\partial y} \\
+  &\frac{\partial^2 f}{\partial y^2} &&= \frac{\partial}{\partial y} \dotprod \frac{\partial f}{\partial y}
+\end{alignat*}
+
 \end{document}
