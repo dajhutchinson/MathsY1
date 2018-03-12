@@ -566,4 +566,61 @@ $$\vect{f}'(\vect{x}) = \begin{pmatrix}
   &\frac{\partial^2 f}{\partial y^2} &&= \frac{\partial}{\partial y} \dotprod \frac{\partial f}{\partial y}
 \end{alignat*}
 
+\section{Gradient \& Chain Rule in Several Variables}
+%
+\subsection{Chain Rule}
+
+\subtitle{Theorem 11.1 - }{Chain rule in Several Variables}
+Let $\vect{f} : \real^d \to \real^n$ \& $\vect{g} : \real^m \to \real^d$ be differentiable. Then
+$$[\vect{f} \dotprod \vect{g}]' = \vect{f}'(\vect{g}(\vect{x})).\vect{g}'(\vect{x})$$
+
+\subsection{Invertible Maps \& Implicit Differentiation}
+
+\subtitle{Definition 11.2 - }{Implicit Differentiation}
+Let $A, B \subset \real^d$ and $\vect{f} : A \to B$.\\
+If $\vect{f}$ is invertible then be cannot denote the inverse by $\vect{f}^{-1} : B \to A$ and $$[\vect{f}^{-1} \dotprod \vect{f}](\vect{x}) = \vect{x}$$
+If $\vect{f}$ and $\vect{f}^{-1}$ are differentiable then by the chain run $$\vect{f}' (\vect{f}^{-1} (\vect{x})) \vect{f}^{-1}\ '(\vect{x}) = I$$
+Hence $$\vect{f}^{-1}\ '(\vect{x}) = [\vect{f}'(\vect{f}(\vect{x}))]^{-1}$$
+
+\subsection{The Gradient}
+
+\subtitle{Defintion 11.3 - }{The Gradient}
+Let $f : \real^d \to \real$ be a map with first-order partial derivatives at every point of $\real^d$.\\
+Then the gradient at a point $\vect{x} \in \real^d$, $\nabla f : \real^d \to \real^d$, is defined as $$\nabla f(\vect{x}) := (f_{x_1}(\vect{x}), \dots, f_{x_d}(\vect{x}))$$
+
+\subtitle{Definition 11.4 - }{Direction of Greatest Change}
+By considering the case in two dimensions then $$(D_{\vect{u}}f)(x,y) = \nabla f(x,y) \dotprod \vect{u}$$
+Where $\vect{u} = (cos\theta, sin\theta)$. \\
+Then $$(D_{\vect{u}}f)(x_0,y_0) = cos\theta.\frac{\partial f}{\partial x}(x_0, y_0) + sin\theta.\frac{\partial f}{\partial y}(x_0, y_0)$$
+The greatest change occurs when
+\begin{alignat*}{2}
+  &\frac{d}{d\theta} [cos\theta.\frac{\partial f}{\partial x}(x_0, y_0) + sin\theta.\frac{\partial f}{\partial y}(x_0, y_0)] &&= 0 \\
+  =>&-sin\theta.\frac{\partial f}{\partial x}(x_0, y_0) + cos\theta.\frac{\partial f}{\partial y}(x_0, y_0)] &&= \\
+  =>&\nabla f(x_0, y_0) \dotprod (-sin\theta, cos\theta) &&= \\
+\end{alignat*}
+We can thus deduce that $$\nabla f(x_0, y_0) \perp (-sin\theta, cos\theta)$$
+So $$\vect{u} \parallel \nabla f(x_0, y_0)$$
+We can then establish the direction, $\vect{u}$ occurs when $\vect{u}$ satisfies $$\vect{u} = \frac{\nabla f(x_0, y_0)}{||\nabla f(x_0, y_0)||}$$
+
+\section{Integration over Two-Dimensional Domains}
+
+\subtitle{Remark 12.1 - }{Notation}
+Let $D \subset \real^2$.\\
+When integrating over $D$ the following notation is used $$\iint_D f(x, y) dx dy$$
+When $D$ is specified e.g. $D = \{(x, y) : g(y) < x < h(y); a < y < b\}$ then we denote it by $$\int_{a}^{b} \left\{\int_{g(y)}^{h(y)} f(x, y) dx \right\} dy$$
+
+\subtitle{Theorem 12.2 - }{Rectangular Domain}
+If we are given a domain between constant values, $D = \{(x, y) : c < y < d; a < x < b\}$ then we perform
+$$V = \int_{c}^{d} \left\{\int_{a}^{b} f(x, y) dx \right\} dy$$
+And can perform the integrations are seperate calculations.
+
+\subtitle{Theorem 12.3 - }{Triangle Domain}
+In triangular domains the value of $x$ depends on $y$, so can be expressed as a function of $y$. If we take $0 < x < a$ and $0 < y < b$ then $x = \frac{ya}{b}$.
+This gives us a domain of $$D = \{(x, y): \frac{ya}{b} < x < a; 0 < y < b\}$$
+We can solve the intregral by performing: $$V = \int_{0}^{b} \left\{ \int_{\frac{ay}{b}}^{a} f(x, y) dx \right\} dy$$
+
+\subtitle{Theorem 12.4 - }{Genreal Domains}
+If we have a domain, $D$, define by $D = \{(x, y) \in \real^2: L(x) \leq y \leq U(x), a \leq x \leq b\}$. Then the integral over $D$ can be found by
+$$V=\int_{a}^{b} \left\{ \int_{L(x)}^{U(x)} f(x,y) dy \right\} dx$$
+
 \end{document}
