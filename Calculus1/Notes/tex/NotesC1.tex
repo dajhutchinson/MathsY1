@@ -609,7 +609,7 @@ Let $D \subset \real^2$.\\
 When integrating over $D$ the following notation is used $$\iint_D f(x, y) dx dy$$
 When $D$ is specified e.g. $D = \{(x, y) : g(y) < x < h(y); a < y < b\}$ then we denote it by $$\int_{a}^{b} \left\{\int_{g(y)}^{h(y)} f(x, y) dx \right\} dy$$
 
-\subtitle{Theorem 12.2 - }{Rectangular Domain}
+\subtitle{Theorem 12.2 - }{Rectangular Domain}in terms of distance from origin
 If we are given a domain between constant values, $D = \{(x, y) : c < y < d; a < x < b\}$ then we perform
 $$V = \int_{c}^{d} \left\{\int_{a}^{b} f(x, y) dx \right\} dy$$
 And can perform the integrations are seperate calculations.
@@ -622,5 +622,105 @@ We can solve the intregral by performing: $$V = \int_{0}^{b} \left\{ \int_{\frac
 \subtitle{Theorem 12.4 - }{Genreal Domains}
 If we have a domain, $D$, define by $D = \{(x, y) \in \real^2: L(x) \leq y \leq U(x), a \leq x \leq b\}$. Then the integral over $D$ can be found by
 $$V=\int_{a}^{b} \left\{ \int_{L(x)}^{U(x)} f(x,y) dy \right\} dx$$
+
+\section{Polar Co-ordinates}
+
+\subtitle{Defintion 13.1 - }{Cartesian to Polar Co-ordinates}
+Polar co-ordinates are an alternative way to denoting a point in two dimensional space, using distance from origin and angle from positive x-axis.\\
+Polar co-ordiantes are given in the form $(r, \theta)$. Using pythagoras' theorem and trigonometry we can see that $$r = \sqrt{x^2 + y^2},\ \theta = tan^{-1}\left(\frac{y}{x}\right)$$
+
+\subtitle{Theorem 13.2 - }{Polar to Cartesian Co-ordinates}
+We can convert a polar co-ordinate, $(r, \theta)$, to cartesian co-ordinates, $(x, y)$ using the following formula
+$$\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} rcos(\theta) \\ rsin(\theta) \end{pmatrix}$$
+
+\subtitle{Remark 13.3 - }{Plotting Curves expressed as polar co-ordiantes}
+There are two common ways to do this:
+\begin{enumerate}[label=\roman*)]
+  \item Convert back to cartesian form;
+  \item Interpolation, plot a few points and link them.
+\end{enumerate}
+
+\subtitle{Theorem 13.4 - }{Computing Curvature of Polar Curve}
+Suppose a curve is defined by $r = R(\theta)$. This means that
+\begin{alignat*}{2}
+  x =& rcos(\theta) =&& R(\theta)cos(\theta) \\
+  y =& rsin(\theta) =&& R(\theta)sin(\theta)
+\end{alignat*}
+By substituting into the equation for curvature of a cartesian curve we get
+$$k(\theta) = \frac{|R(\theta)^2 + 2[R'(\theta)]^2 - R(\theta)R''(\theta)|}{\{R(\theta)^2 + [R'(\theta)]^2\}^{3/2}}$$
+
+\subtitle{Theorem 13.5 - }{Gradient of a Polar Curve}
+Consider the equation $f(x, y) = u(r, \theta)$ then by using substitution and chain rule we can deduce the following equations:
+\begin{alignat*}{1}
+  \frac{\partial f}{\partial x} &= cos(\theta)\frac{\partial u}{\partial r} - \frac{sin(\theta)}{r}\frac{\partial u}{\partial \theta} \\
+  \frac{\partial f}{\partial y} &= sin(\theta)\frac{\partial u}{\partial r} + \frac{cos(\theta)}{r}\frac{\partial u}{\partial \theta}
+\end{alignat*}
+
+\subsection{Change of Variable Formula}
+
+\subtitle{Theorem 13.6 - }{Single Variable Substitution}
+By making the substitution of $x = g(u)$ we can produce the following formula
+$$\int_{g(a)}^{g(b)}f(x) dx = \int_{a}^{b} (f \dotprod g)(u)g'(u)du$$
+
+\subtitle{Theorem 13.6 - }{Double Variable Substitution}
+Suppose we make the following substitution $$\begin{pmatrix} x \\ y \end{pmatrix} = \vect{g}(u, v) := \begin{pmatrix} g_{1}(u, v) \\ g_{2}(u, v) \end{pmatrix}$$
+Then we can produce the following equation $$\iint_{\vect{g}(D)} f(x, y) dx dy = \iint_{D}(f \dotprod \vect{g})(u, v)|det\{\vect{g}'(u, v)\}dudv$$
+
+\subtitle{Remark 13.7 - }{Cartesian to Polar Double Integration}
+By using the formula in 13.6 we can change produce the following equation, by using the substitution $(x, y) = (rcos(\theta), rsin(\theta))$
+$$\vect{g}(r, \theta) = (rcos(\theta), rsin(\theta))$$
+$$\iint_{\vect{g}(D)} f(x, y) dx dy = \iint_D f(rcos(\theta), rsin(\theta)). r . dr d\theta$$
+
+\section{Triple Integration}
+
+\subtitle{Remark 14.1 - }{Triple Integration}
+If we let $D$ be a three dimensional region, so $D \subset \real^3$. Then by doing
+$$\iiint_{D}f(x, y, z)dxdydz$$
+we produce a \textit{hypervolume}.\\
+By setting $f(x, y, z) = 1$ we can find the volume of $D$. If we set it to be a variable equation then we can determine other properties such as mass, center of mass etc.\\
+
+\subtitle{Theorem 14.2 - }{Box-Like region}
+If we define $D$ as $D = \{(x, y , z) \in \real^3 : a \leq x \leq A; b \leq y \leq B; c \leq z \leq C \}$. We can integrate over $D$ by
+$$\iiint_{D}f(x, y , z)dxdydz = \int_{c}^{C} \left\{ \int_{b}^{B} \left\{ \int_{a}^{A} f(x, y, z) dx \right\} dy \right\} dz$$
+
+\subtitle{Theorem 14.3 - }{General Domains}
+If we define $D$ as $D = \{ (x, y , z) \in \real^3: a \leq x \leq A(y, z); b \leq y \leq B(z); c \leq z \leq C \}$. We can integrate over $D$ by
+$$\iiint_{D}f(x, y , z)dxdydz = \int_{c}^{C} \left\{ \int_{b}^{B(z)} \left\{ \int_{a}^{A(x, y)} f(x, y, z) dx \right\} dy \right\} dz$$
+
+\subsection{Substitution with Triple Integrals}
+
+\subtitle{Theorem 14.4 - }{Substitution with Triple Integration}
+If we want to perform a substitution define by
+\begin{alignat*}{1}
+  x &= g_1(u, v, w), \\
+  y &= g_2(u, v, w), \\
+  z &= g_3(u, v, w)
+\end{alignat*}
+Then we can produce the following equation
+$$\iiint_{\vect{g}(D)} f(x, y, z) dx dy dz = \iiint_{D} (f \dotprod \vect{g})(u, v, w).|det \{\vect{g}'(u, v, w)\}| du dv dw$$
+
+\subtitle{Remark 14.5 - }{Cartesian to Spherical Triple Integration}
+If we can to covnert a cartesian region to a spherical region we use the following substitution
+\begin{alignat*}{2}
+  x &= \rho sin(\phi) cos(\theta) &&= g_1(\rho, \phi, \theta), \\
+  x &= \rho sin(\phi) sin(\theta) &&= g_2(\rho, \phi, \theta), \\
+  x &= \rho sin(\phi) &&= g_3(\rho, \phi, \theta)
+\end{alignat*}
+This means $det\{ \vect{g}'(\rho, \phi, \theta) \} = \rho^2 sin(\phi)$. Then
+$$\iiint_{\vect{g}(D)} f(x, y , z) dx dy dz = \iiint_D (f \dotprod \vect{g})(\rho, \phi, \theta).(\rho^2 sin(\phi)).d\rho d\phi d\theta$$
+
+\subsection{Applications of Multiple Integration}
+
+\subtitle{Definition 14.6 - }{Multiple Integrations}
+When integrating over multiple dimensions we dont need to write $\int$ every time, instead we can denoted it as
+$$\int_R f(\vect{x}) d\vect{x}$$
+or
+$$\int \dots \int_R f(\vect{x}) dx_1 \dots dx_d$$
+
+\subtitle{Theorem 14.7 - }{Centre of Mass of a Volume}
+By considering a region $R \subset \real^d$ whose density is describe by $f(\vect{x})$. Then its mass can be found by
+$$m = \int_R f(\vect{x})d\vect{x}$$
+Then its centre of mass, $\bar{x} \in \real^d$, can be found by $$\bar{x} := \frac{1}{m} \int_R \vect{x} f(\vect{x}) d\vect{x}$$
+
 
 \end{document}
