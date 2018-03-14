@@ -22,6 +22,7 @@
 \newcommand{\nat}[0]{\mathbb{N}}
 \newcommand{\field}[0]{\mathbb{F}}
 \newcommand{\vectorspace}[0]{\mathbb{V}}
+\newcommand{\basis}[0]{\mathbb{B}}
 
 % Cover page title
 \title{Linear Algebra \& Geometry - Notes}
@@ -805,5 +806,85 @@ $\vectorspace$ is a (linear) vector space over a field, $\field$ if:
   \item $\lambda(\mu\vect{v}) = (\lambda\mu)\vect{v}$;
   \item $1.\vect{v} = \vect{v}$.
 \end{enumerate}
+
+\subtitle{Theorem 7.8 - }{Vector Spaces over Fields}
+Let $W$ be a vector space over a field, $\field$, and $U$ be a set. Then define
+$$F(U, W) := {f : U \to W}$$
+Then $F(U, W)$ is a vector space over $\field$.\\
+This means $F(U, W)$ is linear so for all $\lambda \in \field\ \&\ f, g \in F(U, W)$ then
+$$(f + g)(u) = f(u) + g(u),\quad (\lambda f)(u) = \lambda f(u)$$
+
+\subsection{Subspace, Linear Combinations \& Span}
+
+\subtitle{Definition 7.9 - }{Subspace}
+Let $\vectorspace$ be a vector space over a field $\field$ and $W \subset \vectorspace$, $W$ is a subspace if it is a vector space for the operations inherited from $\vectorspace$.\\
+
+\subtitle{Theorem 7.10 - }{Properties of Subspaces}
+Let $\vectorspace$ be a vector space and $U \subset \vectorspace$ be a subspace, then $U$ has the following properties:
+\begin{enumerate}[label=\roman*)]
+  \item Not empty - $U \not = \emptyset$;
+  \item Closed under addition - $\forall\ u, v \in U; (u + v) \in U$;
+  \item Closed under multiplication - $\forall\ \lambda \in \field, u \in U; \lambda u \in U$.
+\end{enumerate}
+
+\subtitle{Theorem 7.11 - }{Subsets of Subspaces}
+Let $\vectorspace$ be a vector space over $\field$ and $U, W \subset \vectorspace$ be subspaces. Then $U \cap W$ is a subspace of $\vectorspace$.\\
+
+\subtitle{Remark 7.12 - }{Linear Independence and Span}
+Let $\vectorspace$ be a vector space over field, $\field$, and $S \subset \vectorspace$.\\
+$S$ is linearly dependent if there exists $v \in \vectorspace$ such that $span(S) = span(S\backslash\{v\})$.\\
+
+\subtitle{Definition 7.13 - }{Finite Dimensional}
+Let $\vectorspace$ be a vector space over $\field$.\\
+$\vectorspace$ is finitely dimensional if it is a span of a finite set, $S \subset \vectorspace$, of vectors.\\
+\underline{N.B.} - If a vector space is not finite dimensional, then it is \textit{infinitely dimensional}.\\
+
+\subtitle{Theorem 7.14}{}
+Let $\vectorspace$ be a vector space over $\field$ with $\basis, U \subset \vectorspace$.\\
+If $\basis$ is a basis for $\vectorspace$, with $|\basis| < \infty$, and $U$ is linearly independent then $$|U| \leq |\basis|$$
+
+\subtitle{Theorem 7.15 - }{Linearly Independent Sets as Bases}
+Let $\vectorspace$ be a vector space over $\field$ with $U \subset \vectorspace$ as a linearly independent set.\\
+Then $U$ can be extended to form a basis of $\vectorspace$.
+
+\subsection{Direct Sums}
+
+\subtitle{Definition 7.16 - }{Direct Sum}
+Let $\vectorspace$ be a vector space over $\field$ and $U, W \subset V$ be subspaces with $U \cap W = \emptyset$ then
+$$U \oplus W := U + W$$
+This is the direct sum of $U$ and $W$.\\
+
+\subtitle{Theorem 7.17 - }{Dimension of Direct Sum}
+Let $\vectorspace$ be a vector space over $\field$ and $U, W \subset V$ be subspaces with $U \cap W = \emptyset$ then
+$$dim(U \oplus W) = dim(U) + dim(W)$$
+
+\subtitle{Theorem 7.18 - }{Complement}
+Let $\vectorspace$ be a vector space over $\field$ and $U, W \subset V$ be subspaces with $U \cap W = \emptyset$ if
+$$U \oplus W = V$$
+then $W$ is said to be the complement of $U$ in $V$.
+
+\subsection{Rank-Nullity Theorem}
+
+\subtitle{Definition 7.19 - }{Rank \& Nullity}
+Let $\vectorspace, \mathbb{W}$ be vector spaces over $\field$ and $T : \vectorspace \to \mathbb{W}$ be a linear map. Then
+$$rank(T) := Dim(Im(T)),\quad nullity(T) := Dim(Ker(T))$$
+
+\subtitle{Theorem 7.20 - }{Rank-Nullity Theorem}
+Let $\vectorspace, \mathbb{W}$ be vector spaces over $\field$ and $T : \vectorspace \to \mathbb{W}$ be a linear map, with $dim(\vectorspace) < \infty$ then
+$$Rank(T) + Im(T) = Dim(V)$$
+
+\subsection{Projection}
+
+\subtitle{Defintion 7.21 - }{Projection}
+A linear map $P : V \to V$ is called a projection if $P^2 = P$.\\
+
+\subtitle{Theorem 7.22 - }{Image of Projection}
+Let $P : V \to V$ be a projection then $v \in Im(P)$ iff $P(v) = v$.\\
+
+\subtitle{Theorem 7.22 - }{Direct Sum of Projection}
+Let $P : V \to V$ be a projection then
+$$V = Ker(P) \oplus Im(P)$$
+
+\subsection{Isomorphisms}
 
 \end{document}
