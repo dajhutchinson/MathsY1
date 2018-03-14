@@ -881,10 +881,104 @@ A linear map $P : V \to V$ is called a projection if $P^2 = P$.\\
 \subtitle{Theorem 7.22 - }{Image of Projection}
 Let $P : V \to V$ be a projection then $v \in Im(P)$ iff $P(v) = v$.\\
 
-\subtitle{Theorem 7.22 - }{Direct Sum of Projection}
+\subtitle{Theorem 7.23 - }{Direct Sum of Projection}
 Let $P : V \to V$ be a projection then
 $$V = Ker(P) \oplus Im(P)$$
 
 \subsection{Isomorphisms}
+
+\subtitle{Definition 7.24 -}{Isomorphisms}
+Let $V, W$ be vector spaces over $\field$. \\
+We say that the map $T : V \to W$ is an isomorphism between $V\ \&\ W$ if
+\begin{enumerate}[label=\roman*)]
+  \item $T$ is linear; and
+  \item $T$ is bijective.
+\end{enumerate}
+\underline{N.B.} - If an isomorphism exists between $V$ \& $W$, then they are said to be isomorphic.\\
+
+\subtitle{Theorem 7.25 - }{Dimension of Isomorphic Spaces}
+Let $V$ be a finitely dimensional vector space over $\field$.\\
+If $W$ is isomorphic to $V$ then $$dim(V) = dim(W)$$
+This definition can be extended to say\\
+\centerline{\textit{If two vector spaces have the same dimension, then they are isomorphic.}}\\
+
+\subtitle{Proposition 7.26 - }{Multiple Bases}
+Let $A = \{\vect{a}_1 , \dots , \vect{a}_n\}$ and $B = \{\vect{b}_1 , \dots , \vect{b}_n\}$ be different bases for $V$.\\
+Define $T_A : \field^n \to V$ and $T_B : \field^n \to V$ such that
+$$T_A(x_1, \dots , x_n) = x_1.\vect{a}_1 + \dots + x_n.\vect{a}_n; \quad T_B(x_1, \dots , x_n) = x_1.\vect{b}_1 + \dots + x_n.\vect{b}_n$$
+Then for all $\vect{v} \in V$ there are two ways of expressing $\vect{v}$.
+$$x_1.\vect{a}_1 + \dots + x_n.\vect{a}_n = \vect{v} = x_1.\vect{b}_1 + \dots + x_n.\vect{b}_n$$
+Unless $A = B$ then $x_i \not = y_i$ for at least one $i \in \nat, i \leq n$.\\
+
+\subtitle{Theorem 7.27 - }{Conversion Matrices}
+Let $A, B$ be different bases for vector space $V$, with $dim(V) = n$.\\
+Then an $n \times n$ matrix, $C_{AB}$ can be used to convert elements given in basis $A$ to now be givin in basis $B$.\\
+\\Let $\vect{v} \in V$ and $\vect{x} = T_{A}(\vect{x})\ \& \vect{u} = T_{B}(\vect{x})$ then $$\vect{y} = C_{AB}\vect{x}$$
+
+\subtitle{Theorem 7.28 - }{General Relationship between Bases}
+Let $V$ be a vector space over $\field$, with $dim(V) = n$.\\
+Let $A, B$ be different bases for $V$ with $A = \{\vect{a}_1 , \dots , \vect{a}_n\}\ \&\ B = \{\vect{b}_1 , \dots , \vect{b}_n\}$\\
+Then for all $\vect{v} \in V$ we have that $$\vect{v} = \sum_{i=1}^{n} v_i . \vect{a}_i = \sum_{i=1}^{n} v_i . \vect{b}_i $$
+Let $C_{AB} = (c_{ij})$ be the conversion matrix from $A$ to $B$ then $$v_j = \sum_{i=1}^{n} c_{ij}\vect{b_i}$$
+
+\subtitle{Theorem 7.29 - }{Properties of Transition Matrices}
+Let $A, B, C \subset V$ all be different bases for $V$ then
+\begin{enumerate}[label=\roman*)]
+  \item $C_{AA} = I$;
+  \item $C_{AB}C_{BA} = I$;
+  \item $C_{CA}C_{AB} = C_{CB}$.\\
+\end{enumerate}
+
+\subtitle{Theorem 7.30 - }{Linear Maps between Vector Spaces as Matrices}
+Let $V, W$ both be vector spaces over $\field$, with $dim(V) = n$ and $dim(W) = m$, and $T : V \to W$ be a linear map.\\
+Let $A = \{\vect{a}_1, \dots , \vect{a}_n\} \subset V$ and $B = \{\vect{b}_1, \dots , \vect{b}_n\} \subset W$ be bases for $V\ \&\ W$ respectively.
+Then we can define an $n \times m$ matrix $$M_{AB}(T) = (m_{ij}) \in M_{n,m}(\field)$$
+Where $m_{ij}$ are defined to satisfy $$T(a_j) = \sum_{i=1}^{m} m_{ij}b_i$$
+Then $$\vect{w} = M_{AB}(T)\vect{v}$$
+With $\vect{v} \in V, \vect{w} \in W$
+
+\subtitle{Theorem 7.31 - }{Change Basis of Linear Map}
+Let $V$ be a vector space over $F$ and $U, W \subset V$ be different bases for $V$.\\
+Define $T : V \to V$ be a linear map and $C$ to be the transition matrix from basis $U \to W$.\\
+Then $C^{-1}$ is the transition matrix from $W \to U$.\\
+Set $A$ to be the matrix representation of $T$ in basis $U$. Then
+$$A' = C^{-1}AC$$
+Where $A'$ is the matrix representation of $T$ in basis $W$.
+
+\section{Eigenvalues \& Eigenvectors}
+
+\subsection{Characteristic Polynomial}
+
+\subtitle{Definition 8.1 - }{Eigenvectors \& Eigenvalues}
+Let $\vect{v} \in V\backslash\{\vect{0}\}$ and $T : V \to V$ be a linear operator.\\
+$\vect{v}$ is called an \textit{eigenvector} of $T$ if $$T(\vect{v}) = \lambda\vect{v}, \quad \lambda \in \field$$
+This $\lambda$ is the associatiated \textit{eigenvalue} for $\vect{v}$.\\
+
+\subtitle{Definition 8.2 - }{Spectrum}
+The set of eigenvectors of a linear operator $T : V \to V$ is called the spectrum of $T$, generally denoted as $$Spec(T) := \{\vect{v} \in V : T(\vect{v}) = \lambda\vect{v}, \lambda \in \field\}$$
+
+\subtitle{Defintion 8.3 - }{Diagonisable}
+A linear operator is \textit{diagonisable} if there exists a basis of eigenvectors for it.\\
+
+\subtitle{Remark 8.4 - }{Finding Eigenvalues}
+Let $A$ be the matrix which represents a linear operator $T$, and $\vect{X}$ be a general eigenvector for $T$
+\begin{alignat*}{1}
+  T(\vect{x}) = A\vect{x} &= \lambda\vect{x}
+  => (A - \lambda.I)\vect{x} = \vect{0}
+\end{alignat*}
+Then $\lambda$ is an eigenvalue if it satisfies $$det(A - \lambda.I) = 0$$
+
+\subtitle{Definition 8.5 - }{Characteristic Polynomial}
+The polynomial which is equivalent to $det(A - \lambda.I)$ is called the \textit{characteristic polynomial} of $A$.
+$$p_A(\lambda) := det(A - \lambda.I)$$
+\underline{N.B.} - $\lambda$ is an eigenvalue for $A$ if $p_A(\lambda) = 0$\\
+
+\subtitle{Remark 8.6 - }{Finding Eigenvectors}
+Once we have found all $\lambda_1 , \dots , \lambda_k$ that satisfy $p_A(\lambda_i) = 0$ then we can find the eigenvectors, $\vect{x}_i$, of $A$
+$$(A - \lambda.I)\vect{x}_i = \vect{0}$$
+A good way to start is to produce the linear equations
+$$\sum_{j=1}^{n} (A - \lambda.I)_{ij}.x_j = 0$$
+For all $i \leq n$. Then solve these, as a series of simultaneous equations, to find the values $x_j$ which produce the eigenvector $\vect{x}$.\\
+Repeat this process for all $\lambda_1 , \dots , \lambda_k$ to find all eigenvectors for $A$.
 
 \end{document}
