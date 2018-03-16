@@ -19,6 +19,8 @@
 \newcommand{\dotprod}[0]{\boldsymbol{\cdot}}
 \newcommand{\real}[0]{\mathbb{R}}
 \newcommand{\nat}[0]{\mathbb{N}}
+\newcommand{\field}[0]{\mathbb{F}}
+
 \setlength\parindent{0pt}
 
 % Cover page title
@@ -722,5 +724,68 @@ By considering a region $R \subset \real^d$ whose density is describe by $f(\vec
 $$m = \int_R f(\vect{x})d\vect{x}$$
 Then its centre of mass, $\bar{x} \in \real^d$, can be found by $$\bar{x} := \frac{1}{m} \int_R \vect{x} f(\vect{x}) d\vect{x}$$
 
+\section{Local Extrema \& Taylor's Theorem in Several Variables}
+
+\subsection{Taylor's Theorem}
+
+\subtitle{Theorem 15.1 - }{Taylor's Theorem for a Single Variable}
+If $f : \real \to \real$ is smooth and $a \in \real$, then
+$$f(x) = f(a) + (x-a)f'(a) + \frac{1}{2!}(x-a)^2f''(a) + \dots$$
+$$f(x) = \sum_{j=1}^{\infty} \frac{1}{j!}.(x-a)^j.\left[\frac{d^jf}{dx^j}(a)\right]$$
+
+\subtitle{Theorem 15.2 - }{Taylor's Theorem for a Two Variables}
+If $f : \real^2 \to \real$ is smooth and $a, b \in \real$, then
+$$f(x, y) = f(a,b) + f'(a,b)\begin{pmatrix} x-a \\ y-b \end{pmatrix} + \frac{1}{2} \begin{pmatrix} x-a \\ y-b\end{pmatrix}^tf''(a,b)\begin{pmatrix} x-a \\ y-b\end{pmatrix} + \dots$$
+\underline{N.B} - $f'(x,y) \in M_{1,2}(\field)$ \& $f''(x,y) \in M_2(\field)$
+
+\subsection{Local Extrema}
+
+\subtitle{Definition 15.3 - }{Local Minima}
+Let $f : \real^d \to \real$.\\
+We say the point $\vect{x}_0 \in \real^d$ is a local minimum if
+$$\exists\ \delta > 0\ st\ \forall\ \vect{x} \in \real^d, ||\vect{x} - \vect{x}_0|| < d \mathrm{\ then\ } f(\vect{x_0}) \leq f(\vect{x})$$
+
+\subtitle{Definition 15.4 - }{Local Maxima}
+Let $f : \real^d \to \real$.\\
+We say the point $\vect{x}_0 \in \real^d$ is a local maxima if
+$$\exists\ \delta > 0\ st\ \forall\ \vect{x} \in \real^d, ||\vect{x} - \vect{x}_0|| < d \mathrm{\ then\ } f(\vect{x_0}) \geq f(\vect{x})$$
+
+\subtitle{Definition 15.5 - }{Local Extremum}
+A point is a \textit{Local Extremum} if it is either a local minimum or maximum.\\
+
+\subtitle{Definition 15.6 - }{Critical point}
+A point, $\vect{x}_0$, is a critical point of $f$ if $$f'(\vect{x}_0) = \vect{0}$$
+
+\subtitle{Proposition 15.7 - }{Extremum and Critical Point}
+If $\vect{x}_0$ is a local extremum of $f$ then it is a critical point of $f$.\\
+
+\subtitle{Remark 15.8 - }{Classifing Critical Points}
+Let $x_0$ be a critical point of $f$.\\
+Then Taylor's theorem says that
+$$f(\vect{x}) = f(\vect{x}_0) + \frac{1}{2}(\vect{x} - \vect{x}_0)^t.f''(\vect{x}_0)(\vect{x} - \vect{x}_0) + ...$$
+
+\subtitle{Definition 15.9 - }{Define \& Indefine Matrices}
+Let $A \in M_d$, then $A$ is
+\begin{enumerate}[label=\roman*)]
+  \item Positive definite if $\forall\ \vect{x} \in \real^d, \vect{x} \not = \vect{0} => \vect{x}^tA\vect{x} > 0$;
+  \item Negative definite if $\forall\ \vect{x} \in \real^d, \vect{x} \not = \vect{0} => \vect{x}^tA\vect{x} < 0$;
+  \item Indefinite if $\exists\ \vect{x}, \vect{y} \in \real^d\ st\ \vect{x}^tA\vect{x} > 0 \&\ \vect{y}^tA\vect{y} < 0$.
+\end{enumerate}
+
+\subtitle{Theorem 15.10}{Extrema and Definite Matrices}
+The critical point $\vect{x}_0 \in \real^d$ is a
+\begin{enumerate}[label=\roman*)]
+  \item Local minimum iff $f''(\vect{x}_0)$ is a positive-definite;
+  \item Local maximum iff $f''(\vect{x}_0)$ is a negative-definite;
+\end{enumerate}
+If $f''(\vect{x}_0)$ is indefinite then we say that $\vect{x}_0$ is a \textit{saddle}.\\
+
+\subtitle{Theorem 15.11 - }{Definite Matrices and Eigenvalues}
+We say $f''(\vect{x}_0)$ is
+\begin{enumerate}[label=\roman*)]
+  \item Positive definite iff all its eigenvalues are strictly positive;
+  \item Negative definite iff all its eigenvalues are strictly negative;
+  \item Indefinite if it has both positive and negative eigenvalues.
+\end{enumerate}
 
 \end{document}

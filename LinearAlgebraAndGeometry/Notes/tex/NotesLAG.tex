@@ -979,6 +979,51 @@ $$(A - \lambda.I)\vect{x}_i = \vect{0}$$
 A good way to start is to produce the linear equations
 $$\sum_{j=1}^{n} (A - \lambda.I)_{ij}.x_j = 0$$
 For all $i \leq n$. Then solve these, as a series of simultaneous equations, to find the values $x_j$ which produce the eigenvector $\vect{x}$.\\
-Repeat this process for all $\lambda_1 , \dots , \lambda_k$ to find all eigenvectors for $A$.
+Repeat this process for all $\lambda_1 , \dots , \lambda_k$ to find all eigenvectors for $A$.\\
+
+\subtitle{Theorem 8.7 - }{Similar Characteristic Polynomial}
+Let $C$ be an invertible matrix.\\
+Define $A' = C^{-1}AV$ where $A$ \& $A'$ are conjugate or similar.\\
+Then $p_A(\lambda) = p_{A'}(\lambda)$.\\
+
+\subtitle{Theorem 8.8 - }{Characteristic Polynomial \& Basis}
+The characteristic polynomial for $T$ is the same, regardless of the basis of $T$.\
+
+\subtitle{Definition 8.9 - }{Trace}
+Let $A \in M_n(\field)$.\\
+Then the trace of $A$ is defined as
+$$Tr(A) := \sum_{i=1}^{n}a_{ii}$$
+\underline{N.B.} - Trace is sometimes called \textit{Spur}.
+
+\subtitle{Remark 8.10}{}
+As the terms after the first term of the determinat of a matrix do not contribute to the powers of $\lambda$ in the characteristic equation then we can ignore them.
+This means we can deduce that
+$$p_T(\lambda) = (-1)^n\lambda^n + (-1)^{n-1}(Tr(A)) + \dots + det(A)$$
+
+\subtitle{Theorem 8.11 - }{Diagonalised Matrix}
+Let $T$ be a diagonisable matrix with eigenvalues $\{\lambda_1, \lambda_2, \dots , \lambda_n\}$.\\
+Then $T$ can be represented by $$\Delta = \begin{pmatrix} \lambda_1 & 0  & \dots & 0\\ 0 & \lambda_2 & & \vdots \\ \vdots & & \ddots & \vdots \\ 0 & \dots & \dots & \lambda_n \end{pmatrix}$$
+\underline{N.B.} - $T$ can also be represented in any basis with, $C$ as the transition matrix, by $C^{-1}\Delta C$.
+
+\subtitle{Theorem 8.11 - }{Relationship between Matrix and its Diagonalised Form}
+Let $T$ be a matrix and $\Delta$ be its diagonalised form, then
+$$Det(T) = Det(\Delta) = \prod_{j=1}^n \lambda_j$$
+And $$Tr(T) = Tr(\Delta) = \sum_{j=1}^n \lambda_j$$
+
+\subtitle{Theorem 8.12 - }{Distinct Eigenvectors and Diagonisability}
+Eigenvectors, which correspond to distinct eigen values, are linearly independent.\\
+Thus if a matrix, $A$, has only distinct eigenvalues then it is diagonisable.\\
+
+\subtitle{Remark 8.13 - }{Degree of Characteristic Equation}
+Eigenvalues are rrots of $p_A(\lambda) = 0$ where $p_A$ is an equation of degree $dim(A)$.\\
+
+\subtitle{Remark 8.14 - }{Non-Distinct Roots of Characteristic Equation}
+If the roots of $P_A(\lambda)$ are not distinct then $A$ may be diagonisable depending on how many eigenvectors are found.
+
+\subtitle{Theorem 8.15 - }{Vieta's Theorem}
+If $\lambda_1 , \dots , \lambda_n$ are roots of the Polynomial
+$$\lambda_n + a_1\lambda^{n-1} + \dots + a_n = 0 \equiv p(\lambda) = 0$$
+Then $p(\lambda) = (\lambda-\lambda_1)(\lambda - \lambda_2) \dots (\lambda - \lambda_n)$.\\
+So $p(\lambda)$ factorises in the produce $\prod_{i=1}^{n}(\lambda - \lambda_i)$ but the $\lambda_i$s are not necessarily distinct.
 
 \end{document}
