@@ -1,0 +1,268 @@
+% Ctrl + alt + b to build & preview (Linux)
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in, paperwidth=8.3in, paperheight=11.7in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+\begin{document}
+
+\pagestyle{fancy}
+\setlength\parindent{0pt}
+\allowdisplaybreaks
+
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\subtitle}[2]{\textbf{#1}\textit{#2} \\}
+\newcommand{\dotprod}[0]{\boldsymbol{\cdot}}
+\newcommand{\real}[0]{\mathbb{R}}
+\newcommand{\nat}[0]{\mathbb{N}}
+\newcommand{\field}[0]{\mathbb{F}}
+\newcommand{\integers}[0]{\mathbb{Z}}
+\newcommand{\vectorspace}[0]{\mathbb{V}}
+\newcommand{\basis}[0]{\mathbb{B}}
+
+% Cover page title
+\title{Introduction to Group Theory - Notes}
+\author{Dom Hutchinson}
+\date{\today}
+\maketitle
+
+% Header
+\fancyhead[L]{Dom Hutchinson}
+\fancyhead[C]{Introduction to Group Theory - Notes}
+\fancyhead[R]{\today}
+
+\tableofcontents
+
+% Start of content
+\newpage
+
+\section{Symmetries}
+
+\subtitle{Definition 1.01 - }{Permutation}
+A \textit{permutation} of a set, $G$, is a bijection $f : G \to G$.\\
+\underline{N.B.} - Since the composition of two bijections is also a bijection, then the composition of two permutations is a permutation.\\
+
+\subtitle{Definition 1.02 - }{Symmetries of a Polygon}
+A \textit{symmetry} of an n-sided polygon is a permutation of the vertices which preserves adjacency.\\
+So if the vertices, $u, v$, are adjacent then the permutation $f$ is a symmetry if $f(u)$ \& $f(v)$ are adjacent.\\
+
+\subtitle{Remark 1.03 - }{Symmetries}
+When dealing with symmetries of a shape then they can only be rotations or reflections.\\
+
+\subtitle{Definition 1.04 - }{Identity}
+The trivial symmetry, which maps an element to itself, is known as the identity.\\
+
+\subtitle{Remark 1.05 - }{Multiple Composition}
+Let $R, S\ \&\ T$ be permutations. Then $(RS)T$ means do $T$, then $S$, then $R$. So $$(RS)T = R(ST)$$
+
+\subtitle{Remark 1.06 - }{One-Line Notation}
+Let $S = \{a_1, \dots, a_n\}$ be a set and $\sigma : S \to S$ be a permutation.\\
+One-Line notation denotes the result of $\sigma$ by $$\begin{pmatrix} \sigma(a_1) & \dots & \sigma(a_n) \end{pmatrix}$$
+So if $\sigma$ maps $1 \to 2, 2 \to 3, \dots, n \to 1$ then it can be denoted by $$\begin{pmatrix} 2  & 3 & \dots & n & 1 \end{pmatrix}$$
+
+\subtitle{Remark 1.07 - }{Two-Line Notation}
+Let $S = \{a_1, \dots, a_n\}$ be a set and $\sigma : S \to S$ be a permutation.\\
+Two-Line notation denotes the result of $\sigma$ by $$\begin{pmatrix} a_1 & \dots & a_n \\ \sigma(a_1) & \dots & \sigma(a_n) \end{pmatrix}$$
+So if $\sigma$ maps $1 \to 2, 2 \to 3, \dots, n \to 1$ then it can be denoted by $$\begin{pmatrix} 1 & 2 & \dots & n-1 & n \\ 2  & 3 & \dots & n & 1 \end{pmatrix}$$
+
+\subtitle{Remark 1.08 - }{Cycle Decomposition Notation}
+Let $S = \{a_1, \dots, a_n\}$ be a set and $\sigma : S \to S$ be a permutation.\\
+Cycle Decomposition Notation denotes $\sigma$ as the product of disjoint cycles.\\
+Each element in a cycle goes the position of the element after it in the list, the last element goes to the position of the first.\\
+$()$ denotes no variation. The operation of $\sigma$ is denoted by $$\begin{pmatrix} a_1 & \sigma(a_1) & \sigma(\sigma(a_1)) & \dots & \sigma(\dots\sigma(a_1)\dots)\end{pmatrix}$$
+
+\section{Groups}
+
+\subtitle{Definition 2.01 - }{Binary Operation}
+A \textit{binary operation} on a set $X$ is a fuction from $X \times X \to X$.\\
+
+\subtitle{Remark 2.02 - }{Asteriks Notation}
+Binary operations are general denoted by an $*$. $$f(x, y) = x*y$$
+
+\subtitle{Remark 2.03 - }{Set of Permutations}
+A set of permutations have a binary operation for composition.\\
+Let $f, g, h$ be permutations of a set $X$ and $x \in X$ $$f(x) \times g(x) \to h(x)$$
+
+\subtitle{Definition 2.04 - }{Commutative}
+A binary operation, $*$, on a set $X$ is commutative if order of input doesn't affected the outcome. $$x * y = y * x,\forall\ x, y \in X$$
+
+\subtitle{Defintion 2.05 - }{Group}
+A group is a set, $G$, with an associated binary operation, $*$, such that
+\begin{enumerate}[label=\roman*)]
+  \item It is \textit{associative}, $(x * y) * z = x * (y * z)\ \forall\ x, y, z \in G$;
+  \item It as an \textit{identity element}, $\exists\ e \in G$ such that $x * e = x = e * x$;
+  \item For all $x \in G\ \exists\ x^{-1} \in G$ st $xx^{-1} = e = x^{-1}x$.\\
+\end{enumerate}
+
+\subtitle{Remark 2.06 - }{Group Notation}
+The group of set $G$ and binary operation $*$ is denoted by $(G, *)$.\\
+
+\subtitle{Definition 2.07 - }{Abelian Group}
+An \textit{Abelian group}, $(G, *)$ is one where $*$ is commutative.\\
+
+\subtitle{Definition 2.08 - }{Commute}
+If $x, y \in G$ satisfy $x*y = y*x$ then it is said that $x\ \&\ y$ commute.\\
+
+\subtitle{Remark 2.08 - }{Multiplicty Notation}
+Multiplicity notation is used to simplify equations with a single binary operator, by not writting $*$. $$x * y = xy$$
+
+\section{Elementary Consequences of the Definition}
+
+\subtitle{Proposition 3.1 - }{Right Cancellation}
+If $a, b, x \in G$ and $$ax = bx => a = b$$
+
+\subtitle{Proposition 3.2 - }{Left Cancellation}
+If $a, b, x \in G$ and $$xa = xb => a = b$$
+
+\subtitle{Proposition 3.3 - }{Uniqueness of Identity}
+If $a, x, e \in G$ with $e$ as the identity of $G$ then $$ax = a => e = x$$
+
+\subtitle{Proposition 3.4 - }{Uniqueness of Inverses}
+If $x, y, e \in G$ with $e$ as the identity of $G$ then $$xy = e => x = y^{-1}\ \&\ y = x^{-1}$$
+
+\subtitle{Proposition 3.5 - }{Inverse of Inverse}
+Let $x \in G$ then $$(x^{-1})^{-1} = x$$
+
+\subtitle{Proposition 3.6 - }{Composite Inverses}
+Let $x, y \in G$ then $$(xy)^{-1} = y^{-1}x^{-1}$$
+
+\subtitle{Definition 3.7 - }{Caley Table}
+Let $e, x, y$ be all the elements of $G$ then the result of all compositions can be displayed in a Caley Table.
+\begin{center}
+\begin{tabular}{c|ccc}
+ & e & x & y \\
+ \hline
+ e & e & x & y \\
+ x & x & xx & yx \\
+ y & y & xy & yy
+\end{tabular}
+\end{center}
+The operation of the column is done first, then the operation of the row.\\
+\underline{N.B.} - All values in any given column or row are unique, so all elements of $G$ appear exactly once.\\
+
+\subtitle{Definition 3.8 - }{Powers of Elements}
+If $n > 0$ then $x^n$ means $x * \dots * x$ $n$ times. $$x^{-n} = (x^{n})^{-1} = (x^{-1})^n,\quad x^0 = e$$
+
+\subtitle{Definition 3.9 - }{Composition of Powers}
+For $m,n \in \integers$ $$x^mx^n = x^{m+n}$$
+
+\section{Dihedral Groups}
+
+\subtitle{Definition 4.01 - }{Order}
+The \textit{order} of a group $G$ is the number of elements in $G$.\\
+\underline{N.B.} - Order of $G$ is denoted by $|G|$.\\
+
+\subtitle{Definition 4.02 - }{Dihedral Groups}
+The dihedral group $D_{2n}$ is the group of symmetries of a regular n-sided polygon, with $n \geq 3$.
+\underline{N.B.} - $|D_{2n}| = 2n$.\\
+
+\subtitle{Proposition 4.03 - }{Elements of Dihedral Group}
+Let $a$ describe a rotation by $\frac{2\pi}{n}$ and $b$ a reflection thenAn External
+$$D_{2n} = \{ e, a, a^2, \dots, a^{n-1}, b, ab , \dots , a^{n-1}b\}$$
+\underline{N.B.} - $a^n = e = b^2,\quad a^{-1} = a^{n-1}, b = b^{-1}$.\\
+
+\subtitle{Proposition 4.04 - }{Reflections \& Rotations}
+Let $a$ denote a rotation and $b$ denoted a reflection then $$ab = ba^{-1}$$
+
+\section{Subgroups}
+
+\subtitle{Definition 5.01 - }{Subgroup}
+A subgroup of a group $G$ is a group formed of a subset of $G$ with the same associated operation.\\
+\underline{N.B.} - $H$ being a subgroup of $G$ is denoted by $H \leq G$.\\
+
+\subtitle{Definition 5.02 - }{Non-Trivial Subgroup}
+A subgroup $H$ of $G$ is non-trivial if $H \not = \{ e \}$.\\
+
+\subtitle{Definition 5.03 - }{Proper Subgroup}
+A subgroup $H$ of $G$ is a proper subgroup if $H \not = G$.\\
+
+\subtitle{Theorem 5.04 - }{Subgroup}
+A subset $H$ of a group $G$ is a subgroup iff
+\begin{enumerate}[label=\roman*)]
+  \item It is closed under binary operation $x, y \in H => xy \in H$;
+  \item It has an identity element $\exists\ e \in H$ st $xe = x\ \forall\ x \in H$;
+  \item All elements have an inverse $\forall\ x \in H\ \exists\ x^{-1} \in H$ st $xx^{-1} = e$.\\
+\end{enumerate}
+
+\subtitle{Proposition 5.05 - }{Pairs of Subgroups}
+Let $G, H, K$ be groups with $H \leq G$ \& $K \leq G$ then $H \cap K \leq G$.\\
+
+\section{Order of Elements}
+
+\subtitle{Definition 6.01 - }{Order of an Element}
+Let $x \in G$ such that $x^n = e$, then the order of $x$ is the smallest such $n$.$$ord(x) = n$$
+\underline{N.B.} - If there is no such $n$ then $ord(x) = \infty$.\\
+
+\subtitle{Proposition 6.02 - }{Uniqueness of Powers}
+Let $x \in G$ with $ord(x) = \infty$ then $$x^i \not = x^j\ \forall\ i \not = j$$
+
+\subtitle{Theorem 6.03 - }{Order Elements in a Finite Group}
+Every element of a finite group has finite order.\\
+
+\subtitle{Theorem 6.04 - }{Properties of Order of an Element}
+Let $x \in G$ such that $ord(x) = n < \infty$ then if
+\begin{enumerate}[label=\roman*)]
+  \item $x^i = e \iff n | i$;
+  \item $x^i = x^j \iff i \equiv j (mod n)$;
+  \item $x^{-1} = x^{n-1}$;
+  \item The powers of $x$ less than $n$ are all distinct.\\
+\end{enumerate}
+
+\subtitle{Proposition 6.05 - }{Order of Powers of Elements}
+let $x \in G, i \in \integers$.
+\begin{enumerate}[label=\roman*)]
+  \item If $ord(x) = \infty$ then $ord(x^i) = \infty$ if $i \not = 0$;
+  \item If $ord(x) = n < \infty$ then $\displaystyle{ord(x^i) = \frac{n}{gcd(n,i)}}$.
+\end{enumerate}
+
+\section{Cyclic Groups \& Cyclic Subgroups}
+
+\subtitle{Definition 7.01 - }{Generating Cyclic Groups}
+Let $G$ be a group and $x \in G$.\\
+We define a cyclic group generated by $x$ $$\langle x \rangle = \{x^i : i \in \integers \} \leq G$$.
+
+\subtitle{Theorem 7.02 - }{Cyclic Subgroup}
+Let $x \in G$ then $\langle x \rangle$ is a subgroup of $G$.\\
+
+\subtitle{Definition 7.03 - }{Cyclic Group}
+A group $G$ is cyclic if $G = \langle x \rangle$ for some $x \in G$.\\
+\underline{N.B.} - Here $x$ is called the generator of $G$.\\
+
+\subtitle{Theorem 7.04 - }{Abelian Cyclic Groups}
+Every cyclic group is abelian.\\
+
+\subtitle{Theorem 7.05 - }{Finding Cyclic Groups}
+Let $G$ be a group with $|G| = n < \infty$.\\
+$G$ is cyclic iff $\exists\ x \in G$ such that $ord(x) = n$.\\
+
+\subtitle{Theorem 7.06 - }{Subgroups of Cyclic Groups}
+Every subgroup of a cyclic group is also a cyclic group.\\
+
+\section{Groups from Modular Arithmetic}
+
+\subtitle{Definition 8.01 - }{Congurence Class}
+Let $n \in \nat$ then $a \equiv b (mod\ n)$ means $n | a - b$.\\
+There are $n$ \textit{congurence classes} $[0], [1], \dots , [n-1]$ where every integer is in exactly one of these classes.
+$$[x] = \{y \in \integers : x \equiv y (mod\ n) = \{ \dots , a-n , a , a+n , a+2n , \dots\}$$
+
+\subtitle{Definition 8.02 - }{Congurence groups}
+Let $n \in \nat$ then we denoted a congurence group of $n$ by
+$$\frac{\integers}{n\integers} = {[0], [1] , \dots , [n-2] , [n-1]}$$
+\underline{N.B} - Addition and multiplication are valid binary operations for congurence groups.\\
+
+\subtitle{Definition 8.03 - }{Properties of Congurence Groups}
+Let $[a], [b] \in \frac{\integers}{n\integers}$ for some $n \in \nat$ then
+$$[a] + [b] = [a + b], [a].[b] = [a.b]$$
+
+\subtitle{Theorem 8.04 - }{Abelian Congurence Groups}
+Let $n \in \nat$ then $\frac{\integers}{n\integers}$ is an abelian group.\\
+
+\subtitle{Theorem 8.05 - }{Cyclic Abelian Congurence Groups}
+The group $\left( \frac{\integers}{n\integers}, + \right) = \langle [1] \rangle$, so it is a cyclic group.\\
+The group $\left( \frac{\integers}{n\integers}, \dotprod \right)$ is never a group for $n > 1$ as $[0][x] = [0] \not = [1] = e$.
+\end{document}
