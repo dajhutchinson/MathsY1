@@ -788,4 +788,31 @@ We say $f''(\vect{x}_0)$ is
   \item Indefinite if it has both positive and negative eigenvalues.
 \end{enumerate}
 
+\section{Systems of Linear Differential Equations}
+
+\subtitle{Theorem 16.1 - }{Linear Case}
+Define a function, $\vect{f} : \real^d \to \real^d$, such that $\vect{f}(\vect{x}) = A\vect{x}$ where $\vect{x} \in \real^d$ and $A \in M_d$ is diagonisable.\\
+Let $\{\vect{v}_1 , \dots , \vect{v}_d \}$ be eigenvectors for $A$, with $\{ \lambda_1 , \dots , \lambda_d \}$ as the corresponding eigenvalues.\\
+Then the general solution is $$\vect{x}(t) = \sum_{j=1}^d c_j(0) . e^{\lambda_j.t}.\vect{v}_j$$ values of $c$ are determined in the particular solution from the initial solutions.\\
+
+\subtitle{Definition 16.2 - }{Equilibria}
+Let $\vect{f} : \real^d \to \real^d$, $\vect{e} \in \real^d$ is said to be an equilibrium of $\vect{f}$ if
+$$\vect{f}(\vect{e}) = \vect{0}$$
+
+\subtitle{Theorem 16.3 - }{Particular Solutions and Equilibria}
+Let $t \in \real$, $\vect{f} : \real^d \to \real^d$ \& $\vect{x} : \real \to \real^d$. If
+$$\vect{f}(\vect{x}(t)) = \vect{0} $$
+then $t$ is a particular solution of $\vect{f}$.\\
+
+\subtitle{Definition 16.4 - }{Stable/Unstable Equilibria}
+Let $\vect{e}$ be an equilibrium. $\vect{e}$ is said to \textit{stable} if
+$$\forall\ \epsilon > 0, \exists\ \delta > 0\ st\ \forall\ \vect{x}(0) \in \real^d\ \&\ t \geq 0, ||\vect{x}(0) - \vect{e}|| < \delta => ||\vect{x}(t) - \vect{e}|| < \epsilon$$
+Otherwise the equilibrium point is \textit{unstable}.\\
+
+\subtitle{Theorem 16.5 - }{Determining Stability of Equilibria}
+If for all eigenvalues, $\lambda_j$, of $\vect{f}'(\vect{e})$ is such that
+$$Re(\lambda_j) < 0$$
+then the equilibrium, $\vect{e}$, is \textit{stable}.\\
+If there exists one eigenvalue, $\lambda_i$, where $Re(\lambda_i) > 0$ then $\vect{e}$ is \textit{unstable}.
+
 \end{document}
