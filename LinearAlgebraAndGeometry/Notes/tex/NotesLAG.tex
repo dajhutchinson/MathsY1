@@ -23,6 +23,7 @@
 \newcommand{\field}[0]{\mathbb{F}}
 \newcommand{\vectorspace}[0]{\mathbb{V}}
 \newcommand{\basis}[0]{\mathbb{B}}
+\newcommand{\complex}[0]{\mathbb{C}}
 
 % Cover page title
 \title{Linear Algebra \& Geometry - Notes}
@@ -116,17 +117,17 @@ Then $$|\vect{v} \dotprod \vect{w}| \leq ||\vect{v}||\ ||\vect{w}||$$
 \end{alignat*}
 
 \subtitle{Definition 1.12 - }{Complex Number Set}
-The set of complex numbers contains all numbers with an imaginary part. $$\mathbb{C} := \left\{x + iy; x,y \in \real\right\}$$
+The set of complex numbers contains all numbers with an imaginary part. $$\complex := \left\{x + iy; x,y \in \real\right\}$$
 Complex numbers are often denoted by $$z = x + iy$$ and we say $x$ is the real part of $z$ and $y$ the imaginary part.
 
 \subtitle{Definition 1.13 - }{Complex Conjugate}
-Let $z \in \mathbb{C}$ st $z = x + iy$. \\
+Let $z \in \complex$ st $z = x + iy$. \\
 Then $$\bar{z} := x - iy$$
 %
 \newpage
 %
 \subtitle{Theorem 1.14 - }{Operations on Complex Numbers}
-Let $z_1,z_2 \in \mathbb{C}$ st $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$. \\
+Let $z_1,z_2 \in \complex$ st $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$. \\
 Then \begin{alignat*}{2}
   &z_1 + z_2 &&:= (x_1 + x_2) + i(y_1 + y_2) \\
   &z_1.z_2 &&:= (x_1 + iy_1)(x_2 + iy_2) \\
@@ -136,7 +137,7 @@ Then \begin{alignat*}{2}
 
 \subtitle{Definition 1.15 - }{Modulus of Complex Numbers}
 The modulus of a complex number is the distance of the number, from the origin, on an Argand diagram.
-Let $z \in \mathbb{C}$ st $z = x + iy$. \\
+Let $z \in \complex$ st $z = x + iy$. \\
 Then \begin{alignat*}{2}
   |z| &:= \sqrt{x^2 + y^2} \\
   &:= \sqrt{\bar{z}z}
@@ -973,7 +974,11 @@ The polynomial which is equivalent to $det(A - \lambda.I)$ is called the \textit
 $$p_A(\lambda) := det(A - \lambda.I)$$
 \underline{N.B.} - $\lambda$ is an eigenvalue for $A$ if $p_A(\lambda) = 0$\\
 
-\subtitle{Remark 8.6 - }{Finding Eigenvectors}
+\subtitle{Definition 8.6 - }{Eigenspace}
+let $\lambda \in \field$ be an eigenvalue of $T$, then the corresponding \textit{eigenspace} is defined as
+$$V_\lambda := ker(T - \lambda.I)$$
+
+\subtitle{Remark 8.7 - }{Finding Eigenvectors}
 Once we have found all $\lambda_1 , \dots , \lambda_k$ that satisfy $p_A(\lambda_i) = 0$ then we can find the eigenvectors, $\vect{x}_i$, of $A$
 $$(A - \lambda.I)\vect{x}_i = \vect{0}$$
 A good way to start is to produce the linear equations
@@ -981,49 +986,138 @@ $$\sum_{j=1}^{n} (A - \lambda.I)_{ij}.x_j = 0$$
 For all $i \leq n$. Then solve these, as a series of simultaneous equations, to find the values $x_j$ which produce the eigenvector $\vect{x}$.\\
 Repeat this process for all $\lambda_1 , \dots , \lambda_k$ to find all eigenvectors for $A$.\\
 
-\subtitle{Theorem 8.7 - }{Similar Characteristic Polynomial}
+\subtitle{Theorem 8.8 - }{Similar Characteristic Polynomial}
 Let $C$ be an invertible matrix.\\
 Define $A' = C^{-1}AV$ where $A$ \& $A'$ are conjugate or similar.\\
 Then $p_A(\lambda) = p_{A'}(\lambda)$.\\
 
-\subtitle{Theorem 8.8 - }{Characteristic Polynomial \& Basis}
+\subtitle{Theorem 8.9 - }{Characteristic Polynomial \& Basis}
 The characteristic polynomial for $T$ is the same, regardless of the basis of $T$.\
 
-\subtitle{Definition 8.9 - }{Trace}
+\subtitle{Definition 8.10 - }{Trace}
 Let $A \in M_n(\field)$.\\
 Then the trace of $A$ is defined as
 $$Tr(A) := \sum_{i=1}^{n}a_{ii}$$
 \underline{N.B.} - Trace is sometimes called \textit{Spur}.
 
-\subtitle{Remark 8.10}{}
+\subtitle{Remark 8.11}{}
 As the terms after the first term of the determinat of a matrix do not contribute to the powers of $\lambda$ in the characteristic equation then we can ignore them.
 This means we can deduce that
 $$p_T(\lambda) = (-1)^n\lambda^n + (-1)^{n-1}(Tr(A)) + \dots + det(A)$$
 
-\subtitle{Theorem 8.11 - }{Diagonalised Matrix}
+\subtitle{Theorem 8.12 - }{Diagonalised Matrix}
 Let $T$ be a diagonisable matrix with eigenvalues $\{\lambda_1, \lambda_2, \dots , \lambda_n\}$.\\
 Then $T$ can be represented by $$\Delta = \begin{pmatrix} \lambda_1 & 0  & \dots & 0\\ 0 & \lambda_2 & & \vdots \\ \vdots & & \ddots & \vdots \\ 0 & \dots & \dots & \lambda_n \end{pmatrix}$$
-\underline{N.B.} - $T$ can also be represented in any basis with, $C$ as the transition matrix, by $C^{-1}\Delta C$.
+\underline{N.B.} - $T$ can also be represented in any basis with, $C$ as the transition matrix, by $C^{-1}\Delta C$.\\
 
-\subtitle{Theorem 8.11 - }{Relationship between Matrix and its Diagonalised Form}
+\subtitle{Theorem 8.13 - }{Relationship between Matrix and its Diagonalised Form}
 Let $T$ be a matrix and $\Delta$ be its diagonalised form, then
 $$Det(T) = Det(\Delta) = \prod_{j=1}^n \lambda_j$$
 And $$Tr(T) = Tr(\Delta) = \sum_{j=1}^n \lambda_j$$
 
-\subtitle{Theorem 8.12 - }{Distinct Eigenvectors and Diagonisability}
+\subtitle{Theorem 8.14 - }{Distinct Eigenvectors and Diagonisability}
 Eigenvectors, which correspond to distinct eigen values, are linearly independent.\\
 Thus if a matrix, $A$, has only distinct eigenvalues then it is diagonisable.\\
 
-\subtitle{Remark 8.13 - }{Degree of Characteristic Equation}
-Eigenvalues are rrots of $p_A(\lambda) = 0$ where $p_A$ is an equation of degree $dim(A)$.\\
+\subsection{Roots of Characteristic Polynomial}
 
-\subtitle{Remark 8.14 - }{Non-Distinct Roots of Characteristic Equation}
-If the roots of $P_A(\lambda)$ are not distinct then $A$ may be diagonisable depending on how many eigenvectors are found.
+\subtitle{Remark 8.15 - }{Degree of Characteristic Equation}
+Eigenvalues are roots of $p_A(\lambda) = 0$ where $p_A$ is an equation of degree $dim(A)$.\\
 
-\subtitle{Theorem 8.15 - }{Vieta's Theorem}
+\subtitle{Remark 8.16 - }{Non-Distinct Roots of Characteristic Equation}
+If the roots of $P_A(\lambda)$ are not distinct then $A$ may be diagonisable depending on how many eigenvectors are found.\\
+
+\subtitle{Theorem 8.17 - }{Vieta's Theorem}
 If $\lambda_1 , \dots , \lambda_n$ are roots of the Polynomial
 $$\lambda_n + a_1\lambda^{n-1} + \dots + a_n = 0 \equiv p(\lambda) = 0$$
 Then $p(\lambda) = (\lambda-\lambda_1)(\lambda - \lambda_2) \dots (\lambda - \lambda_n)$.\\
-So $p(\lambda)$ factorises in the produce $\prod_{i=1}^{n}(\lambda - \lambda_i)$ but the $\lambda_i$s are not necessarily distinct.
+So $p(\lambda)$ factorises in the product $\prod_{i=1}^{n}(\lambda - \lambda_i)$ but the $\lambda_i$s are not necessarily distinct.\\
+
+\subtitle{Definition 8.18 - }{Multiplicity of Roots}
+Let $\lambda_1 \in \complex$ of characteristic polynomial, $p(\lambda)$.\\
+$\lambda_1$ has multiplicity $m_1 \in \nat$ if
+$$p(\lambda_1) = \frac{dp}{d\lambda}(\lambda_1) = \dots = \frac{d^{m_1 - 1}p}{d\lambda^{m_1 - 1}}(\lambda_1) = 0$$
+This means that $(\lambda - \lambda_1)^{m_1}$ is a factor of $p(\lambda)$.\\
+
+\subtitle{Definition 8.19 - }{Geometric \& Algebraic Multiplicity}
+Let $\lambda \in spec(T)$ and $V_\lambda$ be the corresponding eigenspace.
+\begin{enumerate}[label=\roman*)]
+  \item $\lambda$ has \textit{geometric multiplicity}, $m_g(\lambda) \in \nat$, if $dim(V_\lambda) = m_g(\lambda)$;
+  \item $\lambda$ has \textit{algebraic multiplicity}, $m_a(\lambda) \in \nat$, if $\lambda$ has multiplicity $m_a$ of $p_T(\lambda)$
+\end{enumerate}
+
+\subtitle{Theorem 8.20 - }{Relationship between Geometric \& Algebraic Multiplicity}
+Let $\lambda \in spec(T)$ then $$m_g(\lambda) \leq m_a(\lambda)$$
+
+\subtitle{Theorem 8.21 - }{}
+Let $T$ be a linear operator on an $n$ dimensional space over $\complex$ or $\real$, with eigenvalues $\lambda_1 , \dots , \lambda_n$, which are not necessarily distinct. Then
+$$det(T) = \prod_{i=1}^n \lambda_i \quad \& \quad tr(T) = \sum_{i=1}^n \lambda_i$$
+
+\section{Inner Product Spaces}
+
+\subsection{Inner Product, Norm \& Orthogonality}
+
+\subtitle{Definition 9.01 - }{Inner Product (Complex)}
+Let $V$ be a vector space over $\complex$.\\
+An \textit{inner product} on $V$ is a map, $\langle V, V \rangle : V \times V \to \complex$, with the following properties:
+\begin{enumerate}[label=\roman*)]
+  \item $\langle v, v \rangle \geq 0$;
+  \item $\langle v, w \rangle = \overline{\langle v, w \rangle}$;
+  \item $\langle u, v + w \rangle = \langle u, v \rangle + \langle u, w \rangle$;
+  \item $\langle \lambda.u , v \rangle = \lambda \langle u, v \rangle$.
+\end{enumerate}
+Where $u, v, w \in V$ and $\lambda \in \complex$.\\
+
+\subtitle{Definition 9.02 - }{Inner Product (Real)}
+Let $V$ be a vector space over $\real$.\\
+An \textit{inner product} on $V$ is a map, $\langle , \rangle : V \times V \to \complex$, with the following properties:
+\begin{enumerate}[label=\roman*)]
+  \item $\langle v, v \rangle \geq 0$;
+  \item $\langle v, w \rangle = \langle w, v \rangle$;
+  \item $\langle u, v + w \rangle = \langle u, v \rangle + \langle u, w \rangle$;
+  \item $\langle \lambda.u , v \rangle = \lambda \langle u, v \rangle$.
+\end{enumerate}
+Where $u, v, w \in V$ and $\lambda \in \complex$.\\
+
+\subtitle{Definition 9.03 - }{Inner Product Space}
+A $V$ be a vector space with $\langle , \rangle$ as a defined inner product are called an \textit{inner product space}, denoted by
+$$(V, \langle , \rangle)$$
+\underline{N.B.} - If $V$ is over $\complex$ then this is called a \textit{complex inner product space}. If $V$ is over $\real$ then this is called a \textit{real inner product space}.\\
+
+\subtitle{Definition 9.04 - }{Norm}
+Let $( V , \langle , \rangle )$ be an inner product space, then we define the associated norm as
+$$||v|| := \sqrt{\langle v, v \rangle},\quad v \in V$$
+
+\subtitle{Definition 9.05 - }{Orthogonal}
+Let $(V , \langle , \rangle)$ be an inner product space, then
+\begin{enumerate}[label=\roman*)]
+  \item $v, w \in V$ are \textit{orthogonal}, $v \perp w$, if $\langle v, w \rangle = 0$;
+  \item $U, W \subset V$ are \textit{orthogonal}, $U \perp W$, if $u \perp w\ \forall\ u \in U\ \&\ v \in V$.
+\end{enumerate}
+
+\subtitle{Definition 9.06 - }{Orthogonal Complement}
+Let $(V, \langle , \rangle)$ be an inner product space and $W \subset V$.\\
+The \textit{orthogonal complement} is defined as
+$$W^\perp := \{ v \in V : v \perp w\ \forall\ w \in W \}$$
+
+\subtitle{Theorem 9.07 - }{Norm of Orthogonal Elements}
+Let $(V, \langle , \rangle)$ be an inner product space and $v, w \in V$ with $v \perp w$, then
+$$||v + w||^2 = ||v||^2 + ||w||^2$$
+
+\subtitle{Definition 9.08 - }{Orthonormal Basis}
+Let $(V, \langle , \rangle)$ be an inner product space.\\
+A basis, $\basis = \{ v_1 , \dots , v_n\}$, is called an \textit{orthonormal basis} if
+$$\langle v_i , v_j \rangle = \delta_{ij} := \begin{cases} 1 \quad i = j;\\ 0 \quad i \not = j. \end{cases}$$
+
+\subtitle{Theorem 9.09 - }{Properties of Orthogonal Basis}
+Let $(V, \langle , \rangle)$ be an inner product space and $\basis = \{ v_1 , \dots , v_n\}$ an orthonormal basis.\\
+Then $\forall v, w \in V$,
+\begin{enumerate}[label=\roman*)]
+  \item $v = \sum_{i=1}^n \langle v_i , v \rangle v_i$;
+  \item $\langle v , w \rangle = \sum_{i=1}^n \overline{\langle v_i, v \rangle}\langle v_i, w \rangle$;
+  \item $||v|| = \left[\sum_{i=1}^n |\langle v_i, v \rangle|^2\right]^{1/2} $.
+\end{enumerate}
+
+\subsection{Construction of Orthonormal Basis}
 
 \end{document}
