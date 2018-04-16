@@ -16,7 +16,7 @@
 
 \renewcommand{\headrulewidth}{0pt}
 \newcommand{\vect}[1]{\boldsymbol{#1}}
-\newcommand{\subtitle}[2]{\textbf{#1}\textit{#2} \\}
+\newcommand{\subtitle}[2]{\textbf{#1}\textit{#2}\\}
 \newcommand{\dotprod}[0]{\boldsymbol{\cdot}}
 \newcommand{\real}[0]{\mathbb{R}}
 \newcommand{\nat}[0]{\mathbb{N}}
@@ -44,12 +44,12 @@
 \section{Symmetries}
 
 \subtitle{Definition 1.01 - }{Permutation}
-A \textit{permutation} of a set, $G$, is a bijection $f : G \to G$.\\
+A \textit{permutation} of a set, $G$, is a bijection of the form $f : G \to G$.\\
 \underline{N.B.} - Since the composition of two bijections is also a bijection, then the composition of two permutations is a permutation.\\
 
 \subtitle{Definition 1.02 - }{Symmetries of a Polygon}
 A \textit{symmetry} of an n-sided polygon is a permutation of the vertices which preserves adjacency.\\
-So if the vertices, $u, v$, are adjacent then the permutation $f$ is a symmetry if $f(u)$ \& $f(v)$ are adjacent.\\
+So if the vertices $u\ \&\ v$ are adjacent then the permutation $f$ is a symmetry if $f(u)$ \& $f(v)$ are adjacent.\\
 
 \subtitle{Remark 1.03 - }{Symmetries}
 When dealing with symmetries of a shape then they can only be rotations or reflections.\\
@@ -57,82 +57,83 @@ When dealing with symmetries of a shape then they can only be rotations or refle
 \subtitle{Definition 1.04 - }{Identity}
 The trivial symmetry, which maps an element to itself, is known as the identity.\\
 
-\subtitle{Remark 1.05 - }{Multiple Composition}
-Let $R, S\ \&\ T$ be permutations. Then $(RS)T$ means do $T$, then $S$, then $R$. So $$(RS)T = R(ST)$$
+\subtitle{Remark 1.05 - }{Composition of Permutations}
+Let $R, S\ \&\ T$ be permutations.\\
+Then $(RS)T$ means do $T$, then $S$, then $R$. So $$(RS)T = R(ST)$$
 
 \subtitle{Remark 1.06 - }{One-Line Notation}
 Let $S = \{a_1, \dots, a_n\}$ be a set and $\sigma : S \to S$ be a permutation.\\
-One-Line notation denotes the result of $\sigma$ by $$\begin{pmatrix} \sigma(a_1) & \dots & \sigma(a_n) \end{pmatrix}$$
+\textit{One-Line notation} denotes the result of $\sigma$ by $$\begin{pmatrix} \sigma(a_1) & \dots & \sigma(a_n) \end{pmatrix}$$
 So if $\sigma$ maps $1 \to 2, 2 \to 3, \dots, n \to 1$ then it can be denoted by $$\begin{pmatrix} 2  & 3 & \dots & n & 1 \end{pmatrix}$$
 
 \subtitle{Remark 1.07 - }{Two-Line Notation}
 Let $S = \{a_1, \dots, a_n\}$ be a set and $\sigma : S \to S$ be a permutation.\\
-Two-Line notation denotes the result of $\sigma$ by $$\begin{pmatrix} a_1 & \dots & a_n \\ \sigma(a_1) & \dots & \sigma(a_n) \end{pmatrix}$$
+\textit{Two-Line notation} denotes the result of $\sigma$ by $$\begin{pmatrix} a_1 & \dots & a_n \\ \sigma(a_1) & \dots & \sigma(a_n) \end{pmatrix}$$
 So if $\sigma$ maps $1 \to 2, 2 \to 3, \dots, n \to 1$ then it can be denoted by $$\begin{pmatrix} 1 & 2 & \dots & n-1 & n \\ 2  & 3 & \dots & n & 1 \end{pmatrix}$$
 
 \subtitle{Remark 1.08 - }{Cycle Decomposition Notation}
 Let $S = \{a_1, \dots, a_n\}$ be a set and $\sigma : S \to S$ be a permutation.\\
-Cycle Decomposition Notation denotes $\sigma$ as the product of disjoint cycles.\\
+\textit{Cycle Decomposition Notation} denotes $\sigma$ as the product of disjoint cycles.\\
 Each element in a cycle goes the position of the element after it in the list, the last element goes to the position of the first.\\
 $()$ denotes no variation. The operation of $\sigma$ is denoted by $$\begin{pmatrix} a_1 & \sigma(a_1) & \sigma(\sigma(a_1)) & \dots & \sigma(\dots\sigma(a_1)\dots)\end{pmatrix}$$
 
 \section{Groups}
 
 \subtitle{Definition 2.01 - }{Binary Operation}
-A \textit{binary operation} on a set $X$ is a fuction from $X \times X \to X$.\\
+A \textit{binary operation} on a set $X$ is a function of the form $f : X \times X \to X$.\\
 
 \subtitle{Remark 2.02 - }{Asteriks Notation}
 Binary operations are general denoted by an $*$. $$f(x, y) = x*y$$
 
-\subtitle{Remark 2.03 - }{Set of Permutations}
+\subtitle{Remark 2.03 - }{Multiplicty Notation}
+Multiplicity notation is used to simplify equations with a single binary operator, by not writting $*$. $$x * y = xy$$
+
+\subtitle{Remark 2.04 - }{Set of Permutations}
 A set of permutations have a binary operation for composition.\\
 Let $f, g, h$ be permutations of a set $X$ and $x \in X$ $$f(x) \times g(x) \to h(x)$$
 
-\subtitle{Definition 2.04 - }{Commutative}
-A binary operation, $*$, on a set $X$ is commutative if order of input doesn't affected the outcome. $$x * y = y * x,\forall\ x, y \in X$$
+\subtitle{Definition 2.05 - }{Commutativity}
+A binary operation, $*$, on a set $X$ is \textit{commutative} if order of input doesn't affected the outcome. $$x * y = y * x,\forall\ x, y \in X$$
 
-\subtitle{Defintion 2.05 - }{Group}
-A group is a set, $G$, with an associated binary operation, $*$, such that
-\begin{enumerate}[label=\roman*)]
-  \item It is \textit{associative}, $(x * y) * z = x * (y * z)\ \forall\ x, y, z \in G$;
-  \item It as an \textit{identity element}, $\exists\ e \in G$ such that $x * e = x = e * x$;
-  \item For all $x \in G\ \exists\ x^{-1} \in G$ st $xx^{-1} = e = x^{-1}x$.\\
-\end{enumerate}
-
-\subtitle{Remark 2.06 - }{Group Notation}
-The group of set $G$ and binary operation $*$ is denoted by $(G, *)$.\\
-
-\subtitle{Definition 2.07 - }{Abelian Group}
-An \textit{Abelian group}, $(G, *)$ is one where $*$ is commutative.\\
-
-\subtitle{Definition 2.08 - }{Commute}
+\subtitle{Definition 2.06 - }{Commute}
 If $x, y \in G$ satisfy $x*y = y*x$ then it is said that $x\ \&\ y$ commute.\\
 
-\subtitle{Remark 2.08 - }{Multiplicty Notation}
-Multiplicity notation is used to simplify equations with a single binary operator, by not writting $*$. $$x * y = xy$$
+\subtitle{Defintion 2.07 - }{Group}
+A group is a set, $G$, with an associated binary operation, $*$, that
+\begin{enumerate}[label=\roman*)]
+  \item Is \textit{associative}, $(x * y) * z = x * (y * z)\ \forall\ x, y, z \in G$;
+  \item Has as an \textit{identity element}, $\exists\ e \in G$ such that $x * e = x = e * x$; and,
+  \item Has an inverse element $\forall\ x \in G\ \exists\ x^{-1} \in G$ st $xx^{-1} = e = x^{-1}x$.\\
+\end{enumerate}
+
+\subtitle{Remark 2.08 - }{Group Notation}
+The group of set $G$ and binary operation $*$ is denoted by $(G, *)$.\\
+
+\subtitle{Definition 2.09 - }{Abelian Group}
+An \textit{Abelian group}, $(G, *)$ is one where $*$ is commutative.
 
 \section{Elementary Consequences of the Definition}
 
-\subtitle{Proposition 3.1 - }{Right Cancellation}
-If $a, b, x \in G$ and $$ax = bx => a = b$$
+\subtitle{Proposition 3.01 - }{Right Cancellation}
+If $a, b, x \in G$ and $ax = bx$ then $a = b$.\\
 
-\subtitle{Proposition 3.2 - }{Left Cancellation}
-If $a, b, x \in G$ and $$xa = xb => a = b$$
+\subtitle{Proposition 3.02 - }{Left Cancellation}
+If $a, b, x \in G$ and $x => $ then $a = xba = b$.\\
 
-\subtitle{Proposition 3.3 - }{Uniqueness of Identity}
+\subtitle{Proposition 3.03 - }{Uniqueness of Identity}
 If $a, x, e \in G$ with $e$ as the identity of $G$ then $$ax = a => e = x$$
 
-\subtitle{Proposition 3.4 - }{Uniqueness of Inverses}
+\subtitle{Proposition 3.04 - }{Uniqueness of Inverses}
 If $x, y, e \in G$ with $e$ as the identity of $G$ then $$xy = e => x = y^{-1}\ \&\ y = x^{-1}$$
 
-\subtitle{Proposition 3.5 - }{Inverse of Inverse}
+\subtitle{Proposition 3.05 - }{Inverse of Inverse}
 Let $x \in G$ then $$(x^{-1})^{-1} = x$$
 
-\subtitle{Proposition 3.6 - }{Composite Inverses}
+\subtitle{Proposition 3.06 - }{Composite Inverses}
 Let $x, y \in G$ then $$(xy)^{-1} = y^{-1}x^{-1}$$
 
-\subtitle{Definition 3.7 - }{Caley Table}
-Let $e, x, y$ be all the elements of $G$ then the result of all compositions can be displayed in a Caley Table.
+\subtitle{Definition 3.07 - }{Caley Table}
+Let $e, x, y$ be all the elements of $G$ then the result of all compositions can be displayed in a \textit{Caley Table}.
 \begin{center}
 \begin{tabular}{c|ccc}
  & e & x & y \\
@@ -145,10 +146,10 @@ Let $e, x, y$ be all the elements of $G$ then the result of all compositions can
 The operation of the column is done first, then the operation of the row.\\
 \underline{N.B.} - All values in any given column or row are unique, so all elements of $G$ appear exactly once.\\
 
-\subtitle{Definition 3.8 - }{Powers of Elements}
+\subtitle{Definition 3.08 - }{Powers of Elements}
 If $n > 0$ then $x^n$ means $x * \dots * x$ $n$ times. $$x^{-n} = (x^{n})^{-1} = (x^{-1})^n,\quad x^0 = e$$
 
-\subtitle{Definition 3.9 - }{Composition of Powers}
+\subtitle{Definition 3.09 - }{Composition of Powers}
 For $m,n \in \integers$ $$x^mx^n = x^{m+n}$$
 
 \section{Dihedral Groups}
@@ -158,11 +159,11 @@ The \textit{order} of a group $G$ is the number of elements in $G$.\\
 \underline{N.B.} - Order of $G$ is denoted by $|G|$.\\
 
 \subtitle{Definition 4.02 - }{Dihedral Groups}
-The dihedral group $D_{2n}$ is the group of symmetries of a regular n-sided polygon, with $n \geq 3$.
+The \textit{dihedral group} $D_{2n}$ is the group of symmetries of a regular n-sided polygon, with $n \geq 3$.
 \underline{N.B.} - $|D_{2n}| = 2n$.\\
 
 \subtitle{Proposition 4.03 - }{Elements of Dihedral Group}
-Let $a$ describe a rotation by $\frac{2\pi}{n}$ and $b$ a reflection thenAn External
+Let $a$ describe a rotation by $\frac{2\pi}{n}$ and $b$ a reflection then
 $$D_{2n} = \{ e, a, a^2, \dots, a^{n-1}, b, ab , \dots , a^{n-1}b\}$$
 \underline{N.B.} - $a^n = e = b^2,\quad a^{-1} = a^{n-1}, b = b^{-1}$.\\
 
@@ -172,30 +173,30 @@ Let $a$ denote a rotation and $b$ denoted a reflection then $$ab = ba^{-1}$$
 \section{Subgroups}
 
 \subtitle{Definition 5.01 - }{Subgroup}
-A subgroup of a group $G$ is a group formed of a subset of $G$ with the same associated operation.\\
+A \textit{subgroup} of a group $G$ is a group formed of a subset of $G$ with the same associated operation.\\
 \underline{N.B.} - $H$ being a subgroup of $G$ is denoted by $H \leq G$.\\
 
 \subtitle{Definition 5.02 - }{Non-Trivial Subgroup}
 A subgroup $H$ of $G$ is non-trivial if $H \not = \{ e \}$.\\
 
 \subtitle{Definition 5.03 - }{Proper Subgroup}
-A subgroup $H$ of $G$ is a proper subgroup if $H \not = G$.\\
+A subgroup $H$ of $G$ is a \textit{proper subgroup} if $H \not = G$.\\
 
 \subtitle{Theorem 5.04 - }{Subgroup}
 A subset $H$ of a group $G$ is a subgroup iff
 \begin{enumerate}[label=\roman*)]
-  \item It is closed under binary operation $x, y \in H => xy \in H$;
-  \item It has an identity element $\exists\ e \in H$ st $xe = x\ \forall\ x \in H$;
+  \item It is closed under the binary operation $x, y \in H => xy \in H$;
+  \item It has an identity element $\exists\ e \in H$ st $xe = x\ \forall\ x \in H$; and,
   \item All elements have an inverse $\forall\ x \in H\ \exists\ x^{-1} \in H$ st $xx^{-1} = e$.\\
 \end{enumerate}
 
 \subtitle{Proposition 5.05 - }{Pairs of Subgroups}
-Let $G, H, K$ be groups with $H \leq G$ \& $K \leq G$ then $H \cap K \leq G$.\\
+Let $G, H\ \&\ K$ be groups with $H \leq G$ \& $K \leq G$ then $H \cap K \leq G$.
 
 \section{Order of Elements}
 
 \subtitle{Definition 6.01 - }{Order of an Element}
-Let $x \in G$ such that $x^n = e$, then the order of $x$ is the smallest such $n$.$$ord(x) = n$$
+Let $x \in G$ such that $x^n = e$, then the \textit{order} of $x$ is the smallest such $n$.$$ord(x) = n$$
 \underline{N.B.} - If there is no such $n$ then $ord(x) = \infty$.\\
 
 \subtitle{Proposition 6.02 - }{Uniqueness of Powers}
@@ -208,15 +209,15 @@ Every element of a finite group has finite order.\\
 Let $x \in G$ such that $ord(x) = n < \infty$ then if
 \begin{enumerate}[label=\roman*)]
   \item $x^i = e \iff n | i$;
-  \item $x^i = x^j \iff i \equiv j (mod n)$;
-  \item $x^{-1} = x^{n-1}$;
-  \item The powers of $x$ less than $n$ are all distinct.\\
+  \item $x^i = x^j \iff i \equiv j (mod\ n)$;
+  \item $x^{-1} = x^{n-1}$; and,
+  \item The powers of $x$ less than $n$ are all distinct.
 \end{enumerate}
 
 \subtitle{Proposition 6.05 - }{Order of Powers of Elements}
-let $x \in G, i \in \integers$.
+Let $x \in G, i \in \integers$.
 \begin{enumerate}[label=\roman*)]
-  \item If $ord(x) = \infty$ then $ord(x^i) = \infty$ if $i \not = 0$;
+  \item If $ord(x) = \infty$ then $ord(x^i) = \infty$ if $i \not = 0$; and,
   \item If $ord(x) = n < \infty$ then $\displaystyle{ord(x^i) = \frac{n}{gcd(n,i)}}$.
 \end{enumerate}
 
@@ -224,14 +225,14 @@ let $x \in G, i \in \integers$.
 
 \subtitle{Definition 7.01 - }{Generating Cyclic Groups}
 Let $G$ be a group and $x \in G$.\\
-We define a cyclic group generated by $x$ $$\langle x \rangle = \{x^i : i \in \integers \} \leq G$$.
+We define a \textit{cyclic group} generated by $x$ $$\langle x \rangle = \{x^i : i \in \integers \} \leq G$$.
 
 \subtitle{Theorem 7.02 - }{Cyclic Subgroup}
 Let $x \in G$ then $\langle x \rangle$ is a subgroup of $G$.\\
 
 \subtitle{Definition 7.03 - }{Cyclic Group}
 A group $G$ is cyclic if $G = \langle x \rangle$ for some $x \in G$.\\
-\underline{N.B.} - Here $x$ is called the generator of $G$.\\
+\underline{N.B.} - Here $x$ is called the \textit{generator} of $G$.\\
 
 \subtitle{Theorem 7.04 - }{Abelian Cyclic Groups}
 Every cyclic group is abelian.\\
@@ -241,7 +242,7 @@ Let $G$ be a group with $|G| = n < \infty$.\\
 $G$ is cyclic iff $\exists\ x \in G$ such that $ord(x) = n$.\\
 
 \subtitle{Theorem 7.06 - }{Subgroups of Cyclic Groups}
-Every subgroup of a cyclic group is also a cyclic group.\\
+Every subgroup of a cyclic group is also a cyclic group.
 
 \section{Groups from Modular Arithmetic}
 
@@ -257,7 +258,7 @@ $$\frac{\integers}{n\integers} = {[0], [1] , \dots , [n-2] , [n-1]}$$
 
 \subtitle{Definition 8.03 - }{Properties of Congurence Groups}
 Let $[a], [b] \in \frac{\integers}{n\integers}$ for some $n \in \nat$ then
-$$[a] + [b] = [a + b], [a].[b] = [a.b]$$
+$$[a] + [b] = [a + b],\quad [a].[b] = [a.b]$$
 
 \subtitle{Theorem 8.04 - }{Abelian Congurence Groups}
 Let $n \in \nat$ then $\frac{\integers}{n\integers}$ is an abelian group.\\
@@ -267,172 +268,171 @@ The group $\left( \frac{\integers}{n\integers}, + \right) = \langle [1] \rangle$
 The group $\left( \frac{\integers}{n\integers}, \dotprod \right)$ is never a group for $n > 1$ as $[0][x] = [0] \not = [1] = e$.\\
 
 \subtitle{Theorem 8.06 - }{Multiplicative Inverse of Congurence Groups}
-In $[a] \in \frac{\integers}{n\integers}$ has a multiplicative inverse if and only if $gcd(a, n) = 1$.\\
+$[a] \in \frac{\integers}{n\integers}$ has a multiplicative inverse if, and only if, $gcd(a, n) = 1$.\\
 
 \subtitle{Definition 8.07 - }{Subset of $\frac{\integers}{n\integers}$ with multiplicative inverses}
 $U_n$ is the subset of $\frac{\integers}{n\integers}$ such that
 $$U_n = \left\{ [a] \in \frac{\integers}{n\integers}; gcd(a, n) = 1 \right\}$$
-\underline{N.B.} - $(U_n, \times)$ is an abelian group.
+\underline{N.B.} - $(U_n, \dotprod)$ is an abelian group.
 
 \section{Isomorphic Groups}
 
-\subtitle{Definition 9.1 - }{Isomorphism}
+\subtitle{Definition 9.01 - }{Isomorphism}
 Let $(G, *)$ and $(H, \dotprod)$ be groups.\\
 An \textit{isomorphism} from $G$ to $H$ is a bijective function $\phi : G \to H$ such that $$\phi(x * y) = \phi(x) \dotprod \phi(y),\quad \forall\ x, y \in G$$
 \underline{N.B.} - Since $\phi$ is bijective then there exists an inverse such that $\phi^{-1} : H \to G$.\\
 
-\subtitle{Definition 9.2 - }{Isomorphic}
+\subtitle{Definition 9.02 - }{Isomorphic}
 Let $G$ and $H$ be groups.\\
-$G$ and $H$ are said to be \textit{isomorphic} if there exists an isomorphism $\phi : G \to H$. This is denoted by $G \cong H$.
+$G$ and $H$ are said to be \textit{isomorphic} if there exists an isomorphism $\phi : G \to H$. This is denoted by $G \cong H$.\\
 
-\subtitle{Proposition 9.3 - }{Transitive property of Isomorphisms}
+\subtitle{Proposition 9.03 - }{Transitive property of Isomorphisms}
 Let $G, H$ and $I$ be groups.\\
 If $G \cong H$  and $H \cong I$, then $G \cong I$.\\
 If $G \cong H$ and $H$ is \textit{abelian}, then $G$ is albelian.\\
-If $G \cong H$ and $H$ is \textit{cyclic}, then $H$ is cyclic
+If $G \cong H$ and $H$ is \textit{cyclic}, then $H$ is cyclic.\\
 
-\subtitle{Proposition 9.4 - }{Indentity element and Isomorphisms}
+\subtitle{Proposition 9.04 - }{Indentity element and Isomorphisms}
 Let $\phi : G \to H$ be an isomorphism, $e_G$ \& $e_H$ be the identity elements of these groups and $x \in G$. Then
 \begin{enumerate}[label=\roman*)]
   \item $\phi(e_G) = e_H$;
   \item $\phi(x^{-1}) = \phi(x)^{-1}$;
   \item $\phi(x^i) = \phi(x)^i,\quad \forall\ i \in \integers$; and,
-  \item $ord_G(x) = ord_H(\phi(x))$.
+  \item $ord_G(x) = ord_H(\phi(x))$.\\
 \end{enumerate}
 
-\subtitle{Proposition 9.5 - }{Order of Isomorphic Groups}
+\subtitle{Proposition 9.05 - }{Order of Isomorphic Groups}
 Let $G$ \& $H$ be isomorphic then $|G| = |H|$.\\
 
-\subtitle{Proposition 9.5 - }{Order of Elements of Isomorphic Groups}
+\subtitle{Proposition 9.06 - }{Order of Elements of Isomorphic Groups}
 Let $G$ \& $H$ be isomorphic and $n \in \nat$.\\
-Then $G$ and $H$ have the same number of elements of order $n$.\\
+Then $G$ and $H$ have the same number of elements of order $n$.
 
 \section{Direct Product}
 
-\subtitle{Definition 10.1 - }{Direct Product}
+\subtitle{Definition 10.01 - }{Direct Product}
 Let $G$ \& $H$ be groups with the same binary operator.\\
 The \textit{direct product}, $G \times H$, is the cartesian product of the sets of $G$ and $H$ with the binary operator
 $$(x, y)(x', y') = (xx', yy'),\quad x, x' \in G\ y, y' \in H$$
 
-\subtitle{Proposition 10.2 - }{Direct Product as a group}
+\subtitle{Proposition 10.02 - }{Direct Product as a group}
 The direct product of two groups is itself a group.\\
 
-\subtitle{Proposition 10.3 - }{Properties of Direct Product}
+\subtitle{Proposition 10.03 - }{Properties of Direct Product}
 Let $G$ and $H$ be groups with the same binary operator.
 \begin{enumerate}[label=\roman*)]
   \item $G \times H$ is \textit{infinite} iff both $G$ and $H$ are infinite;
-  \item $G \times H$ is \textit{abelian} iff both $G$ and $H$ are abelian;
-  \item If $G \times H$ is \textit{cyclic}, \textbf{then} $G$ and $H$ are cyclic.
+  \item $G \times H$ is \textit{abelian} iff both $G$ and $H$ are abelian; and,
+  \item If $G \times H$ is \textit{cyclic}, \underline{then} $G$ and $H$ are cyclic.\\
 \end{enumerate}
 
-\subtitle{Proposition 10.4 - }{Order of Elements of Direct Product}
+\subtitle{Proposition 10.04 - }{Order of Elements of Direct Product}
 Let $g \in G, h \in H$ with $ord_G(g) = m \in \nat$ and $ord_H(h) = n \in \nat$ then for $(g, h) \in G \times H$
 $$ord_{G \times H}(g, h) = lcm(m, n)$$
 
-\subtitle{Theorem 10.5 - }{Cycle Direct Products}
-Let $G \& H$ be finite cyclic groups.\\
+\subtitle{Theorem 10.05 - }{Cycle Direct Products}
+Let $G\ \&\ H$ be finite cyclic groups.\\
 Then $G \times H$ is a cyclic group iff $gcd(|G|, |H|) = 1$.\\
 
-\subtitle{Definition 10.6 - }{Klein 4-Group}
+\subtitle{Definition 10.06 - }{Klein 4-Group}
 A \textit{Klein 4-Group} is a group of order 4 such that every element, except the identity, has order 2.\\
 
-\subtitle{Proposition 10.7 - }{}
+\subtitle{Proposition 10.07 - }{}
 Let $m, n \in \nat$ such that $gcd(m,n) = 1$. Then
 $$U_{mn} \cong U_m \times U_n$$
 
 \section{Lagrange's Theorem}
 
-\subtitle{Theorem 11.1 - }{Lagrange's Theorem}
+\subtitle{Theorem 11.01 - }{Lagrange's Theorem}
 Let $G$ be a finite group, and $H \leq G$, then $|H|$ divides $|G|$.\\
 
-\subtitle{Definition 11.2 - }{Co-Sets}
+\subtitle{Definition 11.02 - }{Co-Sets}
 Let $G$ be a group, $H \leq G$ and $x \in G$.\\
 The \textit{left co-set} is defined as $xH = \{xh \in G : h \in H\} \subseteq G$.\\
 The \textit{right co-set} is defined as $Hx = \{hx \in G : h \in H\} \subseteq G$.\\
 
-\subtitle{Theorem 11.3 - }{Order of Co-set}
-There exists a bijection, $\phi : H \to xH$, where $\phi(h) = xh$ this
-$$|H| = |xH|$$
+\subtitle{Theorem 11.03 - }{Order of Co-set}
+There exists a bijection, $\phi : H \to xH$, where $\phi(h) = xh$ so $$|H| = |xH|$$
 
-\subtitle{Theorem 11.4 - }{Relationship between Co-sets}
+\subtitle{Theorem 11.04 - }{Relationship between Co-sets}
 Let $x, y \in G$ and $H \leq G$ then either
 $$xH = yH \mathrm{\ or\ } xH \cap yh = \emptyset$$
 
-\subtitle{Theorem 11.5 - }{Cosets of Abelian Groups}
+\subtitle{Theorem 11.05 - }{Cosets of Abelian Groups}
 Let $G$ be an abelian group and $H \leq G$ then $xH = Hx$.\\
 
-\subtitle{Definition 11.6 - }{Index}
+\subtitle{Definition 11.06 - }{Index}
 Let $H \leq G$.\\
-Then \textit{index}, $|G : H|$, is the number of left co-sets $xH$ in $G$.
+Then \textit{index}, $|G : H|$, is the number of left co-sets, $xH$, in $G$.
 
-\section{Some Consequences and Applications of Lagrange's Theorem}
+\section{Some Consequences and Applications of\\ Lagrange's Theorem}
 
-\subtitle{Propostion 12.1 - }{Lagrange for Order of Elements}
+\subtitle{Propostion 12.01 - }{Lagrange for Order of Elements}
 Let $G$ be a finite group with $|G| = n$.\\
 Then $\forall\ x \in G,\ ord(x) | n$ meaning $x^n = e$.\\
 
-\subtitle{Theorem 12.2 - }{Fermat's Little Theorem}
+\subtitle{Theorem 12.02 - }{Fermat's Little Theorem}
 Let $p \in \nat$ and $a \in \integers$ such that $p \not | a$. Then
 $$a^{p-1} \equiv 1 (mod\ p)$$
 
-\subtitle{Definition 12.3 - }{Euler's Phi Function}
-\textit{Euler's phi function} is the function, $\phi : \nat \to \nat$ where
+\subtitle{Definition 12.03 - }{Euler's Phi Function}
+\textit{Euler's phi function} is the function, $\phi : \nat \to \nat$, where
 $$\phi(m) = |\{ a \in \integers : 0 \leq a \leq m; gcd(a, m) = 1 \}|$$
 
-\subtitle{Theorem 12.4 - }{Fermat-Euler Theorem}
+\subtitle{Theorem 12.04 - }{Fermat-Euler Theorem}
 Let $m > 0$ and $a \in \integers$ with $gcd(a, m) = 1$. Then
 $$a^{\phi(m)} \equiv 1 (mod\ m)$$
 
-\subtitle{Theorem 12.5 - }{Properties of Prime-Ordered Groups}
+\subtitle{Theorem 12.05 - }{Properties of Prime-Ordered Groups}
 Let $p \in \nat$ be prime and $G$ be a group such that $|G| = p$. Then
 \begin{enumerate}[label=\roman*)]
   \item $G$ is cyclic;
-  \item $\forall\ x \in G \backslash \{e\}, ord(x) = p$ and $G = \langle x \rangle$;
-  \item $G$ only has two subgroups, both trivial, $\{e\}$ and $G$ itself.
+  \item $\forall\ x \in G \backslash \{e\}, ord(x) = p$ and $G = \langle x \rangle$; and,
+  \item $G$ only has two subgroups, both trivial, $\{e\}$ and $G$ itself.\\
 \end{enumerate}
 
-\subtitle{Proposition 12.6 - }{Relationship between Prime-Ordered Subgroups}
+\subtitle{Proposition 12.06 - }{Relationship between Prime-Ordered Subgroups}
 Let $p \in \nat$ be prime and $H, I \leq G$ such that $|H| = p = |I|$, then either
 $$P = Q \mathrm{\ or \ } P \cap Q = \{e\} $$
 
-\subtitle{Proposition 12.7 - }{Relationship between Relatively-Prime-Ordered Subgroups}
+\subtitle{Proposition 12.07 - }{Relationship between Relatively-Prime-Ordered Subgroups}
 Let $m, n \in \nat$, with $gcd(m,n) = 1$ and $H, I \leq G$ such that $|H| = m, |I| = n$, then
 $$H \cap I = \{e\}$$
 
-\subtitle{Theorem 12.8 - }{Odd Primed-Ordered Groups}
+\subtitle{Theorem 12.08 - }{Odd Primed-Ordered Groups}
 Let $p \in \nat$ be an odd-prime. Then
 \begin{enumerate}[label=\roman*)]
-  \item every group of order $2p$ is either \textit{cyclic} or \textit{isomorphic} to $D_{2p}$.
-  \item every group of order $p^2$ is either \textit{cyclic} or \textit{isomorphic} to $(\frac{\integers}{p\integers}) \times (\frac{\integers}{p\integers})$.
+  \item Every group of order $2p$ is either \textit{cyclic} or \textit{isomorphic} to $D_{2p}$; and,
+  \item Every group of order $p^2$ is either \textit{cyclic} or \textit{isomorphic} to $(\frac{\integers}{p\integers}) \times (\frac{\integers}{p\integers})$.
 \end{enumerate}
 
 \section{Symmetric Groups}
 
-\subtitle{Definition 13.1 - }{Symmetric Group}
+\subtitle{Definition 13.01 - }{Symmetric Group}
 Let $X$ be a set.\\
 The \textit{symmetric group} on $X$ is the group, $S(X)$, of all permutations of $X$ under composition.\\
 \underline{N.B.} - $S_n$ is the group of all permutations of $\{1 , \dots , n\}$.\\
 
-\subtitle{Proposition 13.2 - }{Order of Symmetric Group}
-\begin{center} $|S_n| = n!$ \end{center}
+\textbf{Proposition 13.02 - }\textit{Order of Symmetric Group}
+$$|S_n| = n!$$
 
-\subtitle{Definition 13.3 - }{k-cycle}
+\subtitle{Definition 13.03 - }{k-cycle}
 A \textit{k-cycle} in $S_n$, where $k \leq n$, is a permutation where
 $$\sigma(x_i) = x_{i+1},\quad \sigma(x_k) = x_1$$
-\underline{N.B.} - denoted by $\sigma = (x_1\ x_2\ x_k)$.\\
+\underline{N.B.} - denoted by $\sigma = (x_1\ x_2\ \dots\ x_k)$.\\
 
-\subtitle{Theorem 13.4 - }{Order of a k-cycle}
+\subtitle{Theorem 13.04 - }{Order of a k-cycle}
 Let $\sigma$ be a k-cycle then $ord_{S_n}(\sigma) = k$.\\
 
-\subtitle{Definition 13.5 - }{Transposition}
+\subtitle{Definition 13.05 - }{Transposition}
 A \textit{transposition} is a permutation that swaps two-elements and leaves all other elements unchanged.\\
 \underline{N.B.} - $\sigma(x_m) = x_n,\ \sigma(x_n) = x_m$ is denoted by $\sigma = (x_m, x_n)$. This can be extended for any number of elements.\\
 
-\subtitle{Definition 13.6 - }{Disjoint Cycles}
+\subtitle{Definition 13.06 - }{Disjoint Cycles}
 Disjoint cycles are cycles of $S_n$ that have no elements share a common position.\\
 
-\subtitle{Theorem 13.7 - }{Order of Products of Disjoint Cycles}
-Let $f$ be the product of disjoint cycles of lenth $k_1, k_2, \dots , k_n$ then
+\subtitle{Theorem 13.07 - }{Order of Products of Disjoint Cycles}
+Let $f$ be the product of disjoint cycles of length $k_1, k_2, \dots , k_n$ then
 $$ord(f) = lcm(k_1, k_2, \dots , k_n)$$
 
 \end{document}
