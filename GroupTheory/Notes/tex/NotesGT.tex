@@ -435,4 +435,51 @@ Disjoint cycles are cycles of $S_n$ that have no elements share a common positio
 Let $f$ be the product of disjoint cycles of length $k_1, k_2, \dots , k_n$ then
 $$ord(f) = lcm(k_1, k_2, \dots , k_n)$$
 
+\section{Transpositions and Alternating Groups}
+
+\subtitle{Definition 14.01 - }{Transposition}
+A \textit{transposition} is a 2-cycle.\\
+\textit{i.e.} - A permutation where only two elements are swapped.\\
+
+\subtitle{Theorem 14.02 - }{Permutations as Transpositions}
+Any permutation, $\sigma \in S_n$, is the product of a series of transpositions.\\
+\underline{N.B.} - The identity transposition, $id_{S_n}$, is the product of zero transpositions.\\
+
+\subtitle{Proposition 14.03 - }{K-Cycles as Transpositions}
+Let $k > 1$.\\
+Then a k-cycle is a product of $k-1$ transpositions.\\
+\underline{N.B.} - $(1, 2, \dots , k) = (1,2)(2,3) \dots (k-1, k)$.\\
+
+\subtitle{Definition 14.04 - }{Even \& Odd Permutations}
+Let $\sigma \in S_n$.\\
+We say $\sigma$ is \textit{even} if it is the product of an even number of transpositions.\\
+We say $\sigma$ is \textit{odd} if it is the product of an odd number of transpositions.\\
+\underline{N.B.} - The identity is even.\\
+
+\subtitle{Theorem 14.05 - }{Exclusivity of Even \& Odd Permutations}
+Every $\sigma \in S_n$ is either even or odd, never both.\\
+
+\subtitle{Proposition 14.06 - }{Composition of Even \& Odd Permutations}
+Let $\sigma, \tau \in S_n$.\\
+If $\sigma$ \& $\tau$ are both \textit{even} then, $\sigma\tau$ is \textit{even}.\\
+If $\sigma$ is \textit{even} \& $\tau$ is \textit{odd} then, $\sigma\tau$ is \textit{odd}.\\
+If $\sigma$ is \textit{odd} \& $\tau$ is \textit{even} then, $\sigma\tau$ is \textit{odd}.\\
+If $\sigma$ \& $\tau$ are both \textit{odd} then, $\sigma\tau$ is \textit{even}.\\
+
+\subtitle{Proposition 14.07 - }{Even \& Oddness of K-Cycles}
+Let $\sigma \in S_n$.\\
+If $\sigma = \tau_1\tau_2 \dots \tau_k$, where $\tau_i$ is a $k_i$-cycle.\\
+Then $\sigma$ is \textit{even} if the number of odd $\tau_i$ is even.\\
+$\sigma$ is \textit{odd} if the number of odd $\tau_i$ is odd.\\
+
+\subtitle{Proposition 14.08 - }{Even Permutations}
+The set of even permutations in $S_n$ is a subgroup of $S_n$.\\
+
+\subtitle{Definition 14.09 - }{Alternating Group}
+The subgroup of even permutations in $S_n$ is called the \textit{Alternating Group}, $A_n$.\\
+
+\subtitle{Theorem 14.10 - }{Order of an Alternating Group}
+Let $n > 1$.\\
+Then $|A_n| = \frac{n!}{2} = \frac{1}{2}|S_n|$.\\
+
 \end{document}

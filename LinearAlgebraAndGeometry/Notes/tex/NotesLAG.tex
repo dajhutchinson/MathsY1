@@ -1134,4 +1134,38 @@ Then $\forall\ v, w \in V$,
 
 \subsection{Construction of Orthonormal Basis}
 
+\subtitle{Theorem 9.10 - }{Inner Product of Vectors and Orthonormal Basis Elements}
+Let $\{\vect{v}_1, \dots , \vect{v}_n\}$ be an orthonormal basis.\\
+Define $\vect{v}$ such that $\vect{v} = \sum_{j=1}^n x_j \vect{v}_j$. Then\\
+$$\langle\vect{v}_i, \vect{v}\rangle = \sum_{j=1}^n x_j \langle\vect{v}_i, \vect{v}_j \rangle = x_i$$
+
+\subtitle{Theorem 9.11 - }{Inner Product of Two Vectors Over the Same Orthonormal Basis}
+Let $\{\vect{v}_1, \dots , \vect{v}_n\}$ be an orthonormal basis.\\
+Define $\vect{v}$ \& $\vect{w}$ such that $\vect{v} = \sum_{j=1}^n x_j \vect{v}_j$ \& $\vect{w} = \sum_{j=1}^n y_j \vect{v}_j$. Then\\
+$$\langle \vect{v}, \vect{w} \rangle = \sum_{i,j=1}^n \bar{x_j}.y_j.\langle \vect{v}_j, \vect{v}_i \rangle = \sum_{i=1}^n \bar{x_i}.y_i$$
+\underline{N.B.} - This is the same formula as the dot product of $\vect{x}$ \& $\vect{y}$.\\
+
+\subtitle{Definition 9.12 - }{Orthogonal Projection}
+Let $(V, \langle,\rangle)$ be an inner product space \& $P : V \to V$ be a linear operation.\\
+$P$ is called an \textit{orthogonal projection} if
+\begin{enumerate}[label=\roman*)]
+  \item $P^2 = P$; and,
+  \item $\langle Pv, w\rangle = \langle v, PW\rangle\ \forall\ v, w \in V$.
+\end{enumerate}
+
+\subtitle{Proposition 9.13 - }{Common Orthogonal Projection}
+Let $(V, \langle, \rangle)$ be an inner product space, $W \subset V$ be a subspace and $w_1, \dots , w_k \in W$ form an orthogonal basis.\\
+Then a common orthogonal projection, $P_W : V \to V$, is defined by
+$$P_W(v) := \sum_{i=1}^k \langle w_i, v \rangle w_i$$
+
+\subtitle{Theorem 9.14 - }{Value of Inner Product}
+Let $(V, \langle , \rangle)$ be an inner product space. Then
+$$|\langle v, w \rangle| \leq ||v||.||w||$$
+
+\subtitle{Theorem 9.15 - }{Forming an Orthogonal Basis}
+let $(V, \langle,\rangle)$ be an inner product space, $dim(V) = n$ and $u_1 , \dots , u_n \in V$.\\
+Then an orthogonal basis, $\{v_1, \dots , v_n\}$, can be formed following
+$$v_1 = \frac{1}{||u_1||}.u_1, \quad v_2 = \frac{1}{||u_2 - \langle v_1, u_2\rangle v_1||}.(u_2 - \langle v_1, u_2\rangle v_1)$$
+$$v_n = \frac{1}{||u_n - (\sum_{i=1}^{n-1}\langle v_i, u_n\rangle v_i)||}.\left(u_n - \left(\sum_{i=1}^{n-1}\langle v_i, u_n\rangle v_i\right)\right)$$
+
 \end{document}
