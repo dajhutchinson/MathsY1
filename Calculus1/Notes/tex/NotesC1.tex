@@ -376,7 +376,8 @@ Then $$y'_p = \lambda'_1 y_1 + \lambda_1 y'_1 + \lambda'_2 y_2 + \lambda_2 y'_2$
 As $\lambda_1, \lambda_2$ are constant then $\lambda'_1 = \lambda'_2 = 0$ so $$y'_p = \lambda_1y'_1 + \lambda_2y'_2$$
 By differentiating and then substituting back into the original equation we see $y_p$ is a solution iff $$\lambda'_1y'_1 + \lambda'_2y'_2 = f$$
 In matrix form we have $$\begin{pmatrix} y_1 & y_2 \\ y'_1 & y'_2 \end{pmatrix} \begin{pmatrix} \lambda'_1 \\ \lambda'_2 \end{pmatrix} = \begin{pmatrix} 0 \\ f \end{pmatrix}$$
-Then by Cramer's rule we have $$\lambda'_1 = \frac{\begin{vmatrix}0 & y_2 \\ f & y'_2 \end{vmatrix}}{W[y_1\ y_2]} = \frac{-y_2f}{W[y_1\ y_2]}$$
+Then by Cramer's rule (\textit{LAG - Theorem 6.14}) we have
+$$\lambda'_1 = \frac{\begin{vmatrix}0 & y_2 \\ f & y'_2 \end{vmatrix}}{W[y_1\ y_2]} = \frac{-y_2f}{W[y_1\ y_2]}$$
 and $$\lambda'_2 = \frac{\begin{vmatrix}y_1 & 0 \\ y'_1 & f \end{vmatrix}}{W[y_1\ y_2]} = \frac{y_1f}{W[y_1\ y_2]}$$
 Giving use a solution for $y'_p = \lambda'_1 y_1 + \lambda_1 y'_1 + \lambda'_2 y_2 + \lambda_2 y'_2$.
 

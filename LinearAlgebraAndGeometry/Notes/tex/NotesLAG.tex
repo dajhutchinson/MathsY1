@@ -46,58 +46,58 @@
 \subsection{Vectors}
 
 \subtitle{Definition 1.01 - }{Vectors}
-Ordered sets of real numbers. \\
-Denoted by $\vect{v} = (v_1, v_2, v_3,...) = \begin{pmatrix} x \\ y \end{pmatrix}$ \\
+Vectors are ordered sets of real numbers.\\
+Denoted by $\vect{v} = (v_1, v_2, v_3,...)$.\\
 
 \subtitle{Definition 1.02 - }{Euclidean Plane}
 The set of two dimensional vectors, with real componenets, is called the Euclidean Plane. \\
-Denoted by $\real^2$ \\
+Denoted by $\real^2$.\\
 
 \subtitle{Definition 1.03 - }{Vector Addition}
-Let $\vect{v}, \vect{w} \in \real^2$ such that $\vect{v} = (v_1,v_2)$ and $\vect{w} = (w_1,w_2)$. \\
-Then $\vect{v} + \vect{w} = (v_1 + w_1, v_2 + w_2)$. \\
+Let $\vect{v}, \vect{w} \in \real^2$ such that $\vect{v} = (v_1,v_2)$ and $\vect{w} = (w_1,w_2)$. Then\\
+$$\vect{v} + \vect{w} = (v_1 + w_1, v_2 + w_2)$$
 
 \subtitle{Definition 1.03 - }{Scalar Multiplcation of Vectors}
-Let $\vect{v} \in \real^2$ and $\lambda \in \real$ such that $\vect{v} = (v_1,v_2)$. \\
-Then $\lambda\vect{v} = (\lambda v_1, \lambda v_2)$. \\
+Let $\vect{v} \in \real^2$ and $\lambda \in \real$ such that $\vect{v} = (v_1,v_2)$. Then\\
+$$\lambda\vect{v} = (\lambda v_1, \lambda v_2)$$
 
 \subtitle{Definition 1.04 - }{Norm of vectors}
 The norm of a vector is its length from the origin. \\
-Denoted by $||\vect{v}|| = \sqrt{v_{1}^{2} + v_{2}^{2}}$ for $\vect{v} \in \real^2$. \\
+$$||\vect{v}|| := \sqrt{v_{1}^{2} + v_{2}^{2}}, \quad \vect{v} \in \real^2$$
 
-\subtitle{Theorem 1.05}{}
-Let $\vect{v}, \vect{w} \in \real^2$ and $\lambda \in \real $ such that $\vect{v} = (v_1,v_2)$ and $\vect{w} = (w_1,w_2)$. \\
-Then
+\subtitle{Theorem 1.05 - }{Properties of the Norm}
+Let $\vect{v}, \vect{w} \in \real^2$ and $\lambda \in \real $ such that $\vect{v} = (v_1,v_2)$ and $\vect{w} = (w_1,w_2)$. Then
 \begin{align*}
   ||\vect{v}|| &= 0\ \mathrm{iff}\ \vect{v} = \vect{0}\\
   ||\lambda\vect{v}|| &= \sqrt{\lambda^2v_{1}^{2} + \lambda^2v_{2}^{2}} \\
   &= |\lambda|.||\vect{v}|| \\
   ||\vect{v} + \vect{w}|| &\leq ||\vect{v}|| + ||\vect{w}||
-\end{align*} \\
+\end{align*}
 
 \subtitle{Definition 1.06 - }{Unit Vector}
 A vector can be described by its length \& direction. \\
 Let $\vect{v} \in \real^2\backslash\{\vect{0}\}$. \\
-Then $\vect{v} = ||\vect{v}||\vect{u}$ where $\vect{u}$ is the unit vector, $\vect{u} = \begin{pmatrix} cos\theta \\ sin\theta \end{pmatrix}$ \\
-Thus $\forall\ \vect{v} \in \real^2\ \vect{v} = \begin{pmatrix} \lambda cos\theta \\ \lambda sin\theta \end{pmatrix}$ for some $\lambda \in \real$. \\
+Then $\vect{v} = ||\vect{v}||.\vect{u}$ where $\vect{u}$ is the unit vector, $\vect{u} = \begin{pmatrix} cos\theta \\ sin\theta \end{pmatrix}$ \\
+Thus $\forall\ \vect{v} \in \real^2, \vect{v} = \begin{pmatrix} \lambda cos\theta \\ \lambda sin\theta \end{pmatrix}$ for some $\lambda \in \real\ \&\ \vect{w} = (w_1, w_2)$. \\
 
 \subtitle{Definition 1.07 - }{Dot Product}
-Let $\vect{v} \in \real^2$ and $\lambda \in \real$ such that $\vect{v} = (v_1,v_2)$. \\
+Let $\vect{v}, \vect{w} \in \real^2$ and $\lambda \in \real$ where $\vect{v} = (v_1,v_2)\ \&\ \vect{w} = (w_1, w_2)$. \\
 Then $\vect{v} \dotprod \vect{w} = v_1.w_1 + v_2.w_2$. \\
 
 \subtitle{Remark 1.08 - }{Positivity of Dot Product}
 Let $\vect{v} \in \real^2$. \\
-Then $\vect{v} \dotprod \vect{v} = ||\vect{v}||^2 = v_{1}^{2} + v_{2}^{2} \geq 0$. \\
+Then $\vect{v} \dotprod \vect{v} = v_{1}^{2} + v_{2}^{2} = ||\vect{v}||^2 \geq 0$. \\
 
 \subtitle{Remark 1.09 - }{Angle between vectors in Euclidean Plane}
 Let $\vect{v}, \vect{w} \in \real^2$. \\
 Set $\theta$ to be the angle between $\vect{v}$ \& $\vect{w}$. \\
-Then $$cos\theta = \frac{\vect{v} \dotprod \vect{w}}{||\vect{v}||\ ||\vect{w}||}$$.
+Then
+$$cos(\theta) = \frac{\vect{v} \dotprod \vect{w}}{||\vect{v}||\ ||\vect{w}||}$$.
 
 \subtitle{Theorem 1.10 - }{Cauchy-Schwarz Inequality}
 Let $\vect{v}, \vect{w} \in \real^2$. \\
 Then $$|\vect{v} \dotprod \vect{w}| \leq ||\vect{v}||\ ||\vect{w}||$$
-%
+
 \textit{Proof}
 \begin{align*}
   \frac{v_1w_1}{||\vect{v}||\ ||\vect{w}||} + \frac{v_2w_2}{||\vect{v}||\ ||\vect{w}||} &\leq \frac{1}{2}\left(\frac{v_{1}^{2}}{||\vect{v}||^2} + \frac{w_{1}^{2}}{||\vect{w}||^2}\right) + \frac{1}{2}\left(\frac{v_{2}^{2}}{||\vect{v}||^2} + \frac{w_{2}^{2}}{||\vect{w}||^2}\right) \\
@@ -110,25 +110,23 @@ Then $$|\vect{v} \dotprod \vect{w}| \leq ||\vect{v}||\ ||\vect{w}||$$
 
 \subsection{Complex Numbers}
 
-\subtitle{Definition 1.11 - }{i}
+\textbf{Definition 1.11 - }\textit{i}
 \begin{alignat*}{1}
   i^2 &= -1 \\
   i &= \sqrt{-1}
 \end{alignat*}
 
 \subtitle{Definition 1.12 - }{Complex Number Set}
-The set of complex numbers contains all numbers with an imaginary part. $$\complex := \left\{x + iy; x,y \in \real\right\}$$
+The set of \textit{complex numbers} contains all numbers with an imaginary part. $$\complex := \left\{x + iy; x,y \in \real\right\}$$
 Complex numbers are often denoted by $$z = x + iy$$ and we say $x$ is the real part of $z$ and $y$ the imaginary part.
 
 \subtitle{Definition 1.13 - }{Complex Conjugate}
-Let $z \in \complex$ st $z = x + iy$. \\
-Then $$\bar{z} := x - iy$$
-%
-\newpage
-%
+Let $z \in \complex$ st $z = x + iy$. Then
+$$\bar{z} := x - iy$$
+
 \subtitle{Theorem 1.14 - }{Operations on Complex Numbers}
-Let $z_1,z_2 \in \complex$ st $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$. \\
-Then \begin{alignat*}{2}
+Let $z_1,z_2 \in \complex$ st $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$. Then
+\begin{alignat*}{2}
   &z_1 + z_2 &&:= (x_1 + x_2) + i(y_1 + y_2) \\
   &z_1.z_2 &&:= (x_1 + iy_1)(x_2 + iy_2) \\
   & && := x_1.x_2 - y_1.y_2 + i(x_1.y_2 + x_2.y_1)
@@ -136,23 +134,20 @@ Then \begin{alignat*}{2}
 \underline{N.B.} When dividing by a complex number, multiply top and bottom by the complex conjugate. \\
 
 \subtitle{Definition 1.15 - }{Modulus of Complex Numbers}
-The modulus of a complex number is the distance of the number, from the origin, on an Argand diagram.
-Let $z \in \complex$ st $z = x + iy$. \\
-Then \begin{alignat*}{2}
-  |z| &:= \sqrt{x^2 + y^2} \\
-  &:= \sqrt{\bar{z}z}
-\end{alignat*}
-\underline{N.B.} Amplitude is an alternative name for the modulus \\
+The \textit{modulus} of a complex number is the distance of the number, from the origin, on an Argand diagram.
+Let $z \in \complex$ st $z = x + iy$. Then
+$$|z| := \sqrt{x^2 + y^2} = \sqrt{\bar{z}z}$$
+\underline{N.B.} \textit{Amplitude} is an alternative name for the modulus \\
 
 \subtitle{Definition 1.16 - }{Phase of Complex Numbers}
 The phase of a complex number is the angle between the positive real axis and the line subtended from the origin and the number, on an Argand digram.$$z = |z|.(cos\theta + i.sin\theta), \quad \theta = \mathrm{Phase}$$
-\underline{N.B.} Phase of $\bar{z}$ = - Phase of $z$ \\
+\underline{N.B.} (Phase of $\bar{z}$) = - (Phase of $z$) \\
 
 \subtitle{Theorem 1.17 - }{de Moivre's Formula}
-$$z^n = (cos\theta +i.sin\theta)^n = cos(n\theta)+i.sin(n\theta)$$
+$$z^n = (cos(\theta) +i.sin(\theta))^n = cos(n\theta)+i.sin(n\theta)$$
 
 \subtitle{Theorem 1.18 - }{Euler's Formula}
-$$e^{i\theta} = cos\theta + i.sin\theta$$
+$$e^{i\theta} = cos(\theta) + i.sin(\theta)$$
 
 \subtitle{Remark 1.19}{}
 Using Euler's formula we can express all complex numbers in terms of $e$. Thus many properties of the exponential remain true:
@@ -162,16 +157,17 @@ Using Euler's formula we can express all complex numbers in terms of $e$. Thus m
   \&, \frac{z_1}{z_2} &= \frac{\lambda_1}{\lambda_2}.e^{i(\theta_1 = \theta_2)}
 \end{alignat*}
 
-\newpage
 \section{Euclidean Space, $\real^n$}
-%
+
 \subtitle{Definition 2.01 - }{Euclidean Space}
-Let $n \in \nat$ then $\forall\ \vect{x} = (x_1, x_2, ... , x_n)$ with $x_1, x_2, ... , x_n \in \real$ we have that $\vect{x} \in \real^n$. \\
+Let $n \in \nat$ then $\forall\ \vect{x} = (x_1, x_2, ... , x_n)$ with $x_1, x_2, ... , x_n \in \real$ then $\vect{x} \in \real^n$. \\
 
 \subtitle{Theorem 2.02 - }{Operations in Euclidean Space}
-Let $\vect(x), \vect(y) \in \real^n$ and $\lambda \in \real$.
-Then $$\vect(x) + \vect(y) = (x_1 + y_1, ... , x_n + y_n)$$
-And $$\vect(x) + \lambda.\vect(y) = (x_1 + \lambda.y_1, ... , x_n + \lambda.y_n)$$
+Let $\vect{x}, \vect{y} \in \real^n$ and $\lambda \in \real$.
+Then
+$$\vect{x} + \vect{y} = (x_1 + y_1, ... , x_n + y_n)$$
+And
+$$\vect{x} + \lambda.\vect{y} = (x_1 + \lambda.y_1, ... , x_n + \lambda.y_n)$$
 
 \subtitle{Definition 2.03 - }{Cartesian Product}
 Let $A, B \in \real^n$ be non-empty sets. \\
@@ -186,22 +182,23 @@ Let $\vect{v}, \vect{w} \in \real^n$. Then \begin{alignat*}{1}
 \end{alignat*}
 
 \subtitle{Theorem 2.05 - }{Properties of the Dot Product}
-Let $\vect{u}, \vect{v}, \vect{w} \in \real^n$.
-Linearity: $$(\vect{u} + \lambda\vect{v}) \dotprod \vect{w} = \vect{u} \dotprod \vect{w} + \lambda(\vect{v} \dotprod \vect{w})$$
-Symmetry: $$\vect{v} \dotprod \vect{w} = \vect{w} \dotprod \vect{v}$$
-Positivity: $$\vect{v} \dotprod \vect{v} = v_1^2 + v_2^2 + ... +v_n^2 \geq 0$$
+Let $\vect{u}, \vect{v}, \vect{w} \in \real^n$.\\
+Linearity:
+$$(\vect{u} + \lambda\vect{v}) \dotprod \vect{w} = \vect{u} \dotprod \vect{w} + \lambda(\vect{v} \dotprod \vect{w})$$
+Symmetry:
+$$\vect{v} \dotprod \vect{w} = \vect{w} \dotprod \vect{v}$$
+Positivity:
+$$\vect{v} \dotprod \vect{v} = v_1^2 + v_2^2 + ... +v_n^2 \geq 0$$
 
 \subtitle{Definition 2.06 - }{Orthogonality}
 Let $\vect{v}, \vect{w} \in \real^n$. \\
-It is said that $\vect(v), \vect(w)$ are orthogonal to each other if $\vect{v} \dotprod \vect{w} = 0$ \\
+It is said that $\vect{v}, \vect{w}$ are \textit{orthogonal} to each other if $\vect{v} \dotprod \vect{w} = 0$ \\
 \underline{N.B.} Orthogonal vectors are perpendicular to each other. \\
 
 \subtitle{Definition 2.07 - }{The Norm}
-Let $\vect{x} \in \real^n$.\\
-Then $$||\vect{x}|| = \sqrt{\vect{x} \dotprod \vect{x}} = \sqrt{\sum_{i=1}^n x_i^2}$$
+Let $\vect{x} \in \real^n$. Then
+$$||\vect{x}|| = \sqrt{\vect{x} \dotprod \vect{x}} = \sqrt{\sum_{i=1}^n x_i^2}$$
 
-\newpage
-%
 \subtitle{Theorem 2.08 - }{Properties of the Norm}
 Let $\vect{x}, \vect{y} \in \real^n$ and $\lambda \in \real$. Then
 \begin{alignat*}{2}
@@ -214,61 +211,67 @@ Let $\vect{x}, \vect{y} \in \real^n$ and $\lambda \in \real$. Then
 \subtitle{Theorem 2.09 - }{Dot Product and Norm}
 Let $\vect{x}, \vect{y} \in \real^n$.
 $$|\vect{x} \dotprod \vect{y}| \leq ||\vect{x}|| ||\vect{y}||$$
-\underline{N.B.} $|\vect{x} \dotprod \vect{y}| = ||\vect{x}|| ||\vect{y}||$ iff $\vect{x}$ \& $\vect{x}$ are orthogonal.\\
+\underline{N.B.} $|\vect{x} \dotprod \vect{y}| = ||\vect{x}||.||\vect{y}||$ iff $\vect{x}$ \& $\vect{y}$ are orthogonal.\\
 
 \subtitle{Theorem 2.10 - }{Angle between Vectors}
-Let $\vect{x}, \vect{y} \in \real^n$. Then $$cos\theta = \frac{\vect{x} \dotprod \vect{y}}{||\vect{x}|| ||\vect{y}||}$$
+Let $\vect{x}, \vect{y} \in \real^n$. Then
+$$cos(\theta) = \frac{\vect{x} \dotprod \vect{y}}{||\vect{x}||.||\vect{y}||}$$
 
 \subsection{Linear Subspaces}
-%
+
 \subtitle{Definition 2.11 - }{Linear Subspace}
-Let $V \subset \real^n$. $V$ is a \textit{Linear Subspace} if: \\
-\textbf{i)} $V \not = \emptyset$; \\
-\textbf{ii)} $\forall\ \vect{v}, \vect{w} \in V$ then $\vect{v} + \vect{w} \in V$; \\
-\textbf{iii)} $\forall\ \lambda \in \real, \vect{v} \in V$ then $\lambda\vect{v} \in V$. \\
+Let $V \subset \real^n$.\\
+$V$ is a \textit{Linear Subspace} if
+\begin{enumerate}[label=\roman*)]
+  \item $V \not = \emptyset$;
+  \item $\forall\ \vect{v}, \vect{w} \in V$ then $\vect{v} + \vect{w} \in V$; and
+  \item $\forall\ \lambda \in \real, \vect{v} \in V$ then $\lambda\vect{v} \in V$.\\
+\end{enumerate}
 
 \subtitle{Definition 2.12 - }{Span}
-Let $\vect{x_1}, ... , \vect{x_k} \in \real^n; k \in \nat$. Then
+Let $\vect{x_1}, ... , \vect{x_k} \in \real^n, k \in \nat$. Then
 $$\mathrm{span}\{\vect{x_1}, ... , \vect{x_k}\} := \{\lambda_1\vect{x_1} + ... + \lambda_k\vect{x_k}; \lambda_i \in \real, 0 \leq i \geq k\}$$
 
-\subtitle{Definition 2.13 - }{Spans are Subspaces}
+\subtitle{Theorem 2.13 - }{Spans are Subspaces}
 Let $\vect{x_1}, ... , \vect{x_k} \in \real^n;\ k \in \nat$. Then span$\{\vect{x_1}, ... , \vect{x_k}\}$ is a linear subspace of $\real^n$. \\
 
 \subtitle{Theorem 2.14}{}
 $$W_{\vect{a}} := \{\vect{x} \in \real^n; \vect{x} \dotprod \vect{a} = 0\}\mathrm{\ is\ a\ subspace.}$$
 
 \subtitle{Definition 2.15 - }{Orthogonal Complement}
-Let $V \subset \real^n$. Then,
+Let $V \subset \real^n$. Then
 $$V^{\perp} := \{\vect{x} \in \real^n; \vect{x} \dotprod \vect{y}\ \forall\ \vect{y} \in V\}$$
-\underline{N.B.} $V^{\perp} \subset \real^n$
+\underline{N.B.} $V^{\perp} \subset \real^n$.\\
 
 \subtitle{Theorem 2.16 - }{Relationship of Subspaces}
-Let $V, W$ be subspaces of $\real$. Then
-$$V \cap W \mathrm{\ is\ a\ subspace.}$$
+Let $V, W \subset \real^n$. Then
+$$V \cap W \mathrm{\ is\ a\ subspace\ and}$$
 $$V+W := \{\vect{v} + \vect{w}; \vect{v} \in V, \vect{w} \in W\}\mathrm{\ is\ a\ subspace.}$$
 
 \subtitle{Definition 2.17 - }{Direct Sum}
-Let $V_1, V_2, W$ be subspaces of $\real$. Then $W$ is said to be a \textit{direct sum} if \\
-\textbf{i)} $W = V_1 + V_2$; \\
-\textbf{ii)} $V_1 \cap V_2 = \emptyset$. \\
+Let $V_1, V_2, W$ be subspaces of $\real$. Then $W$ is said to be a \textit{direct sum} if
+\begin{enumerate}[label=\roman*)]
+  \item $W = V_1 + V_2$; and,
+  \item $V_1 \cap V_2 = \emptyset$.
+\end{enumerate}
 
 \section{Linear Equations \& Matrices}
 
 \subsection{Linear Equations}
-%
+
 \subtitle{Definition 3.01 - }{Multi-Variable Linear Equations}
 Linear equations produce a straight line and can have multiple variables. \\
-\textit{Examples} - $x = 3, y = x + 3, z + 5x - 2y$ \\
+\textit{Examples} $x = 3, y = x + 3, z + 5x - 2y$ \\
 
 \subtitle{Defintion 3.02 - }{Systems of Linear Equations}
 Let $\vect{a}, \vect{x} \in \real^n$ \& $b \in \real$ such that $\vect{a} \dotprod \vect{x} = b$. \\
-$\vect{a} \dotprod \vect{x} = b$ is a linear equation in $x$ with $S = \{\vect{x}; \vect{a} \dotprod \vect{x} = b\}$ as the set of solutions. \\
-\underline{N.B.} If $b = 0$ then $S(\vect{a}, 0)$ is a subspace. \\
+$\vect{a} \dotprod \vect{x} = b$ is a linear equation in $S$ with $S(\vect{a}, b) = \{\vect{x}; \vect{a} \dotprod \vect{x} = b\}$ as the set of solutions. \\
+\underline{N.B.} If $b = 0$ then $S(\vect{a}, 0)$ is a subspace.
 
 \subsection{Matrices}
-%
+
 \subtitle{Definition 3.03 - }{Matrix}
-Let $m, n \in \nat$, then a $m \times n$ grid of numbers form an "m" by "n" matrix.
+Let $m, n \in \nat$, then a $m \times n$ grid of numbers form an \textit{'m by n'} matrix.
 Each element of the matrix can be reference by $a_{ij}$ with $i = 1, ... , m$ and $j = 1, ... , n$.
 $$ A = \begin{pmatrix}
   a_{11} & a_{12} & ... & a_{1n} \\
@@ -277,15 +280,15 @@ $$ A = \begin{pmatrix}
   a_{m1} & a_{m2} & ... & a_{mn}
 \end{pmatrix}
 $$
-\underline{N.B.} m,i = rows, n,j = columns \\
+\underline{N.B.} m\ \&\ i = rows; n\ \&\ j = columns \\
 
 \subtitle{Definition 3.04 - }{Sets of Matrices}
-$M_{m,n}(\real)$ is the set of m x n matrices containing only real numbers. \\
-$M_{m,n}(\mathbb{Z})$ is the set of m x n matrices containing only integers. \\
-$M_{n}(\real)$ is the set square matrices, size n, containing only real numbers. \\
+$M_{m,n}(\real)$ is the set of m x n matrices containing only real elements. \\
+$M_{m,n}(\mathbb{Z})$ is the set of m x n matrices containing only integer elements. \\
+$M_{n}(\real)$ is the set square matrices, size n, containing only real elements. \\
 
 \subtitle{Definition 3.05 - }{Transpose Vectors}
-Let $\vect{x} = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n\end{pmatrix}$ then $\vect{x}^t = \begin{pmatrix} x_1 & x_2 & ... & x_n\end{pmatrix}$
+Let $\vect{x} = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n\end{pmatrix}$ then $\vect{x}^t = \begin{pmatrix} x_1 & x_2 & ... & x_n\end{pmatrix}$\\\\
 
 \subtitle{Definition 3.06 - }{Vector-Matrix Multiplication}
 Let $A \in \real_{m,n}$ and $\vect{x} \in \real^n$ then
@@ -309,54 +312,55 @@ $$A\vect{x} := \begin{pmatrix}
 \end{pmatrix} \in \real^m
 $$ This can be simplified to $$\vect{y} = A\vect{x} \mathrm{\ with\ } y_i = \sum_{j=1}^n a_{ij} x_j$$
 
-\subtitle{Theorem 3.07 - }{Operations on Matrices with Vectors}
+\textbf{Theorem 3.07 - }\textit{Operations on Matrices with Vectors}
 \begin{enumerate}[label=\roman*)]
   \item $A(\vect{x} + \vect{y}) = A\vect{x} + A\vect{y},\quad \forall\ \vect{x}, \vect{y} \in \real^n$.
-  \item $A(\lambda\vect{x}) = \lambda(A\vect{x}),\quad \forall \vect{x} \in \real^n, \lambda \in \real$.
+  \item $A(\lambda\vect{x}) = \lambda(A\vect{x}),\quad \forall\ \vect{x} \in \real^n, \lambda \in \real$.\\
 \end{enumerate}
 
-\subtitle{Theorem 3.08}{}
-Let $A = (a_{ij}) \in M_{m,n}(\real)$ and $B = (b_{ij}) \in M_{l,m}(\real)$.
+\subtitle{Theorem 3.08 - }{Composition of Matrices}
+Let $A = (a_{ij}) \in M_{m,n}(\real)$ and $B = (b_{ij}) \in M_{l,m}(\real)$.\\
 Then there exists a $C = (c_{ij}) \in M_{l,n}(\real)$ such that
 $$C\vect{x} = B(A\vect{x}), \quad \forall\ \vect{x} \in \real^n$$
 \underline{N.B.} $c_{ij} = \sum_{k=1}^m b_{ik} a_{kj}$ \\
 
-\subtitle{Theorem 3.09 - }{Operation between Matrices}
+\subtitle{Theorem 3.09 - }{Operations with Matrices}
 Let $A, B \in M_{m,n}$ and $C \in M_{l,m}$
 \begin{enumerate}[label=\roman*)]
-  \item $C(A + B) = CA + CB$.
-  \item $(A + B)C = AC + BC$.
+  \item $C(A + B) = CA + CB$;
+  \item $(A + B)C = AC + BC$; and,
   \item Let $D \in M_{m,n}, E \in M_{n,l}$ \& $F \in M_{l, k}$ then $$E(FG) = (EF)G$$
 \end{enumerate}
 \underline{N.B.} $AB \not = BA$ \\
 
 \subtitle{Definition 3.10 - }{Types of Matrix}
-Upper Triangle $\begin{pmatrix}
+Upper Triangle - $\begin{pmatrix}
 1 & 2 & 3 \\
 0 & 4 & 5 \\
 0 & 0 & 6
 \end{pmatrix},\quad a_{ij} = 0 \mathrm{\ if\ } i > j$. \\
-Lower Triangle $\begin{pmatrix}
+Lower Triangle - $\begin{pmatrix}
 1 & 0 & 0 \\
 2 & 3 & 0 \\
 4 & 5 & 6
 \end{pmatrix},\quad a_{ij} = 0 \mathrm{\ if\ } i < j$. \\
-Symmetric Matrix $\begin{pmatrix}
+Symmetric Matrix - $\begin{pmatrix}
 1 & 2 & 3 \\
 2 & 4 & 0 \\
 3 & 0 & 1
 \end{pmatrix},\quad a_{ij} = a_{ji}.$ \\
-Anti-Symmetric $\begin{pmatrix}
+Anti-Symmetric - $\begin{pmatrix}
 1 & -2 & -3 \\
 2 & 0 & -4 \\
 3 & 4 & -1
-\end{pmatrix},\quad a_{ij} = -a_{ji}$. \\
+\end{pmatrix},\quad a_{ij} = -a_{ji}$. \\\\
 
 \subtitle{Definition 3.11 - }{Transposed Matrices}
-Let $A = (a_{ij}) \in M_{m,n}(\real)$ then the transponse of $A$, $A^t$, is an element of $M_{n,m}(\real)$. $$A^t := (aji)$$
+Let $A = (a_{ij}) \in M_{m,n}(\real)$ then the transponse of $A$, $A^t$, is an element of $M_{n,m}(\real)$.
+$$A^t := (a_{ji})$$
 
 \subtitle{Theorem 3.12 - }{Transpose Matrix Multiplication}
-Let $A \in M_{m,n}(\real), \vect{x} \in \real^n, \vect{y} \in \real^m$. Then
+Let $A \in M_{m,n}(\real), \vect{x} \in \real^n\ \&\ \vect{y} \in \real^m$. Then
 $$\vect{y} \dotprod A \vect{x} = \left(A_t \vect{y}\right) \dotprod \vect{x}$$
 
 \subtitle{Theorem 3.10 - }{Transposing Multiplied Matrices}
@@ -365,10 +369,12 @@ $$(AB)^t = B^t A^t$$
 \subsection{Structure of Set of Solutions}
 %
 \subtitle{Definition 3.13 - }{Set of Solutions}
-Let $A \in M_{m,n}(\real)$ and $\vect{b} \in \real^m$. Then $$S(A, \vect{b}) :={\vect{x} \in \real^n; A\vect{x} = b}$$
+Let $A \in M_{m,n}(\real)$ and $\vect{b} \in \real^m$. Then
+$$S(A, \vect{b}) :=\left\{\vect{x} \in \real^n; A\vect{x} = b\right\}$$
 
 \subtitle{Definition 3.14 - }{Homogenous Solutions}
-The system of $S(A, \vect{0})$ is called said to be \textit{homogenous}. All other systems are \textit{inhomogenous}.
+The system of $S(A, \vect{0})$ is said to be \textit{homogenous}.\\
+All other systems are \textit{inhomogenous}.
 \underline{N.B.} - $S(A, \vect{0})$ is a linear subspace. \\
 
 \subtitle{Theorem 3.15 - }{Using Homogenous Solutions}
@@ -376,7 +382,7 @@ Let $A \in M_{m,n}(\real)$ and $\vect{b} \in \real^n$. Let $\vect{x}_0 \in \real
 $$S(A, \vect{b}) = {\vect{x}_0} + S(A, \vect{0})$$
 
 \subtitle{Remark 3.16 - }{Systems of Linear Equations as Matrices}
-The system of linear equations $3x + z = 0, y - z = 1, 3x + y = 1$ can be represented by a matrix and a vector.
+The system of linear equations $3x + z = 0, y - z = 1\ \&\ 3x + y = 1$ can be represented by a matrix and a vector.
 $$A = \begin{pmatrix}
 3 & 0 & 1 \\
 0 & 1 & -1 \\
@@ -388,23 +394,24 @@ $$A = \begin{pmatrix}
 \subsection{Solving Systems of Linear Equations}
 Systems of linear equations can be displayed as matrices which can be reduced and solved by a technique called \textit{Gaussian Elimination}. \\ \\
 %
-\subtitle{Theorem 3.17}{}
+\subtitle{Theorem 3.17 - }{Operations on Linear Equations}
 There are certain operations that can be performed on a system of linear equations without changing the result:
 \begin{enumerate}[label=\roman*)]
   \item Multiply an equaion by a non-zero constant;
-  \item Add a multiple of any equation to another equation;
-  \item Swap any two equations.
+  \item Add a multiple of any equation to another equation; and,
+  \item Swap any two equations.\\
 \end{enumerate}
 
 \subtitle{Definition 3.18 - }{Augmented Matrices}
-Let $A\vect{x} = \vect{b}$ be a system of linear equations. The associated \textit{Augmented Matrix} is $$(A\ \vect{b}) \in M_{m, n+1}(\real)$$
+Let $A\vect{x} = \vect{b}$ be a system of linear equations.\\
+The associated \textit{Augmented Matrix} is $$(A\ \vect{b}) \in M_{m, n+1}(\real)$$
 
 \subtitle{Theorem 3.19 - }{Elementary Row Operations}
 From \textit{Theorem 3.17} we can deduce ceratin operations that can be performed on an \textit{Augmented Matrix} which do not alter the solutions:
 \begin{enumerate}[label=\roman*)]
   \item Multiply a row by a non-zero constant, $row\ i \to \lambda(row\ i)$;
-  \item Add a multiple of any row to another row, $row\ i \to row\ i + \lambda(row\ j)$;
-  \item Swap two rows, $row\ i \leftrightarrow row\ j $.
+  \item Add a multiple of any row to another row, $row\ i \to row\ i + \lambda(row\ j)$; and,
+  \item Swap two rows, $row\ i \leftrightarrow row\ j $.\\
 \end{enumerate}
 
 \subtitle{Definition 3.20 - }{Row Echelon Form}
@@ -417,19 +424,19 @@ A matrix is in \textit{Row Echelon Form} if:
   1 & a & b \\
   0 & 1 & c \\
   0 & 0 & 1
-\end{pmatrix}$$
+\end{pmatrix}$$ \\
 
 \subtitle{Definition 3.20 - }{Reduced Row Echelon Form}
 A matrix is in \textit{Reduced Row Echelon Form} if:
 \begin{enumerate}[label=\roman*)]
-  \item The matrix is in \textit{row echelon form}; And,
+  \item The matrix is in \textit{row echelon form}; and,
   \item All values in a row, except the leading $1$, are $0$.
 \end{enumerate}
 \textit{Example} $$\begin{pmatrix}
   1 & 0 & 0 \\
   0 & 1 & 0 \\
   0 & 0 & 1
-\end{pmatrix}$$
+\end{pmatrix}$$\\
 
 \subtitle{Theorem 3.21 - }{Gaussian Elimination}
 \textit{Gaussian Elimination} is a technique used to solve systems of linear equations.
@@ -476,17 +483,14 @@ Solve $x + y + 2z = 9, 2x + 4y - 3z = 1, 3x + 6y - 5z = 0$.
 \subsection{Elementary Matrices \& Inverting Matrices}
 %
 \subtitle{Definition 3.22 - }{Invertible Matrices}
-A matrix, $A \in M_{m,n}(\real)$, is said to be \textit{Invertible} if there exists $A^{-1} \in M_{n,m}(\real)$ such that
+A matrix, $A \in M_{m,n}(\real)$, is said to be \textit{invertible} if there exists $A^{-1} \in M_{n,m}(\real)$ such that
 $$AA^{-1} = I$$
-\underline{N.B.} - If a matrix is not invertible then it is \textit{Singular}.\\
+\underline{N.B.} - If a matrix is not invertible then it is \textit{singular}.\\
 
 \subtitle{Definition 3.23 - }{Elementary Matrices}
 A matrix, $E \in M_{m,n}(\real)$, is said to be an \textit{Elementary Matrix} if it can be obtained by performing Elementary Row Operations on a square identity matrix.\\
-\textit{Examples}
+\textit{Example}
 $\begin{pmatrix}
-  0 & 1 \\
-  1 & 0
-\end{pmatrix},\ \begin{pmatrix}
   0 & \lambda \\
   \mu & 0
 \end{pmatrix}$ \\
@@ -495,7 +499,7 @@ $\begin{pmatrix}
 All elementary matrices are invertible.
 
 \subtitle{Remark 3.25}{}
-Let $A$ be a matrix, and $B$ be a matrix which can be obtained from $A$ by elementary row operations. Then there exists an elementary matrix $E$ such that $$B = EA$$.
+Let $A$ be a matrix, and $B$ be a matrix which can be obtained from $A$ by elementary row operations. Then there exists an elementary matrix, $E$, such that $$B = EA$$.
 
 \subtitle{Theorem 3.26 - }{Finding $A^{-1}$}
 Let $A = \begin{pmatrix}
@@ -513,45 +517,49 @@ Let $A = \begin{pmatrix}
 \end{pmatrix}$. \\
 Then by using EROS to change $(A\ I) \to (I\ B)$, $B$ is the inverse of $A$. \\
 
-\subtitle{Theorem 3.27 - }{Inverse of a 2x2 Matrix}
+\subtitle{Theorem 3.27 - }{Inverse of a $2 \times 2$ Matrix}
 Let $A = \begin{pmatrix}
   a & b \\
   c & d
-\end{pmatrix}$ then $$A^{-1} = \frac{1}{ad - bc}\begin{pmatrix}
+\end{pmatrix}$ then $$A^{-1} = \frac{1}{ad - bc} \begin{pmatrix}
   d & -b \\
   -c & a
-\end{pmatrix}$$
+\end{pmatrix} = \frac{1}{det(A)} \begin{pmatrix}
+  d & -b \\
+  -c & a
+\end{pmatrix} $$
 
 \section{Linear Independence, Bases \& Dimensions}
 \subsection{Linear Independence \& Dependence}
 %
 \subtitle{Definition 4.01 - }{Linear Independence \& Dependence}
-Vectors, $\vect{x}_1, ... , \vect{x}_n \in \real^k$, are said to be \textit{linearly dependent} if there exists \underline{non-zero} real numbers, $\lambda_1, ... , \lambda_n$ such that
+Vectors, $\vect{x}_1, ... , \vect{x}_n \in \real^k$, are said to be \textit{linearly dependent} if there exists non-zero real numbers, $\lambda_1, ... , \lambda_n$, such that
 $$\lambda_1.\vect{x}_1 + ... + \lambda_n.\vect{x}_n = \vect{0}$$
 \underline{N.B.} - If this is only true if $\lambda_1 = ... = \lambda_n = 0$ then the vectors are said to be \textit{linearly independent}. \\
 
 \subtitle{Remark 4.02}{}
-Vectors are only \textit{linearly dependent} if one of them lies in the span of the rest.
+Vectors are \textit{linearly dependent} if at least one of them lies in the span of the rest.
 
 \subsection{Bases \& Dimensions}
 %
 \subtitle{Definition 4.03 - }{Basis}
 A \textit{basis} is a set of vectors, $\vect{v}_1, ... , \vect{v}_n \in V$ such that
 \begin{enumerate}[label=\roman*)]
-  \item $V = \mathrm{span}\{\vect{v}_1, .... , \vect{v}_n\}$;
-  \item $\vect{v}_1, ... , \vect{v}_n$ are linearly independent.
+  \item $V = \mathrm{span}\{\vect{v}_1, .... , \vect{v}_n\}$; and,
+  \item $\vect{v}_1, ... , \vect{v}_n$ are linearly independent.\\
 \end{enumerate}
 
 \subtitle{Definition 4.04 - }{Standard Basis}
 The \textit{standard basis} for a vector space is the set fewest unit vectors which span it. \\
-\textit{Example} - $\{\vect{v}_1, \vect{e}_2 , \vect{e}_3\}$ are the standard basis for $\real^3$. \\
+\textit{Example} - $\{\vect{e}_1, \vect{e}_2 , \vect{e}_3\}$ are the standard basis for $\real^3$. \\
 
 \subtitle{Theorem 4.05 - }{Basis of a Linear Subspace}
 For all elements, $\vect{v}$, of a linear subspace, $V \subset \real^n$, there exists a \underline{unique} set of numbers, $\lambda_1, ... , \lambda_n$, such that
 $$\vect{v} = \lambda_1.\vect{v}_1 + ... + \lambda_n.\vect{v}_n$$
 
 \subtitle{Theorem 4.06 - }{Linear Independence and Bases}
-Let $V \subset \real^n$ be a linear subspace with basis ${\vect{v}_1, ... , \vect{v}_n}$. Suppose $\vect{w}_1 , ... , \vect{w}_k \in V$ are linearly independent, then $k \leq n$. \\
+Let $V \subset \real^n$ be a linear subspace with basis ${\vect{v}_1, ... , \vect{v}_n}$.\\
+Suppose $\vect{w}_1 , ... , \vect{w}_k \in V$ are linearly independent, then $k \leq n$.\\
 
 \subtitle{Definition 4.07 - }{Dimension}
 Let $V \subset \real^n$ be a linear subspace then the \textit{dimension} of $V$, $dim(V)$, is the fewest number vectors required to form a basis for $V$.
@@ -559,12 +567,13 @@ Let $V \subset \real^n$ be a linear subspace then the \textit{dimension} of $V$,
 \subsection{Orthogonal Bases}
 %
 \subtitle{Definition 4.08 - }{Orthogonal}
-Let $V \subset \real^n$ be a linear subspace with $\{\vect{v}_1 , ... , \vect{v}_k\}$ as its basis. This basis is an \textit{orthogonal basis} if it statisfies:
+Let $V \subset \real^n$ be a linear subspace with $\{\vect{v}_1 , ... , \vect{v}_k\}$ as its basis.\\
+This basis is an \textit{orthogonal basis} if it statisfies
 \begin{enumerate}[label=\roman*)]
-  \item $\vect{v}_i \dotprod \vect{v}_j = 0$ if $i \not = j$;
+  \item $\vect{v}_i \dotprod \vect{v}_j = 0$ if $i \not = j$; and,
   \item $\vect{v}_i \dotprod \vect{v}_i = 1,\ i = 1, ... , k$.
 \end{enumerate}
-\underline{N.B.} - This can be generalised to $\vect{v}_i \dotprod \vect{v}_k = \delta_{ij}$ with $\delta_{ij} := \begin{cases} 1, & i = j \\ 0, & \mathrm{otherwise}\end{cases}$
+\underline{N.B.} - This can be generalised to $\vect{v}_i \dotprod \vect{v}_k = \delta_{ij}$ with $\delta_{ij} := \begin{cases} 1, & i = j \\ 0, & \mathrm{otherwise}\end{cases}$\\\\
 
 \subtitle{Theorem 4.09}{}
 Let $V \subset \real^n$ be a linear subspace with an orthogonal basis $\{\vect{v}_1 , ... , \vect{v}_k\}$. \\
@@ -575,7 +584,7 @@ Then for all $\vect{u} \in V$ $$\vect{u} = (\vect{v}_1 \dotprod \vect{u}) \vect{
 \subtitle{Definition 5.01 - }{Linear Map}
 A map, $T : \real^n \to \real^m$ is a \textit{linear map} if
 \begin{enumerate}[label=\roman*)]
-  \item $T(\vect{x} + \vect{y}) = T(\vect{x}) + T(\vect{y}),\quad \forall\ \vect{x}, \vect{y} \in \real^n$;
+  \item $T(\vect{x} + \vect{y}) = T(\vect{x}) + T(\vect{y}),\quad \forall\ \vect{x}, \vect{y} \in \real^n$; and,
   \item $T(\lambda\vect{x}) = \lambda T(\vect{x}),\quad \forall\ \vect{x} \in \real^n, \lambda \in \real$.
 \end{enumerate}
 \underline{N.B.} - If $m = n$ then $T$ is referred to as a \textit{linear operator}. \\
@@ -584,8 +593,10 @@ A map, $T : \real^n \to \real^m$ is a \textit{linear map} if
 Let $T : \real^n \to \real^m$ be a linear map. Then $T(\vect{0}) = \vect{0}$. \\
 
 \subtitle{Definiton 5.03 - }{Linear Maps as Matrices}
-Let $T : \real^n \to \real^m$ be a linear map. Then the associated Matrix is defined as $$M_T = (t_{ij}) \in M_{m,n}(\real)$$
-with the elements of $M_T$ defined by $$t_{ij} = \vect{e}_i \dotprod T(\vect{e}_j)$$
+Let $T : \real^n \to \real^m$ be a linear map. Then the associated Matrix is defined as
+$$M_T := (t_{ij}) \in M_{m,n}(\real)$$
+with the elements of $M_T$ defined by
+$$t_{ij} := \vect{e}_i \dotprod T(\vect{e}_j)$$
 
 \subtitle{Theorem 5.04 - }{Solutions to Linear Maps from Matrices}
 Let $T : \real^n \to \real^m$ be a linear map and $M_T$ be the associated matrix. Then $$T(\vect{x}) = M_T\vect{x},\quad \forall\ \vect{x} \in \real^n$$
@@ -593,27 +604,25 @@ Let $T : \real^n \to \real^m$ be a linear map and $M_T$ be the associated matrix
 \subsection{Abstract Properties of Linear Maps}
 %
 \subtitle{Theorem 5.05 - }{Relationship between Linear Maps}
-Let $S : \real^n \to \real^m$, $T : \real^n \to \real^m$ \& $U : \real^m \to \real^k$ be a linear maps and $\lambda \in \real$. Then
+Let $S : \real^n \to \real^m$, $T : \real^n \to \real^m$ \& $U : \real^m \to \real^k$ be a linear maps, $\vect{x} \in \real^n$ and $\lambda \in \real$. Then
 \begin{enumerate}[label=\roman*)]
-  \item $(\lambda T)(\vect{x}) := \lambda T(\vect{x})$;
-  \item $(S + T)(\vect{x}) = S(\vect{x}) + T(\vect{x})$;
-  \item $(U \circ S)(\vect{x}) = U(S(\vect{x}))$.
+  \item $(\lambda T)(\vect{x}) = \lambda T(\vect{x})$;
+  \item $(S + T)(\vect{x}) = S(\vect{x}) + T(\vect{x})$; and,
+  \item $(U \circ S)(\vect{x}) = U(S(\vect{x}))$.\\
 \end{enumerate}
 
 \subtitle{Definition 5.06 - }{Image \& Kernel}
-Let $T : \real^n \to \real^m$ be a linear map. Then
-\begin{enumerate}[label=\roman*)]
-  \item The \textit{image} of $T$ is defined to be $$Im(T) := \{\vect{y} \in \real^m : \exists\ \vect{x} \in \real^n st\ T(\vect{x}) = \vect{y}\}$$
-  \item The \textit{kernel} of $T$ is defined to be $$Ket(T) := \{\vect{x} \in \real^n : T(\vect{x}) = \vect{0}\}$$
-\end{enumerate}
+Let $T : \real^n \to \real^m$ be a linear map. Then\\
+The \textit{image} of $T$ is defined to be $$Im(T) := \{\vect{y} \in \real^m : \exists\ \vect{x} \in \real^n st\ T(\vect{x}) = \vect{y}\}$$
+The \textit{kernel} of $T$ is defined to be $$Ker(T) := \{\vect{x} \in \real^n : T(\vect{x}) = \vect{0}\}$$
 
-\subtitle{Theorem 5.07}{}
+\subtitle{Theorem 5.07 - }{Image \& Kernel are Linear Subspaces}
 Let $T : \real^n \to \real^m$ be a linear map then $Im(T)$ is a linear subsapce of $\real^m$ and $Ker(T)$ is a linear subspaces of $\real^n$ \\
 
 \subtitle{Remark 5.08}{}
 Let $T : \real^n \to \real^m$ be a linear map. Then
 \begin{enumerate}[label=\roman*)]
-  \item $T$ is surjective if $Im(T) = \real^m$;
+  \item $T$ is surjective if $Im(T) = \real^m$; and,
   \item $T$ is injective if $Ker(T) = \{ 0\}$.
 \end{enumerate}
 
@@ -623,7 +632,7 @@ Let $T : \real^n \to \real^m$ be a linear map. Then
 Let $S : \real^n \to \real^m$, $T : \real^n \to \real^m$ \& $U : \real^m \to \real^k$ be a linear maps and $\lambda \in \real$ with $M_S, M_T\ \&\ M_U$ as the corresponding matrices. Then
 \begin{enumerate}[label=\roman*)]
   \item $M_{\lambda T} = \lambda M_T = (\lambda t_{ij})$;
-  \item $M_{S + T} = (s_{ij} + t_{ij}) = M_S + M_T$;
+  \item $M_{S + T} = (s_{ij} + t_{ij}) = M_S + M_T$; and,
   \item $M_{U \circ S} = (r_{ij})$ where $r_{ik} = \sum_{k=1}^m s_{ik}t_{jk}$.
 \end{enumerate}
 
@@ -646,29 +655,29 @@ Let $S : \real^n \to \real^m$ \& $T : \real^k \to \real^n$ be linear maps. Then
 \begin{enumerate}[label=\roman*)]
   \item $S \circ T = 0$ iff $Im(T) \subset Ker(S)$;
   \item $rank(S \circ T) \leq rank(T)$ and $rank(S \circ T) \leq rank(S)$;
-  \item $nullity(S \circ T) \geq nullity(T)$ and $nullity(S \circ T) \geq nullity(S) + k - n$;
+  \item $nullity(S \circ T) \geq nullity(T)$ and $nullity(S \circ T) \geq nullity(S) + k - n$; and,
   \item $S$ is invertible then $rank(S \circ T) = rank(T)$ and $nullity(S \circ T) = nullity(T)$.
 \end{enumerate}
 
 \section{Determinants}
-%
+
 \subsection{Definition \& Basic Properties}
 
 \subtitle{Definition 6.01 - }{Determinant Function}
 A \textit{determinant function} $d_n : \real^n \times ... \times \real^n \to \real$ is a function which statisfies three conditions:
 \begin{enumerate}[label=\roman*)]
-  \item \textit{Multilinear} - $d_2(\lambda\vect{a}_1 + \mu\vect{b}, \vect{a}_2) = \lambda d_2(\vect{a}_1, \vect{a}_2) + \mu(\vect{b}, \vect{a}_2)$;
-  \item \textit{Antisymmetric} - $d_2(\vect{a}_1, \vect{a}_2) = -d_2(\vect{a}_2, \vect{a}_1)$;
+  \item \textit{Multilinearity} - $d_2(\lambda\vect{a}_1 + \mu\vect{b}, \vect{a}_2) = \lambda d_2(\vect{a}_1, \vect{a}_2) + \mu(\vect{b}, \vect{a}_2)$;
+  \item \textit{Antisymmetry} - $d_2(\vect{a}_1, \vect{a}_2) = -d_2(\vect{a}_2, \vect{a}_1)$; and,
   \item \textit{Normalisation} - $d_2(\vect{e}_1, \vect{e}_2) = 1$.
 \end{enumerate}
-\underline{N.B.} - Determinant functions only exists for \textit{square matrices}. \\
+\underline{N.B.} - Determinant functions only exist for \textit{square matrices}. \\
 
-\subtitle{Theorem 6.02 - }{Properties of Determinant}
+\textbf{Theorem 6.02 - }\textit{Properties of Determinant}
 \begin{enumerate}[label=\roman*)]
   \item $det[ ... , \vect{a}_i + \lambda\vect{a}_i , ...] = det[ ... , \vect{a}_i , ...] + \lambda det[ ... , \vect{a}_i , ...]$;
   \item If $A$ has two identical columns then $det(A) = 0$;
-  \item If $A$ has an all zero column then $det(A) = 0$;
-  \item $det[... \vect{a}_i ... \vect{a}_j ...] = det[... (\vect{a}_i + \lambda\vect{a}_j) ... \vect{a}_j ...]$
+  \item If $A$ has an all zero column then $det(A) = 0$; and,
+  \item $det[... \vect{a}_i ... \vect{a}_j ...] = det[... (\vect{a}_i + \lambda\vect{a}_j) ... \vect{a}_j ...]$\\
 \end{enumerate}
 
 \subtitle{Theorem 6.03}{}
@@ -682,15 +691,16 @@ Let $A = (a_{ij}) \in M_{n}(\real)$ be a upper triangle matrix, so $a_{ij} = 0$ 
 \subtitle{Theorem 6.05 - }{Relationship between Determinants}
 Let $A, B \in M_{n}(\real)$ then $$det(AB) = det(A).det(B)$$ but usually $$det(A + B) \not = det(A) + det(B)$$
 
-\subtitle{Theorem 6.06 - }{Determinant \& Inverses}
+\subtitle{Theorem 6.06 - }{Determinant \& the Inverse Matrix}
 If $det(A) = 0$ then $A^{-1}$ does not exist. \\
 
 \subtitle{Theorem 6.07 - }{Leibniz Formula}
 Let $A = (a_{ij}) \in M_n(\real)$ then the \textit{Leibniz Formula} states that $$det(A) := \sum_{\sigma \in S_n} \mathrm{sign}(\sigma) \prod_{j=1}^{n}a_{\sigma(j),j}$$
-Where: \begin{itemize}[label={-}]
+Where
+\begin{itemize}[label={-}]
   \item $S_n$ is the group of symmetries for a regular n-sided polygons;
   \item sign$(\sigma)$ is the sign function which returns $+1$ for even permuations and $-1$ for odd permutations. \\
-  A permutation is even if a even number of permutations (swaps) are required to change the identity permutation to the given permutation, $\sigma$.
+  A permutation is even if a even number of permutations (swaps) are required to change the identity permutation to the given permutation, $\sigma$.\\
 \end{itemize}
 
 \subtitle{Remark 6.08 - }{Determinant of Transpose}
@@ -700,11 +710,12 @@ Let $A$ be a square matrix, then $$det(A) = det(A^t)$$
 
 \subtitle{Theorem 6.09 - }{Laplace's Rule}
 Let $A \in M_n$ then $$det(A) = \sum_{j=1}^n a_{ij} . (-1)^{i+j} . det(A_{ij})$$ where $A_{ij}$ is the $(n-1) \times (n-1)$ matrix formed when row $i$ and column $j$ are removed from $A$.\\
-\textit{Example} Let $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ then $A_{11} = \begin{pmatrix} 4 \end{pmatrix}$ and $A_{12} = \begin{pmatrix} 2 \end{pmatrix}$
+\textit{Example} Let $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ then $A_{11} = \begin{pmatrix} 4 \end{pmatrix}$ and $A_{12} = \begin{pmatrix} 2 \end{pmatrix}$\\\\
 
 \subtitle{Definition 6.10 - }{Adjunct Matrices}
 Let $A, B \in M_n$ be defined such that $b_{ij} = (-1)^{i+j} . det(A_ij)$ then $B$ is said to be \textit{adjunt} to $A$. \\
-This means $$AB = \begin{pmatrix} det(A) & 0 & \dots & 0 \\ 0 & det(A) & \dots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \dots & det(A) \end{pmatrix} = det(A)I$$
+This means
+$$AB = \begin{pmatrix} det(A) & 0 & \dots & 0 \\ 0 & det(A) & \dots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \dots & det(A) \end{pmatrix} = det(A)I$$\\
 
 \subtitle{Remark 6.11 - }{Determinant of Triangle Matrices}
 If $A$ is an upper triangle matrix ($a_{ij} = 0 \mathrm{\ if\ } i > j$) then $$det(A) = a_{11} \times \dots \times a_{nn}$$
@@ -723,7 +734,7 @@ Let $A \in M_n(\real)$ where $det(A) \not = 0$ then $$A^{-1} = \frac{1}{det(A)}a
 Consider $A\vect{x} = \vect{b}$ then $$x_j = \frac{det(A_j)}{det(A)}$$ where $A_j$ is the matrix $A$, but the $j^{th}$ column has been replaced by $\vect{b}$. \\
 
 \subtitle{Definition 6.15 - }{Cross Product}
-Let $\vect{x}, \vect{y} \in \real^3$ be in the \underline{same plane} then we define the cross product by
+Let $\vect{x}, \vect{y} \in \real^3$ be in the \underline{same plane} then we define the \textit{cross product} by
 $$\vect{x} \times \vect{y} := \begin{vmatrix}
   \vect{e}_1 & \vect{e}_2 & \vect{e}_3 \\
   \vect{x}_1 & \vect{x}_2 & \vect{x}_3 \\
@@ -734,18 +745,18 @@ $$\vect{x} \times \vect{y} := \begin{vmatrix}
   \vect{x}_1\vect{y}_2 - \vect{x}_2\vect{y}_1
 \end{pmatrix}$$
 
-\subtitle{Theorem 6.16 - }{Properties of Cross Product}
+\textbf{Theorem 6.16 - }\textit{Properties of Cross Product}
 \begin{enumerate}[label=\roman*)]
-  \item $ \vect{x} \dotprod (\vect{y} \times \vect{z}) = \vect{z} \dotprod (\vect{x} \times \vect{y}) = \vect{y} \dotprod (\vect{z} \times \vect{x}) $
-  \item $ \vect{x} \times \vect{y} = - \vect{y} \times \vect{x} $
-  \item $ \vect{x} \times \vect{x} = 0 $
-  \item $ (\vect{x} + \lambda\vect{y}) \times \vect{z} = (\vect{x} \times \vect{z}) + (\lambda\vect{y} \times \vect{z}) $
-  \item $ ||\vect{x} \times \vect{y}||^2 = ||\vect{x}||^2||\vect{y}||^2 - (\vect{x} \dotprod \vect{y})^2$
+  \item $ \vect{x} \dotprod (\vect{y} \times \vect{z}) = \vect{z} \dotprod (\vect{x} \times \vect{y}) = \vect{y} \dotprod (\vect{z} \times \vect{x}) $;
+  \item $ \vect{x} \times \vect{y} = - \vect{y} \times \vect{x} $;
+  \item $ \vect{x} \times \vect{x} = 0 $;
+  \item $ (\vect{x} + \lambda\vect{y}) \times \vect{z} = (\vect{x} \times \vect{z}) + (\lambda\vect{y} \times \vect{z}) $; and,
+  \item $ ||\vect{x} \times \vect{y}||^2 = ||\vect{x}||^2||\vect{y}||^2 - (\vect{x} \dotprod \vect{y})^2$.
 \end{enumerate}
 
 \subtitle{Theorem 6.17 - }{Cross Product and Angle between vectors}
 Let $\theta$ be the angle between two vectors then
-$$||\vect{x} \times  \vect{y}||^2 = ||\vect{x}||^2||\vect{y}||^2 sin^2(\theta)$$
+$$||\vect{x} \times  \vect{y}||^2 = ||\vect{x}||^2.||\vect{y}||^2.sin^2(\theta)$$
 
 \subtitle{Theorem 6.18 - }{Cross Product with Matrices}
 Let $A \in M_n(\real)$ where $det(A) \not = 0$ then
@@ -755,17 +766,17 @@ $$(A\vect{x}) \times (A\vect{y}) = [det(A)](A^t)^{-1}(\vect{x} \dotprod \vect{y}
 
 \subsection{Groups \& Fields}
 
-\subtitle{Definition 7.1 - }{Group}
+\subtitle{Definition 7.01 - }{Group}
 A group, $G$, is a combination of a set and a map from $G \times G \to G$. The map must obey the following rules:
 \begin{enumerate}[label=\roman*)]
-  \item \textit{Associativity} - $f * (g * h) = (f * g) * h$
-  \item \textit{Identity Element} - $\exists\ e \in G\ st\ \forall\ g \in G, eg = ge = g$
-  \item \textit{Inverse} - $\forall\ g \in G\ \exists\ g^{-1} \in G\ st\ gg^{-1} = e = g^{-1}g$
+  \item \textit{Associativity} - $f * (g * h) = (f * g) * h$;
+  \item \textit{Identity Element} - $\exists\ e \in G\ st\ \forall\ g \in G, eg = ge = g$; and,
+  \item \textit{Inverse} - $\forall\ g \in G\ \exists\ g^{-1} \in G\ st\ gg^{-1} = e = g^{-1}g$.
 \end{enumerate}
 
-\subtitle{Definition 7.2 - }{Matrix Groups}
+\subtitle{Definition 7.02 - }{Matrix Groups}
 The \textit{General Linear Group}, $GL(n, \real)$, is a group defined by $$GL(n ,\real) = \{A \in M_n(\real) : det(A) \not = 0\}$$
-The identity element is $I \in M_n$ and inverse is $A^{-1}$. \\
+The \textit{identity element} is $I \in M_n$ and inverse is $A^{-1}$. \\
 
 The \textit{Special Linear Group}, $SL(n, \real)$, is a group defined by $$SL(n ,\real) = \{A \in M_n(\real) : det(A) = 1\}$$
 
@@ -776,60 +787,61 @@ The \textit{Special Orthogonal Group}, $SO(n, \real)$, is a group defined by $$S
 The \textit{Borel Matrix}, $B(n, \real)$, is the group of upper triangle matrices with non-zero values on the main diagonal.\\
 
 The \textit{Permutations Group}, $S(n, \real)$, is a group of permutations of $\{1, 2, \dots, n\}$ defined my $n \times n$ matrix
-$$\mathrm{e.g.\ }\begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix}1 \\ 2 \\3 \end{pmatrix} = \begin{pmatrix}2 \\ 1 \\ 3 \end{pmatrix}$$
+$$\mathrm{\textit{Example}\ }\begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix}1 \\ 2 \\3 \end{pmatrix} = \begin{pmatrix}2 \\ 1 \\ 3 \end{pmatrix}$$\
 
-\subtitle{Theorem 7.3 - }{Abelian Groups}
+\subtitle{Theorem 7.03 - }{Abelian Groups}
 Let $G$ be a group. If $\forall\ g, h \in G, gh = hg$ then $G$ is commutative and is called an \textit{Abelian Group}.\\
-\underline{N.B.} $e = 0$ is the identity element of all Albelian groups.\\
+\underline{N.B.} $e = 0$ is the identity element of all Abelian groups.\\
 
-\subtitle{Definition 7.4 - }{Direct/Cartesian Product of a Group}
-Let $G, H$ be groups with the same map. Then $G \times H = \{(g, h) : g \in G, h \in H\}$.\\
+\subtitle{Definition 7.04 - }{Direct/Cartesian Product of a Group}
+Let $G, H$ be groups with the same map. Then $$G \times H := \{(g, h) : g \in G, h \in H\}$$
 
-\subtitle{Definition 7.5 - }{Fields, $\field$}
+\subtitle{Definition 7.05 - }{Fields, $\field$}
 A field, $\field$, is a set with two binary operations: addition \& multiplication.\\
 
-\subtitle{Theorem 7.6 - }{Properties of Fields}
+\textbf{Theorem 7.06 - }\textit{Properties of Fields}
 \begin{enumerate}[label=\roman*)]
   \item $\field$ is an abelian group w.r.t addition;
   \item $\field \backslash \{0\}$  is an abeelian group w.r.t multiplication;
-  \item $(x + y) . z = x.z + y.z$;
+  \item $(x + y) . z = x.z + y.z$; and,
   \item A field always contains $0$ \& $1$.
 \end{enumerate}
 
 \subsection{Vector Spaces}
 
-\subtitle{Definition 7.7 - }{Vector Space}
+\subtitle{Definition 7.07 - }{Vector Space, $\vectorspace$}
 $\vectorspace$ is a (linear) vector space over a field, $\field$ if:
 \begin{enumerate}[label=\roman*)]
   \item $\vectorspace$ is an abelian group w.r.t addition;
   \item $\forall\ \vect{v} \in \vectorspace$ \& $\lambda \in \field, \lambda\vect{v} \in \vectorspace$;
   \item $\lambda(\vect{u} + \vect{v}) = \lambda\vect{u} + \lambda\vect{v}$;
-  \item $\lambda(\mu\vect{v}) = (\lambda\mu)\vect{v}$;
+  \item $\lambda(\mu\vect{v}) = (\lambda\mu)\vect{v}$; and,
   \item $1.\vect{v} = \vect{v}$.
 \end{enumerate}
 
-\subtitle{Theorem 7.8 - }{Vector Spaces over Fields}
+\subtitle{Theorem 7.08 - }{Vector Spaces over Fields}
 Let $W$ be a vector space over a field, $\field$, and $U$ be a set. Then define
 $$F(U, W) := {f : U \to W}$$
-Then $F(U, W)$ is a vector space over $\field$.\\
-This means $F(U, W)$ is linear so for all $\lambda \in \field\ \&\ f, g \in F(U, W)$ then
+$F(U, W)$ is a vector space over $\field$.\\
+This means $F(U, W)$ is linear so $\forall\ \lambda \in \field\ \&\ f, g \in F(U, W)$ then
 $$(f + g)(u) = f(u) + g(u),\quad (\lambda f)(u) = \lambda f(u)$$
 
 \subsection{Subspace, Linear Combinations \& Span}
 
-\subtitle{Definition 7.9 - }{Subspace}
+\subtitle{Definition 7.09 - }{Subspace}
 Let $\vectorspace$ be a vector space over a field $\field$ and $W \subset \vectorspace$, $W$ is a subspace if it is a vector space for the operations inherited from $\vectorspace$.\\
 
 \subtitle{Theorem 7.10 - }{Properties of Subspaces}
 Let $\vectorspace$ be a vector space and $U \subset \vectorspace$ be a subspace, then $U$ has the following properties:
 \begin{enumerate}[label=\roman*)]
   \item Not empty - $U \not = \emptyset$;
-  \item Closed under addition - $\forall\ u, v \in U; (u + v) \in U$;
+  \item Closed under addition - $\forall\ u, v \in U; (u + v) \in U$; and,
   \item Closed under multiplication - $\forall\ \lambda \in \field, u \in U; \lambda u \in U$.
 \end{enumerate}
 
 \subtitle{Theorem 7.11 - }{Subsets of Subspaces}
-Let $\vectorspace$ be a vector space over $\field$ and $U, W \subset \vectorspace$ be subspaces. Then $U \cap W$ is a subspace of $\vectorspace$.\\
+Let $\vectorspace$ be a vector space over $\field$ and $U, W \subset \vectorspace$ be subspaces.\\
+Then $U \cap W$ is a subspace of $\vectorspace$.\\
 
 \subtitle{Remark 7.12 - }{Linear Independence and Span}
 Let $\vectorspace$ be a vector space over field, $\field$, and $S \subset \vectorspace$.\\
@@ -853,7 +865,7 @@ Then $U$ can be extended to form a basis of $\vectorspace$.
 \subtitle{Definition 7.16 - }{Direct Sum}
 Let $\vectorspace$ be a vector space over $\field$ and $U, W \subset V$ be subspaces with $U \cap W = \emptyset$ then
 $$U \oplus W := U + W$$
-This is the direct sum of $U$ and $W$.\\
+This is the \textit{direct sum} of $U$ and $W$.\\
 
 \subtitle{Theorem 7.17 - }{Dimension of Direct Sum}
 Let $\vectorspace$ be a vector space over $\field$ and $U, W \subset V$ be subspaces with $U \cap W = \emptyset$ then
@@ -867,17 +879,17 @@ then $W$ is said to be the complement of $U$ in $V$.
 \subsection{Rank-Nullity Theorem}
 
 \subtitle{Definition 7.19 - }{Rank \& Nullity}
-Let $\vectorspace, \mathbb{W}$ be vector spaces over $\field$ and $T : \vectorspace \to \mathbb{W}$ be a linear map. Then
+Let $\vectorspace\ \&\ \mathbb{W}$ be vector spaces over $\field$ and $T : \vectorspace \to \mathbb{W}$ be a linear map. Then
 $$rank(T) := Dim(Im(T)),\quad nullity(T) := Dim(Ker(T))$$
 
 \subtitle{Theorem 7.20 - }{Rank-Nullity Theorem}
-Let $\vectorspace, \mathbb{W}$ be vector spaces over $\field$ and $T : \vectorspace \to \mathbb{W}$ be a linear map, with $dim(\vectorspace) < \infty$ then
-$$Rank(T) + Im(T) = Dim(V)$$
+Let $\vectorspace\ \&\ \mathbb{W}$ be vector spaces over $\field$ and $T : \vectorspace \to \mathbb{W}$ be a linear map, with $dim(\vectorspace) < \infty$ then
+$$Rank(T) + Im(T) = Dim(\vectorspace)$$
 
 \subsection{Projection}
 
 \subtitle{Defintion 7.21 - }{Projection}
-A linear map $P : V \to V$ is called a projection if $P^2 = P$.\\
+A linear map $P : \vectorspace \to \vectorspace$ is called a projection if $P^2 = P$.\\
 
 \subtitle{Theorem 7.22 - }{Image of Projection}
 Let $P : V \to V$ be a projection then $v \in Im(P)$ iff $P(v) = v$.\\
@@ -889,13 +901,13 @@ $$V = Ker(P) \oplus Im(P)$$
 \subsection{Isomorphisms}
 
 \subtitle{Definition 7.24 -}{Isomorphisms}
-Let $V, W$ be vector spaces over $\field$. \\
-We say that the map $T : V \to W$ is an isomorphism between $V\ \&\ W$ if
+Let $\vectorspace\ \&\ \mathbb{W}$ be vector spaces over $\field$. \\
+We say that the map $T : \vectorspace \to \mathbb{W}$ is an \textit{isomorphism} between $\vectorspace\ \&\ \mathbb{W}$ if
 \begin{enumerate}[label=\roman*)]
-  \item $T$ is linear; and
+  \item $T$ is linear; and,
   \item $T$ is bijective.
 \end{enumerate}
-\underline{N.B.} - If an isomorphism exists between $V$ \& $W$, then they are said to be isomorphic.\\
+\underline{N.B.} - If an \textit{isomorphism} exists between $V$ \& $W$, then they are said to be isomorphic.\\
 
 \subtitle{Theorem 7.25 - }{Dimension of Isomorphic Spaces}
 Let $V$ be a finitely dimensional vector space over $\field$.\\
@@ -912,31 +924,33 @@ $$x_1.\vect{a}_1 + \dots + x_n.\vect{a}_n = \vect{v} = x_1.\vect{b}_1 + \dots + 
 Unless $A = B$ then $x_i \not = y_i$ for at least one $i \in \nat, i \leq n$.\\
 
 \subtitle{Theorem 7.27 - }{Conversion Matrices}
-Let $A, B$ be different bases for vector space $V$, with $dim(V) = n$.\\
-Then an $n \times n$ matrix, $C_{AB}$ can be used to convert elements given in basis $A$ to now be givin in basis $B$.\\
-\\Let $\vect{v} \in V$ and $\vect{x} = T_{A}(\vect{x})\ \& \vect{u} = T_{B}(\vect{x})$ then $$\vect{y} = C_{AB}\vect{x}$$
+Let $A\ \&\ B$ be different bases for vector space $V$, with $dim(V) = n$.\\
+Then an $n \times n$ matrix, $C_{AB}$, can be used to convert elements given in basis $A$ to now be givin in basis $B$.\\
+Let $\vect{v} \in V$ and $\vect{x} = T_{A}(\vect{x})\ \& \vect{y} = T_{B}(\vect{x})$ then $$\vect{y} = C_{AB}\vect{x}$$
 
 \subtitle{Theorem 7.28 - }{General Relationship between Bases}
 Let $V$ be a vector space over $\field$, with $dim(V) = n$.\\
-Let $A, B$ be different bases for $V$ with $A = \{\vect{a}_1 , \dots , \vect{a}_n\}\ \&\ B = \{\vect{b}_1 , \dots , \vect{b}_n\}$\\
-Then for all $\vect{v} \in V$ we have that $$\vect{v} = \sum_{i=1}^{n} v_i . \vect{a}_i = \sum_{i=1}^{n} v_i . \vect{b}_i $$
+Let $A\ \&\ B$ be different bases for $V$ with $A = \{\vect{a}_1 , \dots , \vect{a}_n\}\ \&\ B = \{\vect{b}_1 , \dots , \vect{b}_n\}$.\\
+Then $\forall\ \vect{v} \in V$ we have that $$\vect{v} = \sum_{i=1}^{n} v_i . \vect{a}_i = \sum_{i=1}^{n} v_i . \vect{b}_i $$
 Let $C_{AB} = (c_{ij})$ be the conversion matrix from $A$ to $B$ then $$v_j = \sum_{i=1}^{n} c_{ij}\vect{b_i}$$
 
 \subtitle{Theorem 7.29 - }{Properties of Transition Matrices}
-Let $A, B, C \subset V$ all be different bases for $V$ then
+Let $A, B, C \subset V$ all be different bases for $V$. Then
 \begin{enumerate}[label=\roman*)]
   \item $C_{AA} = I$;
-  \item $C_{AB}C_{BA} = I$;
+  \item $C_{AB}C_{BA} = I$; and,
   \item $C_{CA}C_{AB} = C_{CB}$.\\
 \end{enumerate}
 
 \subtitle{Theorem 7.30 - }{Linear Maps between Vector Spaces as Matrices}
-Let $V, W$ both be vector spaces over $\field$, with $dim(V) = n$ and $dim(W) = m$, and $T : V \to W$ be a linear map.\\
-Let $A = \{\vect{a}_1, \dots , \vect{a}_n\} \subset V$ and $B = \{\vect{b}_1, \dots , \vect{b}_n\} \subset W$ be bases for $V\ \&\ W$ respectively.
+Let $\vectorspace\ \&\ \mathbb{W}$ both be vector spaces over $\field$, with $dim(\vectorspace) = n$ and $dim(\mathbb) = m$, and $T : \vectorspace \to \mathbb{W}$ be a linear map.\\
+Let $A = \{\vect{a}_1, \dots , \vect{a}_n\} \subset \vectorspace$ and $B = \{\vect{b}_1, \dots , \vect{b}_n\} \subset \mathbb{W}$ be bases for $\vectorspace\ \&\ \mathbb{W}$ respectively.
 Then we can define an $n \times m$ matrix $$M_{AB}(T) = (m_{ij}) \in M_{n,m}(\field)$$
-Where $m_{ij}$ are defined to satisfy $$T(a_j) = \sum_{i=1}^{m} m_{ij}b_i$$
-Then $$\vect{w} = M_{AB}(T)\vect{v}$$
-With $\vect{v} \in V, \vect{w} \in W$
+Where $m_{ij}$ are defined to satisfy
+$$T(a_j) = \sum_{i=1}^{m} m_{ij}b_i$$
+Then
+$$\vect{w} = M_{AB}(T)\vect{v}$$
+For $\vect{v} \in \vectorspace\ \&\ \vect{w} \in \mathbb{W}$.\\
 
 \subtitle{Theorem 7.31 - }{Change Basis of Linear Map}
 Let $V$ be a vector space over $F$ and $U, W \subset V$ be different bases for $V$.\\
@@ -950,35 +964,35 @@ Where $A'$ is the matrix representation of $T$ in basis $W$.
 
 \subsection{Characteristic Polynomial}
 
-\subtitle{Definition 8.1 - }{Eigenvectors \& Eigenvalues}
+\subtitle{Definition 8.01 - }{Eigenvectors \& Eigenvalues}
 Let $\vect{v} \in V\backslash\{\vect{0}\}$ and $T : V \to V$ be a linear operator.\\
 $\vect{v}$ is called an \textit{eigenvector} of $T$ if $$T(\vect{v}) = \lambda\vect{v}, \quad \lambda \in \field$$
-This $\lambda$ is the associatiated \textit{eigenvalue} for $\vect{v}$.\\
+This $\lambda$ is the associated \textit{eigenvalue} for $\vect{v}$.\\
 
-\subtitle{Definition 8.2 - }{Spectrum}
-The set of eigenvectors of a linear operator $T : V \to V$ is called the spectrum of $T$, generally denoted as $$Spec(T) := \{\vect{v} \in V : T(\vect{v}) = \lambda\vect{v}, \lambda \in \field\}$$
+\subtitle{Definition 8.02 - }{Spectrum}
+The set of eigenvectors of a linear operator $T : V \to V$ is called the \textit{spectrum} of $T$, generally denoted as $$Spec(T) := \{\vect{v} \in V : T(\vect{v}) = \lambda\vect{v}, \lambda \in \field\}$$
 
-\subtitle{Defintion 8.3 - }{Diagonisable}
+\subtitle{Defintion 8.03 - }{Diagonisable}
 A linear operator is \textit{diagonisable} if there exists a basis of eigenvectors for it.\\
 
-\subtitle{Remark 8.4 - }{Finding Eigenvalues}
-Let $A$ be the matrix which represents a linear operator $T$, and $\vect{X}$ be a general eigenvector for $T$
+\subtitle{Remark 8.04 - }{Finding Eigenvalues}
+Let $A$ be the matrix which represents a linear operator $T$, and $\vect{x}$ be a general eigenvector for $T$
 \begin{alignat*}{1}
   T(\vect{x}) = A\vect{x} &= \lambda\vect{x}
   => (A - \lambda.I)\vect{x} = \vect{0}
 \end{alignat*}
 Then $\lambda$ is an eigenvalue if it satisfies $$det(A - \lambda.I) = 0$$
 
-\subtitle{Definition 8.5 - }{Characteristic Polynomial}
+\subtitle{Definition 8.05 - }{Characteristic Polynomial}
 The polynomial which is equivalent to $det(A - \lambda.I)$ is called the \textit{characteristic polynomial} of $A$.
 $$p_A(\lambda) := det(A - \lambda.I)$$
 \underline{N.B.} - $\lambda$ is an eigenvalue for $A$ if $p_A(\lambda) = 0$\\
 
-\subtitle{Definition 8.6 - }{Eigenspace}
-let $\lambda \in \field$ be an eigenvalue of $T$, then the corresponding \textit{eigenspace} is defined as
+\subtitle{Definition 8.06 - }{Eigenspace}
+Let $\lambda \in \field$ be an eigenvalue of $T$, then the corresponding \textit{eigenspace} is defined as
 $$V_\lambda := ker(T - \lambda.I)$$
 
-\subtitle{Remark 8.7 - }{Finding Eigenvectors}
+\subtitle{Remark 8.07 - }{Finding Eigenvectors}
 Once we have found all $\lambda_1 , \dots , \lambda_k$ that satisfy $p_A(\lambda_i) = 0$ then we can find the eigenvectors, $\vect{x}_i$, of $A$
 $$(A - \lambda.I)\vect{x}_i = \vect{0}$$
 A good way to start is to produce the linear equations
@@ -986,19 +1000,19 @@ $$\sum_{j=1}^{n} (A - \lambda.I)_{ij}.x_j = 0$$
 For all $i \leq n$. Then solve these, as a series of simultaneous equations, to find the values $x_j$ which produce the eigenvector $\vect{x}$.\\
 Repeat this process for all $\lambda_1 , \dots , \lambda_k$ to find all eigenvectors for $A$.\\
 
-\subtitle{Theorem 8.8 - }{Similar Characteristic Polynomial}
+\subtitle{Theorem 8.08 - }{Similar Characteristic Polynomial}
 Let $C$ be an invertible matrix.\\
 Define $A' = C^{-1}AV$ where $A$ \& $A'$ are conjugate or similar.\\
 Then $p_A(\lambda) = p_{A'}(\lambda)$.\\
 
-\subtitle{Theorem 8.9 - }{Characteristic Polynomial \& Basis}
-The characteristic polynomial for $T$ is the same, regardless of the basis of $T$.\
+\subtitle{Theorem 8.09 - }{Characteristic Polynomial \& Basis}
+The characteristic polynomial for $T$ is the same, regardless of the basis of $T$.\\
 
 \subtitle{Definition 8.10 - }{Trace}
 Let $A \in M_n(\field)$.\\
-Then the trace of $A$ is defined as
+Then the \textit{trace} of $A$ is defined as
 $$Tr(A) := \sum_{i=1}^{n}a_{ii}$$
-\underline{N.B.} - Trace is sometimes called \textit{Spur}.
+\underline{N.B.} - \textit{Trace} is sometimes called \textit{Spur}.\\
 
 \subtitle{Remark 8.11}{}
 As the terms after the first term of the determinat of a matrix do not contribute to the powers of $\lambda$ in the characteristic equation then we can ignore them.
@@ -1006,7 +1020,7 @@ This means we can deduce that
 $$p_T(\lambda) = (-1)^n\lambda^n + (-1)^{n-1}(Tr(A)) + \dots + det(A)$$
 
 \subtitle{Theorem 8.12 - }{Diagonalised Matrix}
-Let $T$ be a diagonisable matrix with eigenvalues $\{\lambda_1, \lambda_2, \dots , \lambda_n\}$.\\
+Let $T$ be a \textit{diagonisable} matrix with eigenvalues $\{\lambda_1, \lambda_2, \dots , \lambda_n\}$.\\
 Then $T$ can be represented by $$\Delta = \begin{pmatrix} \lambda_1 & 0  & \dots & 0\\ 0 & \lambda_2 & & \vdots \\ \vdots & & \ddots & \vdots \\ 0 & \dots & \dots & \lambda_n \end{pmatrix}$$
 \underline{N.B.} - $T$ can also be represented in any basis with, $C$ as the transition matrix, by $C^{-1}\Delta C$.\\
 
@@ -1017,7 +1031,7 @@ And $$Tr(T) = Tr(\Delta) = \sum_{j=1}^n \lambda_j$$
 
 \subtitle{Theorem 8.14 - }{Distinct Eigenvectors and Diagonisability}
 Eigenvectors, which correspond to distinct eigen values, are linearly independent.\\
-Thus if a matrix, $A$, has only distinct eigenvalues then it is diagonisable.\\
+Thus if a matrix, $A$, has only distinct eigenvalues then it is diagonisable.
 
 \subsection{Roots of Characteristic Polynomial}
 
@@ -1042,8 +1056,8 @@ This means that $(\lambda - \lambda_1)^{m_1}$ is a factor of $p(\lambda)$.\\
 \subtitle{Definition 8.19 - }{Geometric \& Algebraic Multiplicity}
 Let $\lambda \in spec(T)$ and $V_\lambda$ be the corresponding eigenspace.
 \begin{enumerate}[label=\roman*)]
-  \item $\lambda$ has \textit{geometric multiplicity}, $m_g(\lambda) \in \nat$, if $dim(V_\lambda) = m_g(\lambda)$;
-  \item $\lambda$ has \textit{algebraic multiplicity}, $m_a(\lambda) \in \nat$, if $\lambda$ has multiplicity $m_a$ of $p_T(\lambda)$
+  \item $\lambda$ has \textit{geometric multiplicity}, $m_g(\lambda) \in \nat$, if $dim(V_\lambda) = m_g(\lambda)$; and,
+  \item $\lambda$ has \textit{algebraic multiplicity}, $m_a(\lambda) \in \nat$, if $\lambda$ has multiplicity $m_a$ of $p_T(\lambda)$.\\
 \end{enumerate}
 
 \subtitle{Theorem 8.20 - }{Relationship between Geometric \& Algebraic Multiplicity}
@@ -1063,7 +1077,7 @@ An \textit{inner product} on $V$ is a map, $\langle V, V \rangle : V \times V \t
 \begin{enumerate}[label=\roman*)]
   \item $\langle v, v \rangle \geq 0$;
   \item $\langle v, w \rangle = \overline{\langle v, w \rangle}$;
-  \item $\langle u, v + w \rangle = \langle u, v \rangle + \langle u, w \rangle$;
+  \item $\langle u, v + w \rangle = \langle u, v \rangle + \langle u, w \rangle$; and,
   \item $\langle \lambda.u , v \rangle = \lambda \langle u, v \rangle$.
 \end{enumerate}
 Where $u, v, w \in V$ and $\lambda \in \complex$.\\
@@ -1074,14 +1088,14 @@ An \textit{inner product} on $V$ is a map, $\langle , \rangle : V \times V \to \
 \begin{enumerate}[label=\roman*)]
   \item $\langle v, v \rangle \geq 0$;
   \item $\langle v, w \rangle = \langle w, v \rangle$;
-  \item $\langle u, v + w \rangle = \langle u, v \rangle + \langle u, w \rangle$;
+  \item $\langle u, v + w \rangle = \langle u, v \rangle + \langle u, w \rangle$; and,
   \item $\langle \lambda.u , v \rangle = \lambda \langle u, v \rangle$.
 \end{enumerate}
 Where $u, v, w \in V$ and $\lambda \in \complex$.\\
 
 \subtitle{Definition 9.03 - }{Inner Product Space}
-A $V$ be a vector space with $\langle , \rangle$ as a defined inner product are called an \textit{inner product space}, denoted by
-$$(V, \langle , \rangle)$$
+Let $\vectorspace$ be a vector space with $\langle , \rangle$ as a defined inner product are called an \textit{inner product space}, denoted by
+$$(\vectorspace, \langle , \rangle)$$
 \underline{N.B.} - If $V$ is over $\complex$ then this is called a \textit{complex inner product space}. If $V$ is over $\real$ then this is called a \textit{real inner product space}.\\
 
 \subtitle{Definition 9.04 - }{Norm}
@@ -1091,7 +1105,7 @@ $$||v|| := \sqrt{\langle v, v \rangle},\quad v \in V$$
 \subtitle{Definition 9.05 - }{Orthogonal}
 Let $(V , \langle , \rangle)$ be an inner product space, then
 \begin{enumerate}[label=\roman*)]
-  \item $v, w \in V$ are \textit{orthogonal}, $v \perp w$, if $\langle v, w \rangle = 0$;
+  \item $v, w \in V$ are \textit{orthogonal}, $v \perp w$, if $\langle v, w \rangle = 0$; and,
   \item $U, W \subset V$ are \textit{orthogonal}, $U \perp W$, if $u \perp w\ \forall\ u \in U\ \&\ v \in V$.
 \end{enumerate}
 
@@ -1111,10 +1125,10 @@ $$\langle v_i , v_j \rangle = \delta_{ij} := \begin{cases} 1 \quad i = j;\\ 0 \q
 
 \subtitle{Theorem 9.09 - }{Properties of Orthogonal Basis}
 Let $(V, \langle , \rangle)$ be an inner product space and $\basis = \{ v_1 , \dots , v_n\}$ an orthonormal basis.\\
-Then $\forall v, w \in V$,
+Then $\forall\ v, w \in V$,
 \begin{enumerate}[label=\roman*)]
   \item $v = \sum_{i=1}^n \langle v_i , v \rangle v_i$;
-  \item $\langle v , w \rangle = \sum_{i=1}^n \overline{\langle v_i, v \rangle}\langle v_i, w \rangle$;
+  \item $\langle v , w \rangle = \sum_{i=1}^n \overline{\langle v_i, v \rangle}\langle v_i, w \rangle$; and,
   \item $||v|| = \left[\sum_{i=1}^n |\langle v_i, v \rangle|^2\right]^{1/2} $.
 \end{enumerate}
 
