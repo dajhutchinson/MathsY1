@@ -779,7 +779,9 @@ $$\vect{f}(\vect{e}) = \vect{0}$$
 \subtitle{Theorem 16.03 - }{Particular Solutions and Equilibria}
 Let $t \in \real$, $\vect{f} : \real^d \to \real^d$ \& $\vect{x} : \real \to \real^d$. If
 $$\vect{f}(\vect{x}(t)) = \vect{0} $$
-then $t$ is a particular solution of $\vect{f}$.\\
+then $t$ is a particular solution of $\vect{f}$.
+
+\subsection{Stability of Equilibria}
 
 \subtitle{Definition 16.04 - }{Stable/Unstable Equilibria}
 Let $\vect{e}$ be an \textit{equilibrium}.\\
@@ -791,6 +793,53 @@ Otherwise the equilibrium point is \textit{unstable}.\\
 If for all eigenvalues, $\lambda_j$, of $\vect{f}'(\vect{e})$ is such that
 $$Re(\lambda_j) < 0$$
 then the equilibrium, $\vect{e}$, is \textit{stable}.\\
-If there exists one eigenvalue, $\lambda_i$, where $Re(\lambda_i) > 0$ then $\vect{e}$ is \textit{unstable}.
+If there exists one eigenvalue, $\lambda_i$, where $Re(\lambda_i) > 0$ then $\vect{e}$ is \textit{unstable}.\\
+
+\subtitle{Definition 16.06 - }{Classification of Equilibria}
+In dimension $2$.
+\begin{enumerate}[label=\roman*)]
+  \item If both eigenvalues of $\vect{f}'(\vect{e})$ are real, $\vect{e}$ is a \textit{node};
+  \item If both eigenvalues of $\vect{f}'(\vect{e})$ are purely imaginary, $\vect{e}$ is a \textit{centre}; and,
+  \item If both eigenvalues of $\vect{f}'(\vect{e})$ from a complex conjugate pair, with non-zero real parts, $\vect{e}$ is a \textit{spiral}.
+\end{enumerate}
+
+\section{Discrete Dynamic Systems}
+
+\subtitle{Definition 17.01 - }{Discrete Dynamic System}
+A \textit{discrete dynamic system} is a recurrence relation of the form
+$$\vect{x}_{n+1} = \vect{f}(\vect{x}_n), n \in \nat_0$$
+Where $\vect{X}_n$ is the general term of a sequence $\real^d$, and $\vect{f} : \real^d \to \real^d$.\\
+\underline{N.B.} - We use the notation $\vect{x}_n = \begin{pmatrix} x_{1, n} \\ \vdots \\ x_{d, n}\end{pmatrix}$.\\
+
+\subtitle{Theorem 17.02 - }{Linear Case}
+The simplest case of a discrete dynamic system is the \textit{linear case} where
+$$\vect{f}(\vect{x}) = A\vect{x}$$
+with $A$ as a diagonisable $d \times d$ matrix.\\
+Let $\{\vect{v}_1, \dots , \vect{v}_d\}$ be a basis for $\real^d$ consisting of the eigenvectors for $A$.\\
+Then a general solution is
+$$\vect{x}_n = \sum_{j=1}^d c_j.\lambda_j^n.\vect{v}_j$$
+where $\lambda_j$ is the associated eigenvalue for the eigenvector $\vect{v}_j$.\\
+
+\subtitle{Definition 17.03 - }{Equilibria of Discrete Dynamic Systems}
+Let $\vect{x} \in \real^d$ such that
+$$\vect{F}(\vect{x}) = \vect{x}$$
+then $\vect{x}$ is an \textit{equilibrium} point of $\vect{f}$.\\
+
+\subtitle{Definition 17.04 - }{Periodic}
+We say the solution $\vect{x}_n$ of a discrete dynamic system is \textit{periodic} if
+$$\exists\ p \in \nat\ st\ \forall\ n \in \nat\,\quad \vect{x}_{n+p} = \vect{x}_n$$
+The smallest such $p$ is called the period of the solution.\\
+
+\subtitle{Definition 17.05 - }{P-Cycle}
+Let $\vect{x}_n$ be a periodic solution with period $p$ and $k \in \nat$.\\
+Then the ordered list $\vect{x}_k, \vect{x}_{k+1}, \dots, \vect{x}_{k+p-1}$ is called a \textit{p-cycle}.\\
+
+\subtitle{Definition 17.06 - }{Stable Equilibria of Discrete Dynamic Systems}
+We say an equilibrium, $\vect{x}$ of a discrete dynamic system is \textit{stable} if
+$$\forall\ \epsilon > 0, \exists\ \delta > 0\ such\ that\ ||\vect{x}_0 - \vect{x}|| < \delta \implies ||\vect{x}_n - \vect{x}|| < \epsilon\ \forall\ n \in \nat$$
+
+\subtitle{Proposition 17.07 - }{Stability and Eigenvalues}
+The equilibrium $\vect{x}$ is stable if the modulus of every eigenvalue of $\vect{f}'(\vect{X})$ is less than 1.\\
+Otherwise, it is unstable.
 
 \end{document}
