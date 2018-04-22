@@ -7,6 +7,7 @@
 \usepackage{enumerate}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
+\usepackage{upgreek}
 
 \begin{document}
 
@@ -279,12 +280,12 @@ $$U_n = \left\{ [a] \in \frac{\integers}{n\integers}; gcd(a, n) = 1 \right\}$$
 
 \subtitle{Definition 9.01 - }{Isomorphism}
 Let $(G, *)$ and $(H, \dotprod)$ be groups.\\
-An \textit{isomorphism} from $G$ to $H$ is a bijective function $\phi : G \to H$ such that $$\phi(x * y) = \phi(x) \dotprod \phi(y),\quad \forall\ x, y \in G$$
-\underline{N.B.} - Since $\phi$ is bijective then there exists an inverse such that $\phi^{-1} : H \to G$.\\
+An \textit{isomorphism} from $G$ to $H$ is a bijective function $\upvarphi : G \to H$ such that $$\upvarphi(x * y) = \upvarphi(x) \dotprod \upvarphi(y),\quad \forall\ x, y \in G$$
+\underline{N.B.} - Since $\upvarphi$ is bijective then there exists an inverse such that $\upvarphi^{-1} : H \to G$.\\
 
 \subtitle{Definition 9.02 - }{Isomorphic}
 Let $G$ and $H$ be groups.\\
-$G$ and $H$ are said to be \textit{isomorphic} if there exists an isomorphism $\phi : G \to H$. This is denoted by $G \cong H$.\\
+$G$ and $H$ are said to be \textit{isomorphic} if there exists an isomorphism $\upvarphi : G \to H$. This is denoted by $G \cong H$.\\
 
 \subtitle{Proposition 9.03 - }{Transitive property of Isomorphisms}
 Let $G, H$ and $I$ be groups.\\
@@ -293,12 +294,12 @@ If $G \cong H$ and $H$ is \textit{abelian}, then $G$ is albelian.\\
 If $G \cong H$ and $H$ is \textit{cyclic}, then $H$ is cyclic.\\
 
 \subtitle{Proposition 9.04 - }{Indentity element and Isomorphisms}
-Let $\phi : G \to H$ be an isomorphism, $e_G$ \& $e_H$ be the identity elements of these groups and $x \in G$. Then
+Let $\upvarphi : G \to H$ be an isomorphism, $e_G$ \& $e_H$ be the identity elements of these groups and $x \in G$. Then
 \begin{enumerate}[label=\roman*)]
-  \item $\phi(e_G) = e_H$;
-  \item $\phi(x^{-1}) = \phi(x)^{-1}$;
-  \item $\phi(x^i) = \phi(x)^i,\quad \forall\ i \in \integers$; and,
-  \item $ord_G(x) = ord_H(\phi(x))$.\\
+  \item $\upvarphi(e_G) = e_H$;
+  \item $\upvarphi(x^{-1}) = \upvarphi(x)^{-1}$;
+  \item $\upvarphi(x^i) = \upvarphi(x)^i,\quad \forall\ i \in \integers$; and,
+  \item $ord_G(x) = ord_H(\upvarphi(x))$.\\
 \end{enumerate}
 
 \subtitle{Proposition 9.05 - }{Order of Isomorphic Groups}
@@ -352,7 +353,7 @@ The \textit{left co-set} is defined as $xH = \{xh \in G : h \in H\} \subseteq G$
 The \textit{right co-set} is defined as $Hx = \{hx \in G : h \in H\} \subseteq G$.\\
 
 \subtitle{Theorem 11.03 - }{Order of Co-set}
-There exists a bijection, $\phi : H \to xH$, where $\phi(h) = xh$ so $$|H| = |xH|$$
+There exists a bijection, $\upvarphi : H \to xH$, where $\upvarphi(h) = xh$ so $$|H| = |xH|$$
 
 \subtitle{Theorem 11.04 - }{Relationship between Co-sets}
 Let $x, y \in G$ and $H \leq G$ then either
@@ -376,12 +377,12 @@ Let $p \in \nat$ and $a \in \integers$ such that $p \not | a$. Then
 $$a^{p-1} \equiv 1 (mod\ p)$$
 
 \subtitle{Definition 12.03 - }{Euler's Phi Function}
-\textit{Euler's phi function} is the function, $\phi : \nat \to \nat$, where
-$$\phi(m) = |\{ a \in \integers : 0 \leq a \leq m; gcd(a, m) = 1 \}|$$
+\textit{Euler's phi function} is the function, $\upvarphi : \nat \to \nat$, where
+$$\upvarphi(m) = |\{ a \in \integers : 0 \leq a \leq m; gcd(a, m) = 1 \}|$$
 
 \subtitle{Theorem 12.04 - }{Fermat-Euler Theorem}
 Let $m > 0$ and $a \in \integers$ with $gcd(a, m) = 1$. Then
-$$a^{\phi(m)} \equiv 1 (mod\ m)$$
+$$a^{\upvarphi(m)} \equiv 1 (mod\ m)$$
 
 \subtitle{Theorem 12.05 - }{Properties of Prime-Ordered Groups}
 Let $p \in \nat$ be prime and $G$ be a group such that $|G| = p$. Then
@@ -480,6 +481,67 @@ The subgroup of even permutations in $S_n$ is called the \textit{Alternating Gro
 
 \subtitle{Theorem 14.10 - }{Order of an Alternating Group}
 Let $n > 1$.\\
-Then $|A_n| = \frac{n!}{2} = \frac{1}{2}|S_n|$.\\
+Then $|A_n| = \frac{n!}{2} = \frac{1}{2}|S_n|$.
+
+\section{Homomorphisms and Normal Subgroups}
+
+\subtitle{Definition 15.01 - }{Homomorphism}
+Let $(G, \dotprod)$ \& $(H, *)$ be groups.\\
+A \textit{homomorphism}, $\upvarphi : G \to H$, is  a function such that
+$$\upvarphi(x \dotprod y) = \upvarphi(x) * \upvarphi(y)\ \forall\ x, y \in G$$
+\underline{N.B} - This is the same as an isomorphism, except a homomorphism \underline{doesn't have to be bijective}.\\
+
+\subtitle{Remark 15.02 - }{Common Homomorphisms}
+Let $(G, \dotprod)$ \& $(H, *)$ be groups and $\upvarphi : G \to H$ be a homomorphism.\\
+The \textit{trivial homomorphism} is defined as
+$$\upvarphi(g) = e_H\ \forall\ g \in G$$
+If $G \leq H$ then the \textit{inclusive homomorphism} is defined as
+$$\upvarphi(g) = g\ \forall\ g \in G$$
+
+\subtitle{Proposition 15.03 - }{Properties of Homomorphisms}
+Let $\upvarphi : G \to H$ be a homomorphism. Then
+\begin{enumerate}[label=\roman*)]
+  \item $\upvarphi(e_G) = e_H$;
+  \item $\upvarphi(x^{-1}) = \upvarphi(x)^{-1}$; and,
+  \item $\upvarphi(x^i) = \upvarphi(x)^i$.
+\end{enumerate}
+
+\subtitle{Definition 15.04 - }{Image and Kernel}
+Let $\upvarphi : G \to H$ be a homomorphism.\\
+The \textit{kernel} of $\upvarphi$ is
+$$ker(\upvarphi) := \{g \in G : \upvarphi(g) = e_H\}$$
+The \textit{image} of $\upvarphi$ is
+$$im(\upvarphi) := \{\upvarphi(g) : g \in G\}$$
+
+\subtitle{Theorem 15.05 - }{Image and Kernel are subgroups}
+Let $\upvarphi : G \to H$ be a homomorphism. Then
+$$ker(\upvarphi) \leq G,\quad im(\upvarphi) \leq H$$
+\underline{N.B} - $|ker(\upvarphi)|$ divides $|G|$ and $|im(\upvarphi)|$ divides $|H|$.\\
+
+\subtitle{Proposition 15.06 - }{Injective Homomorphisms}
+Let $\upvarphi : G \to H$ be a homomorphism.\\
+Then $\upvarphi$ is injective if and only if $ker(\upvarphi) = \{e_G\}$.\\
+
+\subtitle{Definition 15.07 - }{Normal Subgroups}
+Let $G$ be a group.\\
+A \textit{normal subgroup} of $G$ is a subgroup, $N \leq G$, such that
+$$gxg^{-1} \in N\ \forall\ g \in G\ \&\ x \in N$$
+\underline{N.B.} - A normal subgroup, $N$, is denoted as $N \trianglelefteq G$. $N \triangleleft G$ means $N \neq G$.\\
+
+\subtitle{Proposition 15.08 - }{Kernel is a Normal Subgroup}
+Let $\upvarphi : G \to H$ be a homomorphism. Then\\
+$$ker(\upvarphi) \trianglelefteq G$$
+
+\subtitle{Theorem 15.09 - }{Subgroups of an Abelian Group}
+All subgroups of an abelian group are \textit{normal subgroups}.\\
+
+\subtitle{Proposition 15.10 - }{Equivalences to Normal Subgroups}
+Let $G$ be a group and $N \leq G$.\\
+Then the following statements are equivalent
+\begin{enumerate}[label=\roman*)]
+  \item $N \trianglelefteq G$;
+  \item $gNg^{-1} = N,\ \forall\ g \in G$; and
+  \item $gN = Ng,\ \forall\ g \in G$.
+\end{enumerate}
 
 \end{document}
