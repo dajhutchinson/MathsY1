@@ -1166,6 +1166,40 @@ $$|\langle v, w \rangle| \leq ||v||.||w||$$
 let $(V, \langle,\rangle)$ be an inner product space, $dim(V) = n$ and $u_1 , \dots , u_n \in V$.\\
 Then an orthogonal basis, $\{v_1, \dots , v_n\}$, can be formed following
 $$v_1 = \frac{1}{||u_1||}.u_1, \quad v_2 = \frac{1}{||u_2 - \langle v_1, u_2\rangle v_1||}.(u_2 - \langle v_1, u_2\rangle v_1)$$
-$$v_n = \frac{1}{||u_n - (\sum_{i=1}^{n-1}\langle v_i, u_n\rangle v_i)||}.\left(u_n - \left(\sum_{i=1}^{n-1}\langle v_i, u_n\rangle v_i\right)\right)$$
+$$v_n = \frac{1}{||u_n - (\sum_{i=1}^{n-1}\langle v_i, u_n\rangle v_i)||}.\left(u_n - \left(\sum_{i=1}^{n-1}\langle v_i, u_n\rangle v_i\right)\right)$$\\
+
+\subtitle{Defintion 9.16 - }{Perpendicular Space}
+Let $W$ be a subspace of $V$ and $\vect{v} \in V$.
+$$W^{\bot} := \{\vect{v} : \langle \vect{v}, \vect{w} \rangle = 0\ \forall\ \vect{w} \in W\}$$
+
+\subtitle{Theorem 9.17}{}
+Let $W$ be a subspace of $V$. Then
+$$V = W \oplus W^{\bot}$$
+
+\subtitle{Proposition 9.17 - }{Decomposition of Vectors}
+Let $W$ be a subspace of $V$ and $\vect{v} \in V$.
+Define $\{\vect{v}_1, \dots , \vect{v}_k\}$ to be an orthonormal basis of $W$.
+Then there is a unique decomposition $\vect{v} = \vect{v}^{\|} + \vect{v}^{\bot}$ for $\vect{v}^{\|} \in W$ and $\vect{v}^{\bot} \in W^{\bot}$.\\
+
+\subtitle{Remark 9.18 - }{Orthogonal Projection}
+$\vect{v}^{\|}$ is called the \textit{orthogonal projection} of $\vect{v}$ on $W$.\\
+So setting $\vect{v}^{\|} = P_W(\vect{v})$ and $P_W$ is a linear operation since the inner product is linear.\\
+
+\subtitle{Theorem 9.19 - }{Properties of Orthogonal Projection}
+Let $P_W$ be an orthogonal projection. Then
+\begin{enumerate}[label=\roman*)]
+  \item If $\vect{v} \in W$ and $\vect{v} = \vect{v}^{\|}$ then $P_W(\vect{v}) = \vect{v}$.\\
+  So $\vect{v}$ is an eigenvector of $P_W$ with eigenvalue $1$;
+  \item If $\vect{V} \in W^{\bot}$ and $\vect{v} = \vect{v}^{\bot}$ with $\vect{v}^{\|} = 0$ then $P_W(\vect{v}) = 0$.\\
+  So $\vect{v}$ is an eigenvector with eigenvalue 0; and,
+  \item $P_W^2 = P_W$.
+\end{enumerate}
+
+\subtitle{Theorem 9.20 - }{Pythagorus Theorem}
+$$\|\vect{v}\|^2 = \|\vect{v}^{\|}\|^2 + \|\vect{v}^{\bot}\|^2$$
+
+\subtitle{Theorem 9.21 - }{Cauchy-Schwarz}
+$$|\langle \vect{v}, \vect{w} \rangle | \leq \|\vect{v}\|.\|\vect{w}\|$$
+
 
 \end{document}
