@@ -24,6 +24,7 @@
 \newcommand{\vectorspace}[0]{\mathbb{V}}
 \newcommand{\basis}[0]{\mathbb{B}}
 \newcommand{\complex}[0]{\mathbb{C}}
+\newcommand{\innerproduct}[1]{\langle #1 \rangle}
 
 % Cover page title
 \title{Linear Algebra \& Geometry - Notes}
@@ -1084,7 +1085,7 @@ Where $u, v, w \in V$ and $\lambda \in \complex$.\\
 
 \subtitle{Definition 9.02 - }{Inner Product (Real)}
 Let $V$ be a vector space over $\real$.\\
-An \textit{inner product} on $V$ is a map, $\langle , \rangle : V \times V \to \complex$, with the following properties:
+An \textit{inner product} on $V$ is a map, $\innerproduct{,} : V \times V \to \complex$, with the following properties:
 \begin{enumerate}[label=\roman*)]
   \item $\langle v, v \rangle \geq 0$;
   \item $\langle v, w \rangle = \langle w, v \rangle$;
@@ -1094,37 +1095,37 @@ An \textit{inner product} on $V$ is a map, $\langle , \rangle : V \times V \to \
 Where $u, v, w \in V$ and $\lambda \in \complex$.\\
 
 \subtitle{Definition 9.03 - }{Inner Product Space}
-Let $\vectorspace$ be a vector space with $\langle , \rangle$ as a defined inner product are called an \textit{inner product space}, denoted by
-$$(\vectorspace, \langle , \rangle)$$
+Let $\vectorspace$ be a vector space with $\innerproduct{,}$ as a defined inner product are called an \textit{inner product space}, denoted by
+$$(\vectorspace, \innerproduct{,})$$
 \underline{N.B.} - If $V$ is over $\complex$ then this is called a \textit{complex inner product space}. If $V$ is over $\real$ then this is called a \textit{real inner product space}.\\
 
 \subtitle{Definition 9.04 - }{Norm}
-Let $( V , \langle , \rangle )$ be an inner product space, then we define the associated norm as
+Let $( V , \innerproduct{,} )$ be an inner product space, then we define the associated norm as
 $$\|v\| := \sqrt{\langle v, v \rangle},\quad v \in V$$
 
 \subtitle{Definition 9.05 - }{Orthogonal}
-Let $(V , \langle , \rangle)$ be an inner product space, then
+Let $(V , \innerproduct{,})$ be an inner product space, then
 \begin{enumerate}[label=\roman*)]
   \item $v, w \in V$ are \textit{orthogonal}, $v \perp w$, if $\langle v, w \rangle = 0$; and,
   \item $U, W \subset V$ are \textit{orthogonal}, $U \perp W$, if $u \perp w\ \forall\ u \in U\ \&\ v \in V$.
 \end{enumerate}
 
 \subtitle{Definition 9.06 - }{Orthogonal Complement}
-Let $(V, \langle , \rangle)$ be an inner product space and $W \subset V$.\\
+Let $(V, \innerproduct{,})$ be an inner product space and $W \subset V$.\\
 The \textit{orthogonal complement} is defined as
 $$W^\perp := \{ v \in V : v \perp w\ \forall\ w \in W \}$$
 
 \subtitle{Theorem 9.07 - }{Norm of Orthogonal Elements}
-Let $(V, \langle , \rangle)$ be an inner product space and $v, w \in V$ with $v \perp w$, then
+Let $(V, \innerproduct{,})$ be an inner product space and $v, w \in V$ with $v \perp w$, then
 $$\|v + w\|^2 = \|v\|^2 + \|w\|^2$$
 
 \subtitle{Definition 9.08 - }{Orthonormal Basis}
-Let $(V, \langle , \rangle)$ be an inner product space.\\
+Let $(V, \innerproduct{,})$ be an inner product space.\\
 A basis, $\basis = \{ v_1 , \dots , v_n\}$, is called an \textit{orthonormal basis} if
 $$\langle v_i , v_j \rangle = \delta_{ij} := \begin{cases} 1 \quad i = j;\\ 0 \quad i \not = j. \end{cases}$$
 
 \subtitle{Theorem 9.09 - }{Properties of Orthogonal Basis}
-Let $(V, \langle , \rangle)$ be an inner product space and $\basis = \{ v_1 , \dots , v_n\}$ an orthonormal basis.\\
+Let $(V, \innerproduct{,})$ be an inner product space and $\basis = \{ v_1 , \dots , v_n\}$ an orthonormal basis.\\
 Then $\forall\ v, w \in V$,
 \begin{enumerate}[label=\roman*)]
   \item $v = \sum_{i=1}^n \langle v_i , v \rangle v_i$;
@@ -1159,7 +1160,7 @@ Then a common orthogonal projection, $P_W : V \to V$, is defined by
 $$P_W(v) := \sum_{i=1}^k \langle w_i, v \rangle w_i$$
 
 \subtitle{Theorem 9.14 - }{Value of Inner Product}
-Let $(V, \langle , \rangle)$ be an inner product space. Then
+Let $(V, \innerproduct{,})$ be an inner product space. Then
 $$|\langle v, w \rangle| \leq \|v\|.\|w\|$$
 
 \subtitle{Theorem 9.15 - }{Forming an Orthogonal Basis}
@@ -1269,9 +1270,40 @@ Then $U$ is unitary iff the column vectors of $U$ from an orthonormal basis.\\
 
 \subtitle{Theorem 10.11 - }{Eigenvectors, Eigenvalues \& Adjoint Operators}
 Let $(V, \langle,\rangle)$ be an inner-product space and $T : V \to V$ a normal operator.\\
-Then if $v$ is an eigenvector of $T$ with eigenvalue $\lambda$, then $v$ is an eigenvector of $T^*$ with eigenvalue $\overline{\lambda}$.
+Then if $v \in V$ is an eigenvector of $T$ with eigenvalue $\lambda$, then $v$ is an eigenvector of $T^*$ with eigenvalue $\overline{\lambda}$.
 $$\mathrm{If\ }Tv = \lambda v \implies T^*v = \overline{\lambda}v$$
 
-% Up to 10.12 in lecture notes
+\subtitle{Theorem 10.12 - }{Eigenvectors with Different Eigenvalues are Mutually Orthogonal}
+Let $(V, \langle,\rangle)$ be an inner-product space and $T : V \to V$ a normal operator.\\
+Then if $\lambda_1, \lambda_2$ are eigenvalues of $T$ with $\lambda_1 \neq \lambda_2$ then their associated eigenvectors are mutually orthogonal.
+$$\innerproduct{\vect{v}_{\lambda_1}, \vect{v}_{\lambda_1}} = 0$$
+
+\subtitle{Theorem 10.13 - }{Unitary Matrix from a Complex Matrix}
+Let $A \in M_n(\complex)$ such that $A*A = AA*$.\\
+Then $\exists$ a unitary matrix, $U \in M_n(\complex)$ such that
+$$U*AU=diag(\lambda_1, \dots , \lambda_n)$$
+where $\lambda_1, \dots, \lambda_n$ are the eigenvalues for $A$.\\
+\underline{N.B.} - $U$ has an orthonormal basis of eigenvectors of $A$ as columns.\\
+
+\subtitle{Theorem 10.14 - }{Eigenvalues of a Self Adjoint Operation}
+Let $T$ be self-adjoint.\\
+Then $T$ only has real eigenvalues.
+
+\subsection{Real Matrices}
+
+\subtitle{Theorem 10.15 - }{}
+Let $A \in M_n(\real)$ be a symmetric, real matrix.\\
+Then $\exists\ O \in M_n(\real)$ such that
+$$O^tAO = diag(\lambda_1, \dots, \lambda_n)$$
+Where $\lambda_1, \dots, \lambda_n \in \real$ are the eigenvalues of $A$ and the columns of $O$ form an orthonormal basis.\\
+
+\subtitle{Definition 10.16 - }{Orthogonal Matrix}
+Let $O \in M_n(\real)$.\\
+If $OO^t = I = O^tO$ then $O$ is an \textit{orthogonal matrix}.\\
+
+\subtitle{Remark 10.17 - }{Orthonormal Bases from an Orthogonal Matrix}
+Let $O \in M_n(\real)$ be an orthogonal matrix.\\
+Then the columns \& rows of $O$ form orthonormal bases.\\
+\underline{N.B.} - This means $O^{-1}$ is an orthogonal matrix.
 
 \end{document}

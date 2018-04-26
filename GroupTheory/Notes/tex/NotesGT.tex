@@ -352,14 +352,14 @@ Let $G$ be a group, $H \leq G$ and $x \in G$.\\
 The \textit{left co-set} is defined as $xH = \{xh \in G : h \in H\} \subseteq G$.\\
 The \textit{right co-set} is defined as $Hx = \{hx \in G : h \in H\} \subseteq G$.\\
 
-\subtitle{Theorem 11.03 - }{Order of Co-set}
+\subtitle{Theorem 11.03 - }{Order of Co-Set}
 There exists a bijection, $\upvarphi : H \to xH$, where $\upvarphi(h) = xh$ so $$|H| = |xH|$$
 
-\subtitle{Theorem 11.04 - }{Relationship between Co-sets}
+\subtitle{Theorem 11.04 - }{Relationship between Co-Sets}
 Let $x, y \in G$ and $H \leq G$ then either
 $$xH = yH \mathrm{\ or\ } xH \cap yh = \emptyset$$
 
-\subtitle{Theorem 11.05 - }{Cosets of Abelian Groups}
+\subtitle{Theorem 11.05 - }{Co-Sets of Abelian Groups}
 Let $G$ be an abelian group and $H \leq G$ then $xH = Hx$.\\
 
 \subtitle{Definition 11.06 - }{Index}
@@ -541,7 +541,68 @@ Then the following statements are equivalent
 \begin{enumerate}[label=\roman*)]
   \item $N \trianglelefteq G$;
   \item $gNg^{-1} = N,\ \forall\ g \in G$; and
-  \item $gN = Ng,\ \forall\ g \in G$.
+  \item $gN = Ng,\ \forall\ g \in G$.\\
 \end{enumerate}
+
+\subtitle{Remark 15.11 - }{Co-Sets of a Normal Subgroup}
+A subgroup can only be normal iff its left and right co-sets are the same.
+
+\section{Quotient Groups}
+
+\subtitle{Definition 16.01 - }{Co-Set Notation}
+Let $N \trianglelefteq G$.\\
+We write $[g]$ for the co-set where $gN = Ng$.\\
+
+\subtitle{Definition 16.02 - }{Set of Co-Sets}
+Let $N \trianglelefteq G$.\\
+We write $G / N$ for the set of co-sets $\{[g] : g \in G\}$.\\
+
+\subtitle{Theorem 16.03 - }{Quotient Group}
+Let $N \trianglelefteq G$.\\
+$(G\ N, *)$ is the \textit{quotient} of $G$ by $N$.\\
+This is a group where $*$ is defined as
+$$[x][y] = [xy]\ \forall\ [x], [y] \in G$$
+
+\subtitle{Proposition 16.04 - }{Canonical Homomorphism}
+The \textit{canonical homomorphism}, $\pi : G \to G / N$, is defined as
+$$\pi(g) = [g]$$
+
+\section{The Homomorphism Theorem}
+
+\subtitle{Theorem 17.01 - }{The Homomorphism Theorem}
+Let $G, H$ be groups and $\upvarphi : G \to H$ be a homomorphism.\\
+Then $Ker(\upvarphi) \trianglelefteq G, Im(\phi) \leq H\ \&\ G / ker(\upvarphi) \cong Im(\upvarphi)$.\\\\
+\textit{Proof that $G / ker(\upvarphi) \cong Im(\upvarphi)$}\\
+Define $\alpha : G/Ker(\upvarphi) \to Im(\upvarphi)$ such that
+$$\alpha([g]) = \upvarphi(g)$$
+\textit{WTS $\alpha$ is well defined.}\\
+\begin{alignat*}{2}
+  \mathrm{Take\ } [x] = [y] \implies& x &&= yn \in yN\\
+  \implies& \upvarphi(x) &&= \upvarphi(yn)\\
+  & &&= \upvarphi(y) \upvarphi(n)\\
+  & &&= \upvarphi(y) e_H\\
+  & &&= \upvarphi(y)
+\end{alignat*}
+
+\textit{WTS $\alpha$ is a homomorphism}
+\begin{alignat*}{1}
+  \alpha([x][y]) &= \alpha([xy])\\
+  &= \upvarphi(xy)\\
+  &= \upvarphi(x) \upvarphi(y)\\
+  &= \alpha([x])\alpha([y])
+\end{alignat*}
+
+\textit{WTS $\alpha$ is a bijective, and thus an isomorphism}
+\begin{alignat*}{2}
+  \mathrm{Let\ }& [x] \in Ker(\alpha) \\
+  \implies& \upvarphi(x) &&= e_H\\
+  \implies& x \in Ker(\upvarphi) \\
+  \implies& [x] &&= [e] \in G/Ker(\upvarphi)\\
+  \mathrm{So\ \ }& \alpha \mathrm{\ is\ injective.}\\
+  \mathrm{Let\ }& \upvarphi(g) \in Im(\upvarphi)\\
+  \implies& \upvarphi(g) &&= \alpha([g]) \in Im(\alpha)
+\end{alignat*}
+
+So $\alpha$ is surjective and thus is bijective and an isomorphism.
 
 \end{document}
