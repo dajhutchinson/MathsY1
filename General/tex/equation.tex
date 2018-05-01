@@ -1,0 +1,69 @@
+% Ctrl + alt + b to build & preview (Linux)
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in, paperwidth=8.3in, paperheight=11.7in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+
+\begin{document}
+
+\pagestyle{fancy}
+\setlength\parindent{0pt}
+\allowdisplaybreaks
+\setstretch{1.5}
+
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\subtitle}[2]{\textbf{#1}\textit{#2} \\}
+\newcommand{\dotprod}[0]{\boldsymbol{\cdot}}
+\newcommand{\real}[0]{\mathbb{R}}
+\newcommand{\nat}[0]{\mathbb{N}}
+\newcommand{\field}[0]{\mathbb{F}}
+\newcommand{\vectorspace}[0]{\mathbb{V}}
+\newcommand{\basis}[0]{\mathbb{B}}
+\newcommand{\complex}[0]{\mathbb{C}}
+\newcommand{\innerproduct}[1]{\langle #1 \rangle}
+
+% Cover page title
+\title{Equations}
+\author{Dom Hutchinson}
+\date{\today}
+\maketitle
+
+% Header
+\fancyhead[L]{Dom Hutchinson}
+\fancyhead[C]{Equations}
+\fancyhead[R]{\today}
+
+\section*{Linear Algebra \& Geometry}
+\textbf{Dot Product - }$\vect{v} \dotprod \vect{w} := \sum_{i=1}^n v_i w_i,\quad \vect{v}$\\
+\textbf{Norm - } $\| \vect{v} \| := \sqrt{\vect{v} \dotprod \vect{v}} = \sqrt{\sum_{i=1}^n v_i^2},$\\
+\textbf{Angle Between Vectors - } $cos(\theta) = \displaystyle{\frac{\vect{v} \dotprod \vect{w}}{\|\vect{v}\|\|\vect{w}\|}}$\\
+\textbf{Modulus of Complex Numbers - } $|z| := \sqrt{x^2 + y^2} = \sqrt{\bar{z}z}$\\
+\textbf{Euler's Formula - } $e^{i\theta} = cos(\theta) + i.sin(\theta)$\\
+\textbf{de Moivre's Formula - } $z^n = (cos(\theta) + i.sin(\theta))^n = cos(n\theta) + i.sin(n\theta)$\\
+\textbf{Leibniz Formula - } $det(A) := \sum_{\sigma \in S_n}\left(sign(\sigma) . \prod_{j=1}^n a_{\sigma(j), j}\right)$\\
+\textbf{Cramer's Rule - } $\displaystyle{x_j = \frac{det(A_j)}{det(A)}}$\\
+\setstretch{1}
+\textbf{Cross Product - } $\displaystyle{\vect{x} \times \vect{y} := \begin{vmatrix} \vect{e}_1 & \vect{e}_2 & \vect{e}_3 \\ \vect{x}_1 & \vect{x}_2 & \vect{x}_3 \\ \vect{y}_1 & \vect{y}_2 & \vect{y}_3 \end{vmatrix}}$
+\setstretch{1.5}
+
+\section*{Calculus}
+\textbf{Differentiable - } $\displaystyle{f'(x) := \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}}$\\
+\textbf{Angle between Tangents - } $\displaystyle{\phi = \left| \frac{m_1 - m_2}{1 + m_1m_2} \right|}$\\
+\textbf{Taylor Series Polynomial - } $\displaystyle{T_n(x) = f(a) + (x - a)f'(a) + \dots + \frac{1}{n}(x-a)^nf^n(a)}$\\
+\textbf{Taylor Series Remainder - } $\displaystyle{R_n(x) = \frac{1}{n} \int_a^x (x-t)^nf^{(n+1)}(t) dt}$\\
+\textbf{Curvature, Cartesian - } $\displaystyle{K(x) = \frac{|y''(x)|}{\left[1 + y'(x)^2\right]^{\frac{3}{2}}}}$\\
+\textbf{Curvature, Parametric - } $\displaystyle{K(t_0) = \frac{y''(t_0)x'(t_0) - y'(t_0)x''(t_0)}{\left[x'(t_0)^2 + y'(t_0)^2\right]^{\frac{3}{2}}}}$\\
+\setstretch{1}
+\textbf{Wronskian - } $W\left[x, y\right] = \begin{vmatrix} x & y \\ x' & y'\end{vmatrix}$\\
+\textbf{Wronskian of Sequences - } $W\left[x, y\right] = \begin{vmatrix} x_n & y_n \\ x_{n+1} & y_{n+1}\end{vmatrix}$\\
+\setstretch{1.5}
+\textbf{Directional Derivative - } $D_{\vect{u}}\vect{f}(\vect{x}) := \vect{f}'(\vect{x}).\vect{u}$\\
+\textbf{Directional Derivative - } $\nabla f(\vect{x}) := (f_{x_1}(\vect{x}), \dots , f_{x_d}(\vect{x}))$
+
+\end{document}
