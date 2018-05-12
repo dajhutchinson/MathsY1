@@ -1,0 +1,407 @@
+% Ctrl + alt + b to build & preview (Linux)
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in, paperwidth=8.3in, paperheight=11.7in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{upgreek}
+
+\begin{document}
+
+\pagestyle{fancy}
+\setlength\parindent{0pt}
+\allowdisplaybreaks
+
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\dotprod}[0]{\boldsymbol{\cdot}}
+\newcommand{\real}[0]{\mathbb{R}}
+\newcommand{\field}[0]{\mathbb{F}}
+\newcommand{\naturals}[0]{\mathbb{N}}
+\newcommand{\complex}[0]{\mathbb{C}}
+\newcommand{\integers}[0]{\mathbb{Z}}
+\newcommand{\innerproduct}[2]{\langle #1, #2 \rangle}
+\newcommand{\tit}[1]{\textbf{#1}\\}
+\newcommand{\subtit}[1]{\underline{\textit{#1}}\\}
+\newcommand{\cosec}[0]{\mathrm{cosec}}
+
+% Cover page title
+\title{Introduction to Group Theory - Application Notes}
+\author{Dom Hutchinson}
+\date{\today}
+\maketitle
+
+% Header
+\fancyhead[L]{Dom Hutchinson}
+\fancyhead[C]{Introduction to Group Theory - Application Notes}
+\fancyhead[R]{\today}
+
+\tit{How to Use One-Line Notation}
+
+\subtit{Theory}
+\textit{One-line notation} is used to denote permutations.\\
+Then $n^{th}$ entry shows where $n$ is sent to.\\
+So if $\sigma$ is a permutation \& $S = \{ a_1, \dots, a_n\}$ is a set then $\sigma$ can be denoted as $\sigma = \begin{pmatrix} \sigma(a_1) & \dots & \sigma(a_n) \end{pmatrix}$.\\
+
+\subtit{Process}
+\textit{To perform $\sigma$ on $S$.}\\
+Create $|S|$ free spaces.\\
+Place the first item of $S$ in the position denoted by the first position on the one-line notation.\\
+Repeat this $\forall\ a_i,\ i \leq |S|, i \in \naturals$.\\
+
+\subtit{Example}
+Let $S = \{1,2,3,4,5 \}$ and $\sigma = \begin{pmatrix}5 & 4 & 2 & 1 & 3 \end{pmatrix}$ in one-line notation.\\
+Then $\underline{\sigma(S) = \{4,3,5,2,1 \}}$.\\
+
+\tit{How to Use Two-Line Notation}
+
+\subtit{Theory}
+\textit{Two-line notation} is used to denote permutations.\\
+It is shown on two lines, which should we read as columns.\\
+The top entry is the initial position \& the bottom is the destination.\\
+So $\sigma$ can be denoted as $\sigma = \begin{pmatrix} a_1 & \dots & a_n \\ \sigma(a_1) & \dots & \sigma(a_n) \end{pmatrix}$.\\
+
+\subtit{Process}
+\textit{To perform $\sigma$ on $S$}.\\
+Create $|S|$ free spaces.\\
+Take an element from $S$.\\
+Read along the top row until you find this element.\\
+Place this element in the position denoted by the element below.\\
+Repeat $\forall\ s \in S$.\\
+
+\subtit{Example}
+Let $S = \{1,2,3,4,5 \}$ and $\sigma = \begin{pmatrix}1 & 2 & 3 & 4 & 5 \\5 & 4 & 2 & 1 & 3 \end{pmatrix}$ in two-line notation.\\
+Then $\underline{\sigma(S) = \{4,3,5,2,1 \}}$.\\
+
+\newpage\tit{How to Use Cycle-Decomposition Notation}
+
+\subtit{Theory}
+\textit{Cycle-Decomposition notation} is used to denote permutations.\\
+The position an element goes to is denoted by the next element in a cycle.\\
+The last element goes to the position denoted by the first element.\\
+So $\sigma$ can be denoted as $\sigma = \begin{pmatrix} a_1 & \sigma(a_1) & \sigma(\sigma(a_1)) & \dots & \sigma(\dots\sigma(a_1))\end{pmatrix}$.\\
+Cycles are disjoint if each element appears in only one cycle.\\
+They are read from \textit{right to left}.\\
+
+\subtit{Process}
+\textit{To perform $\sigma$ on $S$}.\\
+Take the first element from $S$.\\
+Starting with the rightmost cycle, read to the left until you find this element.\\
+Place this item in the position denoted by the element on the right.\\
+Position the rest of the items in a cycle.\\
+Once a cycle has been completed, identify the next item in $S$ which has not been position.\\
+Sort this element.\\
+Repeat this until all the elements have been sorted.\\
+
+\subtit{Example}
+Let $S=\{1,2,3,4,5\}$ and define $\sigma = (1,5)(2,4,3)$ in cycle-decomposition notation.\\
+Then $\sigma(S) = \{5,3,4,2,1\}$.\\
+
+\tit{How to Prove something is a Group}
+
+\subtit{Theory}
+A group is constituted of a set \& a binary operation.\\
+The operation must be associative.\\
+The group must have an identity element.\\
+Each element of the group must have an inverse element.\\
+The group is closed under operation.\\
+
+\subtit{Process}
+To show associativity show that $(x * y) * z = x * (y * z)$.\\
+To show an identity element show that $\exists\ e \in G\ st\ xe = x = ex\ \forall\ x \in G$.\\
+To show an inverse show that $\forall\ x \in G\ \exists\ x^{-1} \in G\ st\ xx^{-1} = e = x^{-1}x$.\\
+To show closure show that $\forall\ x, y \in G$ then $x * y \in G$.\\
+
+\newpage\subtit{Example}
+Show that $(2\integers, +)$ is a group.\\
+
+Let $x, y, z \in \integers$ then $2x, 2y, 2z \in G$.\\
+$(2x + 2y) + 2z = 2(x+y)+2x=2(x+y+z)=2(x+y+z)=2(x+(y+z))=2x+(2y+2z)$.\\
+
+Set $2x + 2e = 2x \implies 2e = 0 \implies e=0$\\
+Set $2e+2x=2x \implies 2e = 0 \implies e = 0$.\\
+So $0$ is the identity element.\\
+
+$2x + 2y = 2(x+y)$ since $(x+y) \in \integers$ so $2x+2y \in G$.\\
+
+$G$ has all the properties of a group, therefore it is a group.\\
+
+\tit{How to Prove a Group is Abelian}
+
+\subtit{Theory}
+An operation is \textit{commutative} is $x * y = y * x$, so order does not affect result.\\
+A group is \textit{abelian} if its operation is commutative.\\
+
+\subtit{Example}
+Show that $(\integers, *)$ where $x * y = x*y+1$ is abelian.\\
+$x*y=x+y+1=y+x+1=y*x$.\\
+
+\tit{How to Prove a Group is a Valid Subgroup}
+
+\subtit{Theory}
+A \textit{subgroup} keeps the operation of its master hroup, but with a subset of its elements.\\
+THis is denoted by $H \leq G$ where $H$ is a subgroup of $G$.\\
+It must maintain all the properties of a group.\\
+
+\subtit{Process}
+To show associativity show that $(x * y) * z = x * (y * z)$.\\
+To show an identity element show that $\exists\ e \in G\ st\ xe = x = ex\ \forall\ x \in G$.\\
+To show an inverse show that $\forall\ x \in G\ \exists\ x^{-1} \in G\ st\ xx^{-1} = e = x^{-1}x$.\\
+To show closure show that $\forall\ x, y \in G$ then $x * y \in G$.\\
+
+\subtit{Example}
+Show $H=(2\integers, +)$ is a valid subgroup of $G=(\integers, +)$.\\
+
+Let $x, y, z \in \integers$ then $2x, 2y, 2z \in H$.\\
+$(2x + 2y) + 2z = 2(x+y)+2x=2(x+y+z)=2(x+y+z)=2(x+(y+z))=2x+(2y+2z)$.\\
+
+Set $2x + 2e = 2x \implies 2e = 0 \implies e=0$\\
+Set $2e+2x=2x \implies 2e = 0 \implies e = 0$.\\
+So $0$ is the identity element.\\
+
+$2x + 2y = 2(x+y)$ since $(x+y) \in \integers$ so $2x+2y \in H$.\\
+
+Since $(2\integers, +)$ has all the properties of a group, thus is a valid subgroup.\\
+
+\tit{How to Prove a Group is Cyclic}
+
+\subtit{Theory}
+The \textit{order} of an element is the fewest number of times it needs to operated on itself to produce the identity element.\\
+\-\hspace{2em} $ord(x) = n \implies x^n = e$.\\
+The set of elements generated by an element, $x \in G$, is denoted by $\langle x \rangle = \{x^i:i\in \integers\} \leq G$.\\
+If $\exists\ g \in G\ st\ \langle g \rangle = G$ such that $\langle g \rangle = G$ then $G$ is \textit{cycle} with $g$ as the generator.\\
+$\frac{\integers}{n\integers}, n \in \naturals = \left\{ [a] : a \in \naturals; gcd(a, n) = 1\right\}$.\\
+
+\subtit{Example}
+Show that $U_{11} = \left(\frac{\integers}{11\integers}, \dotprod \right)$ is cyclic.\\
+
+$U_{11} = \{[1], [2], [3], [4],[5],[6],[7],[8],[9],[10]\}.$
+\begin{alignat*}{9}
+[2]^1&=&[2]&&&\quad[2]^6&=&[20]&=&[9]\\
+[2]^2&=&[4]&&&\quad[2]^7&=&[18]&=&[7]\\
+[2]^3&=&[8]&&&\quad[2]^8&=&[14]&=&[3]\\
+[2]^4&=&[16]&=&[5]&\quad[2]^9&=&[6]\\
+[2]^5&=&[10]&&&\quad[2]^{10}&=&[12]&=&[1]
+\end{alignat*}
+$[2]$ is a generator of $U_{11}$.\\
+
+\tit{How to Perform Modular Arithmetic}
+
+\subtit{Theory}
+$a\equiv b(mod\ n) \implies n|(a-b)\ \&\ \exists\ m \in \integers$ such that $mn+b=a$.\\
+A \textit{congurence class} of $a (mod\ n)$ is defined as\\
+\-\hspace{2em}$[a]_n = \{b\in\integers:a\equiv b(mod\ n)\} = \{\dots, a-n, a, a+n, a+2n, \dots\}$.\\
+
+\subtit{Process}
+$[a]+[b]=[a+b]$.\\
+$[a].[b]=[ab]$.\\
+\underline{N.B.} - $[a+b] = [a+b-n]$ so if $a + b \geq n$ subtract $n$ until this is not true, do the same if $ab \geq n$.\\
+
+\tit{How to Prove an Operation is Homomorphic}
+
+\subtit{Theory}
+An opeartion, $\phi : G \to H$ where $G = (G, *)\ \&\ H=(H,\dotprod)$, is \textit{homomorphic} if\\
+\-\hspace{2em}$\phi(x*y) = \phi(x) \dotprod\phi(y)\ \forall\ x, y \in G$.\\
+
+\subtit{Process}
+Show that $\phi$ is a valid map, \textit{i.e} its output is unambiguous.\\
+Show that $\phi(x*y) = \phi(x) \dotprod\phi(y)$.\\
+
+\newpage\subtit{Example}
+Let $\phi:\real\times\real\to\real$ such that $\phi(x, y) = x + y$.\\
+Show that $\phi$ is homomorphic.\\
+
+Let $x_1, x_2, y_1, y_2 \in \real$.\\
+\[\begin{array}{rcl}
+\phi((x_1, y_1) + (x_2, y_2)) &=& \phi((x_1 + x_2, y_1+y_2))\\
+&=& x_1+x_2+y_1+y_2\\
+&=&(x_1+y_1) + (x_2+y_2)\\
+&=&\underline{\phi(x_1, y_1) + \phi(x_2, y_2)}.
+\end{array}\]
+
+\tit{How to Prove an Operation is Isomorphic}
+
+\subtit{Theory}
+An opeartion, $\phi : G \to H$ where $G = (G, *)\ \&\ H=(H,\dotprod)$, is \textit{isomorphic} if\\
+\-\hspace{2em}$\phi(x*y) = \phi(x) \dotprod\phi(y)\ \forall\ x, y \in G$  and \underline{$\phi$ is bijective}.\\
+
+\subtit{Process}
+Show that $\phi$ is a valid map, \textit{i.e} its output is unambiguous.\\
+Show that $\phi$ is homomorphic, \textit{i.e.} $\phi(x*y) = \phi(x) \dotprod\phi(y)$.\\
+Show that $\phi$ is injective, \textit{i.e.} If $\phi(x) = \phi(y) \implies x = y$.\\
+Show that $\phi$ is surjective, \textit{i.e.} $\forall\ x \in G\ \exists\ y \in H\ st\ \phi(x) = y$.\\
+Thus $\phi$ is bijective \& homomorphic, thus an \textit{isomorphism}.\\
+
+\subtit{Example}
+Let $G=(G,+)$ \& $H=(H,\times)$.\\
+Define $\phi : G\to H$ as $\phi(x)=e^x$. Show that $\phi$ is an isomorphism.\\
+
+\-\hspace{2em}$\phi(x+y)=e^{x+y}=e^xe^y=\phi(x)\phi(y)$.\\
+\-\hspace{2em}$\phi$ is homomorphic.\\
+
+\-\hspace{2em}Let $x, y \in G$ such that $\phi(x)=\phi(y)$.\\
+\-\hspace{2em}$\implies e^x=e^y$\\
+\-\hspace{2em}$\implies ln(e^x)=ln(e^y)$\\
+\-\hspace{2em}$\implies x=y$.\\
+\-\hspace{2em}$\phi$ is injective.\\
+
+\-\hspace{2em}Let $y=e^x$.\\
+\-\hspace{2em}$\implies x=ln(y)$\\
+\-\hspace{2em}$\implies f(x) = f(ln(y))$\\
+\-\hspace{2em}$\implies e^x = e^{ln(y)}=y$.\\
+\-\hspace{2em}$\phi$ is surjective.\\
+
+\-\hspace{2em}Since $\phi$ is injective \& surjective it is bijective.\\
+\-\hspace{2em}Since $\phi$ is homomorphic \& bijective then it is an isomorphism.\\
+
+\newpage\tit{How to Prove Lagrange's Theorem}
+
+\subtit{Theory}
+\textit{Lagrange's Theorem} states that\\
+\-\hspace{1em}If $G$ is a finite group \& $H \leq G$ then $|H|$ divides $|G|$.\\
+Cosets are the set formed by operating on all elements of a subgroup with a single element of the main group.\\
+There are two types of cosets, left \& right.\\
+\-\hspace{2em}$xH=\{xh:h\in H\}\ \& Hx=\{hx:h\in H\}$.\\
+
+\subtit{Proof}
+Let $g \in G$.\\
+Then $g=ge=gH$.\\
+So $G=\bigcup_{g\in G}gH$\\
+
+Then $|G|=\sum_{g \in G}|gH|=\mathrm{\#\ cosets}\times|H|$.\\
+Hence $|H|$ divides $|G|$.\\
+
+\tit{How to Apply Fermat's Little Theorem \& the Fermat-Euler Theorem}
+
+\subtit{Theory}
+\textit{Fermat's Little Theorem} states that\\
+\-\hspace{2em}If $p$ is prime, $a \in \integers$ \& $p \not| a$ then $a^{p-1}\equiv 1(mod\ p)$.\\
+\textit{Euler's Phi Function}, $\phi \naturals\to\naturals$, is the number of natural numbers which are less than \& co-prime to a given number.\\
+\-\hspace{2em}$\phi(n)=|\{a\in\naturals:a\leq m, gcd(a,m)=1\}|$.\\
+The \textit{Fermat-Euler Theorem} states\\
+\-\hspace{2em}If $m>0\ \& a\in\integers$ with $gcd(a,m)=1\implies a^{\phi(m)}\equiv1(mod\ m)$.\\
+
+\subtit{Example}
+Find $2^300(mod\ 17)$.\\
+
+$gcd(2, 17)=1\ \&\ \phi(17) = 16$.\\
+So by the \textit{Fermat-Euler Theorem} $2^{16}\equiv 1(mod\ 17)$.\\
+
+\[\begin{array}{rrcl}
+&300&=&18\times16+12\\
+\implies&2^{300}&=&(2^{16})^{18}2^{12}\\
+\implies&2^{300}&\equiv& 2^{12}(mod\ 17)\\
+\\&12&=&3\times4\\
+&2^4&=&16\equiv(-1)(mod\ 17)\\
+\implies&2^{12}&\equiv&(2^4)^3(mod\ 17)\\
+&&\equiv&(-1)^3(mod\ 17)\\
+&&\equiv&-1(mod\ 17)\\
+\implies&2^{300}&\equiv&\underline{16(mod\ 17)}
+\end{array}\]
+
+\newpage\tit{How to Simplify Transpositions}
+
+\subtit{Theory}
+A transposition is a switch of 2 elements.\\
+Read them from \textit{right to left}.\\
+
+\subtit{Process}
+Take the first element of $S$.\\
+Start on the right \& follow the path of this element.\\
+Write down where it ends up.\\
+Now repeat with this position you just found.\\
+When you cycle back to the first element find the next element in $S$ which has not been placed.\\
+
+\subtit{Example}
+Simplify $(1,2)(2,4)(1,5)(3,5)(1,2)(2,4)$.\\
+\[\begin{array}{l}
+1\to2\to4\\
+4\to2\to1\to5\\
+5\to3\\
+3\to5\to1\to2\\
+2\to4\to2\to1\\
+\underline{(1,4,5,3,2)}
+\end{array}\]\\
+
+\tit{How to Prove a Group is Normal}
+
+\subtit{Theory}
+$N\leq G$ is a \textit{normal subgroup} if\\
+\-\hspace{2em}$gng^{-1}\in\naturals\ \forall\ g\in G, n\in N$.\\
+This is then denoted as $N\trianglelefteq G$.\\
+This means $gN=Ng\ \forall\ g\in G$.\\
+
+\subtit{Process}
+Show that $gN=Ng\ \forall\ g\in G$.\\
+
+\subtit{Example}
+Prove $\langle a\rangle$ is a normal subgroup of $D_{2n}$.\\
+
+\-\hspace{2em}$\langle a\rangle=\{a, a^2, \dots, a^{n-1}, e$.\\
+
+\-\hspace{2em}Let $a^i \in \langle a \rangle$.\\
+\-\hspace{2em}$a^ib = ba^{-i} = ba^{n-i}$.\\
+\-\hspace{2em}$(n-i)\in [0,n)$ so $b\langle a \rangle = \langle a \rangle b$.\\
+
+\-\hspace{2em}$a^ja^i=a^{i+j}=a^ja^i$.\\
+\-\hspace{2em}So $a^i\langle a \rangle = \langle a \rangle a^i\ \forall\ i \in \naturals$.\\
+
+\-\hspace{2em}$e\langle a \rangle = \langle a \rangle = \langle a \rangle e$.\\
+
+\-\hspace{2em}So $x\langle a \rangle = \langle a \rangle x\ \forall x \in D_{2n}$.\\
+\-\hspace{2em}\underline{$\langle a \rangle$ is a normal subgroup.}\\
+
+\tit{How to Prove The Homomorphism Theorem}
+
+\subtit{Theory}
+The Homomorphism Theorem states that \\
+if $G, H$ be groups and $\upvarphi : G \to H$ is a homomorphism then $Ker(\upvarphi) \trianglelefteq G, Im(\phi) \leq H\ \&\ G / ker(\upvarphi) \cong Im(\upvarphi)$.\\\\
+
+\subtit{Process}
+Show the function is well defined.\\
+Show the function is a homomorphism.\\
+Show the function is injective, $f(x) = f(y) \implies x = y$.\\
+Show the function is surjective, $\forall\ y \in H\ \exists\ x \in G\ st\ f(x) = y$.\\
+Thus the function is bijective and thus an isomorphism.\\
+
+
+\subtit{Proof}
+Define $\alpha : G/Ker(\upvarphi) \to Im(\upvarphi)$ such that
+$$\alpha([g]) = \upvarphi(g)$$
+\textit{WTS $\alpha$ is well defined.}\\
+\begin{alignat*}{2}
+  \mathrm{Take\ } [x] = [y] \implies& x &&= yn \in yN\\
+  \implies& \upvarphi(x) &&= \upvarphi(yn)\\
+  & &&= \upvarphi(y) \upvarphi(n)\\
+  & &&= \upvarphi(y) e_H\\
+  & &&= \upvarphi(y)
+\end{alignat*}
+
+\textit{WTS $\alpha$ is a homomorphism}
+\begin{alignat*}{1}
+  \alpha([x][y]) &= \alpha([xy])\\
+  &= \upvarphi(xy)\\
+  &= \upvarphi(x) \upvarphi(y)\\
+  &= \alpha([x])\alpha([y])
+\end{alignat*}
+
+\textit{WTS $\alpha$ is a bijective, and thus an isomorphism}
+\begin{alignat*}{2}
+  \mathrm{Let\ }& [x] \in Ker(\alpha) \\
+  \implies& \upvarphi(x) &&= e_H\\
+  \implies& x \in Ker(\upvarphi) \\
+  \implies& [x] &&= [e] \in G/Ker(\upvarphi)\\
+  \mathrm{So\ \ }& \alpha \mathrm{\ is\ injective.}\\
+  \mathrm{Let\ }& \upvarphi(g) \in Im(\upvarphi)\\
+  \implies& \upvarphi(g) &&= \alpha([g]) \in Im(\alpha)
+\end{alignat*}
+
+So $\alpha$ is surjective and thus is bijective and an isomorphism.
+
+\end{document}
