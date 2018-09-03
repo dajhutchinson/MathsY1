@@ -588,7 +588,7 @@ A map, $T : \real^n \to \real^m$ is a \textit{linear map} if
   \item $T(\vect{x} + \vect{y}) = T(\vect{x}) + T(\vect{y}),\quad \forall\ \vect{x}, \vect{y} \in \real^n$; and,
   \item $T(\lambda\vect{x}) = \lambda T(\vect{x}),\quad \forall\ \vect{x} \in \real^n, \lambda \in \real$.
 \end{enumerate}
-\underline{N.B.} - If $m = n$ then $T$ is referred to as a \textit{linear operator}. \\
+\underline{N.B.} - If $m = n$ then $T$ is referred to as a \underline{linear operator}. \\
 
 \subtitle{Theorem 5.02 - }{Properties of Linear Maps}
 Let $T : \real^n \to \real^m$ be a linear map. Then $T(\vect{0}) = \vect{0}$. \\
@@ -597,7 +597,7 @@ Let $T : \real^n \to \real^m$ be a linear map. Then $T(\vect{0}) = \vect{0}$. \\
 Let $T : \real^n \to \real^m$ be a linear map. Then the associated Matrix is defined as
 $$M_T := (t_{ij}) \in M_{m,n}(\real)$$
 with the elements of $M_T$ defined by
-$$t_{ij} := \vect{e}_i \dotprod T(\vect{e}_j)$$
+$$t_{ij} := \vect{e}_i \dotprod T(\vect{e}_j)\quad\vect{e}_i \in \real^m, \vect{e}_j \in \real^n$$
 
 \subtitle{Theorem 5.04 - }{Solutions to Linear Maps from Matrices}
 Let $T : \real^n \to \real^m$ be a linear map and $M_T$ be the associated matrix. Then $$T(\vect{x}) = M_T\vect{x},\quad \forall\ \vect{x} \in \real^n$$
@@ -634,13 +634,13 @@ Let $S : \real^n \to \real^m$, $T : \real^n \to \real^m$ \& $U : \real^m \to \re
 \begin{enumerate}[label=\roman*)]
   \item $M_{\lambda T} = \lambda M_T = (\lambda t_{ij})$;
   \item $M_{S + T} = (s_{ij} + t_{ij}) = M_S + M_T$; and,
-  \item $M_{U \circ S} = (r_{ij})$ where $r_{ik} = \sum_{k=1}^m s_{ik}t_{jk}$.
+  \item $M_{U \circ S} = (r_{ij})$ where $r_{ij} = \sum_{k=1}^m s_{ik}t_{jk}$.
 \end{enumerate}
 
 \subsection{Rank \& Nullity}
 
 \subtitle{Defintion 5.10 - }{Rank \& Nullity}
-Let $T : \real^n \to \real^m$ be a linear map. Then we define \textit{Rank} of $T$ by $$rank(T) := dim(Im(T))$$
+Let $T : \real^n \to \real^m$ be a linear map. Then we define \textit{Rank} of $T$ by $$rank(T) := dim(Ker(T))$$
 and we define \textit{Nullity} of $T$ by $$nullity(T) := dim(Im(T))$$
 \underline{N.B.} - For all linear maps, $T : \real^n \to \real^m$, $$nullity(T) + rank(T) = n$$
 
@@ -657,7 +657,7 @@ Let $S : \real^n \to \real^m$ \& $T : \real^k \to \real^n$ be linear maps. Then
   \item $S \circ T = 0$ iff $Im(T) \subset Ker(S)$;
   \item $rank(S \circ T) \leq rank(T)$ and $rank(S \circ T) \leq rank(S)$;
   \item $nullity(S \circ T) \geq nullity(T)$ and $nullity(S \circ T) \geq nullity(S) + k - n$; and,
-  \item $S$ is invertible then $rank(S \circ T) = rank(T)$ and $nullity(S \circ T) = nullity(T)$.
+  \item $S$ is invertible then $rank(S \circ T) = rank(S)$ and $nullity(S \circ T) = nullity(T)$.
 \end{enumerate}
 
 \section{Determinants}
@@ -740,9 +740,18 @@ $$\vect{x} \times \vect{y} := \begin{vmatrix}
   \vect{e}_1 & \vect{e}_2 & \vect{e}_3 \\
   \vect{x}_1 & \vect{x}_2 & \vect{x}_3 \\
   \vect{y}_1 & \vect{y}_2 & \vect{y}_3
+\end{vmatrix} = \vect{e}_1 \begin{vmatrix}
+  \vect{x}_2 & \vect{x}_3 \\
+  \vect{y}_2 & \vect{y}_3
+\end{vmatrix} + \vect{e}_2 \begin{vmatrix}
+  \vect{x}_1 & \vect{x}_3 \\
+  \vect{y}_1 & \vect{y}_3
+\end{vmatrix} +  \vect{e}_3 \begin{vmatrix}
+  \vect{x}_1 & \vect{x}_2 \\
+  \vect{y}_1 & \vect{y}_2
 \end{vmatrix} = \begin{pmatrix}
   \vect{x}_2\vect{y}_3 - \vect{x}_3\vect{y}_2 \\
-  \vect{x}_3\vect{y}_1 - \vect{x}_1\vect{y}_3 \\
+  \vect{x}_1\vect{y}_3 - \vect{x}_3\vect{y}_1 \\
   \vect{x}_1\vect{y}_2 - \vect{x}_2\vect{y}_1
 \end{pmatrix}$$
 
@@ -1064,7 +1073,7 @@ Let $\lambda \in spec(T)$ and $V_\lambda$ be the corresponding eigenspace.
 \subtitle{Theorem 8.20 - }{Relationship between Geometric \& Algebraic Multiplicity}
 Let $\lambda \in spec(T)$ then $$m_g(\lambda) \leq m_a(\lambda)$$
 
-\subtitle{Theorem 8.21 - }{}
+\subtitle{Theorem 8.21}{}
 Let $T$ be a linear operator on an $n$ dimensional space over $\complex$ or $\real$, with eigenvalues $\lambda_1 , \dots , \lambda_n$, which are not necessarily distinct. Then
 $$det(T) = \prod_{i=1}^n \lambda_i \quad \& \quad tr(T) = \sum_{i=1}^n \lambda_i$$
 
@@ -1208,7 +1217,7 @@ $$|\langle \vect{v}, \vect{w} \rangle | \leq \|\vect{v}\|.\|\vect{w}\|$$
 Let $T : V \to V$ be a linear operator over vector space $V$.\\
 Define $\basis = \{\vect{v}_1 , \dots , \vect{v}_n\}$ to be an orthonormal basis of $V$.\\
 Then the matrix representation of $T$, $M_T = (a_{ij})$, is given by
-$$a_ij = \langle \vect{V}_i, T(\vect{V}_j) \rangle$$
+$$a_ij = \langle \vect{v}_i, T(\vect{v}_j) \rangle$$
 
 \subsection{Complex Inner Product Spaces}
 
@@ -1291,7 +1300,7 @@ Then $T$ only has real eigenvalues.
 
 \subsection{Real Matrices}
 
-\subtitle{Theorem 10.15 - }{}
+\subtitle{Theorem 10.15}{}
 Let $A \in M_n(\real)$ be a symmetric, real matrix.\\
 Then $\exists\ O \in M_n(\real)$ such that
 $$O^tAO = diag(\lambda_1, \dots, \lambda_n)$$
@@ -1305,5 +1314,11 @@ If $OO^t = I = O^tO$ then $O$ is an \textit{orthogonal matrix}.\\
 Let $O \in M_n(\real)$ be an orthogonal matrix.\\
 Then the columns \& rows of $O$ form orthonormal bases.\\
 \underline{N.B.} - This means $O^{-1}$ is an orthogonal matrix.
+
+\newpage\section{Extra}
+
+\subtitle{Parraleofram Rule}{}
+$$\|\vect{x}+\vect{y}\|^2 = \|\vect{x}\|^2 + \|\vect{y}\|^2 + 2\vect{x}\dotprod\vect{y}$$
+$$\|\vect{x}-\vect{y}\|^2 = \|\vect{x}\|^2 + \|\vect{y}\|^2 - 2\vect{x}\dotprod\vect{y}$$
 
 \end{document}
