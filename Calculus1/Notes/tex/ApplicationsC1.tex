@@ -340,9 +340,9 @@ Set $a\lambda^2 + b\lambda + c = 0$.''
 Solve to find $\lambda_1$ \& $\lambda_2$.
 Let $y_n^c$ be the complementary function. Set it with these conditions.\\
 If\\
-\-\hspace{2em} $\lambda_1 = \lambda_2 \in \real \implies y_n^c = \mu_1\lambda_1^n + n\mu_2\lambda_2^n$;\\
-\-\hspace{2em} $\lambda_1, \lambda_2 \in \real\ \ \ \implies y_n^c = \mu_1\lambda^n + \mu_2\lambda_2^n$; or,\\
-\-\hspace{2em} $\lambda_1, \lambda_2 \in \complex \ \ \ \implies y_n^c = \mu_1\lambda_1^n\cos(n\theta) + \mu_2\lambda_2^n\sin(n\theta)$.\\
+\-\hspace{2em} $\lambda_1 = \lambda_2 \in \real \quad \quad \quad \quad \quad \quad \quad \implies y_n^c = \mu_1\lambda_1^n + n\mu_2\lambda_2^n$;\\
+\-\hspace{2em} $\lambda_1, \lambda_2 \in \real\quad \quad \quad \quad \quad \quad \quad \quad \implies y_n^c = \mu_1\lambda^n + \mu_2\lambda_2^n$; or,\\
+\-\hspace{2em} $\lambda_1, \lambda_2 \in \complex\ st\ \lambda_1, \lambda_2 = Re^{\pm i\theta} \implies y_n^c = R^n.[\mu_1 cos(n\theta)+\mu_2 sin(n\theta)]$.\\
 Let $y_n^p$ be the particular function. Set it with these conditions.\\
 If\\
 \-\hspace{2em} $d(n) = a \in \real\ \forall\ n \implies y_n^p = A$;\\
@@ -542,6 +542,15 @@ Find and determine the equilibria of $x_{n+1} = \frac{3x_n}{2}(1-x_n)$.\\
 \\&f(x) &=& \frac{3}{2}-3x\\
 \implies& f(0) &=& \frac{3}{2} \implies \mathrm{unstable}.\\
 \&& f(\frac{1}{3}) &=& \frac{1}{2} \implies \mathrm{stable}.
-\end{array}\]
+\end{array}\] \\
+
+\textbf{Find general solution to system of first-order-differential-equations.}\\
+
+\textit{\underline{Process}}
+\begin{enumerate}[label=\roman*)]
+  \item Express system as matrix $\begin{pmatrix}x_1' \\ \vdots \\ x_n'\end{pmatrix}=A\begin{pmatrix}x_1 \\ \vdots \\ x_n\end{pmatrix}, A \in M_n$.
+  \item Find the eigenvalues \& eigenvectors of A, $\{(\lambda, \vect{v})\}$.
+  \item Express system as $\begin{pmatrix} x \\ y \end{pmatrix} = \mu_1.e^{\lambda_1.t}\vect{v}_1 + \dots + \mu_n.e^{\lambda_n.t}\vect{v}_n$ where $\mu_1, \dots, \mu_n$ are constants to be found.
+\end{enumerate}
 
 \end{document}

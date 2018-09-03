@@ -264,7 +264,7 @@ $$-\frac{dx(t_0)}{dy(t_0)} = \frac{y - y(t_0)}{x - x(t_0)}$$
 \subtitle{Theorem 5.03 - }{Arc-Length}
 \textit{Arc-Length} is the length of a curve, following a function, between two points.\\
 For a \textit{cartesian equation}, $y = f(x)$, between the points $x$ and $x + dx$ is $$ds = \sqrt{dx^2 + dy^2}$$
-So for a set of \textit{parametric equations}, $(x(t), y(t)),\ a \leq t \leq b$, $$ds = \sqrt{\frac{dx^2}{dt} + \frac{dy^2}{dt}}$$
+So for a set of \textit{parametric equations}, $(x(t), y(t)),\ a \leq t \leq b$, $$\frac{ds}{dt} = \sqrt{\frac{dx^2}{dt} + \frac{dy^2}{dt}}$$
 To find the length of a curve between points $a$ and $b$ $$s = \int_{a}^{b} \sqrt{\frac{dx^2}{dt} + \frac{dy^2}{dt}} dt$$
 
 \subtitle{Definition 5.04 - }{Curvature}
@@ -288,7 +288,8 @@ $$f(x, y, \frac{dx}{dy}, ... , \frac{d^{(n)}y}{dx^{(n)}}) = 0,\ x \in I$$
 \subsection{First Order Differential Equations}
 %
 \subtitle{Definition 6.02 - }{First Order Differential Equations}
-First order differential equations are equations of form $f(x, y, \frac{dx}{dy}) = 0$. \\
+First order differential equations are equations of form $f(x, y, \frac{dx}{dy}) = 0$.\\
+\underline{i.e.} - $y=a\frac{dx}{dy}+bx$.
 
 \subtitle{Definition 6.03 - }{Seperable Equations}
 An equation, $f$, is said to be seperable if there exists two equations, $M(x),\ N(y)$, such that $$f(x, y, y') = y' - M(x).N(y)$$
@@ -313,7 +314,7 @@ Let $F(x) = \int{f(x)dx}$. Thus \begin{alignat*}{2}
 \subsection{Second Order Differential Equations}
 %
 \subtitle{Definition 6.05 - }{Linear Differential Equations}
-A differential equation is said to be \textit{linear} if it can be written in the form $$Ay(x) := a_n(x).y^{(n)}(x) + ... + a_1(x).y'(x) + a_0(x).y(x) = b(x)$$
+A differential equation is said to be \textit{linear} if it can be written in the form $$Ay(x) := a_n.y^{(n)}(x) + ... + a_1.y'(x) + a_0.y(x) = b(x)$$
 We define the set of solutions as $$S(A, b) := {y : I \to \real ; Ay = b}$$
 If the only solution is $b(x) = 0\ \forall\ x$ then the system is \textit{homogenous}, otherwise it is \textit{inhomogenous}.
 
@@ -410,7 +411,7 @@ So $$y_n = y_{n_0} + \sum_{j = n_0}^{n-1} f_j$$
 \subtitle{Theorem 8.04 - }{Solving First-Order Linear Difference Equations}
 From \textit{Definition 8.02} we can generalise the equation to show that $$y_{n+1} + b_ny_n = f_n$$
 Then $$\frac{-1}{b_n}y_{n+1}-y_n = \frac{-1}{b_n}f_n$$
-We now define the \textit{Summing Factor}, $S_n$, as $$S_n :=\prod_{j={n_0}}^{n-1}\frac{-1}{b_n}$$.
+We now define the \textit{Summing Factor}, $S_n$, as $$S_n :=\prod_{j={n_0}}^{n-1}\frac{-1}{b_j}$$.
 We multiply both sides of the original equation by the summing factor and as $S_n(\frac{-1}{b_n})=S_{n+1}$ we get $$S_{n+1}y_{n+1} - S_ny_n = S_{n+1}f_n$$
 As this has the same form as the example in \textit{8.03} we can now deduce $$S_ny_n = y_{n_0} + \sum_{j={n_0}}^{n-1}S_{j+1}.f_j$$
 
@@ -829,6 +830,7 @@ then $\vect{x}$ is an \textit{equilibrium} point of $\vect{f}$.\\
 We say the solution $\vect{x}_n$ of a discrete dynamic system is \textit{periodic} if
 $$\exists\ p \in \nat\ st\ \forall\ n \in \nat\,\quad \vect{x}_{n+p} = \vect{x}_n$$
 The smallest such $p$ is called the period of the solution.\\
+\underline{i.e} - So all values repeat at a regular interval in the system.
 
 \subtitle{Definition 17.05 - }{P-Cycle}
 Let $\vect{x}_n$ be a periodic solution with period $p$ and $k \in \nat$.\\
@@ -839,7 +841,7 @@ We say an equilibrium, $\vect{x}$ of a discrete dynamic system is \textit{stable
 $$\forall\ \epsilon > 0, \exists\ \delta > 0\ such\ that\ \|\vect{x}_0 - \vect{x}\| < \delta \implies \|\vect{x}_n - \vect{x}\| < \epsilon\ \forall\ n \in \nat$$
 
 \subtitle{Proposition 17.07 - }{Stability and Eigenvalues}
-The equilibrium $\vect{x}$ is stable if the modulus of every eigenvalue of $\vect{f}'(\vect{X})$ is less than 1.\\
+The equilibrium $\vect{x}$ is stable if the modulus of $\vect{f}'(\vect{X})$ is less than 1.\\
 Otherwise, it is unstable.
 
 \end{document}
