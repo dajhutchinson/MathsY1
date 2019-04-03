@@ -3,7 +3,7 @@
 Files from some of my first year maths modules: <br />
 | [Calculus 1](https://github.com/dajhutchinson/MathsY1/tree/master/Calculus1) |
 | [Linear Algebra And Geometry](https://github.com/dajhutchinson/MathsY1/tree/master/LinearAlgebraAndGeometry) |
-| [Introduction to Group Theory](GroupTheory) |
+| [Introduction to Group Theory](https://github.com/dajhutchinson/MathsY1/tree/master/GroupTheory/Notes) |
 
 #### N.B. ####
 To build and preview LaTeX file in atom use
